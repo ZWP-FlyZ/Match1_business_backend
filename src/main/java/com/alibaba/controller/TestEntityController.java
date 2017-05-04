@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/test")
 public class TestEntityController {
 	@Autowired
 	private TestEntityRepository testEntityRepository;
 	
 	@RequestMapping("")
-	@ResponseBody
+	@ResponseBody//返回数据，没加则进入templates里面查找对应页面
 	public String result(){
 		List<TestEntity> tests = testEntityRepository.findAll();
 		String temp = "";
@@ -26,9 +25,9 @@ public class TestEntityController {
 		return temp;
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping("/")//拦截url
 	public String getPage(){
-		return "index";
+		return "copy";
 	}
 	
 	@RequestMapping("/testone")
@@ -39,5 +38,10 @@ public class TestEntityController {
 	@RequestMapping("/copyw")
 	public String getCopy(){
 		return "copy";
+	}
+	
+	@RequestMapping("/tony")
+	public String getTony(){
+		return "test/copy";
 	}
 }

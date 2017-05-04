@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
+//JpaRepository<entity名字, 其主键类型>
 public interface TestEntityRepository extends JpaRepository<TestEntity, Integer> {
 	//add or update
 	public TestEntity save(TestEntity testEntity);
@@ -16,4 +17,5 @@ public interface TestEntityRepository extends JpaRepository<TestEntity, Integer>
 	public TestEntity findByTestId(int testId);
 	//retrive some
 	public List<TestEntity> findAll();
+	
 }
