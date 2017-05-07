@@ -1,7 +1,7 @@
 <template>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1 class="text-center">已有时长</h1>
+      <h1 class="text-center">我的应用</h1>
     </div>
     <div class="panel-body">
       <h1 class="text-center">{{time}}小时</h1>
