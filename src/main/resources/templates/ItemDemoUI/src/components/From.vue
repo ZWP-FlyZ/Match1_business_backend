@@ -22,7 +22,7 @@
 		methods:{
 			submit: function(){
 				var names = this.user.name;
-				console.log(names)
+				console.log("name:::"+names)
 				this.$http.post('/api/receiveData',names).then(function(data){
 				consolelo.log(data.bodyText)
 			},function(error){

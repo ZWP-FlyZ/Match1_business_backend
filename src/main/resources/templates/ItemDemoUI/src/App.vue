@@ -4,15 +4,17 @@
       <div class="container">
         <a class="navbar-brand" href="#">
           <i class="glyphicon glyphicon-time"></i>
-          App
+          业务中台
         </a>
         <ul class="nav navbar-nav">
-          <li><router-link to="/home">首页</router-link></li>
-          <li><router-link to="/time-entries">计划列表</router-link></li>
-          <li><router-link to="/form">表单提交</router-link></li>
+          <li><router-link to="/home">业务中台首页</router-link></li>
+          <li><router-link to="/time-entries">张三</router-link></li>
+          <li><router-link to="/form"></router-link></li>
         </ul>
       </div>
     </nav>
+    <!-- 以上nav是写首页的头部的 -->
+    <!-- 以上div是写首页的内容的 ，其中Sidebar代表导航栏，对应的文件在components文件夹下的sidebar.vue,-->
     <div class="container">
       <div class="col-sm-3">
         <Sidebar></Sidebar>
