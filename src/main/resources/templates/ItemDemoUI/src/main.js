@@ -4,12 +4,12 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
 import App from './App'
-import Home from './components/Hello'
-import Form from './components/From'
+import Content from './components/Content'
+import BZProcess from './components/BZProcess'
+import PageTemplate from './components/PageTemplate'
+import BZability from './components/BZability'
+import Ability from './components/Ability'
 import 'bootstrap/dist/css/bootstrap.css'
-
-import store from './store'
-import TimeEntries from './components/TimeEntries.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -19,20 +19,24 @@ const routes = [{
   component: App
 },
 {
-  path: '/home',
-  component: Home
+  path: '/content',
+  component: Content
 },
 {
-  path: '/form',
-  component: Form
+  path: '/bzprocess',
+  component: BZProcess
 },
 {
-  path: '/time-entries',
-  component: TimeEntries,
-  children: [{
-    path: 'log-time',
-    component: resolve => require(['./components/LogTime.vue'], resolve)
-  }]
+  path: '/pagetemplate',
+  component: PageTemplate
+},
+{
+  path: '/bzability',
+  component: BZability
+},
+{
+  path: '/ability',
+  component: Ability
 }]
 
 const router = new VueRouter({
@@ -45,7 +49,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  store,
   template: '<App/>',
-  components: { App }
+  components: { App}
 })

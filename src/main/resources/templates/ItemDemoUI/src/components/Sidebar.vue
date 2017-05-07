@@ -4,17 +4,10 @@
       <h1 class="text-center">我的应用</h1>
     </div>
     <div class="panel-body">
-      <h1 class="text-center">{{time}}小时</h1>
+      <router-link to="/content">应用1</router-link>
+      <router-link to="/content">应用1</router-link>
     </div>
   </div>
 </template>
 
-<script>
-  export default {
-    computed: {
-      time () {
-        return this.$store.state.totalTime
-      }
-    }
-  }
-</script>
+

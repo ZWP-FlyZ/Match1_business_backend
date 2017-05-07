@@ -1,7 +1,7 @@
 <template>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1 class="text-center">bzability</h1>
+      <h1 class="text-center">process</h1>
     </div>
   </div>
 </template>

@@ -7,9 +7,9 @@
           业务中台
         </a>
         <ul class="nav navbar-nav">
-          <li><router-link to="/home">业务中台首页</router-link></li>
-          <li><router-link to="/time-entries">张三</router-link></li>
-          <li><router-link to="/form"></router-link></li>
+          <li>业务中台首页</li>
+          <li>张三</li>
+          <li>99999999999</li>
         </ul>
       </div>
     </nav>
@@ -28,8 +28,9 @@
 
 <script>
   import Sidebar from './components/Sidebar.vue'
+  
   export default{
-    components: { 'Sidebar': Sidebar }
+    components: { 'Sidebar': Sidebar}
   };
   
 </script>
