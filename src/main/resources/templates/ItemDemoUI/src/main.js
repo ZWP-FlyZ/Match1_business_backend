@@ -4,13 +4,16 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
 import App from './App'
+import Login from './Login'
 import Content from './components/Content'
 import BZProcess from './components/BZProcess'
 import PageTemplate from './components/PageTemplate'
 import BZability from './components/BZability'
 import Ability from './components/Ability'
+
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
+import './assets/css/login.css'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -18,6 +21,10 @@ Vue.use(vuex)
 const routes = [{
   path: '/',
   component: App
+},
+{
+  path: '/login',
+  component: Login
 },
 {
   path: '/content',
@@ -50,6 +57,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App}
+  template: '<Login/>',
+  components: { Login}
 })
