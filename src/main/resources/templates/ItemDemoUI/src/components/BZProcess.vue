@@ -1,7 +1,3 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1 class="text-center">process</h1>
-    </div>
-  </div>
+  <h1 class="text-center">process</h1>
 </template>

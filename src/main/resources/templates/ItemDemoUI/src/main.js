@@ -20,23 +20,23 @@ const routes = [{
 },
 {
   path: '/content',
-  component: Content
-},
-{
-  path: '/bzprocess',
-  component: BZProcess
-},
-{
-  path: '/pagetemplate',
-  component: PageTemplate
-},
-{
-  path: '/bzability',
-  component: BZability
-},
-{
-  path: '/ability',
-  component: Ability
+  component: Content,
+  children:[{
+    path: '/bzprocess',
+    component: BZProcess 
+  },
+  {
+    path: '/pagetemplate',
+    component: PageTemplate
+  },
+  {
+    path: '/bzability',
+    component: BZability
+  },
+  {
+    path: '/ability',
+    component: Ability
+  }]
 }]
 
 const router = new VueRouter({
