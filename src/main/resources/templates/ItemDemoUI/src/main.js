@@ -10,6 +10,7 @@ import PageTemplate from './components/PageTemplate'
 import BZability from './components/BZability'
 import Ability from './components/Ability'
 import 'bootstrap/dist/css/bootstrap.css'
+import './assets/css/index.css'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
