@@ -1,3 +1,4 @@
+
 <template>
 		<div id="application">
 			<div class="application-heading">
@@ -18,7 +19,7 @@
 						<router-link to="/content">应用3</router-link>
 					</li>
 					<li>
-						<button type = "submit" value="submit">注册应用</button>
+						<router-link to="/registerApplication" class = "btn btn-primary">注册应用</router-link>
 					</li>
 
 				</ul>

@@ -14,16 +14,16 @@
           <ul class="BZ-edit">
             <li class = "BZ-num">1</li>
             <li class = "process">此处放流程图</li>
-            <li><button type = "submit" value="submit">编辑</button></li>
-            <li><button type = "submit" value="submit">查看</button></li>
-            <li><button type = "submit" value="submit">删除</button></li>
+            <li class = "btn btn-primary">编辑</li>
+            <li class = "btn btn-primary">查看</li>
+            <li class = "btn btn-primary">删除</li>
             <span></span>
 
             <li class = "BZ-num">2</li>
             <li class = "process">此处放流程图</li>
-            <li><button type = "submit" value="submit">编辑</button></li>
-            <li><button type = "submit" value="submit">查看</button></li>
-            <li><button type = "submit" value="submit">删除</button></li>
+            <li class = "btn btn-primary">编辑</li>
+            <li class = "btn btn-primary">查看</li>
+            <li class = "btn btn-primary">删除</li>
             <span></span>
           </ul>
           
@@ -35,16 +35,16 @@
           <ul class="BZ-edit">
             <li class = "BZ-num">1</li>
             <li class = "process">此处放流程图</li>
-            <li><button type = "submit" value="submit">编辑</button></li>
-            <li><button type = "submit" value="submit">查看</button></li>
-            <li><button type = "submit" value="submit">删除</button></li>
+            <li class = "btn btn-primary">编辑</li>
+            <li class = "btn btn-primary">查看</li>
+            <li class = "btn btn-primary">删除</li>
             <span></span>
 
             <li class = "BZ-num">2</li>
             <li class = "process">此处放流程图</li>
-            <li><button type = "submit" value="submit">编辑</button></li>
-            <li><button type = "submit" value="submit">查看</button></li>
-            <li><button type = "submit" value="submit">删除</button></li>
+            <li class = "btn btn-primary">编辑</li>
+            <li class = "btn btn-primary">查看</li>
+            <li class = "btn btn-primary">删除</li>
             <span></span>
           </ul>
 
