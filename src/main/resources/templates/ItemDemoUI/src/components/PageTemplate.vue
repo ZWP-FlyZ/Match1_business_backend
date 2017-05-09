@@ -1,13 +1,34 @@
 <template>
+  <div class="center">
   <div class="template-page">
+
     <div class="template-head">
       <div class="head-left">页面模板</div>
       <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
 
-    <div class="template-body">
+    <table class="template-body" cellspacing=20>
+      <tr>
+        <td>
 
-      <div class="four-container">
+        <div class="one-container" >
+          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
+          <div class="template-edit">
+            <div class="template-view">
+              <img src="" class="template-img">
+            </div>
+            <div class="bottoms">
+              <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
+              <br/>
+              <a href="#" class="bottom-item">查看</a>
+              <br/>
+              <bottom class="delete" >删除</bottom>
+            </div>
+          </div>
+        </div>
+
+        </td>
+          <td>
         <div class="one-container">
           <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
           <div class="template-edit">
@@ -23,22 +44,11 @@
             </div>
           </div>
         </div>
-        <div class="one-container">
-          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
-          <div class="template-edit">
-            <div class="template-view">
-              <img src="" class="template-img">
-            </div>
-            <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
-              <br/>
-              <a href="#" class="bottom-item">查看</a>
-              <br/>
-              <bottom class="delete" >删除</bottom>
-            </div>
-          </div>
-        </div>
+    </td>
 
+      </tr>
+    <tr>
+<td>
         <div class="one-container">
           <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
           <div class="template-edit">
@@ -54,6 +64,8 @@
             </div>
           </div>
         </div>
+</td>
+      <td>
         <div class="one-container">
           <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
           <div class="template-edit">
@@ -70,7 +82,10 @@
           </div>
         </div>
 
-      </div>
+      </td>
+    </tr>
+    </table>
+
 
       <ul class="pagination">
         <li><a href="#">«</a></li>
@@ -83,21 +98,24 @@
         <li><a href="#">7</a></li>
         <li><a href="#">»</a></li>
       </ul>
-  </div>
+
 
     </div>
+
+  </div>
 </template>
 
 <style>
-  .template-page{margin-top:15px;}
+
   .template-head{
+    padding:0;
+    margin:0;
     font: 15px/25px Arial, sans-serif;
-    background:#f2f2f2;
+    background:#F2F2F2;
     width:90%;
     height: 40px;
-    margin:0 auto;
-
-
+    display: inline-block;
+    position: relative;
     text-decoration: none;
   }
   .head-left{
@@ -105,19 +123,21 @@
 
     position: relative;
     left: 40px;
-    top:7px;
+    top:8px;
   }
   .head-creat{
+    font-size: 14px;
     text-align: center;
     text-decoration: none;
-    color: #fafafa;
+    color: #ffffff;
     float:right;
     position: relative;
+    top:6px;
     right: 40px;
-    top:5px;
-    background: #04acec;
+
+    background: #357ebd;
     padding: 2px 10px;
-    border-radius: 25px;
+    border-radius: 4px;
   }
 
   .head-creat:hover{
@@ -125,25 +145,20 @@
     text-decoration: none;
   }
   .template-body{
-
-
-
-  }
-  .four-container{
-    height:500px;
-    justify-content:center;
-    display: flex;
-    flex-wrap:wrap;
+    display: inline;
+    width: 90%;
 
 
   }
+
   .one-container{
+    position: relative;
     width:250px;
     height:200px;
     border-style:solid;
     border-width:1px;
     border-color: #999999;
-    margin: 10px 15px;
+    margin: 10px 30px;
 
   }
   .one-container:hover{
@@ -164,18 +179,21 @@
 
   }
  .bottom-item{
+   color: #ffffff;
+   background-color: #428bca;
+   border-color: #357ebd;
    text-align: center;
    text-decoration: none;
-   color: #fafafa;
+
    float:right;
    position: relative;
    right: 5px;
    top:20px;
    left:20px;
-   background: #04acec;
+
    margin: 5px;
    padding: 2px 10px;
-   border-radius: 25px;
+   border-radius: 4px;
  }
   .bottom-item:hover {
     text-decoration: none;
@@ -213,6 +231,10 @@
     height: 150px;
     margin:15px 15px;
     background: #0186ba;
+  }
+  .center{
+    text-align: center;
+
   }
   ul.pagination li {
     display: inline;}
