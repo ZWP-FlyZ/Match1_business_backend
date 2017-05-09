@@ -46,4 +46,9 @@ public class TestEntityController {
 	public String getTest(){
 		return "test";
 	}
+	@RequestMapping("/aaa")
+	@ResponseBody
+	public String getaa(){
+		return "aaa";
+	}
 }
