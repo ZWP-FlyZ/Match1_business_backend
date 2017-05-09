@@ -1,42 +1,49 @@
-
 <template>
 		<div id="application">
 			<div class="application-heading">
 				<span>我的应用</span>
 			</div>
 			<div class="application-list">
-				<ul>
-					<li>
-						<i class="icon icon-triangle-right"></i>
-						<router-link to="/content"><span>应用1</span></router-link>
+				<ul >
+					<li v-bind:class="{'application-li-active':isActive}" @click="addActive()" v-for="(item,index) in appList">
+						<i class="icon-triangle-right"></i>
+						<router-link to="/content" class="application-router">{{item.name}}</router-link>
 					</li>
 					<li>
-						<i class="icon icon-triangle-right"></i>
-						<router-link to="/content">应用2</router-link>
+						<i class="icon-triangle-right"></i>
+						<router-link to="/content" class="application-router">yingyng yi</router-link>
 					</li>
-					<li>
-						<i class="icon icon-triangle-right"></i>
-						<router-link to="/content">应用3</router-link>
-					</li>
-					<li>
-						<router-link to="/registerApplication" class = "btn btn-primary">注册应用</router-link>
-					</li>
-
 				</ul>
 			</div>
+			<router-link to="/registerApplication" class = "btn btn-primary">注册应用</router-link>
 		</div>
-
-	  	<!-- <div id = "panel-myApplication" class="panel panel-default">
-		    <div class="panel-heading">
-		      <h1 class="text-center">我的应用</h1>
-		    </div>
-		    <div class="panel-body">
-		      <router-link to="/content">应用1</router-link>
-		      <router-link to="/content">应用2</router-link>
-		      <router-link to="/content">应用3</router-link>
-		      <router-link to="/content">应用4</router-link>
-		    </div>
-	  	</div> -->
 </template>
+
+<script>
+export default {
+  data(){
+    return {
+	  isActive:false,
+	  appList:[]
+	}
+  },
+  mounted:function(){
+  	this.$nextTick(function(){
+  		this.getApplication();
+  	})
+  },
+  methods: {
+  	addActive:function(){
+  		this.isActive = true
+  	},
+  	getApplication:function(){
+  		this.$http.get("http://localhost:3000/api/getAppList").then(res=>{
+  			console.log(res)
+  			this.appList = res.data.data;
+  		})
+  	}
+  }
+}
+</script>
 
 

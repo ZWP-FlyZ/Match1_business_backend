@@ -9,6 +9,8 @@ import PageTemplate from '@/components/PageTemplate'
 import BZability from '@/components/BZability'
 import Ability from '@/components/Ability'
 import RegisterProcess from '@/components/RegisterProcess'
+import RegisterBZAbility from '@/components/RegisterBZAbility'
+import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 import RegisterApplication from'@/components/RegisterApplication'
 
@@ -52,8 +54,12 @@ export default new Router({
     component: RegisterPageTemplate
     },
     {
-    path: '/registerApplication',
-    component: RegisterApplication
+    path: '/registerBZAbility',
+    component: RegisterBZAbility
+    },
+    {
+    path: '/registerAbility',
+    component: RegisterAbility
     }]
   }]
 })
