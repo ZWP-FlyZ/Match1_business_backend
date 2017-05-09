@@ -1,4 +1,5 @@
 <template>
+  <div class="center">
   <div class="template-page">
 
     <div class="template-head">
@@ -72,7 +73,7 @@
         </div>
 
       </div>
-  <div class="center">
+
       <ul class="pagination">
         <li><a href="#">«</a></li>
         <li><a href="#">1</a></li>
@@ -93,16 +94,15 @@
 
 <style>
 
-  .template-page{
-    width:80%;
-  }
   .template-head{
     font: 15px/25px Arial, sans-serif;
-    background: lightgrey;
+    background:#dddddd;
+    width:90%;
 
     height: 40px;
     display: inline-block;
     position: relative;
+
 
     text-decoration: none;
   }
@@ -158,9 +158,9 @@
   }
   .titem-name{
     position: relative;
-    left:10px;
+
     top:5px;
-    front-size:10px;
+    font-size:14px;
   }
   .bottoms{
     display: block;
