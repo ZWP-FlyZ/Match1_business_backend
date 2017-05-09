@@ -9,6 +9,7 @@ import PageTemplate from '@/components/PageTemplate'
 import BZability from '@/components/BZability'
 import Ability from '@/components/Ability'
 import RegisterProcess from '@/components/RegisterProcess'
+import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 
 Vue.use(Router)
 
@@ -44,6 +45,10 @@ export default new Router({
     {
     path: '/registerProcess',
     component: RegisterProcess
+    },
+    {
+    path: '/registerPageTemplate',
+    component: RegisterPageTemplate
     }]
   }]
 })
