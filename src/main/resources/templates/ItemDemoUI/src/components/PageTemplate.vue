@@ -1,7 +1,8 @@
 <template>
-  <div class="center">
-  <div class="template-page">
 
+  <div class="template-page">
+    <p class="template-total" >页面模板定制总数：12</p>
+    <div class="template-center">
     <div class="template-head">
       <div class="head-left">页面模板</div>
       <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
@@ -100,30 +101,30 @@
       </ul>
 
 
-    </div>
 
+</div>
   </div>
 </template>
 
 <style>
-
+ .template-total{
+  margin-bottom: 20px;
+ }
   .template-head{
-    padding:0;
-    margin:0;
-    font: 15px/25px Arial, sans-serif;
+    font: 14px Arial, sans-serif;
     background:#F2F2F2;
-    width:90%;
-    height: 40px;
-    display: inline-block;
+    width:100%;
+    height: 45px;
     position: relative;
     text-decoration: none;
   }
   .head-left{
     float:left;
-
     position: relative;
-    left: 40px;
-    top:7px;
+    padding-left: 10%;
+   top:10px;
+    font-size: 16px;
+
   }
   .head-creat{
     font-size: 14px;
@@ -132,12 +133,12 @@
     color: #ffffff;
     float:right;
     position: relative;
-    top:5px;
+    top:8px;
     right: 40px;
 
     background: #357ebd;
-    padding: 2px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 5px;
   }
 
   .head-creat:hover{
@@ -192,7 +193,7 @@
    left:20px;
 
    margin: 5px;
-   padding: 2px 10px;
+   padding: 6px 12px;
    border-radius: 4px;
  }
   .bottom-item:hover {
@@ -210,8 +211,8 @@
     top:20px;
     background: grey;
     margin: 5px;
-    padding: 2px 10px;
-    border-radius: 25px;
+    padding: 6px 12px;
+    border-radius:4px;
   }
   .titem-name{
     color:black;
@@ -232,7 +233,7 @@
     margin:15px 15px;
     background: #0186ba;
   }
-  .center{
+  .template-center{
     text-align: center;
 
   }
