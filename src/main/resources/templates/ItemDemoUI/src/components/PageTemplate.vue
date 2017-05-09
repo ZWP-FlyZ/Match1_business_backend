@@ -123,7 +123,7 @@
 
     position: relative;
     left: 40px;
-    top:8px;
+    top:7px;
   }
   .head-creat{
     font-size: 14px;
@@ -132,7 +132,7 @@
     color: #ffffff;
     float:right;
     position: relative;
-    top:6px;
+    top:5px;
     right: 40px;
 
     background: #357ebd;
@@ -145,7 +145,7 @@
     text-decoration: none;
   }
   .template-body{
-    display: inline;
+    display: inline-block;
     width: 90%;
 
 
