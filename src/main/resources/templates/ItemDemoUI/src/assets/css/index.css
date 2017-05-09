@@ -1,4 +1,4 @@
-
+#wrapper{background:#fff;}
 /*************头部****************************************/
 #header{
 	background: #3D484F;
@@ -6,56 +6,69 @@
 	height: 37px;
 	color: #fff;
 	margin:0 auto;
+	margin-bottom:40px;
 }
+
 #header .header-left{
 	margin-left: 5%;
 	float: left;
 	margin-top: 8px;
 }
 #header .header-right{
-	margin-left: 70%;
+	margin-left: 60%;
 	float: left;
 	margin-top: 8px;
 }
-#header .header-author{
-	float: left;
-	margin-top: 8px;
-	color:#fff;
-	margin-left: 1%;
-}
+
 /*************头部结束****************************************/
 /*************我的应用***************************************/
 #application{
 	/*width: 122px;*/
-	width: 20%;
+	/*width: 20%;
+	float: left;
+	font-size: 19px;*/
+	width: 200px;
 	float: left;
 	font-size: 19px;
+	margin-right:20px;
+	margin-left:20px;
+	border:2px solid #f0f0f0;
+	padding:10px;
+	background: #fff
+
+
 }
 #application .application-heading{
-	margin-top: 45px;
+	/*margin-top: 0px;*/
+	text-align: left
 }
-#application .application-list ul li a.list-first{
+#application .application-heading span{font-size:20px;}
+#application .application-list ul li span:first-Child{
 	color:#169BD5;
 }
 #application .application-list ul li{
 	margin-top: 15px;
 	text-align: left;
-}
-#application .application-list ul li button{
-	margin-top: 15px;
-	text-align: left;
+	font-size:16px;
 	/*color: #000;*/
 }
+.icon{width:16px;height:16px;background:url(../icon.png);}
+.icon .icon-triangle-right{background-origin: 0px 0px}
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{
-	float: left;
+	/*border: 2px solid red;*/
+	/*float: left;*/
 	/*width: 670px;*/
-	width: 60%;
+	/*width: 60%;*/
+	overflow: hidden;
+	
 }
+#content .content-main{border:2px solid #f0f0f0;margin-top:43px;}
 /*流程描述开始*/
 #content .content-descrition ul{
-	margin-top:5%; 
+	/*margin-left: 280px;*/
+	/*margin-top:5%; */
 	width: 100%;
 	float: left;
 }
@@ -72,15 +85,15 @@
 }
 span.tabs-BZ-total{
 	display: block;
+	/*float: left;*/
 	clear:both;
-	margin-bottom: 3%;
 }
 #content .content-tab{
 	float: left;
-	border: 1px solid #E0DAD1;
+	/*margin-left: 280px;*/
+	border: 2px solid #f8f8f8;
+	border-bottom:0px;
 	display: block;
-	width: 100%;
-	border-bottom-color: #fff;
 }
 .nav {
   padding-left: 0;
@@ -116,7 +129,6 @@ margin-right: 2px;
 line-height: 1.42857143;
 border: 1px solid transparent;
 border-radius: 4px 4px 0 0;
-background: #F2F2F2;
 }
 .nav-tabs > li >a:hover {
 border-color: #eee #eee #ddd;
@@ -132,22 +144,17 @@ border-color: #eee #eee #ddd;
 }
 /*tab页结束*/
 /*流程tab内容开始*/
-#content .content-tab .BZ-tabs span.tabs-BZ-total{
-	padding-top: 15px;
-}
+/*span.tabs-BZ-total{
+	float: left;
+}*/
 #content .content-tab .BZ-tabs span{
 	display: block;
 	padding-top: 35px;
 	text-align: left;
 }
-.BZ-tabs{
-	width: 100%;
-}
-.total{
-	color:#169BD5;
-}
 #content .content-tab .BZ-tabs .BZ-register{
 	background: #F2F2F2;
+	/*width: 670px;*/
 	height: 30px;
 }
 #content .content-tab .BZ-tabs .BZ-register li{
@@ -157,42 +164,42 @@ border-color: #eee #eee #ddd;
 }
 #content .content-tab .BZ-tabs .BZ-register li.register{
 	margin-left: 300px;
-	margin-left: 70%;
+
 }
 #content .content-tab .BZ-tabs .BZ-classify a{
 	color:#169BD5;
-	margin-right: 8%;
-}
-.BZ-edit li.BZ-num{
-	margin-left: 3%;
 }
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit{
 	margin-bottom: 25px;
-	border: 1px solid #A29A8F;
 }
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit span{
 	border-bottom: 1px solid #A29A8F;
 }
-li.process{
-	width: 60%;
-	margin-left: 10%;
-	text-align: center;
-}
-#content .content-tab .BZ-tabs .BZ-classify a{
-	line-height: 50px;
-}
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit li{
 	float: left;
-	margin-top:8px;
-}
-.BZ-tabs .BZ-classify .BZ-edit li button{
-	margin-left: 20px;
+	margin-right: 130px;	
+	margin-top:8px;  
 }
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+  @media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+  @media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+  @media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
   .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
