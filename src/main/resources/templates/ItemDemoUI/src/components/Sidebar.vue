@@ -8,15 +8,15 @@
 				<ul>
 					<li>
 						<img src="" alt="">
-						<a href="" class = "list-first">应用1</a>
+						<router-link to="/content">应用1</router-link>
 					</li>
 					<li>
 						<img src="" alt="">
-						<a href=""><router-link to="/content">应用2</router-link></a>
+						<router-link to="/content">应用2</router-link>
 					</li>
 					<li>
 						<img src="" alt="">
-						<a href=""><router-link to="/content">应用3</router-link></a>
+						<router-link to="/content">应用3</router-link>
 					</li>
 					<li>
 						<button type = "submit" value="submit">注册应用</button>
