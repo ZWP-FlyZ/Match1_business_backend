@@ -1,4 +1,4 @@
-
+#wrapper{background:#fff;}
 /*************头部****************************************/
 #header{
 	background: #3D484F;
@@ -6,7 +6,7 @@
 	height: 37px;
 	color: #fff;
 	margin:0 auto;
-	margin-top: 5%;
+	margin-bottom:40px;
 }
 
 #header .header-left{
@@ -24,34 +24,51 @@
 /*************我的应用***************************************/
 #application{
 	/*width: 122px;*/
-	width: 20%;
+	/*width: 20%;
+	float: left;
+	font-size: 19px;*/
+	width: 200px;
 	float: left;
 	font-size: 19px;
+	margin-right:20px;
+	margin-left:20px;
+	border:2px solid #f0f0f0;
+	padding:10px;
+	background: #fff
+
 
 }
 #application .application-heading{
-	margin-top: 45px;
+	/*margin-top: 0px;*/
+	text-align: left
 }
-#application .application-list ul li a.list-first{
+#application .application-heading span{font-size:20px;}
+#application .application-list ul li span:first-Child{
 	color:#169BD5;
 }
 #application .application-list ul li{
 	margin-top: 15px;
 	text-align: left;
+	font-size:16px;
 	/*color: #000;*/
 }
+.icon{width:16px;height:16px;background:url(../icon.png);}
+.icon .icon-triangle-right{background-origin: 0px 0px}
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{
 	/*border: 2px solid red;*/
-	float: left;
+	/*float: left;*/
 	/*width: 670px;*/
-	width: 60%;
+	/*width: 60%;*/
+	overflow: hidden;
+	
 }
+#content .content-main{border:2px solid #f0f0f0;margin-top:43px;}
 /*流程描述开始*/
 #content .content-descrition ul{
 	/*margin-left: 280px;*/
-	margin-top:5%; 
+	/*margin-top:5%; */
 	width: 100%;
 	float: left;
 }
@@ -65,18 +82,17 @@
 .content-tab ul.nav-tabs{
 	display: block;
 	float: left;
-	border: 2px solid red;
 }
 span.tabs-BZ-total{
 	display: block;
 	/*float: left;*/
 	clear:both;
-	border: 2px solid green;
 }
 #content .content-tab{
 	float: left;
 	/*margin-left: 280px;*/
-	border: 1px solid purple;
+	border: 2px solid #f8f8f8;
+	border-bottom:0px;
 	display: block;
 }
 .nav {

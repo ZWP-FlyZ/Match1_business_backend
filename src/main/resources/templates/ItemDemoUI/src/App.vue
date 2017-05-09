@@ -12,7 +12,7 @@
       </div>
       <div class="header-author">
          <img src="" alt="">
-         <a href="">OS建模小组</a>
+          <span>OS建模小组</span>
       </div>
     </div>
     <!-- 以上nav是写首页的头部的 -->

@@ -1,21 +1,20 @@
 <template>
-	<div>
 		<div id="application">
 			<div class="application-heading">
-				<h2>我的应用</h2>
+				<span>我的应用</span>
 			</div>
 			<div class="application-list">
 				<ul>
 					<li>
-						<img src="" alt="">
-						<router-link to="/content">应用1</router-link>
+						<i class="icon icon-triangle-right"></i>
+						<router-link to="/content"><span>应用1</span></router-link>
 					</li>
 					<li>
-						<img src="" alt="">
+						<i class="icon icon-triangle-right"></i>
 						<router-link to="/content">应用2</router-link>
 					</li>
 					<li>
-						<img src="" alt="">
+						<i class="icon icon-triangle-right"></i>
 						<router-link to="/content">应用3</router-link>
 					</li>
 					<li>
@@ -37,7 +36,6 @@
 		      <router-link to="/content">应用4</router-link>
 		    </div>
 	  	</div> -->
-	 </div>
 </template>
 
 

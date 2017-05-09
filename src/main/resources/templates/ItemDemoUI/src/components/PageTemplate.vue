@@ -1,10 +1,8 @@
 <template>
-  <div class="center">
   <div class="template-page">
-
     <div class="template-head">
       <div class="head-left">页面模板</div>
-      <a href="#" class="head-creat">创建页面模板</a>
+      <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
 
     <div class="template-body">
@@ -88,20 +86,16 @@
   </div>
 
     </div>
-
-  </div>
 </template>
 
 <style>
-
+  .template-page{margin-top:15px;}
   .template-head{
     font: 15px/25px Arial, sans-serif;
-    background:#dddddd;
+    background:#f2f2f2;
     width:90%;
-
     height: 40px;
-    display: inline-block;
-    position: relative;
+    margin:0 auto;
 
 
     text-decoration: none;
@@ -219,10 +213,6 @@
     height: 150px;
     margin:15px 15px;
     background: #0186ba;
-  }
-  .center{
-    text-align: center;
-
   }
   ul.pagination li {
     display: inline;}
