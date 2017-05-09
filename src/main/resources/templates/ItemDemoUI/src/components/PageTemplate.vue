@@ -4,7 +4,7 @@
 
     <div class="template-head">
       <div class="head-left">页面模板</div>
-      <router-link to="/RegisterPageTemplate.vue"  class="head-creat">创建页面模板</router-link>
+      <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
 
     <div class="template-body">
