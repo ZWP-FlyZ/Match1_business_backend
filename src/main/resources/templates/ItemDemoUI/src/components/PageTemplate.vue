@@ -93,13 +93,11 @@
 
 <style>
 
-  .template-page{
-    width:80%;
-  }
+
   .template-head{
     font: 15px/25px Arial, sans-serif;
     background: lightgrey;
-
+width:100%;
     height: 40px;
     display: inline-block;
     position: relative;
