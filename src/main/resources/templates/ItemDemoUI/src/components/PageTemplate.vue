@@ -4,7 +4,7 @@
 
     <div class="template-head">
       <div class="head-left">页面模板</div>
-      <a href="#" class="head-creat">创建页面模板</a>
+      <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
 
     <div class="template-body">
