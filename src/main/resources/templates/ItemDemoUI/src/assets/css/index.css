@@ -89,9 +89,9 @@
 }
 span.tabs-BZ-total{
 	display: block;
-	/*float: left;*/
+	margin-top: -10px;
 	clear:both;
-	margin-bottom: 3%;
+	margin-bottom: 20px;
 }
 #content .content-tab{
 	float: left;
@@ -161,33 +161,45 @@ border-color: #eee #eee #ddd;
 .total{
 	color:#169BD5;
 }
-#content .BZ-tabs .BZ-register{
+.BZ-register{
 	background: #F2F2F2;
-	height: 30px;
+	height: 45px;
+
 }
-#content .BZ-tabs .BZ-register li{
+ .BZ-register li{
 	float: left;
 	margin-left: 10%;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 #content .BZ-tabs .BZ-register li.register{
-	margin-left: 300px;
-	margin-left: 70%;
+	margin-left: 71%;
+}
+.L1-name{
+	color:#169BD5;
+	display: inline-block;
+	width: 20%;
+}
+.L1-edit{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	color:#169BD5;
 }
 
-#content .BZ-tabs .BZ-classify a{
-	color:#169BD5;
-	margin-right: 8%;
+.BZ-classify{
+	/*border-bottom: 1px dashed #A29A8F;*/
+	padding-bottom: 20px;
 }
 .BZ-edit li.BZ-num{
 	margin-left: 3%;
 }
 #content .BZ-tabs .BZ-classify .BZ-edit{
-	margin-bottom: 25px;
-	border: 1px solid #A29A8F;
+	margin-bottom: 15px;
+	/*border: 1px solid #A29A8F;*/
 }
-#content .BZ-tabs .BZ-classify .BZ-edit span{
-	border-bottom: 1px solid #A29A8F;
+hr.hr-BZProcess{
+	width: 95%;
+	margin:0 auto;
 }
 li.process{
 	width: 60%;
@@ -197,10 +209,14 @@ li.process{
 #content .BZ-tabs .BZ-classify a{
 	line-height: 50px;
 }
-#content .BZ-tabs .BZ-classify .BZ-edit li{
+#content .BZ-tabs .BZ-classify .BZ-edit li.BZ-num,li.process{
 	float: left;
 	margin-top:8px;
 }
+/*#content .BZ-tabs .BZ-classify .BZ-edit li{
+	float: left;
+}*/
+
 .BZ-tabs .BZ-classify .BZ-edit .btn{
 	margin-left: 10px;
 }
@@ -227,6 +243,9 @@ li.process{
   .row {
   margin-right: -15px;
   margin-left: -15px;
+}
+.BZ-table{
+	border:1px solid #A29A8F;
 }
 /*流程tab内容结束*/
 /*************内容区结束****************************************************/
@@ -274,7 +293,7 @@ button{
   	background-image: none;
   	border: 1px solid transparent;
   	border-radius: 4px;
-	border:1px solid red;
+	/*border:1px solid red;*/
 }
 .btn-primary {
   color: #ffffff;
