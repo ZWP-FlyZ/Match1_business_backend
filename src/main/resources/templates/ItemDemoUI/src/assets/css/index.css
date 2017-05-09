@@ -6,16 +6,14 @@
 	height: 37px;
 	color: #fff;
 	margin:0 auto;
-	margin-top: 5%;
 }
-
 #header .header-left{
 	margin-left: 5%;
 	float: left;
 	margin-top: 8px;
 }
 #header .header-right{
-	margin-left: 60%;
+	margin-left: 80%;
 	float: left;
 	margin-top: 8px;
 }
@@ -27,7 +25,6 @@
 	width: 20%;
 	float: left;
 	font-size: 19px;
-
 }
 #application .application-heading{
 	margin-top: 45px;
@@ -38,19 +35,21 @@
 #application .application-list ul li{
 	margin-top: 15px;
 	text-align: left;
+}
+#application .application-list ul li button{
+	margin-top: 15px;
+	text-align: left;
 	/*color: #000;*/
 }
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{
-	/*border: 2px solid red;*/
 	float: left;
 	/*width: 670px;*/
 	width: 60%;
 }
 /*流程描述开始*/
 #content .content-descrition ul{
-	/*margin-left: 280px;*/
 	margin-top:5%; 
 	width: 100%;
 	float: left;
@@ -65,19 +64,18 @@
 .content-tab ul.nav-tabs{
 	display: block;
 	float: left;
-	border: 2px solid red;
 }
 span.tabs-BZ-total{
 	display: block;
-	/*float: left;*/
 	clear:both;
-	border: 2px solid green;
+	margin-bottom: 3%;
 }
 #content .content-tab{
 	float: left;
-	/*margin-left: 280px;*/
-	border: 1px solid purple;
+	border: 1px solid #E0DAD1;
 	display: block;
+	width: 100%;
+	border-bottom-color: #fff;
 }
 .nav {
   padding-left: 0;
@@ -113,6 +111,7 @@ margin-right: 2px;
 line-height: 1.42857143;
 border: 1px solid transparent;
 border-radius: 4px 4px 0 0;
+background: #F2F2F2;
 }
 .nav-tabs > li >a:hover {
 border-color: #eee #eee #ddd;
@@ -128,17 +127,22 @@ border-color: #eee #eee #ddd;
 }
 /*tab页结束*/
 /*流程tab内容开始*/
-/*span.tabs-BZ-total{
-	float: left;
-}*/
+#content .content-tab .BZ-tabs span.tabs-BZ-total{
+	padding-top: 15px;
+}
 #content .content-tab .BZ-tabs span{
 	display: block;
 	padding-top: 35px;
 	text-align: left;
 }
+.BZ-tabs{
+	width: 100%;
+}
+.total{
+	color:#169BD5;
+}
 #content .content-tab .BZ-tabs .BZ-register{
 	background: #F2F2F2;
-	/*width: 670px;*/
 	height: 30px;
 }
 #content .content-tab .BZ-tabs .BZ-register li{
@@ -148,21 +152,36 @@ border-color: #eee #eee #ddd;
 }
 #content .content-tab .BZ-tabs .BZ-register li.register{
 	margin-left: 300px;
-
+	margin-left: 70%;
 }
 #content .content-tab .BZ-tabs .BZ-classify a{
 	color:#169BD5;
+	margin-right: 8%;
+}
+.BZ-edit li.BZ-num{
+	margin-left: 3%;
 }
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit{
 	margin-bottom: 25px;
+	border: 1px solid #A29A8F;
 }
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit span{
 	border-bottom: 1px solid #A29A8F;
 }
+li.process{
+	width: 60%;
+	margin-left: 10%;
+	text-align: center;
+}
+#content .content-tab .BZ-tabs .BZ-classify a{
+	line-height: 50px;
+}
 #content .content-tab .BZ-tabs .BZ-classify .BZ-edit li{
 	float: left;
-	margin-right: 130px;	
-	margin-top:8px;  
+	margin-top:8px;
+}
+.BZ-tabs .BZ-classify .BZ-edit li button{
+	margin-left: 20px;
 }
 .container {
   padding-right: 15px;
@@ -170,21 +189,7 @@ border-color: #eee #eee #ddd;
   margin-right: auto;
   margin-left: auto;
 }
-  @media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-  @media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-  @media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+ 
   .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
