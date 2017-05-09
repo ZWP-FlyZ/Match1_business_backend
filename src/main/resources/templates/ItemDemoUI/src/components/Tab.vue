@@ -5,4 +5,5 @@
     <li><router-link to="/bzability">业务能力</router-link></li>
     <li><router-link to="/ability">能力</router-link></li>
    </ul>
+   
 </template>
