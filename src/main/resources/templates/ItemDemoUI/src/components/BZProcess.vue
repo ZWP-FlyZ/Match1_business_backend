@@ -62,3 +62,7 @@
         
       </div>
 </template>
+
+<style>
+	.BZ-tabs{border:1px solid red;}
+</style>
