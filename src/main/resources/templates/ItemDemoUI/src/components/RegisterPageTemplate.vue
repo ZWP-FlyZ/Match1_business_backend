@@ -311,7 +311,7 @@
    position: relative;
    padding-top:10px;
    padding-left:20px;
-   border: 1px  #999999;
+   border: 1px #E4E4E4;
    border-style:none solid solid double;
 
  }
