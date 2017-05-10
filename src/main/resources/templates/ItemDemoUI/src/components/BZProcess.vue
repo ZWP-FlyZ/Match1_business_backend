@@ -55,7 +55,7 @@
         </div>
   </div> -->
   <div class = "BZProcess">
-    <div class = "BZProcess-total">业务能力定制总数：12</div>
+    <div class = "BZProcess-total">流程定制总数：12</div>
 
     <div class="BZProcess-register">
       <ul>
