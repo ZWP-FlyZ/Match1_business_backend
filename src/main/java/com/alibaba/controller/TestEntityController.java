@@ -2,12 +2,16 @@ package com.alibaba.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,10 +39,20 @@ public class TestEntityController {
 		return temp;
 	}
 	
+	@RequestMapping("/bb")
+	@ResponseBody
+	public String ss(HttpServletRequest request){
+		if(request.getParameter("password").equals("123")){
+			return "aaaa";
+		}
+		return "ss";
+	}
+	
 	@RequestMapping(value="/receiveData",
 			method=RequestMethod.POST)//拦截url
 	@ResponseBody
-	public void receiveData(@RequestBody TestEntity test){
+	public void receiveData(@ModelAttribute("user") TestEntity test){
+		test.getTestId();
 		testEntityRepository.save(test);
 	}
 	
@@ -46,6 +60,12 @@ public class TestEntityController {
 	public String getTest(){
 		return "test";
 	}
+	
+	@RequestMapping("/index")
+	public String getindex(){
+		return "index";
+	}
+	
 	@RequestMapping("/aaa")
 	@ResponseBody
 	public String getaa(){
