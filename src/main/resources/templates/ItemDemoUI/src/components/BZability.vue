@@ -52,7 +52,7 @@
       margin-top: 8px;
     }
     .BZability-register li .link-btn{
-      margin-left: 84%;
+      margin-left: 88%;
       margin-top: 5px;
     }
 
