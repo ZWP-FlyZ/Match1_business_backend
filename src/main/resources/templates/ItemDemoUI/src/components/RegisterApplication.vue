@@ -6,34 +6,34 @@
 		<div class = "applicationReg-des">
 			<form action="">
 				<label for="">应用名称:</label>
-				<input type="text">
+				<input type="text" value = "商品发布">
 				<label for="">应用描述:</label>
-				<input type="text">
+				<input type="text" value = "用于商品发布">
 				<label for="">负责人:</label>
-				<input type="text">
+				<input type="text" value="xxxx">
 			</form>
 		</div>
 		<div class = "theme-content">
 			<form action="" class = "form-theme">
 				<label for=""><b>主题：</b></label>
-				<input type="text">
+				<input type="text" value = "请输入主题">
 			</form>
 			<form action="" class = "form-content">
 				<label for=""><b>内容：</b></label>
-				<input type="text">
+				<input type="text" value = "请输入内容">
 				<div class = "empty"></div>
 			</form>
 		</div>
 		<div class = "theme-content person">
 			<form action="" class = "form-theme">
 				<label for=""><b>对外服务人员:</b></label>
-				<input type="text">
+				<input type="text" value="xxx,xxx">
 			</form>
 		</div>
 		<div class = "theme-content person">
 			<form action="" class = "form-theme">
 				<label for=""><b>有权限编辑人员:</b></label>
-				<input type="text">
+				<input type="text" value="xxx,xxx">
 			</form>
 		</div>
 	</div>
@@ -59,6 +59,8 @@
 	.applicationReg-des input{
 		border: 1px solid #000;
 		margin-right: 5%;
+		height: 30px;
+		width: 150px;
 	}
 	.theme-content{
 		background: #F2F2F2;
@@ -70,9 +72,10 @@
 	}
 
 	.applicationReg label b{
-		font-size: 20px;
+		/*font-size: 15px;*/
 		margin-right: 5px;
 		padding-left: 20px;
+		color: #666666;
 	}
 	.form-theme{
 		padding-top:40px;
@@ -102,5 +105,11 @@
 	body{
 		font:15px/1.62 Helvetica,Arial,sans-serif;
 		background-color:#fff;
+	}
+	.theme-content,.person{
+		text-align: center;
+	}
+	input{
+		text-align: center;
 	}
 </style>
