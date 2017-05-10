@@ -51,84 +51,39 @@
 /*************内容区****************************************************/
 #content{overflow: hidden;}
 #content .content-main{border:2px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
-/*流程描述开始*/
-#content .content-descrition ul{
-	/*margin-left: 280px;*/
-	/*margin-top:5%; */
-	width: 100%;
-	float: left;
-}
-#content .content-descrition ul li{
-	float: left;
-	padding-left: 36px;
-}
-
-/*流程描述结束*/
 /*tab页开始*/
-.content-tab ul.nav-tabs{
-	display: block;
-	float: left;
-}
+
 span.tabs-BZ-total{
 	display: block;
 	margin-top: -10px;
 	clear:both;
 	margin-bottom: 20px;
 }
-#content .content-tab{
-	float: left;
-	/*margin-left: 280px;*/
-	border: 2px solid #f8f8f8;
-	border-bottom:0px;
-	display: block;
-}
-.nav {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-.nav> li {
-  position: relative;
+.nav li{
   display: block;
+  cursor: pointer;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  background: #F2F2F2;
+  float: left;
+  display: inline-block;
+  width:112px;
+  height:43px;
+  text-align: center;
 }
-.nav> li > a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-}
-.nav> li >a:hover,
-.nav> li >a:focus {
+.nav> li .link{display: block;padding:15px 10px;}
+.nav> li:hover{
   text-decoration: none;
   background-color: #eee;
 }
-.nav>li.disabled> a {
-  color: #999;
-}
-.nav-tabs {
-border-bottom: 1px solid #ddd;
-}
-.nav-tabs > li {
-float: left;
-margin-bottom: -1px;
-}
-.nav-tabs > li > a {
-margin-right: 2px;
-line-height: 1.42857143;
-border: 1px solid transparent;
-border-radius: 4px 4px 0 0;
-background: #F2F2F2;
-}
-.nav-tabs > li >a:hover {
-border-color: #eee #eee #ddd;
-}
-.nav-tabs >li.active> a,
-.nav-tabs >li.active>a:hover,
-.nav-tabs >li.active>a:focus {
-  color: #555;
+.tab-active{
+  color: #555 !important;
   cursor: default;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  background-color: #fff !important;
+  border: 1px solid #ddd  !important;
+  border-bottom-color: transparent !important;
 }
 /*tab页结束*/
 /*流程tab内容开始*/
