@@ -8,12 +8,10 @@
       <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
 
-    <table class="template-body" cellspacing=20>
-      <tr>
-        <td>
 
+      <div class="template-body">
         <div class="one-container" >
-          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
+          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
             <div class="template-view">
               <img src="" class="template-img">
@@ -23,15 +21,13 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-              <bottom class="delete" >删除</bottom>
+              <a class="delete" >删除</a>
             </div>
           </div>
         </div>
 
-        </td>
-          <td>
         <div class="one-container">
-          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
+          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
             <div class="template-view">
               <img src="" class="template-img">
@@ -41,17 +37,13 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-              <bottom class="delete" >删除</bottom>
+              <a class="delete" >删除</a>
             </div>
           </div>
         </div>
-    </td>
 
-      </tr>
-    <tr>
-<td>
         <div class="one-container">
-          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
+          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
             <div class="template-view">
               <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" class="template-img">
@@ -61,14 +53,13 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-              <bottom class="delete" >删除</bottom>
+              <a class="delete" >删除</a>
             </div>
           </div>
         </div>
-</td>
-      <td>
+
         <div class="one-container">
-          <a href="#" class="titem-name">页面模板名称：天猫商品发布页面</a>
+          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
             <div class="template-view">
               <img src="" class="template-img">
@@ -78,14 +69,12 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-              <bottom class="delete" >删除</bottom>
+              <a class="delete" >删除</a>
             </div>
           </div>
         </div>
 
-      </td>
-    </tr>
-    </table>
+      </div>
 
 
       <ul class="pagination">
@@ -108,10 +97,10 @@
 
 <style>
  .template-total{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
  }
   .template-head{
-    font: 14px Arial, sans-serif;
+    font: 15px Arial, sans-serif;
     background:#F2F2F2;
     width:100%;
     height: 45px;
@@ -122,21 +111,20 @@
     float:left;
     position: relative;
     padding-left: 10%;
-   top:10px;
-    font-size: 16px;
+   top:8px;
+    font-size: 15px;
 
   }
   .head-creat{
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
     text-decoration: none;
     color: #ffffff;
     float:right;
     position: relative;
-    top:8px;
-    right: 40px;
-
-    background: #357ebd;
+    top:5px;
+    right:10%;
+    background: #428bca;
     padding: 6px 12px;
     border-radius: 5px;
   }
@@ -145,40 +133,41 @@
     color: black;
     text-decoration: none;
   }
-  .template-body{
-    display: inline-block;
-    width: 90%;
+
+ .template-body{
+   column-count:2;
+   justify-content: center;
+    display: flex;
+   flex:1;
+   flex-wrap: wrap;
 
 
-  }
+ }
 
-  .one-container{
-    position: relative;
-    width:250px;
-    height:200px;
-    border-style:solid;
-    border-width:1px;
-    border-color: #999999;
-    margin: 10px 30px;
+ .one-container{
+   position: relative;
+   width:280px;
+   height:200px;
+   border-style:solid;
+   border-width:1px;
+   border-color: #999999;
+   margin: 10px 30px;
 
-  }
-  .one-container:hover{
+ }
 
-    opacity: 1;
-  }
-  .titem-name{
-    position: relative;
+ .titem-name{
+   position: relative;
 
-    top:5px;
-    font-size:14px;
-  }
-  .bottoms{
-    display: block;
-    float: right;
-    position: relative;
-    right:10px;
+   top:5px;
+   font-size:15px;
+ }
+ .bottoms{
+   display: block;
+   float: right;
+   position: relative;
+   right:10px;
 
-  }
+ }
  .bottom-item{
    color: #ffffff;
    background-color: #428bca;
@@ -196,55 +185,84 @@
    padding: 6px 12px;
    border-radius: 4px;
  }
-  .bottom-item:hover {
-    text-decoration: none;
-    color:black;
-  }
-  .delete{
-    text-align: center;
-    text-decoration: none;
-    color: #fafafa;
-    float:right;
-    position: relative;
-    right: 5px;
-    left:20px;
-    top:20px;
-    background: grey;
-    margin: 5px;
-    padding: 6px 12px;
-    border-radius:4px;
-  }
-  .titem-name{
-    color:black;
-  }
-  .titem-name:hover{
-    color: blue;
-    text-decoration: none;
+ .bottom-item:hover {
+   text-decoration: none;
+   color:black;
+ }
+ .delete{
+   text-align: center;
+   text-decoration: none;
+   color: #fafafa;
+   float:right;
+   position: relative;
+   right: 5px;
+   left:20px;
+   top:20px;
+   background: grey;
+   margin: 5px;
+   padding: 6px 12px;
+   border-radius:4px;
+ }
+ .delete:hover{
+   color: black;
+ }
 
-  }
-  .template-edit{
-    width:250px;
-    display: -webkit-flex;
+ .titem-name{
+   color:black;
+ }
+ .titem-name:hover{
+   color: blue;
+   text-decoration: none;
 
-  }
-  .template-img {
-    width: 140px;
-    height: 150px;
-    margin:15px 15px;
-    background: #0186ba;
-  }
-  .template-center{
-    text-align: center;
+ }
+ .template-edit{
+   width:280px;
+   display: -webkit-flex;
 
-  }
-  ul.pagination li {
-    display: inline;}
-  ul.pagination li a {
-    border-radius: 5px;
-    transition: background-color .3s;
-  }
+ }
+ .template-img {
+   width: 160px;
+   height: 150px;
+   margin:15px 15px;
+   background: #0186ba;
+ }
+ .template-center{
+   text-align: center;
 
-  ul.pagination li a.active {
-    border-radius: 5px;
-  }
+ }
+ ul.pagination {
+   display: inline-block;
+   padding: 0;
+   margin: 0;
+ }
+
+ ul.pagination li {display: inline;}
+
+ ul.pagination li a {
+   color: black;
+   float: left;
+   padding: 8px 16px;
+   text-decoration: none;
+   transition: background-color .3s;
+   border: 1px solid #ddd;
+ }
+
+ .pagination li:first-child a {
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+ }
+
+ .pagination li:last-child a {
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+ }
+
+ ul.pagination li a.active {
+   background-color: #428bca;
+   color: white;
+   border: 1px solid #428bca;
+ }
+
+ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
 </style>

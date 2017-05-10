@@ -15,7 +15,7 @@
         <br/>
         <label class="nameid">开发日期: </label><input type="text" class="inputbox"  placeholder="2017-11-23"
                       autocomplete="on" >
-        <label class="nameid">开发者: </label> </label><input type="text" class="inputbox"  placeholder="222"
+        <label class="nameid">开发者: </label> <input type="text" class="inputbox"  placeholder="222"
                       autocomplete="on" >
       </form>
     </div>
@@ -194,7 +194,7 @@
     </div>
   <br/>
     <div class="bottom" >
-      <a href="#" class="ok">确定</a>
+      <router-link to="/pagetemplate"  class="ok">确定</router-link>>
     </div>
     <br/>
   </div>
@@ -242,7 +242,8 @@
   }
   .inputbox{
     border: 1px solid #999999;
-    width:100px;
+    min-width:80px;
+    max-width: 150px;
     height: 30px;
     padding: 0px 4px ;
     margin-right: 20px;
