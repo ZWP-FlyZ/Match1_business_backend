@@ -77,7 +77,7 @@
           <!-- <li class = "btn btn-primary">编辑</li> -->
           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
         <ul class="BZ-edit">
@@ -85,7 +85,7 @@
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
     </div>
@@ -103,7 +103,7 @@
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
         <ul class="BZ-edit">
@@ -111,7 +111,7 @@
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
     </div>
@@ -165,7 +165,6 @@
     float: left;
     text-align: center;
     margin-top: 9px;
-Lr:1px solid red;
   }
   .BZProcess-table .BZ-num{
     margin-left: 3%;

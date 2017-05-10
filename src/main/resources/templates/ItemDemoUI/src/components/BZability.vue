@@ -14,7 +14,7 @@
           <li class = "BZability-name">描述标题</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "BZability-list-one">
@@ -22,7 +22,7 @@
           <li class = "BZability-name">业务能力1</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "BZability-list-one">
@@ -30,7 +30,7 @@
           <li class = "BZability-name">业务能力2</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
     </div>
@@ -73,7 +73,6 @@
     .BZability-list-one .link-btn{
       margin-top: 5px;
       margin-right: 30px;
-      border:1px solid;
     }
     body{
     font:15px/1.62 Helvetica,Arial,sans-serif;

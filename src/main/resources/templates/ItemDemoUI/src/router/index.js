@@ -13,7 +13,9 @@ import RegisterBZAbility from '@/components/RegisterBZAbility'
 import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 import RegisterApplication from'@/components/RegisterApplication'
-
+import DeleteBZProcess from '@/components/DeleteBZProcess'
+import DeleteBZability from '@/components/DeleteBZability'
+import DeleteAbility from '@/components/DeleteAbility'
 Vue.use(Router)
 
 export default new Router({
@@ -60,6 +62,22 @@ export default new Router({
     {
     path: '/registerAbility',
     component: RegisterAbility
+    },
+    {
+    path: '/registerApplication',
+    component: RegisterApplication
+    },
+    {
+    path: '/deleteBZProcess',
+    component: DeleteBZProcess
+    },
+    {
+    path: '/deleteBZability',
+    component: DeleteBZability
+    },
+    {
+    path: '/deleteAbility',
+    component: DeleteAbility
     }]
   }]
 })

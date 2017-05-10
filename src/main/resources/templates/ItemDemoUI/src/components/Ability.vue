@@ -14,7 +14,7 @@
           <li class = "Ability-name">颜色</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "Ability-list-one">
@@ -22,7 +22,7 @@
           <li class = "Ability-name">尺寸</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "Ability-list-one">
@@ -30,7 +30,7 @@
           <li class = "Ability-name">无理由退货</li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
     </div>
