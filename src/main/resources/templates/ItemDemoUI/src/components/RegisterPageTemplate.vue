@@ -1,5 +1,5 @@
-
 <template>
+
   <div class="regisitertemplate">
     <div class="heads">
       页面模板基本信息
@@ -201,7 +201,6 @@
 
 </template>
 
-<style scoped>
-  @import  '../assets/css/edit.css'
+<style>
+@import "../assets/css/edit.css";
 </style>
-
