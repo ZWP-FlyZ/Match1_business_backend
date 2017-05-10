@@ -204,8 +204,7 @@
 <style>
 
   .regisitertemplate{
-    position: relative;
-    top:20px;
+    position: relative;;
     font-size: 14px;
     padding:0;
     margin:0;
@@ -213,14 +212,13 @@
   }
   .heads{
     text-align: left;
-    font: 14px/30px Arial, sans-serif;
+    font: 15px/40px Arial, sans-serif;
     background:#E8F5FB;
     position: relative;
     text-decoration: none;
     width:100%;
-    height: 30px;
+    height: 40px;
     padding:  0px 20px ;
-
     margin-bottom: 10px;
   }
   .items{
