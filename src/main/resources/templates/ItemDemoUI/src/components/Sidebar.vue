@@ -5,13 +5,9 @@
 			</div>
 			<div class="application-list">
 				<ul >
-					<li v-bind:class="{'application-li-active':isActive}" @click="addActive()" v-for="(item,index) in appList">
+					<li v-bind:class="{'application-li-active':isActive == item}" @click="addActive(item)" v-for="(item,index) in appList">
 						<i class="icon-triangle-right"></i>
 						<router-link to="/content" class="application-router">{{item.name}}</router-link>
-					</li>
-					<li>
-						<i class="icon-triangle-right"></i>
-						<router-link to="/content" class="application-router">yingyng yi</router-link>
 					</li>
 				</ul>
 			</div>
@@ -23,7 +19,7 @@
 export default {
   data(){
     return {
-	  isActive:false,
+      isActive:'',
 	  appList:[]
 	}
   },
@@ -33,13 +29,12 @@ export default {
   	})
   },
   methods: {
-  	addActive:function(){
-  		this.isActive = true
+  	addActive:function(item){
+  		this.isActive = item;
   	},
   	getApplication:function(){
   		this.$http.get("http://localhost:3000/api/getAppList").then(res=>{
-  			console.log(res)
-  			this.appList = res.data.data;
+  			this.appList = JSON.parse(res.body.data).result.appList;
   		})
   	}
   }

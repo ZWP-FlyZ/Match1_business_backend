@@ -35,15 +35,16 @@
 	margin-left:20px;
 	background: #fff;
 }
-#application .application-heading{padding-left:20px;text-align: left;height:55px;color:#fff;background: #448bc7;border:1px solid #448bc7;}
+#application .application-heading{padding-left:20px;text-align: left;height:55px;color:#fff;background: #448bc7;border:0px solid #448bc7;}
 #application .application-heading span{font-size:20px;position:relative;top:10px;}
 #application .application-list{border:1px solid #f0f0f0;margin-bottom:50px;}
 #application .application-list ul li{padding-left:20px;line-height:50px;height:50px;text-align:left;font-size:16px;border:1px solid;border-color:#f0f0f0 transparent #f0f0f0 transparent;}
 #application .application-list ul li:hover{background: #f0f0f0;}
-#application .application-li-active{background: red}
+#application .application-list ul li:hover .application-router{color:#000;}
+#application .application-li-active .application-router{color: #448bc7}
 #application .application-list .application-router{width:70%;display: inline-block;}
 .icon-triangle-right,.icon-triangle-bottom{width:0px;height:0px;display:inline-block;border:8px solid;top: 2px;position: relative;left: 4px;}
-.icon-triangle-right{border-color:transparent transparent transparent #169BD5;}
+#application .application-list ul li:hover .icon-triangle-right,.icon-triangle-right{border-color:transparent transparent transparent #169BD5;}
 .icon-triangle-bottom{border-color:#169BD5 transparent transparent transparent;top:5px;}
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
