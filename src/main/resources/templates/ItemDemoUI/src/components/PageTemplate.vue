@@ -76,7 +76,7 @@
 
       </div>
 
-
+<br/>
       <ul class="pagination">
         <li><a href="#">«</a></li>
         <li><a href="#" class="active">1</a></li>
@@ -92,6 +92,7 @@
 
 
 </div>
+    <br/>
   </div>
 </template>
 
@@ -241,7 +242,7 @@
  ul.pagination li a {
    color: black;
    float: left;
-   padding: 8px 16px;
+   padding: 4px 8px;
    text-decoration: none;
    transition: background-color .3s;
    border: 1px solid #ddd;

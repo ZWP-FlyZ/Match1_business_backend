@@ -1,6 +1,6 @@
 <template>
 
-  <div class="regisitertemplate">
+  <div class="regisiterpage">
     <div class="heads">
       页面模板基本信息
     </div>
