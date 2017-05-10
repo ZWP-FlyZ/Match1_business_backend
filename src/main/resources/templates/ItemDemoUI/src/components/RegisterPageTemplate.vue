@@ -194,7 +194,7 @@
     </div>
   <br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>>
+      <router-link to="/pagetemplate"  class="ok">确定</router-link>
     </div>
     <br/>
   </div>
