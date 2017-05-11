@@ -16,7 +16,7 @@
                                                     autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid"> KEY: </label> <input type="text" class="inputbox"  placeholder="xingfei"
+          <label class="smallname"> KEY: </label> <input type="text" class="inputbox"  placeholder="xingfei"
                                                       autocomplete="on" >
         </div>
 
@@ -62,7 +62,7 @@
     </div>
 
       <form  class="yellow">
-
+<div class="item-row">
   <div class="item">
         <label class="smallname">模块1</label>
         <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder=""
@@ -85,6 +85,8 @@
         </div>
         1. 2.
         <br/>
+        </div>
+        <div class="item-row">
         <div class="item">
           <label class="smallname">模块1</label>
           <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder=""
@@ -105,8 +107,10 @@
             <option value='acura'></option>
           </select>
         </div>
-        1. 2.
-        <br/><div class="item">
+        1. 2.<br/>
+        </div>
+        <div class="item-row">
+        <div class="item">
         <label class="smallname">模块1</label>
         <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder=""
                                                      autocomplete="on" autofocus="autofocus">
@@ -129,6 +133,7 @@
         </div>
         1. 2.
         <br/>
+        </div>
       </form>
 
     <div class="heads">

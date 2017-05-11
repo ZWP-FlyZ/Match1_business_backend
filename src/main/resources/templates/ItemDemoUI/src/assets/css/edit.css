@@ -25,22 +25,23 @@
 .itemsform{
   display:inline-table;
   column-count:3;
-  column-width:200px;
   position: relative;
   left:25px;
   padding-left:10px;
 }
-
+.item-row{
+  display: table-row;
+}
 .item{
  display: inline-table;
   column-count:2;
-margin-right: 30px;
+margin-right: 10px;
 }
 
 .nameid{
 display: table-cell;
   vertical-align:middle;
-  min-width: 80px;
+  min-width: 100px;
 }
 
 
