@@ -7,23 +7,32 @@
 		</div>
 		<div class = "applicationReg-des">
 			<form action="">
+			<div class="applicationReg-des-div">
 				<label for="">应用名称:</label>
 				<input type="text" value = "商品发布">
+			</div>
+			<div class="applicationReg-des-div">
 				<label for="">应用描述:</label>
 				<input type="text" value = "用于商品发布">
+			</div>
+			<div class="applicationReg-des-div">
 				<label for="">负责人:</label>
 				<input type="text" value="xxxx">
+			</div>
+			<div class="applicationReg-des-div">
+				<label for="">注册日期:</label>
+				<input type="date" value="2017-05-11"/>
+			</div>
 			</form>
 		</div>
 		<div class = "theme-content">
 			<form action="" class = "form-theme">
 				<label for=""><b>主题：</b></label>
-				<input type="text" value = "请输入主题">
+				<input type="text" value = "" placeholder="请输入主题">
 			</form>
 			<form action="" class = "form-content">
 				<label for=""><b>内容：</b></label>
-				<input type="text" value = "请输入内容">
-				<div class = "empty"></div>
+				<textarea name="" id=""  rows="5" placeholder="请输入内容"></textarea>
 			</form>
 		</div>
 		<div class = "theme-content person">
@@ -64,22 +73,31 @@
 		margin-top: 30px;
 		/*padding-left: 5%;*/
 		padding-left: 20px;
+		width: 760px;
 	}
+	.applicationReg-des-div{
+		float: left;
+		margin-bottom: 30px;
+	}
+	
 	.applicationReg-des label{
-		margin-right: 5px;
+		/*margin-right: 5px;*/
+		display: inline-block;
+		width: 67px;
 	}
 	.applicationReg-des input{
 		border: 1px solid #000;
 		margin-right: 30px;
 		height: 30px;
-		width: 148px;
+		width: 145px;
+		padding-left: 5px;
 	}
 	.theme-content{
 		background: #F2F2F2;
 		/*width: 70%;*/
 		width: 760px;
-		
-		/*margin-left: 5%;*/
+		clear: both;
+		display: table;
 		margin-left: 8px;
 		margin-top: 30px;
 	}
@@ -91,7 +109,7 @@
 		color: #666666;
 	}
 	.form-theme{
-		padding-top:40px;
+		padding-top:30px;
 	}
 	.form-theme input{
 		height: 30px;
@@ -101,10 +119,20 @@
 		margin-top: 40px;
 		padding-bottom: 40px;
 	}
-	.form-content input{
-		height: 200px;
+	.form-content label{
+		float: left;
+		padding-left: 20px;
+		padding-right: -10px;
+	}
+	.form-content textarea{
+		float: left;
+		border:none;
+		font:15px/1.62 Helvetica,Arial,sans-serif;
+		background-color:#fff;
+		margin-bottom: 40px;
 		width: 85%;
 	}
+
 	.person input{
 		width: 75%;
 	}
