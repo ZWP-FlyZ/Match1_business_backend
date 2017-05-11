@@ -16,22 +16,14 @@
         <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class = "BZProcess-table">
-        <ul class="BZ-edit">
-          <li class = "BZ-num">1</li>
-          <li class = "process">此处放流程图</li>
-          <!-- <li class = "btn btn-primary">编辑</li> -->
-          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-        <hr class = "BZProcess-table-hr">
-        <ul class="BZ-edit">
-          <li class = "BZ-num">2</li>
-          <li class = "process">此处放流程图</li>
+        <ul class="BZ-edit" v-for="(item,index) in processList">
+          <li class = "BZ-num">{{item.name}}</li>
+          <li class = "process"><img v-bind:src="item.imgPath" /></li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
+        <hr class = "BZProcess-table-hr">
       </div>
     </div>
 
@@ -43,14 +35,15 @@
         <a href="" ><router-link to="" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class = "BZProcess-table">
-        <ul class="BZ-edit">
-          <li class = "BZ-num">1</li>
-          <li class = "process">此处放流程图</li>
+        <ul class="BZ-edit" v-for="(item,index) in processList">
+          <li class = "BZ-num">{{item.name}}</li>
+          <li class = "process"><img v-bind:src="item.imgPath" /></li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
+<<<<<<< Updated upstream
         <ul class="BZ-edit">
           <li class = "BZ-num">2</li>
           <li class = "process">此处放流程图</li>
@@ -58,10 +51,35 @@
           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
+=======
+>>>>>>> Stashed changes
       </div>
     </div>
   </div>       
 </template>
+<script>
+  export default{
+    data(){
+      return {
+        processList:[]
+      }
+    },
+    mounted:function(){
+      this.$nextTick(function(){
+        this.getProcess();
+      })
+    },
+    methods: {
+      getProcess:function(){
+        this.$http.get("/api/getList").then(res=>{
+          console.log(JSON.parse(res.body.data).result.processList)
+          this.processList = JSON.parse(res.body.data).result.processList
+
+        })
+      }
+    }
+  }
+</script>
 <style>
   .BZProcess-total{
     margin-top: 0;
@@ -112,12 +130,11 @@
     margin-top: 9px;
   }
   .BZProcess-table .BZ-num{
-    margin-left: 3%;
-    width: 5%;
+    width: 15%;
     position: relative;
   }
   .BZProcess-table .process{
-    width: 50%;
+    width: 45%;
     margin-right: 40px;
     position: relative;
   }
