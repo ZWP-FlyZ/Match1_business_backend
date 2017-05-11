@@ -38,7 +38,7 @@
 		margin-right: 55%;
 	}
 	.BZability-delete:hover{
-		transform:scale(2,2);
+		transform:scale(1.2,1.2);
 	}
 	.deleteBZability-header a{
 		color: #fff;
