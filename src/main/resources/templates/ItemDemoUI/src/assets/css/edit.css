@@ -205,3 +205,15 @@ display: table-cell;
   text-decoration: none;
   color:black;
 }
+.bzprocess-delete{
+  width: 10px;
+  height: 10px;
+  float: right;
+  margin-right: 4px;
+  margin-top: 0px;
+}
+.bzprocess-delete:hover{
+  /*background: #e8f5fb;*/
+  background: #fff;
+  transform: scale(2,2);
+}

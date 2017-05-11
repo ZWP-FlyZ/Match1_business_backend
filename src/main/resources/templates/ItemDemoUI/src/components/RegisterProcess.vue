@@ -85,7 +85,7 @@
     </div>
     <div class="twocolor">
     <form class="grey">
-      <a href="#" class="close">×</a>
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item">
         <label class="nameid"> 前置条件: </label>
 
@@ -106,7 +106,7 @@
 
     </form>
       <form class="grey">
-        <a href="#" class="close">×</a>
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
           <label class="nameid"> 前置条件: </label>
 
@@ -134,7 +134,7 @@
     </div>
     <div class="twocolor">
       <form class="grey">
-        <a href="#" class="close">×</a>
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
           <label class="nameid"> 前置条件: </label>
 
@@ -155,7 +155,7 @@
 
       </form>
       <form class="grey">
-        <a href="#" class="close">×</a>
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
           <label class="nameid"> 前置条件: </label>
 
@@ -203,7 +203,7 @@
     <div class="items">
       <div class="twocolor">
         <form class="grey">
-          <a href="#" class="close">×</a>
+          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
           <div class="item">
             <label class="longname">信用等级大于几颗星：</label>
             <select class="longinput" >
@@ -234,7 +234,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey">
-              <a href="#" class="close">×</a>
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
 
@@ -249,7 +249,7 @@
             </form>
             <br/>
             <form class="grey">
-              <a href="#" class="close">×</a>
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
@@ -267,7 +267,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <a href="#" class="close">×</a>
+          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">是否良心卖家：</label>
@@ -301,7 +301,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey">
-              <a href="#" class="close">×</a>
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="1"
@@ -315,7 +315,7 @@
             </form>
             <br/>
             <form class="grey">
-              <a href="#" class="close">×</a>
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
