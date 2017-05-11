@@ -19,9 +19,10 @@
             <div class="bottoms">
               <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
               <br/>
-              <a href="#" class="bottom-item">查看</a>
+               <router-link to="/registerPageTemplate" class="bottom-item">查看</router-link>
               <br/>
-              <a class="delete" >删除</a>
+              <router-link to="/deleteAbility" class="delete">删除</router-link>
+
             </div>
           </div>
         </div>
@@ -32,11 +33,11 @@
               <img src="" class="template-img">
             </div>
             <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
+             <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
               <br/>
-              <a href="#" class="bottom-item">查看</a>
+              <router-link to="/registerPageTemplate" class="bottom-item">查看</router-link>
               <br/>
-              <a class="delete" >删除</a>
+             <router-link to="/deleteAbility" class="delete">删除</router-link>
             </div>
           </div>
         </div>
@@ -47,11 +48,11 @@
               <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" class="template-img">
             </div>
             <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
+             <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
               <br/>
-              <a href="#" class="bottom-item">查看</a>
+               <router-link to="/registerPageTemplate" class="bottom-item">查看</router-link>
               <br/>
-              <a class="delete" >删除</a>
+             <router-link to="/deleteAbility" class="delete">删除</router-link>
             </div>
           </div>
         </div>
@@ -62,11 +63,11 @@
               <img src="" class="template-img">
             </div>
             <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
+             <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
               <br/>
-              <a href="#" class="bottom-item">查看</a>
+               <router-link to="/registerPageTemplate" class="bottom-item">查看</router-link>
               <br/>
-              <a class="delete" >删除</a>
+             <router-link to="/deleteAbility" class="delete">删除</router-link>
             </div>
           </div>
         </div>
