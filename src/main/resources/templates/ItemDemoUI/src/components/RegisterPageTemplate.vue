@@ -75,10 +75,9 @@
         <div class="item">
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"
                                                     autocomplete="on" >
-
-        <label class="longname">关联的业务模板剖面：</label>
         </div>
         <div class="item">
+        <label class="longname">关联的业务模板剖面：</label>
         <select class="inputbox" >
           <option></option>
           <option value='acura'></option>

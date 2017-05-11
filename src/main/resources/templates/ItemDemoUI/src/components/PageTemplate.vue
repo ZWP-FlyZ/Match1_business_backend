@@ -123,7 +123,7 @@
     float:right;
     position: relative;
     top:5px;
-    right:10%;
+    right:15%;
     background: #428bca;
     padding: 6px 12px;
     border-radius: 5px;
