@@ -12,8 +12,8 @@
       <div class="BZProcess-des">
         <img src="" alt="">
         <a href="" ><router-link to="" class = "L1-name">商品发布流程（2）</router-link></a>
-        <a href="" ><router-link to="" class = "L1-edit">配置前置条件</router-link></a>
-        <a href="" ><router-link to="" class = "L1-edit">查看前置条件</router-link></a>
+        <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
+        <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class = "BZProcess-table">
         <ul class="BZ-edit">
@@ -21,7 +21,7 @@
           <li class = "process">此处放流程图</li>
           <!-- <li class = "btn btn-primary">编辑</li> -->
           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
@@ -29,7 +29,7 @@
           <li class = "BZ-num">2</li>
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
@@ -47,7 +47,7 @@
           <li class = "BZ-num">1</li>
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
@@ -55,7 +55,7 @@
           <li class = "BZ-num">2</li>
           <li class = "process">此处放流程图</li>
            <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>

@@ -3,7 +3,8 @@
 	<div id = "nav">
 		<div class = "deleteAability-header">
 			<p>删除确认</p>
-			<a href=""><router-link to="/ability">X</router-link></a>
+			<!-- <a href=""><router-link to="/ability">X</router-link></a> -->
+			<router-link to="/ability"><img src="../assets/img/delete.png" alt="" class = "ability-delete"></router-link>
 		</div>
 		<div class = "delete-confirm">
 			确认删除：
@@ -35,6 +36,9 @@
 		padding-left: 5%;
 		float: left;
 		margin-right: 55%;
+	}
+	.ability-delete:hover{
+		transform: scale(2,2);
 	}
 	.deleteAability-header a{
 		color: #fff;

@@ -3,7 +3,8 @@
 	<div id = "nav">
 		<div class = "deleteBZProcess-header">
 			<p>删除确认</p>
-			<a href=""><router-link to="/bzprocess">X</router-link></a>
+			<!-- <a href=""><router-link to="/bzprocess">X</router-link></a> -->
+			<router-link to="/bzprocess"><img src="../assets/img/delete.png" alt="" class = "bzprocess-delete"></router-link>
 		</div>
 		<div class = "delete-confirm">
 			确认删除：
@@ -35,6 +36,9 @@
 		padding-left: 5%;
 		float: left;
 		margin-right: 55%;
+	}
+	.bzprocess-delete:hover{
+		transform:scale(2,2);
 	}
 	.deleteBZProcess-header a{
 		color: #fff;
