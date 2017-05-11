@@ -1,7 +1,7 @@
 <template>
   <div class="regisiterpage">
     <div class="heads">
-      业务能力基本信息
+      能力基本信息
     </div>
     <div class="items">
       <form  class="itemsform">
@@ -32,7 +32,7 @@
       </form>
     </div>
     <div class="heads">
-      关联能力
+      关联业务能力
     </div>
     <div class="yellow">
       <div class="item-row">
