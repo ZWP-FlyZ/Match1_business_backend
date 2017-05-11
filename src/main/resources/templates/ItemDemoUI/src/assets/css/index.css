@@ -82,7 +82,7 @@ span.tabs-BZ-total{
 .nav .tab-active .tab-icon-bza-active{background-position: -93px 0px}
 .nav li .tab-icon-abl{background-position: 0px 0px}
 .nav .tab-active .tab-icon-temp-abl{background-position: -27px 0px}
-.nav> li .link{display: block;padding:15px 10px;}
+.nav> li .link{display: block;padding:15px 0px;}
 .nav> li:hover{
   text-decoration: none;
   background-color: #eee;
