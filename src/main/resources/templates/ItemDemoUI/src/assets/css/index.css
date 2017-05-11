@@ -72,6 +72,7 @@ span.tabs-BZ-total{
   width:13%;
   height:43px;
   min-width:122px;
+  text-overflow:ellipsis;
 }
 .nav li .tab-icon{display: inline-block;width: 25px;height: 20px; background: url(/static/img/icon.png);float: left;margin-top: 16px;margin-left: 11%;}
 .nav li .tab-icon-process{background-position: -187px 0px}
