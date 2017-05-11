@@ -5,14 +5,14 @@
     <div class="BZability-register">
       <ul>
           <li class = "BZability-reg">业务能力</li>
-          <li class = "BAability-create"><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">注册业务能力</router-link></li>
+          <li class = "BAability-create"><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">注册业务能力</router-link></li>
       </ul>
     </div>
     <div class = "BZability-list">
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">描述标题</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
@@ -20,7 +20,7 @@
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">业务能力1</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
@@ -28,7 +28,7 @@
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">业务能力2</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
