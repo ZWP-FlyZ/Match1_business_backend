@@ -50,7 +50,7 @@
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{overflow: hidden;}
-#content .content-main{border:2px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
+#content .content-main{border:1px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
 /*tab页开始*/
 
 span.tabs-BZ-total{
@@ -82,7 +82,7 @@ span.tabs-BZ-total{
   color: #555 !important;
   cursor: default;
   background-color: #fff !important;
-  border: 1px solid #ddd  !important;
+  border: 1px solid #f0f0f0  !important;
   border-bottom-color: transparent !important;
 }
 /*tab页结束*/

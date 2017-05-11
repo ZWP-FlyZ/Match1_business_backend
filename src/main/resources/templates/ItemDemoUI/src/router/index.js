@@ -21,9 +21,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
   {
-  path: '/12',
-  component: App
+  path: '/',
+  redirect:'/content'
   },
+
   {
   path: '/login',
   component: Login
@@ -32,6 +33,9 @@ export default new Router({
   path: '/content',
   component: Content,
   children:[{
+    path: '/',
+    redirect: '/bZProcess' 
+    },{
     path: '/bzprocess',
     component: BZProcess 
     },
