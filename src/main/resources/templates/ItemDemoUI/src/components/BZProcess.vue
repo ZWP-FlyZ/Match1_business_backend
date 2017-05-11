@@ -99,7 +99,7 @@
     color:#169BD5;
   }
   .BZProcess-table{
-    border:1px solid #BCBCBC;
+    border:1px solid #f2f2f2;
     margin-top: 20px;
     display: inline-block;
     width: 100%;
@@ -132,7 +132,9 @@
     margin:0 auto;
     margin-left: 20px;
     float: left;
-    border-color: #F2F2F2;
+    background-color: #f2f2f2;
+    height: 1px;
+    border: none;
     margin-top: 5px;
   }
   .BZProcess-table{
