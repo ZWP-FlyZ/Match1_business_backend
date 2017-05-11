@@ -25,7 +25,6 @@
             </div>
           </div>
         </div>
-
         <div class="one-container">
           <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
@@ -41,7 +40,6 @@
             </div>
           </div>
         </div>
-
         <div class="one-container">
           <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
@@ -57,7 +55,6 @@
             </div>
           </div>
         </div>
-
         <div class="one-container">
           <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
           <div class="template-edit">
@@ -73,10 +70,11 @@
             </div>
           </div>
         </div>
-
+        <br/>
+        <br/>
       </div>
 
-<br/>
+
       <ul class="pagination">
         <li><a href="#">«</a></li>
         <li><a href="#" class="active">1</a></li>
@@ -89,10 +87,10 @@
         <li><a href="#">»</a></li>
       </ul>
 
-
+      <br/>  <br/>
 
 </div>
-    <br/>
+
   </div>
 </template>
 
@@ -107,6 +105,7 @@
     height: 45px;
     position: relative;
     text-decoration: none;
+
   }
   .head-left{
     float:left;
@@ -136,16 +135,19 @@
   }
 
  .template-body{
-   column-count:2;
+   vertical-align:middle; text-align:center;
+  width: 90%;
    justify-content: center;
-    display: flex;
-   flex:1;
-   flex-wrap: wrap;
+
+    display: inline-block;
+   position: relative;
+column-count: 2;
 
 
  }
 
  .one-container{
+   display: inline-block;
    position: relative;
    width:280px;
    height:200px;
