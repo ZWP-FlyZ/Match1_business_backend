@@ -65,6 +65,16 @@
 		margin-top: 40px;
 		margin-left: 50%;
 		padding-right:30px;
+		display: inline-block;
+	}
+	.delete-button .btn-primary{
+		float: left;
+	}
+	.delete-button .btn-delete{
+		float: left;
+		margin-top: 0px;
+		position: relative;
+		top: -24px;
 	}
 	.delete-button a{
 		margin-right: 20px;

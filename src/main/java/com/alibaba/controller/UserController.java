@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
+import com.alibaba.util.BaseController;
 
 @RestController
-public class UserController {
+public class UserController extends BaseController {
 	@Autowired//别漏了
 	private UserRepository userRepository;
 	
@@ -26,27 +27,26 @@ public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(TestEntityController.class);
 	
-	
 	//用户登录验证
 	@RequestMapping("/login")
 	@ResponseBody
 	public Map<String, Object> login(@RequestBody  User user){
-				Map<String, Object> modelMap = new HashMap<String,Object>(3);
+//				Map<String, Object> modelMap = new HashMap<String,Object>(3);
 				User user1 = userRepository.findByUsernameAndUserpassword(user.getUsername(), user.getUserpassword());
 				
-				String status = null;
-				if(user1!=null){
-					status = "success";
-					logger.debug("1111========");
-				}
-				else{
-					status = "error";
-					logger.debug("============2222");
-				}
-				modelMap.put("status",status);
-				modelMap.put("user",user1);
+//				String status = null;
+//				if(user1!=null){
+//					status = "success";
+//					logger.debug("1111========");
+//				}
+//				else{
+//					status = "error";
+//					logger.debug("============2222");
+//				}
+//				modelMap.put("status",status);
+//				modelMap.put("user",user1);
 				
-				return modelMap;
+				return writePage(user1,"用户登录失败");
 //				return userRepository.save(user);
 	}
 	

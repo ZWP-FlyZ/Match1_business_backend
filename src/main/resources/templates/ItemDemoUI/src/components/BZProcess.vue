@@ -43,7 +43,7 @@
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
         <hr class = "BZProcess-table-hr">
-<<<<<<< Updated upstream
+<!-- <<<<<<< Updated upstream
         <ul class="BZ-edit">
           <li class = "BZ-num">2</li>
           <li class = "process">此处放流程图</li>
@@ -52,7 +52,7 @@
           <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
 =======
->>>>>>> Stashed changes
+>>>>>>> Stashed changes -->
       </div>
     </div>
   </div>       
