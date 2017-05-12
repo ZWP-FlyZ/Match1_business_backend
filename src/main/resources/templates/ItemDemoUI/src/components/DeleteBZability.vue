@@ -64,9 +64,21 @@
 	.delete-button{
 		margin-top: 40px;
 		margin-left: 50%;
-		padding-right:30px;
+		padding-right:20px;
+		/*border:1px solid red;*/
+		display: inline-block;
+	}
+	.delete-button .btn-primary{
+		float: left;
+	}
+	.delete-button .btn-delete{
+		float: left;
+		margin-top: 0px;
+		position: relative;
+		top: -24px;
 	}
 	.delete-button a{
+
 		margin-right: 20px;
 	}
 
