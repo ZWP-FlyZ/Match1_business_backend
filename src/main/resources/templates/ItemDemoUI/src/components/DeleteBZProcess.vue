@@ -74,7 +74,7 @@
 		float: left;
 		margin-top: 0px;
 		position: relative;
-		top: -24px;
+		/*top: -24px;*/
 	}
 	.delete-button a{
 		margin-right: 20px;

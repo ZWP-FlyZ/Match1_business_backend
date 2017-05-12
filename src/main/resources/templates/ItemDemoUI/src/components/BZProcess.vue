@@ -15,46 +15,37 @@
         <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
         <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
-      <div class = "BZProcess-table">
-        <ul class="BZ-edit" v-for="(item,index) in processList">
-          <li class = "BZ-num">{{item.name}}</li>
-          <li class = "process"><img v-bind:src="item.imgPath" /></li>
-           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-        <hr class = "BZProcess-table-hr">
+      <div class="BZProcess-table">
+        <div class="BZ-edit" v-for="(item,index) in processList">
+          <div class="BZ-num">{{item.name}}</div>
+          <div class="process"><img v-bind:src="item.imgPath" /></div>
+          <div class = "process-button">
+            <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
+            <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
+            <router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class = "classfy-table">
       <div class="BZProcess-des">
         <img src="" alt="">
         <a href="" ><router-link to="" class = "L1-name">交易下单流程（2）</router-link></a>
-        <a href="" ><router-link to="" class = "L1-edit">配置前置条件</router-link></a>
-        <a href="" ><router-link to="" class = "L1-edit">查看前置条件</router-link></a>
+        <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
+        <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
-      <div class = "BZProcess-table">
-        <ul class="BZ-edit" v-for="(item,index) in processList">
-          <li class = "BZ-num">{{item.name}}</li>
-          <li class = "process"><img v-bind:src="item.imgPath" /></li>
-           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-        <hr class = "BZProcess-table-hr">
-<!-- <<<<<<< Updated upstream
-        <ul class="BZ-edit">
-          <li class = "BZ-num">2</li>
-          <li class = "process">此处放流程图</li>
-           <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-=======
->>>>>>> Stashed changes -->
+      <div class="BZProcess-table">
+        <div class="BZ-edit" v-for="(item,index) in processList">
+          <div class="BZ-num">{{item.name}}</div>
+          <div class="process"><img v-bind:src="item.imgPath" /></div>
+          <div class = "process-button">
+            <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
+            <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
+            <router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>       
 </template>
 <script>
@@ -124,19 +115,33 @@
     text-align: center;
     padding-bottom: 5px;
   }
-  .BZProcess-table ul li{
+  .BZ-edit{
+    width:90%;
+  }
+  .BZProcess-table div{
     float: left;
     text-align: center;
     margin-top: 9px;
   }
   .BZProcess-table .BZ-num{
-    width: 15%;
+    width: 20%;
     position: relative;
   }
   .BZProcess-table .process{
-    width: 45%;
-    margin-right: 40px;
+    width: 46%;
+    margin-right: 15%;
     position: relative;
+  }
+  .BZProcess-table .process-button{
+    margin-left: 50px;
+
+  }
+  .BZProcess-table .process-button .link-btn{
+    display: block;
+  }
+  .BZProcess-table .process img{
+    width: 430px;
+    height: 150px;
   }
   .BZProcess-table .link-btn{
     margin-left: 10px;
