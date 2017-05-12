@@ -13,8 +13,10 @@
 			商品发布流程>>淘宝商品发布流程1
 		</div>
 		<div class = "delete-button">
-			<a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确认</router-link></a>
-			<a href=""><router-link to="/bzprocess" class = "btn btn-delete">取消</router-link></a>
+			<!-- <a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确认</router-link></a>
+			<a href=""><router-link to="/bzprocess" class = "btn btn-delete">取消</router-link></a> -->
+			<router-link to="/bzprocess" class = "btn btn-primary">确认</router-link>
+			<router-link to="/bzprocess" class = "btn btn-delete">取消</router-link>
 		</div>
 	</div>
 	</div>
@@ -48,7 +50,8 @@
 		margin-left: 30px;
 	}
 	#nav{
-		 width:420px; 
+		 /*width:420px; */
+		 width: 500px;
 		 height: 260px;
 		 border: 1px solid #D4CD49; 
 		 position:fixed;
@@ -65,7 +68,6 @@
 		margin-top: 40px;
 		margin-left: 50%;
 		padding-right:30px;
-		display: inline-block;
 	}
 	.delete-button .btn-primary{
 		float: left;
