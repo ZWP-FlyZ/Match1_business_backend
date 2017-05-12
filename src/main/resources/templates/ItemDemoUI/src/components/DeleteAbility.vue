@@ -13,7 +13,7 @@
 			能力：描述标题
 		</div>
 		<div class = "delete-button">
-			<a href="" ><router-link to="/ability" class = "btn btn-primary">确认</router-link></a>
+			<a href=""><router-link to="/ability" class = "btn btn-primary">确认</router-link></a>
 			<a href=""><router-link to="/ability" class = "btn btn-delete">取消</router-link></a>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 		margin-right: 55%;
 	}
 	.ability-delete:hover{
-		transform: scale(2,2);
+		transform: scale(1.2,1.2);
 	}
 	.deleteAability-header a{
 		color: #fff;

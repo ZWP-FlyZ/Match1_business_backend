@@ -1,46 +1,46 @@
 <template>
-	<div class = "deleteBZProcess">
+	<div class = "deletePageTemplate">
 	<div id = "nav">
-		<div class = "deleteBZProcess-header">
+		<div class = "deletePageTemplate-header">
 			<p>删除确认</p>
-			<!-- <a href=""><router-link to="/bzprocess">X</router-link></a> -->
-			<router-link to="/bzprocess"><img src="../assets/img/delete.png" alt="" class = "bzprocess-header-delete"></router-link>
+			<!-- <a href=""><router-link to="/bzability">X</router-link></a> -->
+			<router-link to="/pagetemplate"><img src="../assets/img/delete.png" alt="" class = "pageTemplate-delete"></router-link>
 		</div>
 		<div class = "delete-confirm">
-			确认删除：
+			确认删除页面模板：
 		</div>
 		<div class = "delete-content">
-			商品发布流程>>淘宝商品发布流程1
+			天猫商品发布页面
 		</div>
 		<div class = "delete-button">
-			<a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确认</router-link></a>
-			<a href=""><router-link to="/bzprocess" class = "btn btn-delete">取消</router-link></a>
+			<a href="" ><router-link to="/pagetemplate" class = "btn btn-primary">确认</router-link></a>
+			<a href=""><router-link to="/pagetemplate" class = "btn btn-delete">取消</router-link></a>
 		</div>
 	</div>
 	</div>
 </template>
 <style>
-	.deleteBZProcess{
+	.deletePageTemplate{
 		/*border:1px solid red;*/
 		width: 420px;
 		height: 260px;
 		margin:0 auto;
 	}
-	.deleteBZProcess-header{
+	.deletePageTemplate-header{
 		background: #0099FF;
 		height: 45px;
 		font-size: 30px;
 		color: #fff;
 	}
-	.deleteBZProcess-header p{
+	.deletePageTemplate-header p{
 		padding-left: 5%;
 		float: left;
 		margin-right: 55%;
 	}
-	.bzprocess-header-delete:hover{
+	.pageTemplate-delete:hover{
 		transform:scale(1.2,1.2);
 	}
-	.deleteBZProcess-header a{
+	.deletePageTemplate-header a{
 		color: #fff;
 	}
 	.delete-confirm{

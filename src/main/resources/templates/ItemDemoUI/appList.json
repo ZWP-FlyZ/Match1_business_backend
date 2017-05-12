@@ -15,6 +15,40 @@
         "id":"10003",
         "name":"应用3"
       }
+    ],
+    "pageList":[
+      {
+        "id":"10001",
+        "name":"淘宝商品发布页面模板",
+        "imgPath":"static/img/page1.png"
+      },
+      {
+        "id":"10002",
+        "name":"天猫商品发布页面模板",
+        "imgPath":"static/img/page2.png"
+      },
+      {
+        "id":"10003",
+        "name":"AE商品发布页面模板",
+        "imgPath":"static/img/page3.png"
+      },
+      {
+        "id":"10004",
+        "name":"聚划算商品发布页面模板",
+        "imgPath":"static/img/page4.png"
+      }
+    ],
+    "processList":[
+      {
+        "id":"10001",
+        "name":"淘宝商品发布流程",
+        "imgPath":"static/img/process1.png"
+      },
+      {
+        "id":"10001",
+        "name":"AE商品发布流程",
+        "imgPath":"static/img/process1.png"
+      }
     ]
   }
 }

@@ -33,7 +33,7 @@ export default {
   		this.isActive = item;
   	},
   	getApplication:function(){
-  		this.$http.get("/api/getAppList").then(res=>{
+  		this.$http.get("/api/getList").then(res=>{
   			this.appList = JSON.parse(res.body.data).result.appList;
   		})
   	}
