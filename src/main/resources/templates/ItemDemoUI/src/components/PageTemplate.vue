@@ -19,7 +19,7 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-              <router-link to="/deleteAbility" class="delete">删除</router-link>
+               <router-link to="/deletePageTemplate" class="delete">删除</router-link>
             </div>
           </div>
         </div>
