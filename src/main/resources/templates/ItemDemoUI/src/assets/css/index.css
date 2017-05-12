@@ -50,86 +50,52 @@
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{overflow: hidden;}
-#content .content-main{border:2px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
-/*流程描述开始*/
-#content .content-descrition ul{
-	/*margin-left: 280px;*/
-	/*margin-top:5%; */
-	width: 100%;
-	float: left;
-}
-#content .content-descrition ul li{
-	float: left;
-	padding-left: 36px;
-}
-
-/*流程描述结束*/
+#content .content-main{border:1px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
 /*tab页开始*/
-.content-tab ul.nav-tabs{
-	display: block;
-	float: left;
-}
+
 span.tabs-BZ-total{
 	display: block;
 	margin-top: -10px;
 	clear:both;
 	margin-bottom: 20px;
 }
-#content .content-tab{
-	float: left;
-	/*margin-left: 280px;*/
-	border: 2px solid #f8f8f8;
-	border-bottom:0px;
-	display: block;
-}
-.nav {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-.nav> li {
-  position: relative;
+.nav li{
   display: block;
+  cursor: pointer;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  background: #F2F2F2;
+  float: left;
+  display: inline-block;
+  width:13%;
+  height:43px;
+  min-width:122px;
+  text-overflow:ellipsis;
 }
-.nav> li > a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-}
-.nav> li >a:hover,
-.nav> li >a:focus {
+.nav li .tab-icon{display: inline-block;width: 25px;height: 20px; background: url(/static/img/icon.png);float: left;margin-top: 16px;margin-left: 11%;}
+.nav li .tab-icon-process{background-position: -187px 0px}
+.nav .tab-active .tab-icon-process-active{background-position: -215px 0px}
+.nav li .tab-icon-temp{background-position:-126px 0px}
+.nav .tab-active .tab-icon-temp-active{background-position:-158px 0px}
+.nav li .tab-icon-bza{background-position: -55px 0px}
+.nav .tab-active .tab-icon-bza-active{background-position: -93px 0px}
+.nav li .tab-icon-abl{background-position: 0px 0px}
+.nav .tab-active .tab-icon-temp-abl{background-position: -27px 0px}
+.nav> li .link{display: block;padding:15px 0px;}
+.nav> li:hover{
   text-decoration: none;
   background-color: #eee;
 }
-.nav>li.disabled> a {
-  color: #999;
-}
-.nav-tabs {
-border-bottom: 1px solid #ddd;
-}
-.nav-tabs > li {
-float: left;
-margin-bottom: -1px;
-}
-.nav-tabs > li > a {
-margin-right: 2px;
-line-height: 1.42857143;
-border: 1px solid transparent;
-border-radius: 4px 4px 0 0;
-background: #F2F2F2;
-}
-.nav-tabs > li >a:hover {
-border-color: #eee #eee #ddd;
-}
-.nav-tabs >li.active> a,
-.nav-tabs >li.active>a:hover,
-.nav-tabs >li.active>a:focus {
-  color: #555;
+.tab-active{
   cursor: default;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  background-color: #fff !important;
+  border: 1px solid #f0f0f0 !important;
+  border-bottom-color: transparent !important;
+  border-top:2px solid #169BD5 !important;
 }
+.tab-active .link{color:#448bc7;}
 /*tab页结束*/
 /*流程tab内容开始*/
 #content .BZ-tabs span.tabs-BZ-total{
@@ -275,7 +241,6 @@ button{
   	background-image: none;
   	border: 1px solid transparent;
   	border-radius: 4px;
-	/*border:1px solid red;*/
 }
 .btn-primary {
   color: #ffffff;
@@ -301,7 +266,6 @@ button{
   	background-image: none;
   	border: 1px solid transparent;
   	border-radius: 4px;
-	/*border:1px solid red;*/
 }
 .link-btn-primary {
   color: #ffffff;
@@ -313,4 +277,11 @@ button{
     background-color: #999999;
     border-color: #357ebd;
 }
+.btn:hover{
+	color: #000;
+}
+.link-btn:hover{
+	color: #000;
+}
+
 

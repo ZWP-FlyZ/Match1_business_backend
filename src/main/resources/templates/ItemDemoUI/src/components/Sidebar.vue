@@ -5,7 +5,7 @@
 			</div>
 			<div class="application-list">
 				<ul >
-					<li v-bind:class="{'application-li-active':isActive == item}" @click="addActive(item)" v-for="(item,index) in appList">
+					<li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in appList">
 						<i class="icon-triangle-right"></i>
 						<router-link to="/content" class="application-router">{{item.name}}</router-link>
 					</li>
@@ -19,8 +19,8 @@
 export default {
   data(){
     return {
-      isActive:'',
-	  appList:[]
+      isActive:'0',
+	    appList:[]
 	}
   },
   mounted:function(){
@@ -33,7 +33,7 @@ export default {
   		this.isActive = item;
   	},
   	getApplication:function(){
-  		this.$http.get("http://localhost:3000/api/getAppList").then(res=>{
+  		this.$http.get("/api/getList").then(res=>{
   			this.appList = JSON.parse(res.body.data).result.appList;
   		})
   	}

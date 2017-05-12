@@ -1,5 +1,5 @@
 .regisiterpage{
-  position: relative;;
+  position: relative;
   font-size: 14px;
   padding:0;
   margin:0;
@@ -17,69 +17,126 @@
   margin-bottom: 10px;
 }
 .items{
+  width: 97.5%;
   margin-bottom: 20px;
-  display:inline;
-  flex-direction:row;
-  flex-wrap:wrap;
   left:30px;
-
+  display: inline-table;
 }
 .itemsform{
+  display:inline-table;
+  column-count:3;
   position: relative;
-  left:30px;
+  left:25px;
+  padding-left:10px;
+}
+.item-row{
+  display: table-row;
+}
+.item{
+ display: inline-table;
+  column-count:2;
+margin-right: 10px;
+}
 
-}
 .nameid{
-  display: inline-block;
-  width:70px;
+display: table-cell;
+  vertical-align:middle;
+  min-width: 100px;
 }
+
+
 .inputbox{
+  display: table-cell;
+  box-sizing: border-box;
   border: 1px solid #ddd;
-  min-width:80px;
-  max-width: 150px;
+ width: 140px;
+  font-size: 14px;
+  text-align: left;
   height: 30px;
-  padding: 1px 4px ;
-  margin-right: 20px;
+  padding: 2px 4px ;
+  margin-left: 2px;
   margin-bottom: 10px;
+  position: relative;
+
 }
 .inputbox:focus{
   border-color:#999999;
 }
 .yellow{
+   width: 97.5%;
+   position: relative;
+   left:25px;
+   padding-top:10px;
+   padding-left:10px;
+   background: lightgoldenrodyellow;
+   margin-bottom: 20px;
+
+ }
+.grey-block{
+  width: 97.5%;
+  position: relative;
+  left:25px;
+  padding-top:10px;
+  padding-left:10px;
+  background: #F2F2F2;
+
+  border-radius: 10px;
+
+}
+.yellow-block{
   width: 97.5%;
   position: relative;
   left:25px;
   padding-top:10px;
   padding-left:10px;
   background: lightgoldenrodyellow;
-  margin-bottom: 20px;
+
+  border-radius: 10px;
 
 }
 .smallinput{
   border: 1px solid #ddd;
   width:50px;
+  text-align: left;
   height: 30px;
   margin-right: 20px;
   margin-bottom: 10px;
-  padding: 1px 4px ;
+  padding: 2px 4px ;
+}
+.longinput{
+  display: table-cell;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  min-width: 100px;
+  font-size: 14px;
+  text-align: left;
+  height: 30px;
+  padding: 2px 4px ;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  position: relative;
+  margin-right: 10px;
 }
 .smallinput:focus{
   border-color:#999999;
 }
 .smallname{
-  display: inline-block;
+  display: table-cell;
   width:40px;
   height:30px;
-  margin-right: 3px;
+  margin-right: 10px;
 }
 .longname{
   position: relative;
+  display: table-cell;
   margin-right: 5px;
+  min-width: 100px;
 }
 
 .twocolor{
-  width: 97.5%;
+  width: 100%;
   position: relative;
+  display: inline-block;
   left:25px;
   color:#666666;
 
@@ -89,6 +146,7 @@
   padding-top:10px;
   padding-left:10px;
   border:1px solid #ddd;
+  left:25px;
 
 }
 .addbottom{
@@ -146,4 +204,16 @@
 .ok:hover {
   text-decoration: none;
   color:black;
+}
+.bzprocess-delete{
+  width: 10px;
+  height: 10px;
+  float: right;
+  margin-right: 4px;
+  margin-top: 0px;
+}
+.bzprocess-delete:hover{
+  /*background: #e8f5fb;*/
+  background: #fff;
+  transform: scale(2,2);
 }

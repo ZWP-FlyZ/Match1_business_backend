@@ -5,32 +5,32 @@
     <div class="BZability-register">
       <ul>
           <li class = "BZability-reg">业务能力</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">注册业务能力</router-link></li>
+          <li class = "BAability-create"><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">注册业务能力</router-link></li>
       </ul>
     </div>
     <div class = "BZability-list">
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">描述标题</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">业务能力1</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
       <div class = "BZability-list-one">
         <ul>
           <li class = "BZability-name">业务能力2</li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/registerPageTemplate" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
         </ul>
       </div>
     </div>
@@ -43,19 +43,18 @@
       height: 45px;
       margin-top: 30px;
     }
-    .BZability-register li{
-      float: left;
-    }
     .BZability-reg{
-      width: 20%;
-      text-align: center;
-      margin-top: 8px;
+      top:8px;
+      float: left;
+      padding-left: 10%;
+      position: relative;
     }
-    .BZability-register li .link-btn{
-      margin-left: 88%;
-      margin-top: 5px;
+    .BAability-create{
+      position: relative;
+      float: right;
+      right: 14%;
+      padding:6px 12px;
     }
-
     .BZability-list-one{
       border: 1px solid #F2F2F2;
       height: 50px;
@@ -69,11 +68,12 @@
       margin-top: 8px;
       margin-right: 50%;
       width: 20%;
+      position: relative;
     }
     .BZability-list-one .link-btn{
+      margin-left: 10px;
       margin-top: 5px;
-      margin-right: 30px;
-      border:1px solid;
+      position: relative;
     }
     body{
     font:15px/1.62 Helvetica,Arial,sans-serif;

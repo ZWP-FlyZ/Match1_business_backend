@@ -7,14 +7,12 @@
       <div class="head-left">页面模板</div>
       <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
     </div>
-
-
       <div class="template-body">
-        <div class="one-container" >
-          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
+        <div class="one-container" v-for="(item,index) in pageList">
+          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：{{item.name}}</router-link>
           <div class="template-edit">
             <div class="template-view">
-              <img src="" class="template-img">
+              <img v-bind:src="item.imgPath" class="template-img">
             </div>
             <div class="bottoms">
               <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
@@ -25,60 +23,11 @@
             </div>
           </div>
         </div>
-
-        <div class="one-container">
-          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
-          <div class="template-edit">
-            <div class="template-view">
-              <img src="" class="template-img">
-            </div>
-            <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
-              <br/>
-              <a href="#" class="bottom-item">查看</a>
-              <br/>
-              <a class="delete" >删除</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="one-container">
-          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
-          <div class="template-edit">
-            <div class="template-view">
-              <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" class="template-img">
-            </div>
-            <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
-              <br/>
-              <a href="#" class="bottom-item">查看</a>
-              <br/>
-              <a class="delete" >删除</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="one-container">
-          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：天猫商品发布页面</router-link>
-          <div class="template-edit">
-            <div class="template-view">
-              <img src="" class="template-img">
-            </div>
-            <div class="bottoms">
-              <a href="#" class="bottom-item">配置</a>
-              <br/>
-              <a href="#" class="bottom-item">查看</a>
-              <br/>
-              <a class="delete" >删除</a>
-            </div>
-          </div>
-        </div>
-
+        <br/>
+        <br/>
       </div>
-
-<br/>
       <ul class="pagination">
-        <li><a href="#">«</a></li>
+        <li><a href="#">?</a></li>
         <li><a href="#" class="active">1</a></li>
         <li><a  href="#">2</a></li>
         <li><a href="#">3</a></li>
@@ -86,16 +35,37 @@
         <li><a href="#">5</a></li>
         <li><a href="#">6</a></li>
         <li><a href="#">7</a></li>
-        <li><a href="#">»</a></li>
+        <li><a href="#">?</a></li>
       </ul>
 
-
+      <br/>  <br/>
 
 </div>
-    <br/>
+
   </div>
 </template>
 
+<script>
+  export default{
+    data(){
+      return {
+        pageList:[],
+      }
+    },
+    mounted:function(){
+      this.$nextTick(function(){
+        this.getPages();
+      })
+    },
+    methods:{
+      getPages:function(){
+        this.$http.get("/api/getList").then((res)=>{
+          this.pageList = JSON.parse(res.body.data).result.pageList;
+        })
+      }
+    }
+  }
+</script>
 <style>
  .template-total{
   margin-bottom: 30px;
@@ -107,6 +77,7 @@
     height: 45px;
     position: relative;
     text-decoration: none;
+
   }
   .head-left{
     float:left;
@@ -124,7 +95,7 @@
     float:right;
     position: relative;
     top:5px;
-    right:10%;
+    right:15%;
     background: #428bca;
     padding: 6px 12px;
     border-radius: 5px;
@@ -136,23 +107,23 @@
   }
 
  .template-body{
-   column-count:2;
-   justify-content: center;
-    display: flex;
-   flex:1;
-   flex-wrap: wrap;
-
-
+   display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
  }
 
  .one-container{
+   display: inline-block;
    position: relative;
-   width:280px;
+   width:29%;
+   min-width:270px;
    height:200px;
    border-style:solid;
    border-width:1px;
-   border-color: #999999;
-   margin: 10px 30px;
+   border-color: #ddd;
+   margin: 10px 1%;
+   overflow: hidden;
 
  }
 
@@ -166,7 +137,7 @@
    display: block;
    float: right;
    position: relative;
-   right:10px;
+   right:3px;
 
  }
  .bottom-item{
@@ -225,7 +196,6 @@
    width: 160px;
    height: 150px;
    margin:15px 15px;
-   background: #0186ba;
  }
  .template-center{
    text-align: center;
