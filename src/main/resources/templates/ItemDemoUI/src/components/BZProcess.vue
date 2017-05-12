@@ -9,16 +9,17 @@
       </ul>
     </div>
     <div class = "classfy-table">
+     <div v-for="(item,index) in processList">
       <div class="BZProcess-des">
         <img src="" alt="">
-        <a href="" ><router-link to="" class = "L1-name">商品发布流程（2）</router-link></a>
+        <a href="" ><router-link to="" class = "L1-name">{{item.name}}（{{item.count}}）</router-link></a>
         <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
         <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class="BZProcess-table">
-        <div class="BZ-edit" v-for="(item,index) in processList">
-          <div class="BZ-num">{{item.name}}</div>
-          <div class="process"><img v-bind:src="item.imgPath" /></div>
+        <div class="BZ-edit" v-for="i in item.pList">
+          <div class="BZ-num">{{i.name}}</div>
+          <div class="process"><img v-bind:src="i.imgPath" /></div>
           <div class = "process-button">
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
@@ -26,23 +27,6 @@
           </div>
         </div>
       </div>
-
-      <div class="BZProcess-des">
-        <img src="" alt="">
-        <a href="" ><router-link to="" class = "L1-name">交易下单流程（2）</router-link></a>
-        <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
-        <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
-      </div> 
-      <div class="BZProcess-table">
-        <div class="BZ-edit" v-for="(item,index) in processList">
-          <div class="BZ-num">{{item.name}}</div>
-          <div class="process"><img v-bind:src="item.imgPath" /></div>
-          <div class = "process-button">
-            <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
-            <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
-            <router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link>
-          </div>
-        </div>
       </div>
     </div>
 

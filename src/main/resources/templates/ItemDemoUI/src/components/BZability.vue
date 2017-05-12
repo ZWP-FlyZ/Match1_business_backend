@@ -9,25 +9,9 @@
       </ul>
     </div>
     <div class = "BZability-list">
-      <div class = "BZability-list-one">
+      <div class = "BZability-list-one" v-for="(item,index) in bzabilityList">
         <ul>
-          <li class = "BZability-name">描述标题</li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-      </div>
-      <div class = "BZability-list-one">
-        <ul>
-          <li class = "BZability-name">业务能力1</li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-      </div>
-      <div class = "BZability-list-one">
-        <ul>
-          <li class = "BZability-name">业务能力2</li>
+          <li class = "BZability-name">{{item.name}}</li>
           <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteBZability" class = "link-btn link-btn-delete">删除</router-link></li>
@@ -35,8 +19,31 @@
       </div>
     </div>
   </div>
-
 </template>
+
+<script>
+  export default{
+    data(){
+      return {
+        bzabilityList:[]
+      }
+    },
+    mounted:function(){
+      this.$nextTick(function(){
+        this.getProcess();
+      })
+    },
+    methods: {
+      getProcess:function(){
+        this.$http.get("/api/getList").then(res=>{
+          console.log(JSON.parse(res.body.data).result.bzabilityList)
+          this.bzabilityList = JSON.parse(res.body.data).result.bzabilityList
+
+        })
+      }
+    }
+  }
+</script>
 <style>
     .BZability-register{
       background: #F2F2F2;

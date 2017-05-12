@@ -8,25 +8,9 @@
       </ul>
     </div>
     <div class = "Ability-list">
-      <div class = "Ability-list-one">
+      <div class = "Ability-list-one" v-for="(item,index) in abilityList">
         <ul>
-          <li class = "Ability-name">颜色</li>
-          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-      </div>
-      <div class = "Ability-list-one">
-        <ul>
-          <li class = "Ability-name">尺寸</li>
-          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
-        </ul>
-      </div>
-      <div class = "Ability-list-one">
-        <ul>
-          <li class = "Ability-name">无理由退货</li>
+          <li class = "Ability-name">{{item.name}}</li>
           <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">查看</router-link></li>
           <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
@@ -36,6 +20,29 @@
   </div>
 
 </template>
+<script>
+  export default{
+    data(){
+      return {
+        abilityList:[]
+      }
+    },
+    mounted:function(){
+      this.$nextTick(function(){
+        this.getProcess();
+      })
+    },
+    methods: {
+      getProcess:function(){
+        this.$http.get("/api/getList").then(res=>{
+          console.log(JSON.parse(res.body.data).result.abilityList)
+          this.abilityList = JSON.parse(res.body.data).result.abilityList
+
+        })
+      }
+    }
+  }
+</script>
 <style>
   .Ability-total{
     margin-top: 0;

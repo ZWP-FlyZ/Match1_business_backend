@@ -40,14 +40,97 @@
     ],
     "processList":[
       {
+        "name":"商品发布流程",
+        "count":"3",
+        "preList":[
+          {
+            "id":"10001",
+            "name":"账号从属于天猫还是淘宝"
+          },
+          {
+            "id":"10001",
+            "name":"登陆地在中国还是外国"
+          }
+        ],
+        "pList":[
+          {
+            "id":"10001",
+            "name":"淘宝商品发布流程",
+            "imgPath":"static/img/process1.png"
+          },
+          {
+            "id":"10001",
+            "name":"AE商品发布流程",
+            "imgPath":"static/img/process1.png"
+          }
+        ]
+      },
+      {
+        "name":"交易流程",
+        "count":"1",
+        "preList":[
+          {
+            "id":"10001",
+            "name":"虚拟还是实物"
+          },
+          {
+            "id":"10001",
+            "name":"担保还是电子凭证"
+          }
+        ],
+        "pList":[
+          {
+            "id":"10001",
+            "name":"淘宝交易流程",
+            "imgPath":"static/img/process1.png"
+          }
+        ]
+      }
+    ],
+    "bzabilityList":[
+      {
         "id":"10001",
-        "name":"淘宝商品发布流程",
-        "imgPath":"static/img/process1.png"
+        "name":"宝贝标题"
+      },
+      {
+        "id":"10002",
+        "name":"宝贝卖点"
+      },
+      {
+        "id":"10002",
+        "name":"描述羽绒服"
+      },
+      {
+        "id":"10002",
+        "name":"描述帆布鞋"
+      },
+      {
+        "id":"10002",
+        "name":"运费模板"
+      }
+    ],
+    "abilityList":[
+      {
+        "id":"10001",
+        "name":"颜色"
       },
       {
         "id":"10001",
-        "name":"AE商品发布流程",
-        "imgPath":"static/img/process1.png"
+        "name":"尺寸"
+      },
+      {
+        "id":"10001",
+        "name":"材质"
+      }
+    ],
+    "bzapouList":[
+      {
+        "id":"10001",
+        "name":"描述标题-采集"
+      },
+      {
+        "id":"10001",
+        "name":"描述标题-呈现"
       }
     ]
   }
