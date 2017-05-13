@@ -19,12 +19,13 @@
               <br/>
               <a href="#" class="bottom-item">查看</a>
               <br/>
-               <router-link to="/deletePageTemplate" class="delete">删除</router-link>
+               <button class="delete" @click="deleteDialog(item)">删除</button>
             </div>
           </div>
         </div>
         <br/>
         <br/>
+        
       </div>
       <ul class="pagination">
         <li><a href="#">?</a></li>
@@ -41,17 +42,24 @@
       <br/>  <br/>
 
 </div>
-
+  <Delete :message="deleteContent" :hide-dialog.sync="hideDialog"></Delete>
   </div>
 </template>
 
 <script>
+  import Delete from "./Delete"
   export default{
     data(){
       return {
         pageList:[],
+        deleteContent:{
+          item:'',
+          url:''//删除的url请求
+        },
+        hideDialog:true
       }
     },
+    components:{"Delete":Delete},
     mounted:function(){
       this.$nextTick(function(){
         this.getPages();
@@ -62,11 +70,16 @@
         this.$http.get("/api/getList").then((res)=>{
           this.pageList = JSON.parse(res.body.data).result.pageList;
         })
+      },
+      deleteDialog:function(i){
+        this.hideDialog = !this.hideDialog
+        this.deleteContent.item = i
       }
     }
   }
 </script>
 <style>
+ 
  .template-total{
   margin-bottom: 30px;
  }

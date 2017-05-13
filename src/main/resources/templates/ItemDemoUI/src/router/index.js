@@ -17,6 +17,7 @@ import DeleteBZProcess from '@/components/DeleteBZProcess'
 import DeleteBZability from '@/components/DeleteBZability'
 import DeleteAbility from '@/components/DeleteAbility'
 import DeletePageTemplate from '@/components/DeletePageTemplate'
+import Delete from '@/components/Delete'
 Vue.use(Router)
 
 export default new Router({
@@ -87,6 +88,10 @@ export default new Router({
     {
     path: '/deletePageTemplate',
     component: DeletePageTemplate
+    },
+    {
+    path: '/delete',
+    component: Delete
     }]
   }]
 })

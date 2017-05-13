@@ -23,22 +23,30 @@
           <div class = "process-button">
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
-            <router-link to="/deleteBZProcess" class = "link-btn link-btn-delete">删除</router-link>
+            <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)">删除</button></li>
           </div>
         </div>
       </div>
       </div>
     </div>
-
+    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog"></Delete>
   </div>       
 </template>
+
 <script>
+import Delete from "./Delete"
   export default{
     data(){
       return {
-        processList:[]
+        processList:[],
+        deleteContent:{
+          item:'',
+          url:''//删除的url请求
+        },
+        hideDialog:true
       }
     },
+    components:{"Delete":Delete},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
@@ -51,6 +59,11 @@
           this.processList = JSON.parse(res.body.data).result.processList
 
         })
+      },
+      deleteDialog:function(i){
+        this.hideDialog = !this.hideDialog
+        this.deleteContent.item = i
+
       }
     }
   }

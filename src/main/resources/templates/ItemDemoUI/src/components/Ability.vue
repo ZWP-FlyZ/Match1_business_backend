@@ -13,20 +13,28 @@
           <li class = "Ability-name">{{item.name}}</li>
           <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
           <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">查看</router-link></li>
-          <li><router-link to="/deleteAbility" class = "link-btn link-btn-delete">删除</router-link></li>
+          <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)">删除</button></li>
         </ul>
       </div>
     </div>
+    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog"></Delete>
   </div>
 
 </template>
 <script>
+import Delete from "./Delete"
   export default{
     data(){
       return {
-        abilityList:[]
+        abilityList:[],
+        deleteContent:{
+          item:'',
+          url:''//删除的url请求
+        },
+        hideDialog:true
       }
     },
+    components:{"Delete":Delete},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
@@ -39,6 +47,11 @@
           this.abilityList = JSON.parse(res.body.data).result.abilityList
 
         })
+      },
+      deleteDialog:function(i){
+        this.hideDialog = !this.hideDialog
+        this.deleteContent.item = i
+
       }
     }
   }
