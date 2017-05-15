@@ -10,26 +10,26 @@
 			<form action="">
 			<div class="applicationReg-des-div">
 				<label for="">应用名称:</label>
-				<input type="text" value = "商品发布">
+				<input type="text"  placeholder = "商品发布">
 			</div>
 			<div class="applicationReg-des-div">
 				<label for="">应用描述:</label>
-				<input type="text" value = "用于商品发布">
+				<input type="text"  placeholder = "用于商品发布">
 			</div>
 			<div class="applicationReg-des-div">
 				<label for="">负责人:</label>
-				<input type="text" value="xxxx">
+				<input type="text"  placeholder="xxxx">
 			</div>
 			<div class="applicationReg-des-div">
 				<label for="">注册日期:</label>
-				<input type="date" value="2017-05-11"/>
+				<input type="date"  value="2017-05-11"/>
 			</div>
 			</form>
 		</div>
 		<div class = "theme-content">
 			<form action="" class = "form-theme">
 				<label for=""><b>主题：</b></label>
-				<input type="text" value = "" placeholder="请输入主题">
+				<input type="text"  placeholder = "" placeholder="请输入主题">
 			</form>
 			<form action="" class = "form-content">
 				<label for=""><b>内容：</b></label>
@@ -39,13 +39,13 @@
 		<div class = "theme-content person">
 			<form action="" class = "form-theme">
 				<label for=""><b>对外服务人员:</b></label>
-				<input type="text" value="xxx,xxx">
+				<input type="text" >
 			</form>
 		</div>
 		<div class = "theme-content person">
 			<form action="" class = "form-theme">
 				<label for=""><b>有权限编辑人员:</b></label>
-				<input type="text" value="xxx,xxx">
+				<input type="text" >
 			</form>
 		</div>
 		<div class = "applicationReg-submit">
@@ -57,6 +57,7 @@
 <style>
 	.applicationReg-header{
 		background: #0099FF;
+		border-radius: 6px;
 		height: 45px;
 		width: 770px;
 		font-size: 30px;
@@ -100,6 +101,7 @@
 	.theme-content{
 		background: #F2F2F2;
 		/*width: 70%;*/
+		border-radius: 6px;
 		width: 760px;
 		clear: both;
 		display: table;
@@ -158,6 +160,9 @@
 	.applicationReg-submit{
 		padding-top: 30px;
 		margin-left: 370px;
+	}
+	.applicationReg-des-div input{
+		border:1px solid #878787;
 	}
 	input{
 		text-align: left;

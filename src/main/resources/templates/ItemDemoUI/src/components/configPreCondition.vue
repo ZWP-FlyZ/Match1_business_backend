@@ -34,7 +34,7 @@
        
 
         <div class="item">
-          <label class="nameid">流程开发者： </label> <input type="text" class="inputbox checkView"  value="xxx" autocomplete="on" >
+          <label class="nameid">开发人员： </label> <input type="text" class="inputbox checkView"  value="xxx" autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid">开发日期： </label> <input type="date" class="inputbox checkView"  value="2017-05-13" autocomplete="on" >

@@ -13,11 +13,14 @@
         <div class="item">
           <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView"  value="弱管控商品发布" autocomplete="on" autofocus="autofocus">
         </div>
-        <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value =""  autocomplete="on" >
+         <div class="item">
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="2"  autocomplete="on" >
+        </div>
+        <div class="item">
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
@@ -27,12 +30,10 @@
             <option value='' >商品发布</option>
           </select>
         </div>
-        <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="2"  autocomplete="on" >
-        </div>
+        
 
         <div class="item">
-          <label class="nameid">开发者: </label> <input type="text" class="inputbox checkView"  value="121"  autocomplete="on" >
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView develop-date"  value="2017-05-13"  autocomplete="on" >
@@ -326,6 +327,6 @@
   ::-webkit-datetime-edit-year-field { color: #878787;font: 15px/1.62 Helvetica,Arial,sans-serif; }
   ::-webkit-datetime-edit-month-field { color: #878787; }
   ::-webkit-datetime-edit-day-field { color: #878787; }
-  
+
 </style>
 
