@@ -14,10 +14,6 @@ import RegisterBZAbility from '@/components/RegisterBZAbility'
 import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 import RegisterApplication from'@/components/RegisterApplication'
-import DeleteBZProcess from '@/components/DeleteBZProcess'
-import DeleteBZability from '@/components/DeleteBZability'
-import DeleteAbility from '@/components/DeleteAbility'
-import DeletePageTemplate from '@/components/DeletePageTemplate'
 import Delete from '@/components/Delete'
 import ConfigPreCondition from '@/components/ConfigPreCondition'
 
@@ -75,22 +71,6 @@ export default new Router({
     {
     path: '/registerApplication',
     component: RegisterApplication
-    },
-    {
-    path: '/deleteBZProcess',
-    component: DeleteBZProcess
-    },
-    {
-    path: '/deleteBZability',
-    component: DeleteBZability
-    },
-    {
-    path: '/deleteAbility',
-    component: DeleteAbility
-    },
-    {
-    path: '/deletePageTemplate',
-    component: DeletePageTemplate
     },
     {
     path: '/delete',

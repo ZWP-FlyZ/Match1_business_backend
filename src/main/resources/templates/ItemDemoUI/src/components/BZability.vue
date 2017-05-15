@@ -18,12 +18,14 @@
         </ul>
       </div>
     </div>
-    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog"></Delete>
+    <IMask :hide-mask.sync="hideMask"></IMask>
+    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
   </div>
 </template>
 
 <script>
 import Delete from "./Delete"
+import IMask from "./Mask"
   export default{
     data(){
       return {
@@ -32,10 +34,11 @@ import Delete from "./Delete"
           item:'',
           url:''//删除的url请求
         },
-        hideDialog:true
+        hideDialog:true,
+        hideMask:true
       }
     },
-    components:{"Delete":Delete},
+    components:{"Delete":Delete,"IMask":IMask},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
@@ -51,8 +54,13 @@ import Delete from "./Delete"
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog
+        this.hideMask = !this.hideMask
         this.deleteContent.item = i
 
+      },
+      closeDialog:function(childData){
+        this.hideDialog = childData
+        this.hideMask = childData
       }
     }
   }

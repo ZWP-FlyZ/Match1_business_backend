@@ -6,7 +6,7 @@
 				<div class = "deleteAability-header">
 					 <h4 class="delete-modal-title">删除确认</h4>
 					 <div class = "delete-modal-delete-div">
-		              <router-link to="/ability"><img src="../assets/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete"></router-link>
+		             <img src="../assets/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
 		            </div>
 				</div>
 
@@ -19,10 +19,8 @@
 				</div>
 			</div>
 			<div class = "delete-modal-footer">
-				<!-- <button class = "btn btn-primary" @click="confirmDelete">确认</button>
-				<button @click="closeDialog" class = "btn btn-delete">取消</button> -->
-				 <router-link  @click="confirmDelete" to="/ability" class ="btn btn-primary">确认</router-link>
-            <router-link to="/ability" class = "btn btn-delete" @click="closeDialog" >取消</router-link>
+				<button class = "btn btn-primary" @click="confirmDelete">确认</button>
+				<button @click="closeDialog" class = "btn btn-delete">取消</button>
 			</div>
 			</div>
 		  </div>
@@ -31,10 +29,10 @@
 </template>
 <script>
 	export default{
-	  props:['message','hideDialog'],
+	  props:['message','hideDialog','hideMask'],
 	  methods:{
 	  	closeDialog:function(){
-	  		this.hideDialog = !this.hideDialog
+	  		this.$emit("increment",!this.hideDialog)
 	  	},
 	  	confirmDelete:function(){
 	  	/*this.$http.post(this.message.url,object,{emulateJSON: true}).then((res)=>{
