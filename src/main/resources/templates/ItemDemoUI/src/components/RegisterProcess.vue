@@ -11,37 +11,31 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox"  placeholder="弱管控商品发布"
-                                                     autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView"  value="弱管控商品发布" autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox"  placeholder=""
-                                                     autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value =""  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">KEY: </label> <input type="text" class="inputbox"  placeholder="121"
-                                                     autocomplete="on" >
+          <label class="nameid">KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox" >
+          <select class="inputbox checkView SelectList" >
             <option >二级流程</option>
             <option value='' >商品发布</option>
           </select>
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox"  placeholder="2"
-                                                     autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="2"  autocomplete="on" >
         </div>
 
         <div class="item">
-          <label class="nameid">开发者: </label> <input type="text" class="inputbox"  placeholder="121"
-                                                      autocomplete="on" >
+          <label class="nameid">开发者: </label> <input type="text" class="inputbox checkView"  value="121"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox"  value="2014-01-13"
-                                                      autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView develop-date"  value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>
@@ -65,64 +59,52 @@
       <div class="items">
         <form  class="itemsform">
           <div class="item">
-            <label class="nameid">节点名称: </label><input type="text" class="inputbox"  placeholder="审核"
-                                                       autocomplete="on" autofocus="autofocus">
+            <label class="nameid">节点名称: </label><input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item">
-            <label class="nameid">节点功能描述: </label><input type="text" class="inputbox"  placeholder="审核"
-                                                       autocomplete="on" >
+            <label class="nameid">节点功能描述: </label><input type="text" class="inputbox checkView"  placeholder="审核"  autocomplete="on" >
           </div>
 
           <div class="item">
-            <label class="nameid">KEY: </label> <input type="text" class="inputbox"  placeholder="121"
-                                                       autocomplete="on" >
+            <label class="nameid">KEY: </label> <input type="text" class="inputbox checkView"  placeholder="121"  autocomplete="on" >
           </div>
         </form>
       </div>
 
-
-    <div class="heads">
-      流程分支节点前置条件
-    </div>
-    <div class="twocolor">
-    <form class="grey">
-      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item">
-        <label class="nameid"> 前置条件: </label>
-
-        <select class="inputbox" >
+    <div class = "heads">
+      <div class = "condition">外部前置条件</div>
+      <div>
+        <select class="inputbox condition-factory">
           <option >前置条件库</option>
           <option value='' ></option>
         </select>
       </div>
-      <div class="item">
-        <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                     autocomplete="on" autofocus="autofocus">
+    </div>
+    <div class="twocolor">
+    <form class="grey">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        卖家信用等级
       </div>
       <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="两颗星"
-                                                     autocomplete="on" >
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = "1" autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="两颗星" autocomplete="on" >
       </div>
       <a href="#" class="addbottom">添加同类型配置项</a>
 
     </form>
       <form class="grey">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item">
-          <label class="nameid"> 前置条件: </label>
-
-          <select class="inputbox" >
-            <option >前置条件库</option>
-            <option value='' ></option>
-          </select>
+        <div class="item condition-name">
+        产品认证
         </div>
         <div class="item">
-          <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                       autocomplete="on" autofocus="autofocus">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"    value = "3" autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder=""
-                                                       autocomplete="on" >
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"    value = "产品已认证" autocomplete="on" autofocus="autofocus">
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
@@ -130,69 +112,64 @@
 
     <br/>
     <br/>
-    <div class="heads">
-      页面模板前置条件
+    <div class = "heads">
+      <div class = "condition">内部前置条件</div>
+      <div>
+        <select class="inputbox condition-factory">
+          <option >前置条件库</option>
+          <option value='' ></option>
+        </select>
+      </div>
     </div>
     <div class="twocolor">
       <form class="grey">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item">
-          <label class="nameid"> 前置条件: </label>
-
-          <select class="inputbox" >
-            <option >前置条件库</option>
-            <option value='' ></option>
-          </select>
+        <div class="item condition-name">
+          审核方式
         </div>
         <div class="item">
-          <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                       autocomplete="on" autofocus="autofocus">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value="2"  autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder=""
-                                                       autocomplete="on" >
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="审核方式" autocomplete="on" >
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
 
       </form>
       <form class="grey">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item">
-          <label class="nameid"> 前置条件: </label>
-
-          <select class="inputbox" >
-            <option >前置条件库</option>
-            <option value='' ></option>
-          </select>
+        <div class="item condition-name">
+          前置条件2
         </div>
         <div class="item">
-          <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                       autocomplete="on" autofocus="autofocus">
+          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value="4" autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder=""
-                                                       autocomplete="on" >
+          <label class="smallname">名称：</label> <input type="text"  class="inputbox checkView"   value="类目" autocomplete="on" >
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
     </div>
     <br/> <br/>
+
+
+
+
+
     <div class="heads">
       关联页面模板
     </div>
     <form  class="yellow">
       <div class="item">
         <label class="smallname">节点1</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder=""
-                                                     autocomplete="on" autofocus="autofocus">
+        <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value=""
+         autocomplete="on" autofocus="autofocus">
       </div>
       <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"
-                                                     autocomplete="on" >
+        <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
       </div>
       <div class="item">
-        <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"
-                                                       autocomplete="on" >
+        <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
 
         <label class="longname">关联的页面模板：</label>
         1，2，3
@@ -213,13 +190,10 @@
             </select>
           </div>
           <div class="item">
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="Star"
-                                                         autocomplete="on" autofocus="autofocus">
+            <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value="Star" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"
-
-                                                         autocomplete="on" >
+            <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
           </div>
 
           <a href="#" class="addbottom">添加同类型配置项</a>
@@ -239,12 +213,10 @@
 
               <div class="item">
 
-                <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="1"
-                                                             autocomplete="on" autofocus="autofocus">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="一颗星"
-                                                             autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="一颗星" autocomplete="on" >
               </div>
 
             </form>
@@ -253,12 +225,10 @@
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                             autocomplete="on" autofocus="autofocus">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="两颗星"
-                                                             autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="两颗星" autocomplete="on" >
               </div>
 
             </form>
@@ -278,12 +248,10 @@
             </select>
           </div>
           <div class="item">
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="KKY"
-                                                         autocomplete="on" autofocus="autofocus">
+            <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value="KKY" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder=""
-                                                         autocomplete="on" >
+            <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="" autocomplete="on" >
           </div>
 
           <a href="#" class="addbottom">添加同类型配置项</a>
@@ -305,12 +273,10 @@
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="1"
-                                                             autocomplete="on" autofocus="autofocus">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="是"
-                                                             autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="是"  autocomplete="on" >
               </div>
 
             </form>
@@ -319,12 +285,10 @@
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"
-                                                             autocomplete="on" autofocus="autofocus">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="否"
-                                                             autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="否"  autocomplete="on" >
               </div>
 
             </form>
@@ -342,4 +306,26 @@
   </div>
 
 </template>
+<style>
+   .checkView{
+    border-style:none;
+    /*color: #7692C2;*/
+    color: #878787;
+  }
+  .SelectList{
+    border-style:none;
+    appearance:none;
+  }
+  .develop-date{
+    /*style:none;*/
+    /*border:1px solid red;*/
+    color:red;
+  }
+  /*::-webkit-datetime-edit-fields-wrapper { background-color: red; }*/
+  ::-webkit-datetime-edit-text { color: #878787; padding: 0 .3em; }/*/的颜色*/
+  ::-webkit-datetime-edit-year-field { color: #878787;font: 15px/1.62 Helvetica,Arial,sans-serif; }
+  ::-webkit-datetime-edit-month-field { color: #878787; }
+  ::-webkit-datetime-edit-day-field { color: #878787; }
+  
+</style>
 
