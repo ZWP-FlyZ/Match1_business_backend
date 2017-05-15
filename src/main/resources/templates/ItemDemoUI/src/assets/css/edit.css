@@ -53,7 +53,7 @@ display: table-cell;
   font-size: 14px;
   text-align: left;
   height: 30px;
-  padding: 2px 4px ;
+  padding: 9px 4px 2px ;
   margin-left: 2px;
   margin-bottom: 10px;
   position: relative;
@@ -122,7 +122,7 @@ display: table-cell;
 }
 .smallname{
   display: table-cell;
-  width:40px;
+  width:50px;
   height:30px;
   margin-right: 10px;
 }
