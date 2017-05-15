@@ -13,8 +13,8 @@
 			天猫商品发布页面
 		</div>
 		<div class = "delete-button">
-			<a href="" ><router-link to="/pagetemplate" class = "btn btn-primary">确认</router-link></a>
-			<a href=""><router-link to="/pagetemplate" class = "btn btn-delete">取消</router-link></a>
+			<a href="" ><router-link to="/pagetemplate" class = "btn btn-primary PageTemplate-btn-primary">确认</router-link></a>
+			<a href=""><router-link to="/pagetemplate" class = "btn btn-delete PageTemplate-btn-delete">取消</router-link></a>
 		</div>
 	</div>
 	</div>
@@ -67,10 +67,10 @@
 		margin-left: 50%;
 		padding-right:30px;
 	}
-	.delete-button .btn-primary{
+	.delete-button .PageTemplate-btn-primary{
 		float: left;
 	}
-	.delete-button .btn-delete{
+	.delete-button .PageTemplate-btn-delete{
 		float: left;
 		margin-top: 0px;
 		position: relative;

@@ -1,3 +1,4 @@
+
 <template>
   <div class = "Ability">
     <div class = "Ability-total">能力定制总数：12</div>
@@ -104,3 +105,4 @@ import Delete from "./Delete"
   }
 
   </style>
+

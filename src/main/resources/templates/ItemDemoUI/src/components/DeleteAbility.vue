@@ -13,8 +13,8 @@
 			能力：描述标题
 		</div>
 		<div class = "delete-button">
-			<a href=""><router-link to="/ability" class = "btn btn-primary">确认</router-link></a>
-			<a href=""><router-link to="/ability" class = "btn btn-delete">取消</router-link></a>
+			<a href=""><router-link to="/ability" class = "btn btn-primary ability-btn-primary">确认</router-link></a>
+			<a href=""><router-link to="/ability" class = "btn btn-delete ability-btn-delete">取消</router-link></a>
 		</div>
 	</div>
 	</div>
@@ -67,10 +67,10 @@
 		margin-left: 50%;
 		padding-right:30px;
 	}
-	.delete-button .btn-primary{
+	.delete-button .ability-btn-primary{
 		float: left;
 	}
-	.delete-button .btn-delete{
+	.delete-button .ability-btn-delete{
 		float: left;
 		margin-top: 0px;
 		position: relative;

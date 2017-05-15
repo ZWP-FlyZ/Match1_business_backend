@@ -15,8 +15,8 @@
 		<div class = "delete-button">
 			<!-- <a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确认</router-link></a>
 			<a href=""><router-link to="/bzprocess" class = "btn btn-delete">取消</router-link></a> -->
-			<router-link to="/bzprocess" class = "btn btn-primary">确认</router-link>
-			<router-link to="/bzprocess" class = "btn btn-delete">取消</router-link>
+			<router-link to="/bzprocess" class = "btn btn-primary bzprocess-btn-primary">确认</router-link>
+			<router-link to="/bzprocess" class = "btn btn-delete bzprocess-btn-delete">取消</router-link>
 		</div>
 	</div>
 	</div>
@@ -69,10 +69,10 @@
 		margin-left: 50%;
 		padding-right:30px;
 	}
-	.delete-button .btn-primary{
+	.delete-button .bzprocess-btn-primary{
 		float: left;
 	}
-	.delete-button .btn-delete{
+	.delete-button .bzprocess-btn-delete{
 		float: left;
 		margin-top: 0px;
 		position: relative;
