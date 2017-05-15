@@ -1,4 +1,3 @@
-
 <template>
   <div class = "BZProcess">
     <div class = "BZProcess-total">流程定制总数：12</div>
@@ -14,8 +13,8 @@
       <div class="BZProcess-des">
         <img src="" alt="">
         <a href="" ><router-link to="" class = "L1-name">{{item.name}}（{{item.count}}）</router-link></a>
-        <a href="" ><router-link to="/registerProcess" class = "L1-edit">配置前置条件</router-link></a>
-        <a href="" ><router-link to="/registerProcess" class = "L1-edit">查看前置条件</router-link></a>
+        <a href="" ><router-link to="/configPreCondition" class = "L1-edit">配置前置条件</router-link></a>
+        <a href="" ><router-link to="/configPreCondition" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class="BZProcess-table">
         <div class="BZ-edit" v-for="i in item.pList">
@@ -160,7 +159,5 @@ import Delete from "./Delete"
   .BZProcess-table{
     margin-bottom: 20px;
   }
-
 </style>
-
 

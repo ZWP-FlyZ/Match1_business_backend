@@ -19,6 +19,8 @@ import DeleteBZability from '@/components/DeleteBZability'
 import DeleteAbility from '@/components/DeleteAbility'
 import DeletePageTemplate from '@/components/DeletePageTemplate'
 import Delete from '@/components/Delete'
+import ConfigPreCondition from '@/components/ConfigPreCondition'
+
 Vue.use(Router)
 
 export default new Router({
@@ -93,6 +95,10 @@ export default new Router({
     {
     path: '/delete',
     component: Delete
+    },
+    {
+    path: '/configPreCondition',
+    component: ConfigPreCondition
     }]
   }]
 })
