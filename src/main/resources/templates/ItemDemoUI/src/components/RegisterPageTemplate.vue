@@ -14,7 +14,7 @@
         <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="发布商品" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="smallname"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="13241" autocomplete="on" >
+          <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="13241" autocomplete="on" >
         </div>
 
         <div class="item">
@@ -29,96 +29,127 @@
     </div>
 
     <div class="heads">
-      页面流程结点
+      页面流程节点关联
     </div>
-    <div class="yellow">
-    <div class="items">
-      <label class="longname">关联的流程结点:1，2</label>
-        <select class="longinput checkView page-SelectList" >
-      <option>一级流程（多选）</option>
-      <option value=''>商品发布</option>
-      </select>
-      <select class="longinput checkView page-SelectList" >
-        <option>二级流程（多选）</option>
-        <option value=''>商品发布</option>
-      </select>
-      <select class="longinput checkView page-SelectList" >
-        <option>二级流程结点（多选）</option>
-        <option value=''>商品发布</option>
-      </select>
-        <select class="longinput checkView page-SelectList" >
-          <option>角色列表（多选）</option>
-          <option value=''>ID</option>
-        </select>
-    </div>
+    <div class="yellow yellow-div">
+      <div class="items">
+        <!-- <label class="longname">关联的流程节点:1，2</label> -->
+
+          <select class="longinput checkView page-SelectList" >
+            <option>一级流程（多选）</option>
+            <option value=''>商品发布</option>
+          </select>
+          <select class="longinput checkView page-SelectList" >
+            <option>二级流程（多选）</option>
+            <option value=''>商品发布</option>
+          </select>
+          <select class="longinput checkView page-SelectList" >
+            <option>二级流程节点（多选）</option>
+            <option value=''>商品发布</option>
+          </select>
+          <select class="longinput checkView page-SelectList" >
+            <option>角色列表（多选）</option>
+            <option value=''>ID</option>
+          </select>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">流程节点1</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">流程节点2</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
+      </div>
+      
     </div>
     <div class="heads">
       关联的业务能力剖面
     </div>
 
       <form  class="yellow">
-<div class="item-row">
-  <div class="item">
-        <label class="smallname">模块1</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-  </div>
-        <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121" autocomplete="on" >
-        </div>
-        <div class="item">
-        <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121" autocomplete="on" >
-        </div>
-        <div class="item">
-        <label class="longname">关联的业务模板剖面：</label>
-        <select class="inputbox checkView" >
-          <option></option>
-          <option value='acura'></option>
-        </select>
-        </div>
-        1. 2.
-        <br/>
+        <div class="item-row">
+          <div class="item item-select-relate ">
+            <label class="smallname">模块1</label>
+            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="longname">业务能力剖面：</label>
+            <select class="inputbox checkView" >
+              <option></option>
+              <option value='acura'></option>
+            </select>
+          </div>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
         </div>
         <div class="item-row">
-        <div class="item">
-          <label class="smallname">模块1</label>
-          <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-        </div>
-        <div class="item">
-          <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-        </div>
-        <div class="item">
-          <label class="longname">关联的业务模板剖面：</label>
-          <select class="inputbox checkView" >
-            <option></option>
-            <option value='acura'></option>
-          </select>
-        </div>
-        1. 2.<br/>
+          <div class="item item-select-relate">
+            <label class="smallname">模块1</label>
+            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="longname">业务能力剖面：</label>
+            <select class="inputbox checkView" >
+              <option></option>
+              <option value='acura'></option>
+            </select>
+          </div>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
         </div>
         <div class="item-row">
-        <div class="item">
-        <label class="smallname">模块1</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-      </div>
-        <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-        </div>
-        <div class="item">
-          <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121" autocomplete="on" >
-        </div>
-        <div class="item">
-          <label class="longname">关联的业务模板剖面：</label>
-
-          <select class="inputbox checkView" >
-            <option></option>
-            <option value='acura'></option>
-          </select>
-        </div>
-        1. 2.
-        <br/>
+          <div class="item item-select-relate">
+            <label class="smallname">模块1</label>
+            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="longname">业务能力剖面：</label>
+            <select class="inputbox checkView" >
+              <option></option>
+              <option value='acura'></option>
+            </select>
+          </div>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
         </div>
       </form>
 
@@ -260,5 +291,54 @@
   border-style:none;
     appearance:none;
     display: inline-block;
+    float: left;
 }
+.back-color{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background:#4FD2C2;
+  color: #ffffff;
+  width: 100px;
+  /*background-color: #428bca;*/
+  border-color: #357ebd;
+  /*float: left;*/
+}
+    .relate-choose-button{
+      float: left;
+      width: 60%;
+    }
+    .relate-choose-delete{
+      margin-left: 20%;
+      float: right;
+      position: relative;
+      top: -6px;
+    }
+    .relate-choose-delete:hover{
+      transform: scale(1.2,1.2);
+    }
+    .item-relate-list{
+      float: left;
+      /*border:1px solid red;*/
+    }
+    .item-select-relate{
+      float:left;
+    }
+    .relate-choose-list{
+      float: left;
+      display: inline-block;
+      margin-right: 10px;
+    }
+   /* .items{border:1px solid red;}*/
+
 </style>
