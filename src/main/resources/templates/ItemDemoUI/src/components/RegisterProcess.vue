@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="twocolor">
-    <form class="grey">
+    <form class="grey grey-option"> 
       <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         卖家信用等级
@@ -96,7 +96,7 @@
       <a href="#" class="addbottom">添加同类型配置项</a>
 
     </form>
-      <form class="grey">
+      <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
         产品认证
@@ -111,8 +111,8 @@
       </form>
     </div>
 
-    <br/>
-    <br/>
+  <!--   <br/>
+    <br/> -->
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
       <div>
@@ -123,7 +123,7 @@
       </div>
     </div>
     <div class="twocolor">
-      <form class="grey">
+      <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           审核方式
@@ -137,7 +137,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
 
       </form>
-      <form class="grey">
+      <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           前置条件2
@@ -151,12 +151,6 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
     </div>
-    <br/> <br/>
-
-
-
-
-
     <div class="heads">
       关联页面模板
     </div>
@@ -209,7 +203,7 @@
           </div>
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
-            <form class="grey">
+            <form class="grey grey-option">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
@@ -221,7 +215,7 @@
               </div>
 
             </form>
-            <br/>
+            <!-- <br/> -->
             <form class="grey">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
@@ -270,7 +264,7 @@
 
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
-            <form class="grey">
+            <form class="grey grey-option">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
@@ -281,7 +275,7 @@
               </div>
 
             </form>
-            <br/>
+            <!-- <br/> -->
             <form class="grey">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
@@ -327,6 +321,10 @@
   ::-webkit-datetime-edit-year-field { color: #878787;font: 15px/1.62 Helvetica,Arial,sans-serif; }
   ::-webkit-datetime-edit-month-field { color: #878787; }
   ::-webkit-datetime-edit-day-field { color: #878787; }
+  .grey-option{
+    margin-bottom: 20px;
+  }
+  
 
 </style>
 

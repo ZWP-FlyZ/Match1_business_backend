@@ -4,7 +4,6 @@
 		<div class = "applicationReg-header">
 			<p>应用基本信息</p>
 			<router-link to="/bzprocess"><img src="../assets/img/delete.png" alt="" class = "applicationReg-delete"></router-link>
-			<!-- <a href=""><router-link to="/bzprocess">X</router-link></a> -->
 		</div>
 		<div class = "applicationReg-des">
 			<form action="">
@@ -56,20 +55,25 @@
 </template>
 <style>
 	.applicationReg-header{
-		background: #0099FF;
-		border-radius: 6px;
-		height: 45px;
-		width: 770px;
-		font-size: 30px;
+		text-align: left;
+	    font: 15px/40px Arial, sans-serif;
+	    background: #E8F5FB;
+	    position: relative;
+	    text-decoration: none;
+	    width: 740px;
+	    height: 40px;
+	    padding: 0 20px;
+	    margin-bottom: 10px;
+	    border-radius: 6px;
 	}
 	.applicationReg-header p{
-		color: #fff;
+		/*color: #fff;*/
 		float: left;
 		padding-left: 5%;
-		margin-right: 67%;
+		margin-right: 80%;
 	}
 	.applicationReg-delete:hover{
-		transform:scale(2,2);  
+		transform:scale(1.2,1.2);  
 	}
 	
 	.applicationReg-header a{

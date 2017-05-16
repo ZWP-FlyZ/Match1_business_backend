@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="twocolor">
-    <form class="grey">
+    <form class="grey grey-option">
       <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         卖家信用等级
@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="twocolor">
-      <form class="grey">
+      <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           审核方式
@@ -125,7 +125,7 @@
     
     <br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>
+      <router-link to="/bzprocess"  class="ok">确定</router-link>
     </div>
     <br/>
   </div>
@@ -143,7 +143,7 @@
     appearance:none;
   }
   .condition{
-    width:10%;
+    width:13%;
     float: left;
   }
   .condition-factory{
