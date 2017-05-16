@@ -45,16 +45,15 @@ display: table-cell;
   min-width: 100px;
 }
 
-
 .inputbox{
   display: table-cell;
   box-sizing: border-box;
-  border: 1px solid #ddd;
- width: 140px;
+  /*border: 1px solid #ddd;*/
+  width: 140px;
   font-size: 14px;
   text-align: left;
   height: 30px;
-  /*padding: 9px 4px 2px ;*/
+  padding: 9px 4px 2px ;
   margin-left: 2px;
   margin-bottom: 10px;
   position: relative;

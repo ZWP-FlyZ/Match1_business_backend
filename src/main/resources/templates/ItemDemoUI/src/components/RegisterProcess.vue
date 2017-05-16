@@ -75,10 +75,14 @@
     <div class = "heads">
       <div class = "condition">外部前置条件</div>
       <div>
-        <select class="inputbox condition-factory">
-          <option >前置条件库</option>
-          <option value='' ></option>
-        </select>
+        <ul id="myUl" class="inputbox condition-factory">
+          <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/368-expand.png" alt=""></li>
+          <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
+          <!-- <li value="2" class="liHide"><input type="checkbox">2</li>
+          <li value="3" class="liHide"><input type="checkbox">3</li> -->
+          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
+          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
+        </ul>
       </div>
     </div>
     <div class="twocolor">
@@ -116,10 +120,14 @@
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
       <div>
-        <select class="inputbox condition-factory">
-          <option >前置条件库</option>
-          <option value='' ></option>
-        </select>
+        <ul id="myUl" class="inputbox condition-factory">
+          <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/368-expand.png" alt=""></li>
+          <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
+          <!-- <li value="2" class="liHide"><input type="checkbox">2</li>
+          <li value="3" class="liHide"><input type="checkbox">3</li> -->
+          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
+          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
+        </ul>
       </div>
     </div>
     <div class="twocolor">
