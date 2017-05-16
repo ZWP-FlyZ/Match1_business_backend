@@ -86,37 +86,145 @@
       </div>
     </div>
     <div class="twocolor">
-    <form class="grey grey-option"> 
+      <form class="grey grey-option">
       <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
-        卖家信用等级
+        目标节点时限
       </div>
       <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = "1" autocomplete="on" autofocus="autofocus">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
       </div>
       <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="两颗星" autocomplete="on" >
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
       </div>
       <a href="#" class="addbottom">添加同类型配置项</a>
-
     </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-        产品认证
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"    value = "3" autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"    value = "产品已认证" autocomplete="on" autofocus="autofocus">
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-    </div>
 
-  <!--   <br/>
-    <br/> -->
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        是否第一次进入该节点
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = "" autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        商家信用等级
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        开店时间
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        转化率
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        违规记录
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+      销售记录
+      </div>
+      <div class="item">
+        <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"    value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"    value = "" autocomplete="on" autofocus="autofocus">
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        是否是良心卖家
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        七天无理由退货
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+    <form class="grey grey-option">
+      <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <div class="item condition-name">
+        置顶入选规则
+      </div>
+      <div class="item">
+        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+      </div>
+      <div class="item">
+        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
+      </div>
+      <a href="#" class="addbottom">添加同类型配置项</a>
+    </form>
+    </div>
+    
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
       <div>
@@ -134,27 +242,76 @@
       <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
-          审核方式
+          商家信用等级规则
         </div>
         <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value="2"  autocomplete="on" autofocus="autofocus">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="审核方式" autocomplete="on" >
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
-
       </form>
       <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
-          前置条件2
+          销售记录
         </div>
         <div class="item">
-          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value="4" autocomplete="on" autofocus="autofocus">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">名称：</label> <input type="text"  class="inputbox checkView"   value="类目" autocomplete="on" >
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
+        </div>
+        <a href="#" class="addbottom">添加同类型配置项</a>
+      </form>
+      <form class="grey grey-option">
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <div class="item condition-name">
+          产品信息
+        </div>
+        <div class="item">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
+        </div>
+        <div class="item">
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
+        </div>
+        <a href="#" class="addbottom">添加同类型配置项</a>
+      </form>
+      <form class="grey grey-option">
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <div class="item condition-name">
+          价格库存物流
+        </div>
+        <div class="item">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
+        </div>
+        <div class="item">
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
+        </div>
+        <a href="#" class="addbottom">添加同类型配置项</a>
+      </form>
+      <form class="grey grey-option">
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <div class="item condition-name">
+          特定类目规则
+        </div>
+        <div class="item">
+          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
+        </div>
+        <div class="item">
+          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
+        </div>
+        <a href="#" class="addbottom">添加同类型配置项</a>
+      </form>
+      <form class="grey">
+        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <div class="item condition-name">审查批准文号</div>
+        <div class="item">
+          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
+        </div>
+        <div class="item">
+          <label class="smallname">名称：</label> <input type="text"  class="inputbox checkView"   value="" autocomplete="on" >
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
@@ -186,7 +343,7 @@
         <form class="grey">
           <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
           <div class="item">
-            <label class="longname">信用等级大于几颗星：</label>
+            <label class="longname">参与角色：</label>
             <select class="longinput" >
               <option>前置条件库</option>
               <option value=''></option>
@@ -213,17 +370,23 @@
           <div class="items3">
             <form class="grey grey-option">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
               <div class="item">
-
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="一颗星" autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="人工1" autocomplete="on" >
               </div>
-
             </form>
             <!-- <br/> -->
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="审核方1" autocomplete="on" >
+              </div>
+            </form>
             <form class="grey">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
@@ -231,10 +394,11 @@
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="两颗星" autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="机审1" autocomplete="on" >
               </div>
 
             </form>
+
             <br/>
           </div>
         </div>
@@ -244,7 +408,7 @@
           <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
-            <label class="longname">是否良心卖家：</label>
+            <label class="longname">角色的权限：</label>
             <select class="longinput" >
               <option>前置条件库</option>
               <option value=''></option>
@@ -274,16 +438,23 @@
           <div class="items3">
             <form class="grey grey-option">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="是"  autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="可写"  autocomplete="on" >
               </div>
-
             </form>
             <!-- <br/> -->
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="读写"  autocomplete="on" >
+              </div>
+            </form>
             <form class="grey">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
@@ -291,14 +462,186 @@
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
               <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="否"  autocomplete="on" >
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="限制性读"  autocomplete="on" >
               </div>
 
             </form>
             <br/>
           </div>
         </div>
+      </div>
+       <div class="twocolor">
+        <form class="grey">
+          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
+          <div class="item">
+            <label class="longname">角色的期限：</label>
+            <select class="longinput" >
+              <option>前置条件库</option>
+              <option value=''></option>
+            </select>
+          </div>
+          <div class="item">
+            <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value="KKY" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="" autocomplete="on" >
+          </div>
+
+          <a href="#" class="addbottom">添加同类型配置项</a>
+        </form>
+        <div class="items2">
+          <div class="item">
+            <label class="longname">配置项值选项</label>
+            <select class="inputbox" >
+              <option>单选</option>
+              <option value=''></option>
+            </select>
+          </div>
+
+          <a href="#" class="rightaddbottom">添加值选项</a>
+          <div class="items3">
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="1天"  autocomplete="on" >
+              </div>
+            </form>
+            <!-- <br/> -->
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="2天"  autocomplete="on" >
+              </div>
+            </form>
+            <form class="grey">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="3天"  autocomplete="on" >
+              </div>
+            </form>
+            <br/>
+          </div>
+        </div>
+      </div>
+      <div class="twocolor">
+        <form class="grey">
+          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+
+          <div class="item">
+            <label class="longname">节点状态：</label>
+            <select class="longinput" >
+              <option>前置条件库</option>
+              <option value=''></option>
+            </select>
+          </div>
+          <div class="item">
+            <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value="KKY" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="" autocomplete="on" >
+          </div>
+
+          <a href="#" class="addbottom">添加同类型配置项</a>
+        </form>
+        <div class="items2">
+          <div class="item">
+            <label class="longname">配置项值选项</label>
+            <select class="inputbox" >
+              <option>单选</option>
+              <option value=''></option>
+            </select>
+          </div>
+
+          <a href="#" class="rightaddbottom">添加值选项</a>
+          <div class="items3">
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="等待"  autocomplete="on" >
+              </div>
+            </form>
+            <!-- <br/> -->
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="已完成"  autocomplete="on" >
+              </div>
+            </form>
+            
+            <br/>
+          </div>
+        </div>
+      </div>
+      <div class="twocolor">
+        <form class="grey">
+          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+
+          <div class="item">
+            <label class="longname">关联的数据来源：</label>
+            <select class="longinput" >
+              <option>前置条件库</option>
+              <option value=''></option>
+            </select>
+          </div>
+          <div class="item">
+            <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value="KKY" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="" autocomplete="on" >
+          </div>
+
+          <a href="#" class="addbottom">添加同类型配置项</a>
+        </form>
+        <div class="items2">
+          <div class="item">
+            <label class="longname">配置项值选项</label>
+            <select class="inputbox" >
+              <option>单选</option>
+              <option value=''></option>
+            </select>
+          </div>
+
+          <a href="#" class="rightaddbottom">添加值选项</a>
+          <div class="items3">
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="节点"  autocomplete="on" >
+              </div>
+            </form>
+            <!-- <br/> -->
+            <form class="grey grey-option">
+              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <div class="item">
+                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
+              </div>
+              <div class="item">
+                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="数据库"  autocomplete="on" >
+              </div>
+            </form>
+            <br/>
+          </div>
+        </div>
       </div>
     </div>
     <br/>
