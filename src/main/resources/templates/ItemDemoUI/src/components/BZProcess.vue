@@ -5,7 +5,7 @@
     <div class="BZProcess-register">
       <ul>
           <li class = "BZProcess-classify">分类</li>
-          <li class = "BZProcess-create"><router-link to="/registerProcess" class = "link-btn link-btn-primary">注册流程</router-link></li>
+          <li class = "BZProcess-create"><router-link to="/registerProcess" class = "link-btn link-btn-default">注册流程</router-link></li>
       </ul>
     </div>
     <div class = "classfy-table">
@@ -22,7 +22,7 @@
           <div class="process"><img v-bind:src="i.imgPath" /></div>
           <div class = "process-button">
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
-            <router-link to="/registerProcess" class = "link-btn link-btn-primary">查看</router-link>
+            <router-link to="/registerProcess" class = "link-btn link-btn-look">查看</router-link>
             <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
           </div>
         </div>

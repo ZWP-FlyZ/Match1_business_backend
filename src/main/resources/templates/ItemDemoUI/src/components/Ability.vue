@@ -5,7 +5,7 @@
     <div class="Ability-register">
       <ul>
           <li class = "ability-reg">能力</li>
-          <li class = "ability-create"><router-link to="/registerAbility" class = "link-btn link-btn-primary">创建能力</router-link></li>
+          <li class = "ability-create"><router-link to="/registerAbility" class = "link-btn link-btn-default">创建能力</router-link></li>
       </ul>
     </div>
     <div class = "Ability-list">
@@ -13,7 +13,7 @@
         <ul>
           <li class = "Ability-name">{{item.name}}</li>
           <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerAbility" class = "link-btn link-btn-look">查看</router-link></li>
           <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)">删除</button></li>
         </ul>
       </div>

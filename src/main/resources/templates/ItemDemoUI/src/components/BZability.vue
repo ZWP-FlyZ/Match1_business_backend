@@ -5,7 +5,7 @@
     <div class="BZability-register">
       <ul>
           <li class = "BZability-reg">业务能力</li>
-          <li class = "BAability-create"><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">注册业务能力</router-link></li>
+          <li class = "BAability-create"><router-link to="/registerBZAbility" class = "link-btn link-btn-default">注册业务能力</router-link></li>
       </ul>
     </div>
     <div class = "BZability-list">
@@ -13,7 +13,7 @@
         <ul>
           <li class = "BZability-name">{{item.name}}</li>
           <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">查看</router-link></li>
+          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-look">查看</router-link></li>
           <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)">删除</button></li>
         </ul>
       </div>

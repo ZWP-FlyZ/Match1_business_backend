@@ -13,7 +13,6 @@ import RegisterProcess from '@/components/RegisterProcess'
 import RegisterBZAbility from '@/components/RegisterBZAbility'
 import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
-import RegisterApplication from'@/components/RegisterApplication'
 import ConfigPreCondition from '@/components/ConfigPreCondition'
 import GraphProcess from '@/components/GraphProcess'
 
@@ -72,10 +71,6 @@ export default new Router({
     {
     path: '/registerAbility',
     component: RegisterAbility
-    },
-    {
-    path: '/registerApplication',
-    component: RegisterApplication
     },
     {
     path: '/configPreCondition',

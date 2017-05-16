@@ -11,18 +11,25 @@
 					</li>
 				</ul>
 			</div>
-			<router-link to="/registerApplication" class = "btn btn-primary">注册应用</router-link>
+      <button class = "link-btn link-btn-primary" @click="openApp">注册应用</button>
+      <IMask :hide-mask.sync="hideMask"></IMask>
+      <RegisterApplication :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask"  v-on:isClose="closeDialog"></RegisterApplication>
 		</div>
 </template>
 
 <script>
+import IMask from './Mask'
+import RegisterApplication from './RegisterApplication'
 export default {
   data(){
     return {
       isActive:'0',
-	    appList:[]
+	    appList:[],
+      hideMask:true,
+      hideDialog:true
 	}
   },
+  components:{'IMask':IMask,'RegisterApplication':RegisterApplication},
   mounted:function(){
   	this.$nextTick(function(){
   		this.getApplication();
@@ -36,7 +43,15 @@ export default {
   		this.$http.get("/api/getList").then(res=>{
   			this.appList = JSON.parse(res.body.data).result.appList;
   		})
-  	}
+  	},
+    openApp:function(){
+      this.hideMask = !this.hideMask
+      this.hideDialog = !this.hideDialog
+    },
+    closeDialog:function(childData){
+      this.hideDialog = childData
+      this.hideMask = childData
+    }
   }
 }
 </script>

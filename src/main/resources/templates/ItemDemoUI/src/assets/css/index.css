@@ -82,7 +82,7 @@ span.tabs-BZ-total{
 .nav li .tab-icon-bza{background-position: -55px 0px}
 .nav .tab-active .tab-icon-bza-active{background-position: -93px 0px}
 .nav li .tab-icon-abl{background-position: 0px 0px}
-.nav .tab-active .tab-icon-temp-abl{background-position: -27px 0px}
+.nav .tab-active .tab-icon-zbl-active{background-position: -25px 0px}
 .nav> li .link{display: block;padding:15px 0px;}
 .nav> li:hover{
   text-decoration: none;
@@ -267,21 +267,59 @@ button{
   	border: 1px solid transparent;
   	border-radius: 4px;
 }
-.link-btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
+.link-btn-default{
+  color: #fff;
+  background-color: #357ebd;
   border-color: #357ebd;
 }
-.link-btn-delete{
-	color: #ffffff;
-    background-color: #999999;
-    border-color: #357ebd;
+.link-btn-default:hover{
+  color: #357ebd;
+  background-color: #fff;
+  border-color: #357ebd;
+}
+/*彩色，hover更彩*/
+.link-btn-blue{
+	color: #fff;
+  	background-color: #357ebd;
+  	border-color: #357ebd;
+}
+.link-btn-blue:hover{
+	color: #357ebd;
+  	background-color: #fff;
+  	border-color: #357ebd;
+}
+.link-btn-red{
+	color: #1f2d3d;
+  	background-color: #fff;
+  	border-color: #f7ba2a;
+}
+.link-btn-red:hover{
+	color: #f7ba2a;
+  	background-color: #fff;
+  	border-color: #f7ba2a;
+}
+/*浅色按钮，hover彩色*/
+.link-btn-primary,.link-btn-look,.link-btn-delete{
+  color: #1f2d3d;
+  background-color: #fff;
+  border-color: #bfcbd9;
+
+}
+.link-btn-primary:hover{
+  color: #357ebd;
+  background-color: #fff;
+  border-color: #357ebd;
+}
+.link-btn-look:hover{
+	color: #13ce66;
+  	background-color: #fff;
+  	border-color: #13ce66;
+}
+.link-btn-delete:hover{
+	color: #ff6d6d;
+    background-color: #fff;
+    border-color: #ff6d6d;
 }
 .btn:hover{
 	color: #000;
 }
-.link-btn:hover{
-	color: #000;
-}
-
-

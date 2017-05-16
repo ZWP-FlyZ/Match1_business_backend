@@ -5,7 +5,7 @@
     <div class="template-center">
     <div class="template-head">
       <div class="head-left">页面模板</div>
-      <router-link to="/registerPageTemplate"  class="head-creat">创建页面模板</router-link>
+      <router-link to="/registerPageTemplate"  class="link-btn link-btn-default head-creat">创建页面模板</router-link>
     </div>
       <div class="template-body">
         <div class="one-container" v-for="(item,index) in pageList">
@@ -15,11 +15,11 @@
               <img v-bind:src="item.imgPath" class="template-img">
             </div>
             <div class="bottoms">
-              <router-link to="/registerPageTemplate" class="bottom-item">配置</router-link>
+              <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link>
               <br/>
-              <a href="#" class="bottom-item">查看</a>
+              <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
               <br/>
-               <button class="delete" @click="deleteDialog(item)">删除</button>
+               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
             </div>
           </div>
         </div>
@@ -162,25 +162,12 @@
 
  }
  .bottom-item{
-   color: #ffffff;
-   background-color: #428bca;
-   border-color: #357ebd;
-   text-align: center;
-   text-decoration: none;
-
    float:right;
    position: relative;
    right: 5px;
    top:20px;
    left:20px;
-
    margin: 5px;
-   padding: 6px 12px;
-   border-radius: 4px;
- }
- .bottom-item:hover {
-   text-decoration: none;
-   color:black;
  }
  .delete{
    text-align: center;

@@ -1,10 +1,6 @@
 <template>
 
-	<div class = "applicationReg">
-		<div class = "applicationReg-header">
-			<p>应用基本信息</p>
-			<router-link to="/bzprocess"><img src="../assets/img/delete.png" alt="" class = "applicationReg-delete"></router-link>
-		</div>
+	<div class = "applicationReg" v-bind:class="{'hide-dialog':hideDialog}">
 		<div class = "applicationReg-des">
 			<form action="">
 			<div class="applicationReg-des-div">
@@ -18,10 +14,6 @@
 			<div class="applicationReg-des-div">
 				<label for="">负责人:</label>
 				<input type="text"  placeholder="xxxx">
-			</div>
-			<div class="applicationReg-des-div">
-				<label for="">注册日期:</label>
-				<input type="date"  value="2017-05-11"/>
 			</div>
 			</form>
 		</div>
@@ -40,20 +32,33 @@
 				<label for=""><b>对外服务人员:</b></label>
 				<input type="text" >
 			</form>
-		</div>
+		</div><!-- 
 		<div class = "theme-content person">
 			<form action="" class = "form-theme">
 				<label for=""><b>有权限编辑人员:</b></label>
 				<input type="text" >
 			</form>
-		</div>
+		</div> -->
 		<div class = "applicationReg-submit">
 			<a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确定</router-link></a>
+			<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 		</div>
 	</div>
 	
 </template>
+<script>
+	export default{
+		props:['hideDialog','hideMask'],
+		methods:{
+			closeDialog:function(){
+				this.$emit("isClose",!this.hideDialog)
+			}
+		}
+	}
+</script>
 <style>
+    .hide-dialog{display: none}
+    .applicationReg{width:900px;background-color: #fff;z-index:100;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 4px 4px 3px #888}
 	.applicationReg-header{
 		text-align: left;
 	    font: 15px/40px Arial, sans-serif;
@@ -83,7 +88,6 @@
 		margin-top: 30px;
 		/*padding-left: 5%;*/
 		padding-left: 20px;
-		width: 760px;
 	}
 	.applicationReg-des-div{
 		float: left;
@@ -93,7 +97,7 @@
 	.applicationReg-des label{
 		/*margin-right: 5px;*/
 		display: inline-block;
-		width: 67px;
+		width: 90px;
 	}
 	.applicationReg-des input{
 		border: 1px solid #000;

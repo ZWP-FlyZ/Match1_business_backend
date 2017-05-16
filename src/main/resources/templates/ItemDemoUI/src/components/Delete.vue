@@ -3,24 +3,24 @@
 		<!-- <div class="delete-modal"> -->
 	      <div class="delete-modal-dialog">
 	        <div class="delete-modal-content">
-				<div class = "deleteAability-header">
+				<!-- <div class = "deleteAability-header">
 					 <h4 class="delete-modal-title">删除确认</h4>
 					 <div class = "delete-modal-delete-div">
 		             <img src="../assets/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
 		            </div>
-				</div>
+				</div> -->
 
 			<div class="delete-modal-body">
 				<div class = "delete-modal-delete-confirm">
-					确认删除以下内容：
+					<span class="icon-delete"></span>确认删除以下内容：
 				</div>
 				<div class = " delete-modal-delete-content">
 					{{message.item.name}}
 				</div>
 			</div>
 			<div class = "delete-modal-footer">
-				<button class = "btn btn-primary" @click="confirmDelete">确认</button>
-				<button @click="closeDialog" class = "btn btn-delete">取消</button>
+				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
+				<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 			</div>
 			</div>
 		  </div>
@@ -45,6 +45,7 @@
 </script>
 <style>
 	.hideDialog{display: none}
+	.icon-delete{background-position: -248px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -9px;}
 	.deleteAability{
 		/*border:1px solid red;*/
 		width: 420px;
@@ -52,8 +53,9 @@
 		/*margin:0 auto;*/
 		position: fixed;
 		top: 30%;
-		left: 40%;
-	}
+		left: 35%;
+		z-index:100;
+	}/*
 	.deleteAability-header{
 		background: #0099FF;
 		height: 45px;
@@ -64,7 +66,7 @@
 		padding-left: 5%;
 		float: left;
 		margin-right: 55%;
-	}
+	}*/
 	.ability-delete:hover{
 		transform: scale(1.2,1.2);
 	}
