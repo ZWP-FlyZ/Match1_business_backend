@@ -7,18 +7,18 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView"  value="商品发布" autocomplete="on" autofocus="autofocus">
+        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView"  value="淘宝一口价商品发布填写商品信息模板" autocomplete="on" autofocus="autofocus">
         </div>
 
         <div class="item">
-        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="发布商品" autocomplete="on" >
+        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="填写商品信息模板" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="13241" autocomplete="on" >
+          <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="TBPUBLISH" autocomplete="on" >
         </div>
 
         <div class="item">
-        <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx" autocomplete="on" >
+        <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView"  value="应用1" autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
@@ -36,31 +36,43 @@
         <!-- <label class="longname">关联的流程节点:1，2</label> -->
 
           <select class="longinput checkView page-SelectList" >
-            <option>一级流程（多选）</option>
-            <option value=''>商品发布</option>
+            <option value=''>招商</option>
+            <option value=''>组织货品</option>
+            <option value=''>导购</option>
           </select>
           <select class="longinput checkView page-SelectList" >
-            <option>二级流程（多选）</option>
-            <option value=''>商品发布</option>
+            <option value=''>淘宝一口价商品发布</option>
+            <option value=''>淘宝拍卖商品发布</option>
+            <option value=''>天猫一口价商品发布</option>
+            <option value=''>天猫拍卖商品发布</option>
+            <option value=''>聚划一口价算商品发布</option>
+            <option value=''>天猫一口价算商品发布</option>
           </select>
           <select class="longinput checkView page-SelectList" >
-            <option>二级流程节点（多选）</option>
-            <option value=''>商品发布</option>
+            <option value=''>获取类目列表</option>
+            <option value=''>选择货品类目</option>
+            <option value=''>是否使用产品模板</option>
+            <option value=''>填写商品信息</option>
+            <option value=''>搜索获取货品模板</option>
+            <option value=''>审核</option>
+            <option value=''>机器审核</option>
           </select>
           <select class="longinput checkView page-SelectList" >
-            <option>角色列表（多选）</option>
-            <option value=''>ID</option>
+            <option>活动小二</option>
+            <option>流量小二</option>
+            <option>渠道小二</option>
+            <option>商家</option>
           </select>
           <div class="relate-choose-list">
             <div class="back-color">
-                <div class="relate-choose-button">流程节点1</div>
+                <div class="relate-choose-button">天猫一口价--填写商品信息</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
-                <div class="relate-choose-button">流程节点2</div>
+                <div class="relate-choose-button">淘宝一口价--填写商品信息</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
@@ -75,7 +87,7 @@
       <form  class="yellow">
         <div class="item-row">
           <div class="item item-select-relate ">
-            <label class="smallname">模块1</label>
+            <label class="smallname">宝贝基本信息</label>
             <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
@@ -87,13 +99,16 @@
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
             <select class="inputbox checkView" >
-              <option></option>
-              <option value='acura'></option>
+              <option>宝贝标题</option>
+              <option value='acura'>宝贝卖点</option>
+              <option value='acura'>宝贝类型</option>
+              <option value='acura'>描述帆布鞋</option>
+              <option value='acura'>描述篮球鞋</option>
             </select>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
-                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-button">宝贝卖点</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
@@ -101,7 +116,7 @@
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
-            <label class="smallname">模块1</label>
+            <label class="smallname">支付信息</label>
             <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
@@ -113,13 +128,13 @@
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
             <select class="inputbox checkView" >
-              <option></option>
-              <option value='acura'></option>
+              <option>会员打折</option>
+              <option value='acura'>预售</option>
             </select>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
-                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-button">预售</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
@@ -127,7 +142,7 @@
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
-            <label class="smallname">模块1</label>
+            <label class="smallname">物流信息</label>
             <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
@@ -139,13 +154,41 @@
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
             <select class="inputbox checkView" >
-              <option></option>
-              <option value='acura'></option>
+              <option>运费模板</option>
+              <option value='acura'>电子凭证</option>
             </select>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
-                <div class="relate-choose-button">业务能力1</div>
+                <div class="relate-choose-button">运费模板</div>
+                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item item-select-relate">
+            <label class="smallname">售后信息</label>
+            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+          </div>
+          <div class="item item-select-relate">
+            <label class="longname">业务能力剖面：</label>
+            <select class="inputbox checkView" >
+              <option>发票</option>
+              <option value='acura'>保修</option>
+              <option value='acura'>退换货</option>
+              <option value='acura'>无理由退货</option>
+            </select>
+          </div>
+          <div class="relate-choose-list">
+            <div class="back-color">
+                <div class="relate-choose-button">发票</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
@@ -161,7 +204,7 @@
       <form class="grey">
         <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
-        <label class="longname">信用等级大于几颗星：</label>
+        <label class="longname">卖家信用等级</label>
         <select class="longinput" >
           <option>前置条件库</option>
           <option value=''></option>
@@ -176,7 +219,7 @@
 
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
-        <div class="items2">
+        <!-- <div class="items2">
           <div class="item">
           <label class="longname">配置项值选项</label>
           <select class="inputbox" >
@@ -212,69 +255,9 @@
             </form>
             <br/>
           </div>
-        </div>
+        </div> -->
       </div>
-      <div class="twocolor">
-        <form class="grey">
-          <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-      <div class="item">
-          <label class="longname">是否良心卖家：</label>
-          <select class="longinput" >
-            <option>前置条件库</option>
-            <option value=''></option>
-          </select>
-      </div>
-          <div class="item">
-          <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="KKY" autocomplete="on" autofocus="autofocus">
-          </div>
-          <div class="item">
-          <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder=""  autocomplete="on" >
-          </div>
-
-          <a href="#" class="addbottom">添加同类型配置项</a>
-        </form>
-        <div class="items2">
-
-        <div class="item">
-          <label class="longname">配置项值选项</label>
-          <select class="inputbox" >
-            <option>单选</option>
-            <option value=''></option>
-          </select>
-        </div>
-
-
-          <a href="#" class="rightaddbottom">添加值选项</a>
-          <div class="items3">
-            <form class="grey">
-              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-          <div class="item">
-              <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="1"  autocomplete="on" autofocus="autofocus">
-          </div>
-              <div class="item">
-              <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="是" autocomplete="on" >
-              </div>
-
-            </form>
-            <br/>
-            <form class="grey">
-              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-          <div class="item">
-              <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2" autocomplete="on" autofocus="autofocus">
-          </div>
-              <div class="item">
-              <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="否"  autocomplete="on" >
-              </div>
-
-            </form>
-            <br/>
-          </div>
-        </div>
-
-      </div>
+      
     </div>
   <br/>
     <div class="bottom" >
