@@ -1,5 +1,4 @@
 <template>
-
 	<div class = "applicationReg" v-bind:class="{'hide-dialog':hideDialog}">
 		<div class = "applicationReg-des">
 			<form action="">
@@ -58,7 +57,7 @@
 </script>
 <style>
     .hide-dialog{display: none}
-    .applicationReg{width:900px;background-color: #fff;z-index:100;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 4px 4px 3px #888}
+    .applicationReg{width:900px;background-color: #fff;z-index:100;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
 	.applicationReg-header{
 		text-align: left;
 	    font: 15px/40px Arial, sans-serif;
@@ -113,7 +112,7 @@
 		width: 760px;
 		clear: both;
 		display: table;
-		margin-left: 8px;
+		margin-left: 20px;
 		margin-top: 30px;
 	}
 

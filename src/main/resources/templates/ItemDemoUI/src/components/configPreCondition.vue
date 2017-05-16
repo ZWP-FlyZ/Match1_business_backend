@@ -50,12 +50,12 @@
           <option value='' ></option>
         </select> -->
         <ul id="myUl" class="inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/368-expand.png" alt=""></li>
+          <li class="liMenu" id = "liMenu-select" @click="change">前置条件库<img src="../assets/img/368-expand.png" alt=""></li>
           <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
           <!-- <li value="2" class="liHide"><input type="checkbox">2</li>
           <li value="3" class="liHide"><input type="checkbox">3</li> -->
-          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
-          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
+          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b>2</b></li>
+          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b>3</b></li>
         </ul>
 
       </div>
@@ -205,31 +205,31 @@
 
 </style>
 <script>
-
-    var nextState=1;
-
-    function change(obj){
-
-    var liArray=document.getElementsByTagName("LI");
-
-    var i=1;
+    export default{
+      data(){
+        return {
+          nextState:1
+        }
+      },
+      methods:{
+        change:function(){
+          alert(this.nextState)
+          var liArray=document.getElementById("myUl");
+          var arr = liArray.getElementsByTagName("li")
+          var i=1;
 
     var length=liArray.length;
-
-    switch(nextState){
-
+    switch(this.nextState){
     case 1:
-
        // obj.innerHTML="当前选择↑";
-      document.getElementById("liMenu-select").innerHTML="当前选择" + '<img src="../assets/img/370-collapse-top.png" alt="">';
+      document.getElementById("liMenu-select").innerHTML="当前选择111" + '<img src="./assets/img/370-collapse-top.png" alt="">';
 
-      for(;i<length;i++){
-
-      liArray[i].className="liShow";
+      for(;i<arr.length;i++){
+      arr[i].className="liShow";
 
       }
 
-      nextState=0;
+      this.nextState=0;
 
     break;
 
@@ -237,17 +237,21 @@
 
       document.getElementById("liMenu-select").innerHTML="当前选择" + '<img src="../assets/img/368-expand.png" alt="">';
 
-      for(;i<length;i++){
+      for(;i<arr.length;i++){
 
-      liArray[i].className="liHide";
-
-      }
-
-      nextState=1;
+      arr[i].className="liHide";
 
       }
 
+      this.nextState=1;
+
       }
+
+      }
+        }
+    }
+
+    
   </script>
 
 
