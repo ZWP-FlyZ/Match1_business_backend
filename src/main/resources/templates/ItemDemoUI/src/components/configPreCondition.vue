@@ -42,13 +42,31 @@
    
     <div class = "heads">
       <div class = "condition">外部前置条件</div>
-      <div>
+      <!-- <div>
         <ul id="myUl" class="inputbox condition-factory">
           <li class="liMenu" id = "liMenu-select" @click="change">前置条件库<img src="../assets/img/glyphicons-368-expand.png" alt=""></li>
           <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
           <li value = " " class="liHide"><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b>2</b></li>
           <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b>3</b></li>
         </ul>
+      </div> -->
+      <div class="item">
+        <!-- <label class="longname">参与角色：</label> -->
+        <select class="longinput" >
+          <option>目标节点时限</option>
+          <option value=''>是否第一次进入该节点</option>
+          <option value=''>商家信用等级</option>
+          <option value=''>开店时间 </option>
+          <option value=''>转化率</option>
+          <option value=''>违规记录</option>
+          <option value=''>销售记录</option>
+          <option value=''>是否是良心卖家</option>
+          <option value=''>七天无理由退货</option>
+          <option value=''>商家信用等级规则</option>
+          <option value=''>知名品牌高危质检</option>
+          <option value=''>活动时间类型</option>
+          <option value=''>冲突管理规则</option>
+        </select>
       </div>
     </div>
     <div class="twocolor">
@@ -136,12 +154,12 @@
       <a href="#" class="addbottom">添加同类型配置项</a>
     </form>
 
-    <form class="grey">
+    <form class="grey grey-option">
       <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
       销售记录
       </div>
-      <div class="item">
+      <div class="item ">
         <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"    value = " " autocomplete="on" autofocus="autofocus">
       </div>
       <div class="item">
@@ -196,13 +214,32 @@
     <br/>
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
-      <div>
+      <!-- <div>
         <ul id="myUl" class="inputbox condition-factory">
           <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/glyphicons-368-expand.png" alt=""></li>
           <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
           <li value = " " class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
           <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
         </ul>
+      </div> -->
+      <div class="item">
+        <!-- <label class="longname">参与角色：</label> -->
+        <select class="longinput" >
+          <option>商家信用等级规则</option>
+          <option value=''>开店时间</option>
+          <option value=''>转化率</option>
+          <option value=''>违规记录</option>
+          <option value=''>销售记录</option>
+          <option value=''>是否是良心卖家</option>
+          <option value=''>七天无理由退货</option>
+          <option value=''>消保协议</option>
+          <option value=''>退货率</option>
+          <option value=''>评论数</option>
+          <option value=''>发货速度</option>
+          <option value=''>特定类目规则</option>
+          <option value=''>产品信息</option>
+          <option value=''>详细描述</option>
+        </select>
       </div>
      
     </div>
