@@ -14,8 +14,9 @@ import RegisterBZAbility from '@/components/RegisterBZAbility'
 import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 import RegisterApplication from'@/components/RegisterApplication'
-import Delete from '@/components/Delete'
 import ConfigPreCondition from '@/components/ConfigPreCondition'
+import GraphProcess from '@/components/GraphProcess'
+
 
 Vue.use(Router)
 
@@ -29,6 +30,10 @@ export default new Router({
   {
   path: '/login',
   component: Login
+  },
+  {
+  path:'/graphProcess',
+  component:GraphProcess
   },
   {
   path: '/content',
@@ -71,10 +76,6 @@ export default new Router({
     {
     path: '/registerApplication',
     component: RegisterApplication
-    },
-    {
-    path: '/delete',
-    component: Delete
     },
     {
     path: '/configPreCondition',
