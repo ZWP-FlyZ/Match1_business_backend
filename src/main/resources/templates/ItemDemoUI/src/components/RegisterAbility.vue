@@ -162,8 +162,6 @@
         <router-link to="/pagetemplate"  class="ok">确定</router-link>
       </div>
       <br/>
-
-
     </div>
   </div>
 </template>

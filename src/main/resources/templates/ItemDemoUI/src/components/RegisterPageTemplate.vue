@@ -33,8 +33,6 @@
     </div>
     <div class="yellow yellow-div">
       <div class="items">
-        <!-- <label class="longname">关联的流程节点:1，2</label> -->
-
           <select class="longinput checkView page-SelectList" >
             <option value=''>招商</option>
             <option value=''>组织货品</option>
@@ -63,7 +61,11 @@
             <option>渠道小二</option>
             <option>商家</option>
           </select>
-          <div class="relate-choose-list">
+           <select class="longinput checkView page-SelectList" >
+            <option>天猫一口价--填写商品信息</option>
+            <option>淘宝一口价--填写商品信息</option>
+          </select>
+          <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">天猫一口价--填写商品信息</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
@@ -76,7 +78,7 @@
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
-          </div>
+          </div> -->
       </div>
       
     </div>
@@ -106,13 +108,18 @@
               <option value='acura'>描述篮球鞋</option>
             </select>
           </div>
-          <div class="relate-choose-list">
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 宝贝卖点， </label>
+            <label class="smallnamed"> 宝贝类型， </label>
+            <label class="smallnamed"> 描述帆布鞋 </label>
+          </div>
+          <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">宝贝卖点</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
@@ -132,13 +139,17 @@
               <option value='acura'>预售</option>
             </select>
           </div>
-          <div class="relate-choose-list">
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 会员打折， </label>
+            <label class="smallnamed"> 预售 </label>
+          </div>
+          <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">预售</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
@@ -158,12 +169,16 @@
               <option value='acura'>电子凭证</option>
             </select>
           </div>
-          <div class="relate-choose-list">
+          <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">运费模板</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
+          </div> -->
+           <div class="item item-select-relate">
+            <label class="smallnamed"> 运费模板， </label>
+            <label class="smallnamed"> 电子凭证 </label>
           </div>
         </div>
         <div class="item-row">
@@ -186,13 +201,16 @@
               <option value='acura'>无理由退货</option>
             </select>
           </div>
-          <div class="relate-choose-list">
+          <div class="item item-select-relate">
+            <label class="smallnamed"> 发票 </label>
+          </div>
+          <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">发票</div>
                 <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </form>
 

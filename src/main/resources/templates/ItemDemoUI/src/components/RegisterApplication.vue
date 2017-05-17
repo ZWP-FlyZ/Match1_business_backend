@@ -38,8 +38,8 @@
 				<input type="text" >
 			</form>
 		</div> -->
-		<div class = "applicationReg-submit">
-			<a href="" ><router-link to="/bzprocess" class = "btn btn-primary">确定</router-link></a>
+		<div class = "delete-modal-footer">
+			<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
 			<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 		</div>
 	</div>
@@ -106,7 +106,8 @@
 		padding-left: 5px;
 	}
 	.theme-content{
-		background: #F2F2F2;
+		/*background: #F2F2F2;灰色*/
+		background: #E8F5FB;
 		/*width: 70%;*/
 		border-radius: 6px;
 		width: 760px;
@@ -115,7 +116,6 @@
 		margin-left: 20px;
 		margin-top: 30px;
 	}
-
 	.applicationReg label b{
 		/*font-size: 15px;*/
 		margin-right: 5px;
@@ -128,6 +128,7 @@
 	.form-theme input{
 		height: 30px;
 		width: 85%;
+		background: lightgoldenrodyellow;
 	}
 	.form-content{
 		margin-top: 40px;
@@ -145,8 +146,8 @@
 		background-color:#fff;
 		margin-bottom: 40px;
 		width: 85%;
+		background: lightgoldenrodyellow;
 	}
-
 	.person input{
 		width: 75%;
 	}
@@ -156,7 +157,6 @@
 	.person .form-theme{
 		padding-bottom: 40px;
 	}
-
 	body{
 		font:15px/1.62 Helvetica,Arial,sans-serif;
 		background-color:#fff;

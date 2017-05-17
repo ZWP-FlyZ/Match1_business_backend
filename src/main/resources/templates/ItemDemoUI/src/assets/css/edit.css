@@ -48,7 +48,7 @@ display: table-cell;
 .inputbox{
   display: table-cell;
   box-sizing: border-box;
-  /*border: 1px solid #ddd;*/
+  border: 1px solid #ddd;
   width: 140px;
   font-size: 14px;
   text-align: left;

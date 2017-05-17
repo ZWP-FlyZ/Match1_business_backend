@@ -36,7 +36,7 @@
           <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView develop-date"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>
@@ -74,32 +74,24 @@
 
     <div class = "heads">
       <div class = "condition">外部前置条件</div>
-      <!-- <div>
-        <ul id="myUl" class="inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/glyphicons-368-expand.png" alt=""></li>
-          <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
-          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
-          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
-        </ul>
-      </div> -->
-      <div class="item">
-        <!-- <label class="longname">参与角色：</label> -->
-        <select class="longinput" >
-          <option>目标节点时限</option>
-          <option value=''>是否第一次进入该节点</option>
-          <option value=''>商家信用等级</option>
-          <option value=''>开店时间 </option>
-          <option value=''>转化率</option>
-          <option value=''>违规记录</option>
-          <option value=''>销售记录</option>
-          <option value=''>是否是良心卖家</option>
-          <option value=''>七天无理由退货</option>
-          <option value=''>商家信用等级规则</option>
-          <option value=''>知名品牌高危质检</option>
-          <option value=''>活动时间类型</option>
-          <option value=''>冲突管理规则</option>
-        </select>
-      </div>
+        <div class="item">
+          <!-- <label class="longname">参与角色：</label> -->
+          <select class="longinput" >
+            <option>目标节点时限</option>
+            <option value=''>是否第一次进入该节点</option>
+            <option value=''>商家信用等级</option>
+            <option value=''>开店时间 </option>
+            <option value=''>转化率</option>
+            <option value=''>违规记录</option>
+            <option value=''>销售记录</option>
+            <option value=''>是否是良心卖家</option>
+            <option value=''>七天无理由退货</option>
+            <option value=''>商家信用等级规则</option>
+            <option value=''>知名品牌高危质检</option>
+            <option value=''>活动时间类型</option>
+            <option value=''>冲突管理规则</option>
+          </select>
+        </div>
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
@@ -243,32 +235,23 @@
     
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
-     <!--  <div>
-        <ul id="myUl" class="inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select" onclick="change(this);">前置条件库<img src="../assets/img/glyphicons-368-expand.png" alt=""></li>
-          <li value="1" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>前置条件库</b></li>
-          <li value="2" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>2</b></li>
-          <li value="3" class="liHide"><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b>3</b></li>
-        </ul>
-      </div> -->
-      <div class="item">
-            <!-- <label class="longname">参与角色：</label> -->
-          <select class="longinput" >
-            <option>商家信用等级规则</option>
-            <option value=''>开店时间</option>
-            <option value=''>转化率</option>
-            <option value=''>违规记录</option>
-            <option value=''>销售记录</option>
-            <option value=''>是否是良心卖家</option>
-            <option value=''>七天无理由退货</option>
-            <option value=''>消保协议</option>
-            <option value=''>退货率</option>
-            <option value=''>评论数</option>
-            <option value=''>发货速度</option>
-            <option value=''>特定类目规则</option>
-            <option value=''>产品信息</option>
-            <option value=''>详细描述</option>
-          </select>
+        <div class="item">
+            <select class="longinput" >
+              <option>商家信用等级规则</option>
+              <option value=''>开店时间</option>
+              <option value=''>转化率</option>
+              <option value=''>违规记录</option>
+              <option value=''>销售记录</option>
+              <option value=''>是否是良心卖家</option>
+              <option value=''>七天无理由退货</option>
+              <option value=''>消保协议</option>
+              <option value=''>退货率</option>
+              <option value=''>评论数</option>
+              <option value=''>发货速度</option>
+              <option value=''>特定类目规则</option>
+              <option value=''>产品信息</option>
+              <option value=''>详细描述</option>
+            </select>
           </div>
     </div>
     <div class="twocolor">
@@ -615,7 +598,6 @@
                 <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="等待"  autocomplete="on" >
               </div>
             </form>
-            <!-- <br/> -->
             <form class="grey grey-option">
               <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
@@ -749,19 +731,9 @@
 
 </template>
 <style>
-   .checkView{
-    border-style:none;
-    /*color: #7692C2;*/
-    color: #878787;
-  }
   .SelectList{
     border-style:none;
     appearance:none;
-  }
-  .develop-date{
-    /*style:none;*/
-    /*border:1px solid red;*/
-    color:red;
   }
   /*::-webkit-datetime-edit-fields-wrapper { background-color: red; }*/
   ::-webkit-datetime-edit-text { color: #878787; padding: 0 .3em; }/*/的颜色*/
@@ -771,7 +743,5 @@
   .grey-option{
     margin-bottom: 20px;
   }
-  
-
 </style>
 

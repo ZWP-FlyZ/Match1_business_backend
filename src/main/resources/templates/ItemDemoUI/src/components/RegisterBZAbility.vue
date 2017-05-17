@@ -77,7 +77,7 @@
               <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  placeholder="1"  autocomplete="on" autofocus="autofocus">
             </div>
             <div class="item">
-              <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  placeholder="长度不超过三十个汉字"  autocomplete="on" >
+              <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  placeholder="长度不超过30个汉字"  autocomplete="on" >
             </div>
 
           </form>
@@ -157,8 +157,6 @@
           <br/>
         </div>
       </div>
-
-
   </div>
     
     <br/>
@@ -166,8 +164,6 @@
       <router-link to="/pagetemplate"  class="ok">确定</router-link>
     </div>
     <br/>
-
-
   </div>
 
 </template>
