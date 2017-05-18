@@ -107,19 +107,23 @@
               <option value='acura'>描述帆布鞋</option>
               <option value='acura'>描述篮球鞋</option>
             </select>
+            <!-- 自定义样式select框开始 -->
+            <!-- <div class = "inputbox checkView condition-select">
+              <ul id="myUl" class="condition-in-out inputbox condition-factory">
+                <li class="liMenu" id = "liMenu-select-poumian" @click="change($event)"><div><b class = "normal-b">剖面库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
+                <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">宝贝卖点</b></div></li>
+                <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">宝贝类型</b></div></li>
+                <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">描述帆布鞋</b></div></li>
+                <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">描述篮球鞋</b></div></li>
+              </ul>
+            </div> -->
+      <!-- 自定义样式select框结束 -->
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 宝贝卖点， </label>
             <label class="smallnamed"> 宝贝类型， </label>
             <label class="smallnamed"> 描述帆布鞋 </label>
           </div>
-          <!-- <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">宝贝卖点</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div> -->
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
@@ -340,6 +344,40 @@
       display: inline-block;
       margin-right: 10px;
     }
+    
    /* .items{border:1px solid red;}*/
 
 </style>
+<script>
+    export default{
+      data(){
+        return {
+          nextState:1
+        }
+      },
+      methods:{
+        change:function(obj){
+          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
+          var arr = liArray.getElementsByTagName("li")
+          var i=1;
+          var length=liArray.length;
+          switch(this.nextState){
+            case 1:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
+              for(;i<arr.length;i++){
+              arr[i].className="liShow";
+              }
+              this.nextState=0;
+            break;
+            case 0:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
+              for(;i<arr.length;i++){
+              arr[i].className="liHide";
+              }
+              this.nextState=1;
+          }
+        }
+      }
+    }   
+  </script>
+

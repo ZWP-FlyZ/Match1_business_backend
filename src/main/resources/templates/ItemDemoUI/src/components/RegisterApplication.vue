@@ -57,7 +57,7 @@
 </script>
 <style>
     .hide-dialog{display: none}
-    .applicationReg{width:900px;background-color: #fff;z-index:100;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
+    .applicationReg{width:900px;background-color: #fff;z-index:103;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
 	.applicationReg-header{
 		text-align: left;
 	    font: 15px/40px Arial, sans-serif;
@@ -92,7 +92,6 @@
 		float: left;
 		margin-bottom: 30px;
 	}
-	
 	.applicationReg-des label{
 		/*margin-right: 5px;*/
 		display: inline-block;

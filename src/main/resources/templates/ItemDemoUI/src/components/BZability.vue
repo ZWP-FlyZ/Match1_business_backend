@@ -1,5 +1,4 @@
 <template>
-  <!-- <h1 class="text-center">bzability</h1> -->
   <div class = "BZability">
     <div>业务能力定制总数：12</div>
     <div class="BZability-register">
@@ -56,7 +55,6 @@ import IMask from "./Mask"
         this.hideDialog = !this.hideDialog
         this.hideMask = !this.hideMask
         this.deleteContent.item = i
-
       },
       closeDialog:function(childData){
         this.hideDialog = childData

@@ -30,7 +30,6 @@
             <option value='' >商品发布</option>
           </select>
         </div>
-        
 
         <div class="item">
           <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
@@ -74,24 +73,26 @@
 
     <div class = "heads">
       <div class = "condition">外部前置条件</div>
-        <div class="item">
-          <!-- <label class="longname">参与角色：</label> -->
-          <select class="longinput" >
-            <option>目标节点时限</option>
-            <option value=''>是否第一次进入该节点</option>
-            <option value=''>商家信用等级</option>
-            <option value=''>开店时间 </option>
-            <option value=''>转化率</option>
-            <option value=''>违规记录</option>
-            <option value=''>销售记录</option>
-            <option value=''>是否是良心卖家</option>
-            <option value=''>七天无理由退货</option>
-            <option value=''>商家信用等级规则</option>
-            <option value=''>知名品牌高危质检</option>
-            <option value=''>活动时间类型</option>
-            <option value=''>冲突管理规则</option>
-          </select>
-        </div>
+        <!-- 自定义样式select框开始 -->
+      <div class = "condition-select">
+        <ul id="myUl" class="condition-in-out inputbox condition-factory">
+          <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
+          <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">是否第一次进入该节点</b></div></li>
+          <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">商家信用等级</b></div></li>
+          <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">开店时间</b></div></li>
+          <li value="5" class="liHide"><div><input type="checkbox" class="input_check" id="check5"><label for="check5"></label><b class = "normal-b">转化率</b></div></li>
+          <li value="6" class="liHide"><div><input type="checkbox" class="input_check" id="check6"><label for="check6"></label><b class = "normal-b">违规记录</b></div></li>
+          <li value="7" class="liHide"><div><input type="checkbox" class="input_check" id="check7"><label for="check7"></label><b class = "normal-b">销售记录</b></div></li>
+          <li value="8" class="liHide"><div><input type="checkbox" class="input_check" id="check8"><label for="check8"></label><b class = "normal-b">是否是良心卖家</b></div></li>
+          <li value="9" class="liHide"><div><input type="checkbox" class="input_check" id="check9"><label for="check9"></label><b class = "normal-b">七天无理由退货</b></div></li>
+          <li value="10" class="liHide"><div><input type="checkbox" class="input_check" id="check10"><label for="check10"></label><b class = "normal-b">商家信用等级规则</b></div></li>
+          <li value="11" class="liHide"><div><input type="checkbox" class="input_check" id="check11"><label for="check11"></label><b class = "normal-b">知名品牌高危质检</b></div></li>
+           <li value="12" class="liHide"><div><input type="checkbox" class="input_check" id="check12"><label for="check12"></label><b class = "normal-b">冲突管理规则</b></div></li>
+        </ul>
+      </div>
+      <!-- 自定义样式select框结束 -->
+
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
@@ -235,24 +236,27 @@
     
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
-        <div class="item">
-            <select class="longinput" >
-              <option>商家信用等级规则</option>
-              <option value=''>开店时间</option>
-              <option value=''>转化率</option>
-              <option value=''>违规记录</option>
-              <option value=''>销售记录</option>
-              <option value=''>是否是良心卖家</option>
-              <option value=''>七天无理由退货</option>
-              <option value=''>消保协议</option>
-              <option value=''>退货率</option>
-              <option value=''>评论数</option>
-              <option value=''>发货速度</option>
-              <option value=''>特定类目规则</option>
-              <option value=''>产品信息</option>
-              <option value=''>详细描述</option>
-            </select>
-          </div>
+      <div class = "condition-select">
+        <ul id="myUl1" class="condition-in-out inputbox condition-factory">
+          <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li value="221" class="liHide"><div><input type="checkbox" class="input_check" id="check221"><label for="check221"></label><b class = "normal-b">商家信用等级规则</b></div></li>
+          <li value = "222" class="liHide"><div><input type="checkbox" class="input_check" id="check222"><label for="check222"></label><b class = "normal-b">开店时间</b></div></li>
+          <li value="223" class="liHide"><div><input type="checkbox" class="input_check" id="check223"><label for="check223"></label><b class = "normal-b">转化率</b></div></li>
+          <li value="224" class="liHide"><div><input type="checkbox" class="input_check" id="check224"><label for="check224"></label><b class = "normal-b">消保协议</b></div></li>
+          <li value="225" class="liHide"><div><input type="checkbox" class="input_check" id="check225"><label for="check225"></label><b class = "normal-b">违规记录</b></div></li>
+          <li value="226" class="liHide"><div><input type="checkbox" class="input_check" id="check226"><label for="check226"></label><b class = "normal-b">销售记录</b></div></li>
+          <li value="227" class="liHide"><div><input type="checkbox" class="input_check" id="check227"><label for="check227"></label><b class = "normal-b">是否是良心卖家</b></div></li>
+          <li value="228" class="liHide"><div><input type="checkbox" class="input_check" id="check228"><label for="check228"></label><b class = "normal-b">七天无理由退货</b></div></li>
+          <li value="229" class="liHide"><div><input type="checkbox" class="input_check" id="check229"><label for="check229"></label><b class = "normal-b">退货率</b></div></li>
+          <li value="2210" class="liHide"><div><input type="checkbox" class="input_check" id="check2210"><label for="check2210"></label><b class = "normal-b">评论数</b></div></li>
+          <li value="2211" class="liHide"><div><input type="checkbox" class="input_check" id="check2211"><label for="check2211"></label><b class = "normal-b">发货速度</b></div></li>
+          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">特定类目规则</b></div></li>
+          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">产品信息</b></div></li>
+          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">详细描述</b></div></li>
+        </ul>
+      </div> 
+
+
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
@@ -744,4 +748,36 @@
     margin-bottom: 20px;
   }
 </style>
+<script>
+    export default{
+      data(){
+        return {
+          nextState:1
+        }
+      },
+      methods:{
+        change:function(obj){
+          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
+          var arr = liArray.getElementsByTagName("li")
+          var i=1;
+          var length=liArray.length;
+          switch(this.nextState){
+            case 1:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
+              for(;i<arr.length;i++){
+              arr[i].className="liShow";
+              }
+              this.nextState=0;
+            break;
+            case 0:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
+              for(;i<arr.length;i++){
+              arr[i].className="liHide";
+              }
+              this.nextState=1;
+          }
+        }
+      }
+    }   
+  </script>
 

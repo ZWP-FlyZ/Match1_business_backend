@@ -45,7 +45,7 @@
       <!-- 自定义样式select框开始 -->
       <div class = "condition-select">
         <ul id="myUl" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select" @click="change(this)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
           <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
           <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">商家信用等级</b></div></li>
           <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">开店时间</b></div></li>
@@ -209,7 +209,7 @@
       <div class = "condition">内部前置条件</div>
       <div class = "condition-select">
         <ul id="myUl1" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu liMenu-select" @click="change(this)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
           <li value="221" class="liHide"><div><input type="checkbox" class="input_check" id="check221"><label for="check221"></label><b class = "normal-b">商家信用等级规则</b></div></li>
           <li value = "222" class="liHide"><div><input type="checkbox" class="input_check" id="check222"><label for="check222"></label><b class = "normal-b">开店时间</b></div></li>
           <li value="223" class="liHide"><div><input type="checkbox" class="input_check" id="check223"><label for="check223"></label><b class = "normal-b">转化率</b></div></li>
@@ -225,9 +225,7 @@
           <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">产品信息</b></div></li>
           <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">详细描述</b></div></li>
         </ul>
-      </div>
-
-     
+      </div> 
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
@@ -330,32 +328,29 @@
   .condition-factory{/*下拉框所在ul的样式和宽度*/
     float: left;
     margin-top: 2px;
-    width: 50%;
+    width: 30%;
   }
   .condition-name{ width: 10%;}
   .condition-in-out {list-style-type:none;}
   .condition-in-out li{width:60%;position: relative;z-index: 100;}
   .liMenu img{float:right;margin-right: 16px;margin-top:10px;}/*下拉框图标png*/
   .condition-select .inputbox{border:0px;}
-  #liMenu-select{/*select外边框*/
-    position: relative;
-    top:-12px;
-    border:solid #b6d7a8 1px;
+  #liMenu-select-in,#liMenu-select-out{/*select外边框*/
+   position: relative;
+    top:-6px;
+    height: 30px;
+    background: #fff;
   }
-  .liMenu-select{/*select外边框*/
-    position: relative;
-    top:-12px;
-    border:solid #b6d7a8 1px;
-  }
-  .normal-b{font-weight:normal;margin-left: 20px;position:relative;top:-3px;}/*下拉框选项文字*/
-  .liShow{display:block;background:#fff;z-index: 100;position: relative;top:-10px;}/*下拉列表背景色*/
+ 
+  .normal-b{font-weight:normal;margin-left: 20px;position:relative;top:-1px;}/*下拉框选项文字*/
+  .liShow{display:block;background:#fff;z-index: 100;position: relative;top:-6px;}/*下拉列表背景色*/
   .liHide{display:none;background:blue;}/*#myUl{margin: 20px auto;}*/
   .condition-in-out .input_check {position: absolute;visibility: hidden;}
   .condition-in-out .input_check+label {/*复选框按钮样式*/
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 3px solid #b6d7a8;
+    width: 13px;
+    height: 13px;
+    border: 2px solid #b6d7a8;
     border-radius: 3px;
     position: relative;
     top:3px;
@@ -365,8 +360,8 @@
   .condition-in-out  .input_check:checked+label:after {/*选中后的对勾样式*/
     content: "";
     position: absolute;
-    left: 2px;
-    bottom: 8px;
+    left: 1px;
+    bottom: 6px;
     width: 9px;
     height: 4px;
     border: 3px solid #b6d7a8;
@@ -387,21 +382,20 @@
       },
       methods:{
         change:function(obj){
-          var liArray=document.getElementById("myUl1");
-          // var liArray=document.getElementById(obj.parentNode.id);
+          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
           var arr = liArray.getElementsByTagName("li")
           var i=1;
           var length=liArray.length;
           switch(this.nextState){
             case 1:
-              document.getElementById("liMenu-select").innerHTML="当前选择↑" + '<img src="../assets/img/glyphicons-370-collapse-top.png" alt="">';
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
               for(;i<arr.length;i++){
               arr[i].className="liShow";
               }
               this.nextState=0;
             break;
             case 0:
-              document.getElementById("liMenu-select").innerHTML="当前选择↑" + '<img src="../assets/img/glyphicons-370-collapse-top.png" alt="">';
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
               for(;i<arr.length;i++){
               arr[i].className="liHide";
               }

@@ -57,7 +57,6 @@
         <div class="item">
           <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"   value="121"  autocomplete="on" >
         </div>
-
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <div class="items2">

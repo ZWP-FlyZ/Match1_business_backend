@@ -25,7 +25,6 @@
         </div>
         <br/>
         <br/>
-        
       </div>
       <ul class="pagination">
         <li><a href="#">?</a></li>
@@ -38,9 +37,7 @@
         <li><a href="#">7</a></li>
         <li><a href="#">?</a></li>
       </ul>
-
       <br/>  <br/>
-
 </div>
     <IMask :hide-mask.sync="hideMask"></IMask>
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
@@ -87,10 +84,9 @@
   }
 </script>
 <style>
- 
- .template-total{
-  margin-bottom: 30px;
- }
+  .template-total{
+   margin-bottom: 30px;
+  }
   .template-head{
     font: 15px Arial, sans-serif;
     background:#F2F2F2;
@@ -98,7 +94,6 @@
     height: 45px;
     position: relative;
     text-decoration: none;
-
   }
   .head-left{
     float:left;
@@ -106,7 +101,6 @@
     padding-left: 10%;
    top:8px;
     font-size: 15px;
-
   }
   .head-creat{
     font-size: 15px;
@@ -121,19 +115,16 @@
     padding: 6px 12px;
     border-radius: 5px;
   }
-
   .head-creat:hover{
     color: black;
     text-decoration: none;
   }
-
  .template-body{
    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
- }
-
+  }
  .one-container{
    display: inline-block;
    position: relative;
@@ -145,22 +136,18 @@
    border-color: #ddd;
    margin: 10px 1%;
    overflow: hidden;
-
- }
-
+  }
  .titem-name{
    position: relative;
-
    top:5px;
    font-size:15px;
- }
+  }
  .bottoms{
    display: block;
    float: right;
    position: relative;
    right:3px;
-
- }
+  }
  .bottom-item{
    float:right;
    position: relative;
@@ -168,7 +155,7 @@
    top:20px;
    left:20px;
    margin: 5px;
- }
+  }
  .delete{
    text-align: center;
    text-decoration: none;
@@ -182,23 +169,20 @@
    margin: 5px;
    padding: 6px 12px;
    border-radius:4px;
- }
+  }
  .delete:hover{
    color: black;
- }
-
+  }
  .titem-name{
    color:black;
- }
+  }
  .titem-name:hover{
    color: blue;
    text-decoration: none;
-
- }
+  }
  .template-edit{
    width:280px;
    display: -webkit-flex;
-
  }
  .template-img {
    width: 160px;
@@ -207,16 +191,13 @@
  }
  .template-center{
    text-align: center;
-
  }
  ul.pagination {
    display: inline-block;
    padding: 0;
    margin: 0;
  }
-
  ul.pagination li {display: inline;}
-
  ul.pagination li a {
    color: black;
    float: left;
@@ -225,23 +206,18 @@
    transition: background-color .3s;
    border: 1px solid #ddd;
  }
-
  .pagination li:first-child a {
    border-top-left-radius: 5px;
    border-bottom-left-radius: 5px;
  }
-
  .pagination li:last-child a {
    border-top-right-radius: 5px;
    border-bottom-right-radius: 5px;
  }
-
  ul.pagination li a.active {
    background-color: #428bca;
    color: white;
    border: 1px solid #428bca;
  }
-
  ul.pagination li a:hover:not(.active) {background-color: #ddd;}
-
 </style>
