@@ -1,7 +1,29 @@
 <template>
   <div class = "BZProcess">
     <div class = "BZProcess-total">流程定制总数：12</div>
-
+    <!-- 流程模板 -->
+    <div class="BZProcess-register">
+      <ul>
+          <li class = "BZProcess-classify">流程模板</li>
+      </ul>
+    </div>
+    <div class = "classfy-table">
+     <div v-for="(item,index) in tempList">
+      <div class="BZProcess-table">
+        <div class="BZ-edit">
+          <div class="BZ-num">{{item.name}}</div>
+          <div class="process"><img v-bind:src="item.imgPath" /></div>
+          <div class = "process-button">
+            <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
+            <br /><br />
+            <router-link to="/registerProcess" class = "link-btn link-btn-look">查看</router-link>
+            <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- 流程模板 -->
     <div class="BZProcess-register">
       <ul>
           <li class = "BZProcess-classify">分类</li>
@@ -41,6 +63,7 @@ import IMask from "./Mask"
     data(){
       return {
         processList:[],
+        tempList:[],
         deleteContent:{
           item:'',
           url:''//删除的url请求
@@ -58,9 +81,8 @@ import IMask from "./Mask"
     methods: {
       getProcess:function(){
         this.$http.get("/api/getList").then(res=>{
-          console.log(JSON.parse(res.body.data).result.processList)
           this.processList = JSON.parse(res.body.data).result.processList
-
+          this.tempList = JSON.parse(res.body.data).result.processTemp
         })
       },
       deleteDialog:function(i){

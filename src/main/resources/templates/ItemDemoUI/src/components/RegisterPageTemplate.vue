@@ -100,24 +100,7 @@
           </div>
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
-            <select class="inputbox checkView" >
-              <option>宝贝标题</option>
-              <option value='acura'>宝贝卖点</option>
-              <option value='acura'>宝贝类型</option>
-              <option value='acura'>描述帆布鞋</option>
-              <option value='acura'>描述篮球鞋</option>
-            </select>
-            <!-- 自定义样式select框开始 -->
-            <!-- <div class = "inputbox checkView condition-select">
-              <ul id="myUl" class="condition-in-out inputbox condition-factory">
-                <li class="liMenu" id = "liMenu-select-poumian" @click="change($event)"><div><b class = "normal-b">剖面库</b><img src="../assets/img/glyphicons-368-expand.png" alt=""></div></li>
-                <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">宝贝卖点</b></div></li>
-                <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">宝贝类型</b></div></li>
-                <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">描述帆布鞋</b></div></li>
-                <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">描述篮球鞋</b></div></li>
-              </ul>
-            </div> -->
-      <!-- 自定义样式select框结束 -->
+            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 宝贝卖点， </label>
@@ -138,10 +121,7 @@
           </div>
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
-            <select class="inputbox checkView" >
-              <option>会员打折</option>
-              <option value='acura'>预售</option>
-            </select>
+            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 会员打折， </label>
@@ -168,10 +148,7 @@
           </div>
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
-            <select class="inputbox checkView" >
-              <option>运费模板</option>
-              <option value='acura'>电子凭证</option>
-            </select>
+            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
           </div>
           <!-- <div class="relate-choose-list">
             <div class="back-color">
@@ -198,15 +175,7 @@
           </div>
           <div class="item item-select-relate">
             <label class="longname">业务能力剖面：</label>
-            <select class="inputbox checkView" >
-              <option>发票</option>
-              <option value='acura'>保修</option>
-              <option value='acura'>退换货</option>
-              <option value='acura'>无理由退货</option>
-            </select>
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 发票 </label>
+            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
           </div>
           <!-- <div class="relate-choose-list">
             <div class="back-color">
@@ -215,6 +184,7 @@
                 </div>
             </div>
           </div> -->
+          
         </div>
       </form>
 
@@ -289,7 +259,37 @@
   </div>
 
 </template>
-
+<script>
+  import MutipleSelectDelete from './mutipleSelectDelete'
+  export default{
+    data:function(){
+      return {
+        multiple:{
+          originOptions: [],
+          selectedList: []
+      }
+     }
+    },
+    components:{'MutipleSelectDelete':MutipleSelectDelete},
+    mounted:function(){
+      this.$nextTick(function(){
+        this.queryData();
+      })
+    },
+    methods:{
+      queryData:function(){
+        var mySelf = this
+        this.$http.get("/api/getList").then(res=>{
+          mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+        })
+        mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
+      },
+      multipleCallback: function(data){
+            this.multiple.selectedList = data;
+        }
+    }
+  }
+</script>
 <style>
 @import "../assets/css/edit.css";
 .page-SelectList{

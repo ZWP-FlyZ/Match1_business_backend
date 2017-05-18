@@ -67,6 +67,12 @@
         ]
       }
     ],
+    "processTemp":[
+      {
+        "name":"商品发布流程模板",
+        "imgPath":"static/img/publish.png"
+      }
+    ],
     "bzabilityList":[
       {
         "id":"10001",

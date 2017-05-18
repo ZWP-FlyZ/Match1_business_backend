@@ -132,6 +132,7 @@ display: table-cell;
   display: table-cell;
   margin-right: 5px;
   min-width: 100px;
+  top:6px;
 }
 
 .twocolor{
@@ -215,6 +216,6 @@ display: table-cell;
 }
 .bzprocess-delete:hover{
   /*background: #e8f5fb;*/
-  background: #fff;
-  transform: scale(2,2);
+  /*background: #fff;*/
+  transform: scale(1.2,1.2);
 }

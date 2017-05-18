@@ -43,13 +43,17 @@
       流程图形化表达
     </div>
     <div class="items">
-    <div class="yellow-block" >
+      <div class="yellow-block" >
         <br/><br/><br/><br/>
       </div>
     </div>
     <div class="items">
       <div class="grey-block" >
-        <br/><br/><br/><br/>
+        <img src="static/img/process1.png" usemap="#processmap" alt="" />
+        <map name="processmap" id="processmap">
+        <area shape="rect" coords="11 15 121 76" href="http://www.baidu.com" />
+        <area shape="rect" coords="169 17 268 74" href="http://www.google.com" />
+        </map>
       </div>
     </div>
 
@@ -350,10 +354,10 @@
       </div>
       <div class="item">
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
-
         <label class="longname">关联的页面模板：</label>
-        1，2，3
+        <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
       </div>
+        
     </form>
     <div class="heads">
       配置项
@@ -734,6 +738,38 @@
   </div>
 
 </template>
+
+<script>
+  import MutipleSelectDelete from './mutipleSelectDelete'
+  export default{
+    data(){
+      return {
+        multiple:{
+          originOptions: [],
+          selectedList: []
+      }
+     }
+    },
+    components:{'MutipleSelectDelete':MutipleSelectDelete},
+    mounted:function(){
+      this.$nextTick(function(){
+        this.queryData();
+      })
+    },
+    methods:{
+      queryData:function(){
+        var mySelf = this
+        this.$http.get("/api/getList").then(res=>{
+          mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+        })
+        mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
+      },
+      multipleCallback: function(data){
+            this.multiple.selectedList = data;
+        }
+    }
+  }
+</script>
 <style>
   .SelectList{
     border-style:none;

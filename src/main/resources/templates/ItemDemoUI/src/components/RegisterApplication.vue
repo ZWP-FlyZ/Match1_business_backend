@@ -39,7 +39,7 @@
 			</form>
 		</div> -->
 		<div class = "delete-modal-footer">
-			<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
+			<button class = "link-btn link-btn-blue" >确认</button>
 			<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 		</div>
 	</div>
