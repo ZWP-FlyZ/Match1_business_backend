@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="wrapper">
     <div id="header">
       <div class="header-left">
@@ -15,12 +16,12 @@
           <span>OS建模小组</span>
       </div>
       <div>
-          <router-link to="/BBindex" class = "link-btn link-btn-primary log-out">退出</router-link>
+          <router-link to="/" class = "link-btn link-btn-primary log-out">退出</router-link>
       </div>
     </div>
-    <!-- 以上nav是写首页的头部的 --> 
+    <!-- 以上nav是写首页的头部的 -->
     <!-- 以上div是写首页的内容的 ，其中Sidebar代表导航栏，对应的文件在components文件夹下的sidebar.vue,-->
-    <Sidebar></Sidebar>
+    <BBL1SideBar></BBL1SideBar>
     <router-view></router-view>
     <!-- <div class="container">
       <div class="col-sm-3">
@@ -31,6 +32,8 @@
       </div>
     </div> -->
   </div>
+</div>
+  
 </template>
 <style>
   .log-out{
@@ -39,10 +42,10 @@
 </style>
 
 <script>
-  import Sidebar from './components/Sidebar.vue'
+  import BBL1SideBar from './BBL1SideBar.vue'
   
   export default{
-    components: { 'Sidebar': Sidebar}
+    components: { 'BBL1SideBar': BBL1SideBar}
   };
   
 </script>

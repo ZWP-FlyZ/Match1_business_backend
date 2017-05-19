@@ -15,6 +15,12 @@ import RegisterAbility from '@/components/RegisterAbility'
 import RegisterPageTemplate from '@/components/RegisterPageTemplate'
 import ConfigPreCondition from '@/components/ConfigPreCondition'
 import GraphProcess from '@/components/GraphProcess'
+import Identity from '@/components/Identity'
+import BBprocess from '@/components/bBprocess'
+import BBL1SideBar from '@/components/bBL1SideBar'
+import BBEditProcess from '@/components/bBEditProcess'
+import BBConfigProcess from '@/components/BBConfigProcess'
+import BBindex from '@/components/BBindex'
 
 
 Vue.use(Router)
@@ -25,7 +31,10 @@ export default new Router({
   path: '/',
   redirect:'/content'
   },
-
+  {
+  path: '/BBindex',
+  component:BBindex
+  },
   {
   path: '/login',
   component: Login
@@ -75,6 +84,26 @@ export default new Router({
     {
     path: '/configPreCondition',
     component: ConfigPreCondition
+    },
+    {
+    path: '/identity',
+    component: Identity
+    },
+    {
+    path: '/bBprocess',
+    component: BBprocess
+    },
+    {
+    path: '/bBL1SideBar',
+    component: BBprocess
+    },
+    {
+    path: '/bBEditProcess',
+    component: BBEditProcess
+    },
+    {
+    path: '/bBConfigProcess',
+    component: BBConfigProcess
     }]
   }]
 })

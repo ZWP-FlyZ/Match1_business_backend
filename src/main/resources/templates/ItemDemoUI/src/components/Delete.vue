@@ -54,7 +54,7 @@
 		position: fixed;
 		top: 30%;
 		left: 35%;
-		z-index:100;
+		z-index:103;
 	}/*
 	.deleteAability-header{
 		background: #0099FF;
