@@ -23,7 +23,7 @@
 					<div class = "modal-footer-name">业务身份名称：<input type="text" class = "modal-footer-input"></div>
 					<div class = "modal-footer-name">业务归属方:<input type="text" class = "modal-footer-input" style="margin-left:25px;"></div>
 					
-					<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
+					<button class = "link-btn link-btn-blue">确认</button>
 					<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 				</div>
 			</div>

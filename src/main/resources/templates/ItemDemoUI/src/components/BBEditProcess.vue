@@ -1,46 +1,7 @@
 <template>
 	<!-- 全局div开始 -->
   <div>
-  	<div class = "BBright">
-  	<div class = "BZProcess">
-  	    <div class="BZProcess-register">
-  	      <ul>
-  	          <li class = "BZProcess-classify">抽象流程模板</li>
-  	      </ul>
-  	    </div>
-  	    <div class="class-table">
-  	    	<div class="BZProcess-table">
-  	    		<div class="BZ-edit">
-  	    			<div class="BZ-num"></div>
-  	    			<div class="process"><img src="../../assets/img/process1-highlight.png" alt=""></div>
-  	    		</div>
-  	    	</div>
-  	    </div>
-
-  	    <div class="BZProcess-register">
-  	      <ul>
-  	          <li class = "BZProcess-classify">流程自定义</li>
-  	      </ul>
-  	    </div>
-  	    <div class="class-table">
-  	    	<div class="BZProcess-table">
-  	    		<div class="BZ-edit">
-  	    			<div class="BZ-num"></div>
-  	    			<div class="process"><img src="../../assets/img/process1-white.png" alt=""></div>
-  	    		</div>
-  	    	</div>
-  	    </div>
-
-  	    <div class="BZProcess-table" style="border:0;">
-  	        <div class="BZ-edit">
-  	            <router-link to="/bBEditProcess" class = "link-btn link-btn-blue">确定</router-link>
-  	        </div>
-  	    </div>
-  	    </div>
-  	    <IMask :hide-mask.sync="hideMask"></IMask>
-  	    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
-  	  </div>  
-      <div class="BBleft">
+    <div class="BBleft">
       <!-- <div class="todo mrm">
         <div class="todo-search">
           <input type="search" class="todo-search-field" placeholder="search">
@@ -62,12 +23,51 @@
         <input type="checkbox">
       </div>
     </div>
+  	<div class = "BBright">
+  	<div class = "BZProcess">
+  	    <div class="BZProcess-register">
+  	      <ul>
+  	          <li class = "BZProcess-classify">抽象流程模板</li>
+  	      </ul>
+  	    </div>
+  	    <div class="class-table">
+  	    	<div class="BZProcess-table">
+  	    		<div class="BZ-edit">
+  	    			<div class="BZ-num"></div>
+  	    			<div class="process"><img src="../assets/img/process1-highlight.png" alt=""></div>
+  	    		</div>
+  	    	</div>
+  	    </div>
+
+  	    <div class="BZProcess-register">
+  	      <ul>
+  	          <li class = "BZProcess-classify">流程自定义</li>
+  	      </ul>
+  	    </div>
+  	    <div class="class-table">
+  	    	<div class="BZProcess-table">
+  	    		<div class="BZ-edit">
+  	    			<div class="BZ-num"></div>
+  	    			<div class="process"><img src="../assets/img/process1-white.png" alt=""></div>
+  	    		</div>
+  	    	</div>
+  	    </div>
+
+  	    <div class="BZProcess-table" style="border:0;">
+  	        <div class="BZ-edit">
+  	            <router-link to="/bBEditProcess" class = "link-btn link-btn-blue">确定</router-link>
+  	        </div>
+  	    </div>
+  	    </div>
+  	    <IMask :hide-mask.sync="hideMask"></IMask>
+  	    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
+  	  </div>  
 	</div>
 	<!-- 全局div结束 -->
 </template>
 <script>
-import Delete from "../Delete"
-import IMask from "../Mask"
+import Delete from "./Delete"
+import IMask from "./Mask"
   export default{
     data(){
       return {
@@ -207,7 +207,7 @@ import IMask from "../Mask"
     width: 25%;
     height: 200px;
     float: left;
-    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 30px;
     border:1px solid red;
   }

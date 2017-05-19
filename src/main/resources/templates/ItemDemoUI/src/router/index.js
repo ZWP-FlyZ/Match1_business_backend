@@ -19,6 +19,8 @@ import BBprocess from '@/components/BB/bBprocess'
 import BBL1SideBar from '@/components/BB/bBL1SideBar'
 import BBEditProcess from '@/components/BB/bBEditProcess'
 import BBConfigProcess from '@/components/BB/BBConfigProcess'
+import BBContent from '@/components/BB/BBContent'
+
 import BBindex from '@/components/BBindex'
 import AppIndex from '@/components/AppIndex'
 
@@ -99,6 +101,14 @@ export default new Router({
         component: Identity
       },
       {
+        path:'/bBContent',
+        component:BBContent,
+        children:[
+            {
+        path:'/',
+        redirect:'/identity'
+      },
+      {
         path: '/bBprocess',
         component: BBprocess
       },
@@ -113,6 +123,8 @@ export default new Router({
       {
         path: '/bBConfigProcess',
         component: BBConfigProcess
+      }
+        ]
       }
     ]
   }
