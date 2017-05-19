@@ -57,8 +57,8 @@
 </template>
 
 <script>
-import Delete from "./Delete"
-import IMask from "./Mask"
+import Delete from "../Delete"
+import IMask from "../Mask"
   export default{
     data(){
       return {

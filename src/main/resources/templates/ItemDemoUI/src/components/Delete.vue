@@ -6,7 +6,7 @@
 				<!-- <div class = "deleteAability-header">
 					 <h4 class="delete-modal-title">删除确认</h4>
 					 <div class = "delete-modal-delete-div">
-		             <img src="../assets/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
+		             <img src="/static/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
 		            </div>
 				</div> -->
 

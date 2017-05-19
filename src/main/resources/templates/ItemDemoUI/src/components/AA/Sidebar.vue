@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import IMask from './Mask'
+import IMask from '../Mask'
 import RegisterApplication from './RegisterApplication'
 export default {
   data(){

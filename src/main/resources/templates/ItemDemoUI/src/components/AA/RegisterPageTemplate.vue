@@ -68,14 +68,14 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">天猫一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">淘宝一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -130,7 +130,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">预售</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -153,7 +153,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">运费模板</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -180,7 +180,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">发票</div>
-                <div class="relate-choose-delete"><a href=""><img src="../assets/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -194,7 +194,7 @@
     <div class="items">
       <div class="twocolor">
       <form class="grey">
-        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
         <label class="longname">卖家信用等级</label>
         <select class="longinput" >
@@ -222,7 +222,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
           <form class="grey">
-            <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
 
@@ -235,7 +235,7 @@
           </form>
             <br/>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
               <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"  autocomplete="on" autofocus="autofocus">
@@ -259,11 +259,13 @@
   </div>
 
 </template>
-<script>
+  <script>
   import MutipleSelectDelete from './mutipleSelectDelete'
-  export default{
-    data:function(){
+    export default{
+      
+      data:function(){
       return {
+        nextState:1,
         multiple:{
           originOptions: [],
           selectedList: []
@@ -277,21 +279,42 @@
       })
     },
     methods:{
-      queryData:function(){
-        var mySelf = this
-        this.$http.get("/api/getList").then(res=>{
-          mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
-        })
-        mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
-      },
-      multipleCallback: function(data){
+        change:function(obj){
+          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
+          var arr = liArray.getElementsByTagName("li")
+          var i=1;
+          var length=liArray.length;
+          switch(this.nextState){
+            case 1:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
+              for(;i<arr.length;i++){
+              arr[i].className="liShow";
+              }
+              this.nextState=0;
+            break;
+            case 0:
+              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
+              for(;i<arr.length;i++){
+              arr[i].className="liHide";
+              }
+              this.nextState=1;
+          }
+        },
+        queryData:function(){
+          var mySelf = this
+          this.$http.get("/api/getList").then(res=>{
+            mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+          })
+          mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
+        },
+        multipleCallback: function(data){
             this.multiple.selectedList = data;
         }
-    }
-  }
-</script>
+      }
+    }   
+  </script>
 <style>
-@import "../assets/css/edit.css";
+@import "../../assets/css/edit.css";
 .page-SelectList{
   border-style:none;
     appearance:none;
@@ -348,36 +371,5 @@
    /* .items{border:1px solid red;}*/
 
 </style>
-<script>
-    export default{
-      data(){
-        return {
-          nextState:1
-        }
-      },
-      methods:{
-        change:function(obj){
-          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
-          var arr = liArray.getElementsByTagName("li")
-          var i=1;
-          var length=liArray.length;
-          switch(this.nextState){
-            case 1:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
-              for(;i<arr.length;i++){
-              arr[i].className="liShow";
-              }
-              this.nextState=0;
-            break;
-            case 0:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
-              for(;i<arr.length;i++){
-              arr[i].className="liHide";
-              }
-              this.nextState=1;
-          }
-        }
-      }
-    }   
-  </script>
+
 

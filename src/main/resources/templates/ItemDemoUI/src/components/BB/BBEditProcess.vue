@@ -11,7 +11,7 @@
 	    	<div class="BZProcess-table">
 	    		<div class="BZ-edit">
 	    			<div class="BZ-num"></div>
-	    			<div class="process"><img src="../assets/img/process1-highlight.png" alt=""></div>
+	    			<div class="process"><img src="/static/img/process1-highlight.png" alt=""></div>
 	    		</div>
 	    	</div>
 	    </div>
@@ -25,7 +25,7 @@
 	    	<div class="BZProcess-table">
 	    		<div class="BZ-edit">
 	    			<div class="BZ-num"></div>
-	    			<div class="process"><img src="../assets/img/process1-white.png" alt=""></div>
+	    			<div class="process"><img src="/static/img/process1-white.png" alt=""></div>
 	    		</div>
 	    	</div>
 	    </div>
@@ -44,8 +44,8 @@
 	<!-- 全局div结束 -->
 </template>
 <script>
-import Delete from "./Delete"
-import IMask from "./Mask"
+import Delete from "../Delete"
+import IMask from "../Mask"
   export default{
     data(){
       return {

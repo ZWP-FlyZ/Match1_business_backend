@@ -18,7 +18,7 @@
 	      <div class="BZProcess-table">
 	        <div class="BZ-edit">
 	          <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝商品发布模板</div>
-	          <div class="process"><img src="../assets/img/tmpublish.png" /></div>
+	          <div class="process"><img src="/static/img/tmpublish.png" /></div>
 	          <div><input type="radio" name = "primary">选为主要方案</div>
 	          <div class = "process-button">
 	            <router-link to="/bBEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -30,7 +30,7 @@
 	      <div class="BZProcess-table">
 	        <div class="BZ-edit">
 	          <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>天猫商品发布模板</div>
-	          <div class="process"><img src="../assets/img/process1.png" /></div>
+	          <div class="process"><img src="/static/img/process1.png" /></div>
 	          <div><input type="radio" name = "primary">选为主要方案</div>
 	          <div class = "process-button">
 	            <router-link to="/bBEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -61,7 +61,7 @@
 	      <div class="BZProcess-table">
 	        <div class="BZ-edit">
 	          <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝商品发布模板</div>
-	          <div class="process"><img src="../assets/img/tbpublish.png" /></div>
+	          <div class="process"><img src="/static/img/tbpublish.png" /></div>
 	          <div><input type="radio" name = "primary">选为主要方案</div>
 	          <div class = "process-button">
 	            <router-link to="/bBEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -73,7 +73,7 @@
 	      <div class="BZProcess-table">
 	        <div class="BZ-edit">
 	          <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>天猫商品发布模板</div>
-	          <div class="process"><img src="../assets/img/tmpublish.png" /></div>
+	          <div class="process"><img src="/static/img/tmpublish.png" /></div>
 	          <div><input type="radio" name = "primary">选为主要方案</div>
 	          <div class = "process-button">
 	            <router-link to="/bBEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -100,8 +100,8 @@
 	<!-- 全局div结束 -->
 </template>
 <script>
-import Delete from "./Delete"
-import IMask from "./Mask"
+import Delete from "../Delete"
+import IMask from "../Mask"
   export default{
     data(){
       return {

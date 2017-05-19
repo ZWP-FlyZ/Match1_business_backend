@@ -24,23 +24,24 @@
 
 <script>
     export default{
-      props:['selecteddata','optionsdata'],
-	  data:function(){
-		return {
-		  originOptions:[],
-		  displayOptions:[],
-		  show:false,
-		  search:'',
-		  selectedList: [],
-          selectedIdList: []
-		}
-	  },
-	  mounted:function(){
-	  	this.$nextTick(function(){
-	  		window.addEventListener('click',this.blur)
-	  	})
-	  },
-	  watch: {
+      props: ['optionsdata','selecteddata'],
+      data: function() {
+        var data = {
+            originOptions: [],
+            displayOptions: [],
+            show: false,
+            search: '',
+            selectedList: [],
+            selectedIdList: []
+        }
+        return data
+    },
+    mounted:function(){
+        this.$nextTick(function(){
+           window.addEventListener('click',this.blur)
+        })
+    },
+    watch: {
         optionsdata: function (val, oldVal) {
             this.show = false;
             this.originOptions = val;
@@ -56,8 +57,9 @@
                 this.selectedIdList.push(item.id); 
             }
         }
-      },
-      methods:{
+
+    },
+    methods:{
         multipleFocus: function(){
             if (!this.show){
                 document.body.click();
@@ -72,9 +74,11 @@
         },
         searchInputFocus: function(){
             var searchInput = this.$el.getElementsByClassName('search-input')[0];
+
             this.$nextTick(function(){
                 searchInput.focus();
             })
+
         },
         multipleSelect: function(id){
             var mySelf = this;
@@ -176,9 +180,8 @@
             this.search = '';
         }
 
-	},
     }
-	
+}
 </script>
 <style scoped>
 	@charset "UTF-8";

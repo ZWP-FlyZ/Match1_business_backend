@@ -41,7 +41,7 @@
     </div>
     <div class="twocolor">
       <form class="grey">
-        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
           <label class="longname">描述标题--采集剖面</label>
         </div>
@@ -70,7 +70,7 @@
         <a href="#" class="rightaddbottom">添加值选项</a>
         <div class="items3">
           <form class="grey">
-            <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
             <div class="item">
 
@@ -83,7 +83,7 @@
           </form>
           <br/>
           <form class="grey">
-            <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
             <div class="item">
               <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  placeholder="2"  autocomplete="on" autofocus="autofocus">
@@ -100,7 +100,7 @@
 
     <div class="twocolor">
       <form class="grey">
-        <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
         <div class="item">
           <label class="longname">描述标题-呈现剖面：</label>
@@ -132,7 +132,7 @@
         <a href="#" class="rightaddbottom">添加值选项</a>
         <div class="items3">
           <form class="grey">
-            <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
             <div class="item">
               <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  placeholder="1" autocomplete="on" autofocus="autofocus">
@@ -144,7 +144,7 @@
           </form>
           <br/>
           <form class="grey">
-            <router-link to="/bzprocess"><img src="../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
             <div class="item">
               <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  placeholder="2"  autocomplete="on" autofocus="autofocus">
@@ -168,5 +168,5 @@
 
 </template>
 <style>
-  @import "../assets/css/edit.css";
+  @import "../../assets/css/edit.css";
 </style>

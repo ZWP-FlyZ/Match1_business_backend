@@ -73,8 +73,8 @@
 </style>
 
 <script>
-import IMask from './Mask'
-import RegisterApplication from './RegisterApplication'
+import IMask from '../Mask'
+import RegisterApplication from '../AA/RegisterApplication'
 export default {
   data(){
     return {

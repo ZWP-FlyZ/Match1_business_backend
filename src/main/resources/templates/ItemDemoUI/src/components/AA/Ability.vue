@@ -1,18 +1,19 @@
+
 <template>
-  <div class = "BZability">
-    <div>业务能力定制总数：12</div>
-    <div class="BZability-register">
+  <div class = "Ability">
+    <div class = "Ability-total">能力定制总数：12</div>
+    <div class="Ability-register">
       <ul>
-          <li class = "BZability-reg">业务能力</li>
-          <li class = "BAability-create"><router-link to="/registerBZAbility" class = "link-btn link-btn-default">注册业务能力</router-link></li>
+          <li class = "ability-reg">能力</li>
+          <li class = "ability-create"><router-link to="/registerAbility" class = "link-btn link-btn-default">创建能力</router-link></li>
       </ul>
     </div>
-    <div class = "BZability-list">
-      <div class = "BZability-list-one" v-for="(item,index) in bzabilityList">
+    <div class = "Ability-list">
+      <div class = "Ability-list-one" v-for="(item,index) in abilityList">
         <ul>
-          <li class = "BZability-name">{{item.name}}</li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
-          <li><router-link to="/registerBZAbility" class = "link-btn link-btn-look">查看</router-link></li>
+          <li class = "Ability-name">{{item.name}}</li>
+          <li><router-link to="/registerAbility" class = "link-btn link-btn-primary">编辑</router-link></li>
+          <li><router-link to="/registerAbility" class = "link-btn link-btn-look">查看</router-link></li>
           <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)">删除</button></li>
         </ul>
       </div>
@@ -21,14 +22,13 @@
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
   </div>
 </template>
-
 <script>
-import Delete from "./Delete"
-import IMask from "./Mask"
+import Delete from "../Delete"
+import IMask from "../Mask"
   export default{
     data(){
       return {
-        bzabilityList:[],
+        abilityList:[],
         deleteContent:{
           item:'',
           url:''//删除的url请求
@@ -46,8 +46,8 @@ import IMask from "./Mask"
     methods: {
       getProcess:function(){
         this.$http.get("/api/getList").then(res=>{
-          console.log(JSON.parse(res.body.data).result.bzabilityList)
-          this.bzabilityList = JSON.parse(res.body.data).result.bzabilityList
+          console.log(JSON.parse(res.body.data).result.abilityList)
+          this.abilityList = JSON.parse(res.body.data).result.abilityList
 
         })
       },
@@ -64,41 +64,45 @@ import IMask from "./Mask"
   }
 </script>
 <style>
-    .BZability-register{
+  .Ability-total{
+    margin-top: 0;
+  }
+    .Ability-register{
       background: #F2F2F2;
       height: 45px;
       margin-top: 30px;
     }
-    .BZability-reg{
+    .ability-reg{
       top:8px;
       float: left;
       padding-left: 10%;
       position: relative;
     }
-    .BAability-create{
+    .ability-create{
       position: relative;
       float: right;
-      right: 14%;
+      right: 15%;
       padding:6px 12px;
+
     }
-    .BZability-list-one{
+    .Ability-list-one{
       border: 1px solid #F2F2F2;
       height: 50px;
       margin-top: 13px;
     }
-    .BZability-list-one li{
+    .Ability-list-one li{
       float: left;
     }
-    .BZability-name{
+    .Ability-name{
       margin-left: 3%;
       margin-top: 8px;
       margin-right: 50%;
       width: 20%;
       position: relative;
     }
-    .BZability-list-one .link-btn{
-      margin-left: 10px;
+    .Ability-list-one li .link-btn{
       margin-top: 5px;
+      margin-left: 10px;
       position: relative;
     }
     body{
@@ -107,3 +111,4 @@ import IMask from "./Mask"
   }
 
   </style>
+
