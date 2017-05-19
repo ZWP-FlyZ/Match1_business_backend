@@ -62,6 +62,7 @@
         <input type="checkbox">
       </div>
     </div>
+    <div style="clear:both;"></div>
 	</div>
 	<!-- 全局div结束 -->
 </template>

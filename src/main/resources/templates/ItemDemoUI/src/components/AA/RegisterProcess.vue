@@ -70,6 +70,7 @@
         <area shape="rect" coords="552 180 591 219" href="http://www.google.com" />
         <area shape="rect" coords="627 168 693 219" href="http://www.google.com" />
         <area shape="rect" coords="711 178 748 218" href="http://www.google.com" />
+        <area shape="rect" coords="626 31 702 82" href="http://www.google.com" />
         </map>
       </div>
     </div>
