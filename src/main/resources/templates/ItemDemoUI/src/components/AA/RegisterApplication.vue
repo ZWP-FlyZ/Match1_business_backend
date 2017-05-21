@@ -1,4 +1,5 @@
 <template>
+  <transition name="xf-fade" v-if="">
 	<div class = "applicationReg" v-bind:class="{'hide-dialog':hideDialog}">
 		<div class = "applicationReg-des">
 			<form action="">
@@ -43,7 +44,7 @@
 			<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 		</div>
 	</div>
-	
+  </transition>
 </template>
 <script>
 	export default{

@@ -339,3 +339,7 @@ button{
 	color: #000;
 }
 .xf-clear{clear: both;}
+.xf-fade-enter{opacity: 0}
+.xf-fade-enter-active{opacity:1;}
+.xf-fade-leave{opacity: 1}
+.xf-fade-leave-active{opacity: 0}

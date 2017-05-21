@@ -7,21 +7,21 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView"  value="淘宝一口价商品发布填写商品信息模板" autocomplete="on" autofocus="autofocus">
+        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView"  value="淘宝选择类目页面模板" autocomplete="on" autofocus="autofocus">
         </div>
 
         <div class="item">
-        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="填写商品信息模板" autocomplete="on" >
+        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="淘宝选择类目页面模板" autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="TBPUBLISH" autocomplete="on" >
         </div>
 
         <div class="item">
-        <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView"  value="应用1" autocomplete="on" >
+        <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView"  value="淘宝" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView"  value="2017-05-19"  autocomplete="on" >
         </div>
 
 
@@ -34,8 +34,8 @@
     <div class="yellow yellow-div">
       <div class="items">
           <select class="longinput checkView page-SelectList" >
-            <option value=''>招商</option>
             <option value=''>组织货品</option>
+            <option value=''>招商</option>
             <option value=''>导购</option>
           </select>
           <select class="longinput checkView page-SelectList" >
@@ -55,12 +55,12 @@
             <option value=''>审核</option>
             <option value=''>机器审核</option>
           </select>
-          <select class="longinput checkView page-SelectList" >
+          <!--<select class="longinput checkView page-SelectList" >
             <option>活动小二</option>
             <option>流量小二</option>
             <option>渠道小二</option>
             <option>商家</option>
-          </select>
+          </select> -->
            <select class="longinput checkView page-SelectList" >
             <option>天猫一口价--填写商品信息</option>
             <option>淘宝一口价--填写商品信息</option>

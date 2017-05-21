@@ -16,7 +16,8 @@
       </div>
       <div>
           <router-link to="/aaindex" class = "link-btn link-btn-primary log-out">应用方</router-link>
-          <router-link to="/bbindex" class = "link-btn link-btn-primary log-out">业务方</router-link>
+          <router-link to="/bbindex" class = "link-btn link-btn-primary log-out">老师版业务方</router-link>
+          <router-link to="/ccindex" class = "link-btn link-btn-primary log-out">Ali版业务方</router-link>
       </div>
     </div>
     <router-view></router-view>

@@ -26,11 +26,19 @@ import BBAddConfigure from '@/components/BB/BBAddConfigure'
 
 import BBindex from '@/components/BBindex'
 import AppIndex from '@/components/AppIndex'
+import CCIndex from '@/components/CCIndex'
+import CCprocess from '@/components/CC/CCprocess'
+import CIdentity from '@/components/CC/identity'
+import CCEditProcess from '@/components/CC/cCEditProcess'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+  {
+    path:'/',
+    redirect:'/ccindex'
+  },
   {
     path:'/aaindex',
     component:AppIndex,
@@ -136,7 +144,29 @@ export default new Router({
         component: BBAddConfigure
       }
      ]
-    }
+    },
+    {
+      path:'/ccindex',
+      component:CCIndex,
+      children:[
+        {
+          path:"/",
+          redirect:'/cidentity'
+        },
+        {
+          path:'/cidentity',
+          component:CIdentity
+        },
+        {
+          path:'/cCprocess',
+          component:CCprocess
+        },
+        {
+          path:'/cCEditProcess',
+          component:CCEditProcess
+        }
+      ]
+    },
   ]
 })
 
