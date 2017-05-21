@@ -20,6 +20,9 @@ import BBL1SideBar from '@/components/BB/bBL1SideBar'
 import BBEditProcess from '@/components/BB/bBEditProcess'
 import BBConfigProcess from '@/components/BB/BBConfigProcess'
 import BBRegisterProcess from '@/components/BB/BBRegisterProcess'
+import BBAddPreCondition from '@/components/BB/BBAddPreCondition'
+import BBAddPageTemplate from '@/components/BB/BBAddPageTemplate'
+import BBAddConfigure from '@/components/BB/BBAddConfigure'
 
 import BBindex from '@/components/BBindex'
 import AppIndex from '@/components/AppIndex'
@@ -119,6 +122,18 @@ export default new Router({
       {
         path: '/bBRegisterProcess',
         component: BBRegisterProcess
+      },
+      {
+        path: '/bBAddPreCondition',
+        component: BBAddPreCondition
+      },
+      {
+        path: '/bBAddPageTemplate',
+        component: BBAddPageTemplate
+      },
+      {
+        path: '/bBAddConfigure',
+        component: BBAddConfigure
       }
      ]
     }
