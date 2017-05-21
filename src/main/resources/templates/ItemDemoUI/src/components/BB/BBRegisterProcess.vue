@@ -42,20 +42,6 @@
     <div class="heads">
       流程图形化表达
     </div>
-    <!--<div class="items">
-      <div class="yellow-block xf-node-style" >
-        <ul class="xf-node-ul">
-          <li v-for="(item,index) in nodeList">
-            <a href="javascript:void(0)" class="xf-tooltip xf-tooltip-effect-1">
-              <img v-bind:src="item.imgUrl " class="node-style" v-bind:class="{'node-style-fix':index==4}">
-              <span class="xf-tooltip-content">
-                <i class="fa" v-bind:class="item.className"> <font class="xf-node-text">{{item.nodeText}}</font></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
     <div class="items">
       <div class="grey-block xf-process-style" >
         <img src="static/img/tbpublish.png" usemap="#processmap" alt="" />
@@ -827,114 +813,10 @@
     }   
   </script>
 <style>
-  .xf-node-style{text-align:center;}
-  .xf-node-ul li {
-  float:left;
-  width:14%;
-  display: inline-block;
-  position: relative;
-  margin: 0 1em;
-  font-size: 1.5em;
-}
-  .node-style{width:60%;}
-  .node-style-fix{position: relative;top:20px}
-  .xf-detailNode{display: inline-block;}
-  .xf-tooltip {display: inline;position: relative;z-index: 999;}
-  .xf-tooltip-content {
-  position: absolute;
-  z-index: 9999;
-  width: 220px;
-  height: 110px;
-  padding-top: 25px;
-  left: 70%;
-  margin-left: -40px;
-  bottom: 100%;
-  border-radius: 2%;
-  text-align: center;
-  background: #fff;
-  color: #47c9af;
-  opacity: 0;
-  margin-bottom: 20px;
-  cursor: default;
-  pointer-events: none;
-  border-radius: 4px;
-  box-shadow: 3px 3px 3px #eee;
-  border:1px solid #eee;
-}
-.xf-tooltip-content i {
-  opacity: 0;
-}
-
-.xf-tooltip:hover .xf-tooltip-content,
-.xf-tooltip:hover .xf-tooltip-content i {
-  opacity: 1;
-}
-.xf-tooltip-effect-1 .xf-tooltip-content {
-  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
-  transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
-  -webkit-transform-origin: 70% 100%;
-  transform-origin: 70% 100%;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.xf-tooltip-effect-1 .xf-tooltip-content i {
-  -webkit-transform: scale3d(0,0,1);
-  transform: scale3d(0,0,1);
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
-}
-.xf-tooltip:hover .xf-tooltip-content,
-.xf-tooltip:hover .xf-tooltip-content i {
-  pointer-events: auto;
-  -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
-  transform: translate3d(0,0,0) scale3d(1,1,1);
-}
-
-.xf-tooltip-effect-1:hover .xf-tooltip-content i {
-  -webkit-transform: rotate3d(1,1,1,0);
-  transform: rotate3d(1,1,1,0);
-}
-.xf-node-text{position: relative;top:110px;color:#ccc;font-style: normal;font-size:14px;}
-/* Arrow */
-
-.xf-tooltip-content::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin: -7px 0 0 -15px;
-  width: 30px;
-  height: 20px;
-  background-size: 100%;
-}
-.fa{
-    width: 160px;
-    height: 120px;
-    display: inline-block;
-    position: relative
-    
-}
-.fa-node1{top: -60px;left: 10px;background: url(/static/img/node1.png);}
-.fa-node2{top: -60px;left: 10px;background: url(/static/img/node2.png);}
-.fa-node3{top: -60px;left: 10px;background: url(/static/img/node3.png);}
-.fa-node4{top: -60px;left: -15px;background: url(/static/img/node4.png);}
-.fa-node5{width:300px;top: -60px;left: -30px;background: url(/static/img/node5.png);}
-
-.xf-process-style{text-align: center}
-  .SelectList{
-    border-style:none;
-    appearance:none;
-  }
-  /*::-webkit-datetime-edit-fields-wrapper { background-color: red; }*/
-  ::-webkit-datetime-edit-text { color: #878787; padding: 0 .3em; }/*/的颜色*/
-  ::-webkit-datetime-edit-year-field { color: #878787;font: 15px/1.62 Helvetica,Arial,sans-serif; }
-  ::-webkit-datetime-edit-month-field { color: #878787; }
-  ::-webkit-datetime-edit-day-field { color: #878787; }
+  
   .grey-option{
     margin-bottom: 20px;
   }
-  /*.bbb{border:1px solid red;height: 50px;}*/
   .multi-delete{border:1px solid green;margin-left: 480px;}
 </style>
 

@@ -130,112 +130,16 @@ import IMask from "../Mask"
   }
 </script>
 <style>
-  .table-checkbox{
-  	margin-left: 0;
-  	position:relative;
-  	top: -9px;
-  }
-  .BZProcess-total{
-    margin-top: 0;
-  }
-  .BZProcess-register{
-    background: #F2F2F2;
-    height: 45px;
-    margin-top: 30px;
-  }
-  .BZProcess-classify{
-    top:8px;
-    float: left;
-    padding-left: 10%;
-    position: relative;
-  }
-  .BZProcess-create{
-      position: relative;
-      float: right;
-      right: 16%;
-      padding:6px 12px;
-    }
-  .BZProcess-des{
-    margin-top: 20px;
-  }
-  .L1-name{
-    color:#169BD5;
-    display: inline-block;
-    width: 20%;
-    margin-left: 20px;
-  }
-  .L1-edit{
-    display: inline-block;
-    width: 30%;
-    text-align: center;
-    color:#169BD5;
-  }
-  .BZProcess-table{
-    border:1px solid #f2f2f2;
-    margin-top: 20px;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 5px;
-  }
-  .BZ-edit{
-    width:90%;
-  }
-  .BZProcess-table div{
-    float: left;
-    text-align: center;
-    margin-top: 9px;
-  }
-  .BZProcess-table .BZ-num{
-    width: 20%;
-    position: relative;
-  }
-  .BZProcess-table .process{
-    width: 46%;
-    margin-right: 15%;
-    position: relative;
-  }
-  .BZProcess-table .process-button{
-    margin-left: 50px;
-
-  }
-  .BZProcess-table .process-button .link-btn{
-    display: block;
-  }
-  .BZProcess-table .process img{
-    width: 430px;
-    height: 150px;
-  }
-  .BZProcess-table .link-btn{
-    margin-left: 10px;
-    margin-right: 15px;
-    margin-top: 5px;
-    position: relative;
-  }
-   hr.BZProcess-table-hr{
-    width: 95%;
-    margin:0 auto;
-    margin-left: 20px;
-    float: left;
-    background-color: #f2f2f2;
-    height: 1px;
-    border: none;
-    margin-top: 5px;
-  }
-  .BZProcess-table{
-    margin-bottom: 20px;
-  }
+ 
   .BBright-part{
     width: 25%;
     height: 200px;
     float: left;
     margin-left: 20px;
-    margin-top: 30px;
     /*border:1px solid #0000ff;*/
   }
   .BBleft{
     width: 60%;
-    margin-top: 30px;
     float: left;
   }
   .search-header{
@@ -286,8 +190,8 @@ import IMask from "../Mask"
   height: 25px;
 }
 .bbright-div{
-  margin-top: 28px;
-  border-bottom: 20px;
+  margin-bottom: 30px;
+  /*border-bottom: 20px;*/
   display: block;
 }
 .search-body-div{
