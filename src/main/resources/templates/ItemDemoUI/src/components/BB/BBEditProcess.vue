@@ -1,65 +1,86 @@
 <template>
 	<!-- 全局div开始 -->
   <div>
-  	<div class = "BBright">
-  	<div class = "BZProcess">
-  	    <div class="BZProcess-register">
-  	      <ul>
-  	          <li class = "BZProcess-classify">抽象流程模板</li>
-  	      </ul>
-  	    </div>
-  	    <div class="class-table">
-  	    	<div class="BZProcess-table">
-  	    		<div class="BZ-edit">
-  	    			<div class="BZ-num"></div>
-  	    			<div class="process"><img src="../../assets/img/process1-highlight.png" alt=""></div>
-  	    		</div>
-  	    	</div>
-  	    </div>
+  	<div class = "BBleft">
+    	<div class = "BZProcess">
+    	    <div class="BZProcess-register">
+    	      <ul>
+    	          <li class = "BZProcess-classify">抽象流程模板</li>
+    	      </ul>
+    	    </div>
+    	    <div class="class-table">
+    	    	<div class="BZProcess-table">
+    	    		<div class="BZ-edit">
+    	    			<div class="BZ-num"></div>
+    	    			<div class="process"><img src="../../assets/img/process1-highlight.png" alt=""></div>
+    	    		</div>
+    	    	</div>
+    	    </div>
 
-  	    <div class="BZProcess-register">
-  	      <ul>
-  	          <li class = "BZProcess-classify">流程自定义</li>
-  	      </ul>
-  	    </div>
-  	    <div class="class-table">
-  	    	<div class="BZProcess-table">
-  	    		<div class="BZ-edit">
-  	    			<div class="BZ-num"></div>
-  	    			<div class="process"><img src="../../assets/img/process1-white.png" alt=""></div>
-  	    		</div>
-  	    	</div>
-  	    </div>
+    	    <div class="BZProcess-register">
+    	      <ul>
+    	          <li class = "BZProcess-classify">流程自定义</li>
+    	      </ul>
+    	    </div>
+    	    <div class="class-table">
+    	    	<div class="BZProcess-table">
+    	    		<div class="BZ-edit">
+    	    			<div class="BZ-num"></div>
+    	    			<div class="process"><img src="../../assets/img/process1-white.png" alt=""></div>
+    	    		</div>
+    	    	</div>
+    	    </div>
 
-  	    <div class="BZProcess-table" style="border:0;">
-  	        <div class="BZ-edit">
-  	            <router-link to="/bBEditProcess" class = "link-btn link-btn-blue">确定</router-link>
-  	        </div>
-  	    </div>
-  	    </div>
+    	    <div class="BZProcess-table" style="border:0;">
+    	        <div class="BZ-edit">
+    	            <router-link to="/bBRegisterProcess" class = "link-btn link-btn-blue">确定</router-link>
+    	        </div>
+    	    </div>
+    	  </div>
   	    <IMask :hide-mask.sync="hideMask"></IMask>
   	    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
   	  </div>  
-      <div class="BBleft">
-      <!-- <div class="todo mrm">
-        <div class="todo-search">
-          <input type="search" class="todo-search-field" placeholder="search">
-          <ul>
-            <li cass = "todo-done">
-              <div class="todo-icon fui-man-24">图片</div>
-              <div class="todo-content"><h4>选项</h4><input type="table-checkbox"></div>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-      <div class="search-header">
-        <input type="search" class="todo-search-field" placeholder="search">
-        <img src="/static/img/glyphicons-28-search.png" alt="">
+
+      <div class="bbright">
+        <div class="BBright-part">
+          <div class="bbright-div bbright-top">
+            <div class="search-header">
+              <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
+              <img src="/static/img/glyphicons-28-search.png" alt="">
+            </div>
+            <div class = "search-body-div">
+              <div class="search-body">
+                <img src="/static/img/glyphicons-61-compass.png" alt="">
+                <span>淘宝节点配置项1</span>
+                <input type="checkbox">
+              </div>
+              <div class="search-body">
+                <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
+                <span>淘宝节点配置项1</span>
+                <input type="checkbox">
+              </div>
+            </div>
+          </div>
       </div>
-      <div class="search-body">
-        <img src="/static/img/glyphicons-61-compass.png" alt="">
-        <span>选项</span>
-        <input type="checkbox">
+      <div class="BBright-part">
+          <div class="bbright-div bbright-top">
+            <div class="search-header">
+              <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
+              <img src="/static/img/glyphicons-28-search.png" alt="">
+            </div>
+            <div class = "search-body-div">
+              <div class="search-body">
+                <img src="/static/img/glyphicons-61-compass.png" alt="">
+                <span>淘宝节点配置项1</span>
+                <input type="checkbox">
+              </div>
+              <div class="search-body">
+                <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
+                <span>淘宝节点配置项1</span>
+                <input type="checkbox">
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="xf-clear"></div>
@@ -204,58 +225,32 @@ import IMask from "../Mask"
   .BZProcess-table{
     margin-bottom: 20px;
   }
-  .BBleft{
+  .BBright-part{
     width: 25%;
     height: 200px;
     float: left;
     margin-left: 20px;
     margin-top: 30px;
-    border:1px solid red;
+    /*border:1px solid #0000ff;*/
   }
-  .todo li.todo-done{
-    /*background: transparent url(../images/todo/done.png) 92% center no-repeat;*/
-    background-size: 20px 20px;
-    color: #1abc9c;
-  }
-  .todo li {
-    /*background: #34495e url(../images/todo/todo.png) 92% center no-repeat;*/
-    background-size: 20px 20px;
-    cursor: pointer;
-    margin-top: 2px;
-    padding: 18px 42px 17px 25px;
-    position: relative;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    -webkit-backface-visibility: hidden;
-}
-li {
-    line-height: 20px;
-}
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-  .BBright{
+  .BBleft{
     width: 60%;
     margin-top: 30px;
-    border: 1px solid green;
     float: left;
   }
   .search-header{
-    background: #1abc9c;
+    background: #448bc7;
     height: 40px;
     border-radius: 6px;
     background-size: 16px 16px;
     border-radius: 6px 6px 0 0;
     color: #34495e;
-    /*padding: 19px 25px 20px;*/
   }
   input.todo-search-field {
     background: none;
     border: none;
-    color: #34495e;
+    /*color: #34495e;*/
+    color: #fff;
     font-size: 19px;
     font-weight: 700;
     margin-left: 23px;
@@ -278,14 +273,26 @@ li {
   margin-top: 10px;
 }
 .search-body span{
-  width: 50px;
-  border:1px solid red;
-  margin-right:3px;
+  display: inline-block;
+  width: 220px;
+  color:#448bc7;
+  margin-left: 10px;
+  margin-right:10px;
 }
-/*.search-body img{
-  float: left;
-  margin-left: 13px;
-  margin-top: 10px;
-  /*margin:3px 4px;
-}*/
+.search-body img{
+  position: relative;
+  top:6px;
+  width:25px;
+  height: 25px;
+}
+.bbright-div{
+  margin-top: 28px;
+  border-bottom: 20px;
+  display: block;
+}
+.search-body-div{
+  border:2px solid #448bc7;
+  height: 150px;
+}
+
 </style>

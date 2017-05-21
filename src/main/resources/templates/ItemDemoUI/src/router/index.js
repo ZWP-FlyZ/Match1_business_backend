@@ -19,6 +19,7 @@ import BBprocess from '@/components/BB/bBprocess'
 import BBL1SideBar from '@/components/BB/bBL1SideBar'
 import BBEditProcess from '@/components/BB/bBEditProcess'
 import BBConfigProcess from '@/components/BB/BBConfigProcess'
+import BBRegisterProcess from '@/components/BB/BBRegisterProcess'
 
 import BBindex from '@/components/BBindex'
 import AppIndex from '@/components/AppIndex'
@@ -114,6 +115,10 @@ export default new Router({
       {
         path: '/bBConfigProcess',
         component: BBConfigProcess
+      },
+      {
+        path: '/bBRegisterProcess',
+        component: BBRegisterProcess
       }
      ]
     }
