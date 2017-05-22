@@ -1,8 +1,6 @@
 <template>
 <!-- 全局div开始 -->
-<!-- <div>添加前置条件</div> -->
-	<div>
-		<div class="delete-modal-dialog identity-modal">
+		<div class="delete-modal-dialog identity-modal" v-bind:class="{'hide':hideCdialog}">
 			<div class="delete-modal-content">
 			<div class="delete-modal-header"><span class = "identity-header">申请添加</span></div>
 				<div class = "delete-modal-footer">
@@ -15,11 +13,21 @@
 				</div>
 			</div>
 		</div>
-	</div>	
-<!-- 全局div结束 -->
 </template>
-<style>
+<style scoped>
+	.hide{display: none}
+	.delete-modal-dialog{position: fixed;z-index:1000;top:200px;left:30%;}
 	.requirement{position: relative;top:-130px;}
 	.BB-modal-footer-input{width: 230px;}
 </style>
+<script>
+	export default{
+		props:['hideCdialog','hideMask'],
+		methods:{
+			closeDialog:function(){
+				this.$emit("closeDialog",!this.hideCdialog,1);
+			}
+		}
+	}
+</script>
 

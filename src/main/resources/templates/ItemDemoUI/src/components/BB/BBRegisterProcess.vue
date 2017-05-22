@@ -100,8 +100,7 @@
         </ul>
       </div>
       <!-- 自定义样式select框结束 -->
-      <router-link to="/bBAddPreCondition" class = "link-btn link-btn-blue">添加前置条件</router-link>
-
+      <button class = "link-btn link-btn-blue" @click="showDialog(1)">添加前置条件</button>
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
@@ -264,7 +263,8 @@
           <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">详细描述</b></div></li>
         </ul>
       </div>
-      <router-link to="/bBAddPreCondition" class = "link-btn link-btn-blue">添加前置条件</router-link> 
+      <button class = "link-btn link-btn-blue" @click="showDialog(1)">添加前置条件</button>
+
 
 
     </div>
@@ -363,13 +363,13 @@
         <label class="longname">关联的页面模板：</label>
        
        <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-      <router-link to="/BBAddPageTemplate" class = "link-btn link-btn-blue multi-delete">添加模板</router-link>
-
+       <button class = "link-btn link-btn-blue multi-delete" @click="showDialog(0)">添加页面模板</button>
       </div>
         
     </form>
     <div class="heads">
-      配置项<router-link to="/BBAddConfigure" class = "link-btn link-btn-blue multi-delete">添加配置项</router-link>
+      配置
+      <button class = "link-btn link-btn-blue multi-delete" @click="showDialog(2)">添加配置项</button>
     </div>
     <div class="items">
       <div class="twocolor">
@@ -744,17 +744,28 @@
       <router-link to="/pagetemplate"  class="ok">确定</router-link>
     </div>
     <br/>
+    <IMask :hide-mask.sync="hideMask"></IMask>
+    <AddPageTemplate :hide-pdialog.sync="hidePdialog" :hide-mask.sync="hideMask" v-on:closeDialog="closeDialog"></AddPageTemplate>
+    <AddPreCondition :hide-cdialog.sync="hideCdialog" :hide-mask.sync="hideMask" v-on:closeDialog="closeDialog"></AddPreCondition>
+    <AddConfigure :hide-fdialog.sync="hideFdialog" :hide-mask.sync="hideMask" v-on:closeDialog="closeDialog"></AddConfigure>
+    
   </div>
 
 </template>
 <script>
     import MutipleSelectDelete from "../AA/MutipleSelectDelete"
-    // import Delete from "../Delete"
-    // import IMask from "../Mask"
+    import AddPageTemplate from "./BBAddPageTemplate"
+    import AddPreCondition from "./bBAddPreCondition"
+    import AddConfigure from "./BBAddConfigure"
+    import IMask from "../Mask"
     export default{
       data(){
         return {
           nextState:1,
+          hidePdialog:true,
+          hideCdialog:true,
+          hideFdialog:true,
+          hideMask:true,
           multiple: {
             originOptions: [],
             selectedList: []
@@ -768,7 +779,7 @@
           ]
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete},
+      components:{'MutipleSelectDelete':MutipleSelectDelete,'AddPageTemplate':AddPageTemplate,'IMask':IMask,'AddPreCondition':AddPreCondition,'AddConfigure':AddConfigure},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();
@@ -806,8 +817,31 @@
         multipleCallback: function(data){
           this.multiple.selectedList = data;
         },
-        toggleShow:function(){
-
+        showDialog:function(i){
+          if(i==0){
+            this.hidePdialog=!this.hidePdialog;
+            this.hideMask = !this.hideMask
+          }else if(i==1){
+            this.hideCdialog=!this.hideCdialog;
+            this.hideMask = !this.hideMask
+          }else if(i==2){
+            this.hideFdialog=!this.hideFdialog;
+            this.hideMask = !this.hideMask
+          }
+          
+        },
+        closeDialog:function(data,i){
+          if(i==0){
+            this.hidePdialog = data;
+            this.hideMask = data;
+          }else if(i==1){
+            this.hideCdialog = data;
+            this.hideMask = data;
+          }else if(i==2){
+            this.hideFdialog = data;
+            this.hideMask = data;
+          }
+          
         }
       }
     }   

@@ -18,7 +18,7 @@
     right:0;
     background:#000;
     opacity:0.7;
-    height:188888px;
+    position: fixed;
     width:100%;
     }
   .hideMask{display: none}

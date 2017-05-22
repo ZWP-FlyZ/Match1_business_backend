@@ -1,8 +1,5 @@
 <template>
-<!-- 全局div开始 -->
-<!-- <div>添加配置项</div> -->
-	<div>
-		<div class="delete-modal-dialog identity-modal">
+		<div class="delete-modal-dialog identity-modal" v-bind:class="{'hide':hideFdialog}">
 			<div class="delete-modal-content">
 			<div class="delete-modal-header"><span class = "identity-header">申请添加</span></div>
 				<div class = "delete-modal-footer">
@@ -14,11 +11,21 @@
 				</div>
 			</div>
 		</div>
-	</div>	
-<!-- 全局div结束 -->
 </template>
-<style>
-	.bb-button-div{width: 500px;height:200px;margin:0 auto;border:1px solid red;}
-	.bb-button{margin-left:150px;}
+<script>
+	export default{
+		props:['hideFdialog','hideMask'],
+		methods:{
+			closeDialog:function(){
+				this.$emit("closeDialog",!this.hideFdialog,2);
+			}
+		}
+	}
+</script>
+<style scoped>
+ .hide{display: none}
+ .delete-modal-dialog{position: fixed;z-index:1000;top:200px;left:30%;}
+ .bb-button-div{width: 500px;height:200px;margin:0 auto;border:1px solid red;}
+ .bb-button{margin-left:150px;}
 </style>
 

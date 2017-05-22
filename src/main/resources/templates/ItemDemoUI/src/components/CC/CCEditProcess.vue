@@ -201,5 +201,4 @@ import IMask from "../Mask"
 .BZProcess-register-first{
   margin-top: 0;
 }
-
 </style>

@@ -26,7 +26,7 @@
     	    	<div class="BZProcess-table">
     	    		<div class="BZ-edit">
     	    			<div class="BZ-num"></div>
-    	    			<div class="process"><img src="../../assets/img/process1-white.png" alt=""></div>
+    	    			<div class="process"><img v-bind:src="changeImg" alt="" ></div>
     	    		</div>
     	    	</div>
     	    </div>
@@ -52,12 +52,12 @@
               <div class="search-body">
                 <img src="/static/img/glyphicons-61-compass.png" alt="">
                 <span>淘宝节点配置项1</span>
-                <input type="checkbox">
+                <input type="checkbox" @click="choose(1)">
               </div>
               <div class="search-body">
                 <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
                 <span>淘宝节点配置项1</span>
-                <input type="checkbox">
+                <input type="checkbox" @click="choose(1)">
               </div>
             </div>
           </div>
@@ -72,12 +72,12 @@
               <div class="search-body">
                 <img src="/static/img/glyphicons-61-compass.png" alt="">
                 <span>淘宝节点配置项1</span>
-                <input type="checkbox">
+                <input type="checkbox" @click="choose(2)">
               </div>
               <div class="search-body">
                 <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
                 <span>淘宝节点配置项1</span>
-                <input type="checkbox">
+                <input type="checkbox" @click="choose(2)">
               </div>
             </div>
           </div>
@@ -94,6 +94,7 @@ import IMask from "../Mask"
     data(){
       return {
         processList:[],
+        changeImg:require('../../assets/img/process1-white.png'),
         deleteContent:{
           item:'',
           url:''//删除的url请求
@@ -125,6 +126,13 @@ import IMask from "../Mask"
       closeDialog:function(childData){
         this.hideDialog = childData
         this.hideMask = childData
+      },
+      choose:function(i){
+        if(i==1){
+          this.changeImg = require('../../assets/img/process1.png')
+        }else{
+          this.changeImg = require('../../assets/img/process1-add.png')
+        }
       }
     }
   }
