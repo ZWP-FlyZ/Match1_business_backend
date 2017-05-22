@@ -752,7 +752,7 @@
     </div>
     <br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>
+      <router-link to="/bzprocess"  class="ok">确定</router-link>
     </div>
     <br/>
   </div>
@@ -842,7 +842,6 @@
   height: 110px;
   padding-top: 25px;
   left: 70%;
-  top:-150px;
   margin-left: -40px;
   bottom: 100%;
   border-radius: 2%;
@@ -857,7 +856,6 @@
   box-shadow: 3px 3px 3px #eee;
   border:1px solid #eee;
 }
-.node-top-fix{top:-100px;}
 .xf-tooltip-content i {
   opacity: 0;
 }
@@ -867,8 +865,8 @@
   opacity: 1;
 }
 .xf-tooltip-effect-1 .xf-tooltip-content {
-  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,0deg);
-  transform: translate3d(0,10px,0) rotate3d(1,1,1,0deg);
+  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
+  transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
   -webkit-transform-origin: 70% 100%;
   transform-origin: 70% 100%;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
