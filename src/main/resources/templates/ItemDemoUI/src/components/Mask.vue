@@ -10,7 +10,7 @@
 </script>  
 <style>
   .mask{
-    z-index:102;
+    z-index:103;
     /*兼容IE8及以下版本浏览器*/
     filter: alpha(opacity=30);
     position:absolute;

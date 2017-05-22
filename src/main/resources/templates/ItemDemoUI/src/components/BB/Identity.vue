@@ -85,11 +85,11 @@
 <style scoped>
 	.xf-item-header span{font-size:20px;}
 	.xf-item-header{margin-bottom:10px;}
-	.xf-item-box{transition:All 0.4s ease-in-out;border:1px solid;border-color: #f0f0f0;float: left;margin-right: 4%;width:24%;height:200px;margin-bottom:20px;padding:15px 10px;overflow: hidden;white-space:normal;word-wrap:break-word; }
+	.xf-item-box{transition:All 0.3s ease-in-out;border:1px solid;border-color: #f0f0f0;float: left;margin-right: 4%;width:24%;height:200px;margin-bottom:20px;padding:15px 10px;overflow: hidden;white-space:normal;word-wrap:break-word; }
 	.xf-item-box-chooose span{font-size:18px;color:#333;}
 	.xf-item-box-chooose .xf-show-detail,.xf-item-box-des,.xf-item-box-des span{font-size:14px;color:#ccc;}
 	.xf-show-detail span{color:#448bc7;font-size:14px}
-	.xf-item-box-chooose:hover{transform:translate(0,-10px);border:1px solid #448bc7;}
+	.xf-item-box-chooose:hover{transform:translate(0,-4px);border:1px solid #448bc7;}
 	.new-big-bg{background: url("/static/img/new-big.png");width: 80px;height: 80px; margin: 10px auto;}
 	.xf-item-box-new:hover .new-big-bg{background: url("/static/img/new-big-blue.png")}
 	.xf-item-box-new p{text-align: center;margin-top:30px;}

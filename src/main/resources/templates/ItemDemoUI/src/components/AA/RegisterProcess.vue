@@ -841,6 +841,7 @@
   height: 110px;
   padding-top: 25px;
   left: 70%;
+  top:-150px;
   margin-left: -40px;
   bottom: 100%;
   border-radius: 2%;
@@ -864,8 +865,8 @@
   opacity: 1;
 }
 .xf-tooltip-effect-1 .xf-tooltip-content {
-  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
-  transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
+  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,0);
+  transform: translate3d(0,10px,0) rotate3d(1,1,1,0);
   -webkit-transform-origin: 70% 100%;
   transform-origin: 70% 100%;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -914,7 +915,7 @@
 .fa-node3{top: -60px;left: 10px;background: url(/static/img/node3.png);}
 .fa-node4{top: -60px;left: -15px;background: url(/static/img/node4.png);}
 .fa-node5{width:300px;top: -60px;left: -30px;background: url(/static/img/node5.png);}
-
+.node-top-fix{top:-100px;}
 .xf-process-style{text-align: center}
   .SelectList{
     border-style:none;

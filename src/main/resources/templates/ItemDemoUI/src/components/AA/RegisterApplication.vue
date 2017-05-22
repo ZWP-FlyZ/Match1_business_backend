@@ -40,7 +40,7 @@
 </script>
 <style scoped>
     .hide-dialog{display: none}
-    .applicationReg{width:800px;background-color: #fff;z-index:103;position: fixed;top: 7%;left: 20%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
+    .applicationReg{width:800px;background-color: #fff;z-index:103;position: fixed;top: 7%;left: 20%;border-radius: 4px;box-shadow: 2px 2px 1px #000;z-index:1000;}
 	.applicationReg-header{
 		text-align: left;
 	    font: 15px/40px Arial, sans-serif;

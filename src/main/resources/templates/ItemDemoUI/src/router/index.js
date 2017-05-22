@@ -33,7 +33,8 @@ import CCEditProcess from '@/components/CC/cCEditProcess'
 import CCRegisterProcess from '@/components/CC/cCRegisterProcess'
 import CCPageTemplate from '@/components/CC/cCPageTemplate'
 import CCEditPageTemplate from '@/components/CC/cCEditPageTemplate'
-
+import PublishIdentity from '@/components/CC/PublishIdentity'
+import IdentityDetail from '@/components/CC/IdentityDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -179,9 +180,17 @@ export default new Router({
         {
           path:'/cCPageTemplate',
           component:CCPageTemplate
+        },
+        {
+          path:'/publishIdentity',
+          component:PublishIdentity
+        },
+        {
+          path:'/identityDetail',
+          component:IdentityDetail
         }
       ]
-    },
+    }
   ]
 })
 

@@ -42,39 +42,21 @@
     <div class="heads">
       流程图形化表达
     </div>
-  <!--   <div class="items">
-      <div class="yellow-block xf-node-style" >
-        <ul class="xf-node-ul">
-          <li v-for="(item,index) in nodeList">
-            <a href="javascript:void(0)" class="xf-tooltip xf-tooltip-effect-1">
-              <img v-bind:src="item.imgUrl " class="node-style" v-bind:class="{'node-style-fix':index==4}">
-              <span class="xf-tooltip-content" v-bind:class="{'node-top-fix':index==4}">
-                <i class="fa" v-bind:class="item.className"> <font class="xf-node-text">{{item.nodeText}}</font></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
     <div class="items">
       <div class="grey-block xf-process-style" >
-        <img src="static/img/tbpublish.png" usemap="#processmap" alt="" />
+        <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
         <map name="processmap" id="processmap">
-        <area shape="circle" coords="102 159 15" href="http://www.baidu.com" />
-        <area shape="rect" coords="138 134 194 191" href="http://www.google.com" />
-        <area shape="rect" coords="138 134 194 191" href="http://www.google.com" />
-        <area shape="rect" coords="237 141 276 182" href="http://www.google.com" />
-        <area shape="rect" coords="315 100 399 143" href="http://www.google.com" />
-        <area shape="rect" coords="317 171 394 225" href="http://www.google.com" />
-        <area shape="rect" coords="434 178 509 221" href="http://www.google.com" />
-        <area shape="rect" coords="552 180 591 219" href="http://www.google.com" />
-        <area shape="rect" coords="627 168 693 219" href="http://www.google.com" />
-        <area shape="rect" coords="711 178 748 218" href="http://www.google.com" />
-        <area shape="rect" coords="626 31 702 82" href="http://www.google.com" />
+        <area shape="rect" coords="154 150 216 196" href="#1" />
+        <area shape="rect" coords="262 156 307 198" href="#2" />
+        <area shape="rect" coords="352 106 447 159" href="#3" />
+        <area shape="rect" coords="484 195 571 243" href="#4" />
+        <!-- <area shape="rect" coords="618 195 663 241" id="showActivitiid" /> --><!-- 审核 -->
+        <area shape="rect" coords="700 27 787 89" href="#6" />
+        <area shape="rect" coords="702 180 775 238" href="#7" />
         </map>
       </div>
     </div>
-
+     <div v-if="isshowActiviti">
       <div class="heads">
         节点基本信息
       </div>
@@ -99,44 +81,20 @@
       <div class = "condition-select">
         <ul id="myUl" class="condition-in-out inputbox condition-factory">
           <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
-          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
-          <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">是否第一次进入该节点</b></div></li>
-          <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">商家信用等级</b></div></li>
-          <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">开店时间</b></div></li>
-          <li value="5" class="liHide"><div><input type="checkbox" class="input_check" id="check5"><label for="check5"></label><b class = "normal-b">转化率</b></div></li>
-          <li value="6" class="liHide"><div><input type="checkbox" class="input_check" id="check6"><label for="check6"></label><b class = "normal-b">违规记录</b></div></li>
-          <li value="7" class="liHide"><div><input type="checkbox" class="input_check" id="check7"><label for="check7"></label><b class = "normal-b">销售记录</b></div></li>
-          <li value="8" class="liHide"><div><input type="checkbox" class="input_check" id="check8"><label for="check8"></label><b class = "normal-b">是否是良心卖家</b></div></li>
-          <li value="9" class="liHide"><div><input type="checkbox" class="input_check" id="check9"><label for="check9"></label><b class = "normal-b">七天无理由退货</b></div></li>
-          <li value="10" class="liHide"><div><input type="checkbox" class="input_check" id="check10"><label for="check10"></label><b class = "normal-b">商家信用等级规则</b></div></li>
-          <li value="11" class="liHide"><div><input type="checkbox" class="input_check" id="check11"><label for="check11"></label><b class = "normal-b">知名品牌高危质检</b></div></li>
-           <li value="12" class="liHide"><div><input type="checkbox" class="input_check" id="check12"><label for="check12"></label><b class = "normal-b">冲突管理规则</b></div></li>
+          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check0"><label for="check0"></label><b class = "normal-b">商品类型</b></div></li>
         </ul>
       </div>
       <!-- 自定义样式select框结束 -->
-
     </div>
     <div class="twocolor">
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          开店时间
-        </div>
-        <div class="item">
-          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <div class="cc-precondition">
-        <div class="cc-precondition-pre-des">如果商品类型是</div>
-        <div class="cc-precondition-search">
-          <select><option value="">达尔文产品</option></select>
-        </div>
-        机审;否则<em>人工审</em>
+    <form class="grey grey-option">
+      <div class="item ">
+        商品类型 若等于<input type="text" class="inputbox checkView" value ="达尔文类型">
+        则执行 <b>机器审核</b> 活动; 
+        若等于<input type="text" class="inputbox checkView" value ="其他类型">
+        则执行 <b>人工审核</b> 活动
       </div>
+    </form>
     </div>
     
     <div class = "heads">
@@ -146,39 +104,24 @@
           <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
           <li value="221" class="liHide"><div><input type="checkbox" class="input_check" id="check221"><label for="check221"></label><b class = "normal-b">商家信用等级规则</b></div></li>
           <li value = "222" class="liHide"><div><input type="checkbox" class="input_check" id="check222"><label for="check222"></label><b class = "normal-b">开店时间</b></div></li>
-          <li value="223" class="liHide"><div><input type="checkbox" class="input_check" id="check223"><label for="check223"></label><b class = "normal-b">转化率</b></div></li>
-          <li value="224" class="liHide"><div><input type="checkbox" class="input_check" id="check224"><label for="check224"></label><b class = "normal-b">消保协议</b></div></li>
-          <li value="225" class="liHide"><div><input type="checkbox" class="input_check" id="check225"><label for="check225"></label><b class = "normal-b">违规记录</b></div></li>
-          <li value="226" class="liHide"><div><input type="checkbox" class="input_check" id="check226"><label for="check226"></label><b class = "normal-b">销售记录</b></div></li>
-          <li value="227" class="liHide"><div><input type="checkbox" class="input_check" id="check227"><label for="check227"></label><b class = "normal-b">是否是良心卖家</b></div></li>
-          <li value="228" class="liHide"><div><input type="checkbox" class="input_check" id="check228"><label for="check228"></label><b class = "normal-b">七天无理由退货</b></div></li>
-          <li value="229" class="liHide"><div><input type="checkbox" class="input_check" id="check229"><label for="check229"></label><b class = "normal-b">退货率</b></div></li>
-          <li value="2210" class="liHide"><div><input type="checkbox" class="input_check" id="check2210"><label for="check2210"></label><b class = "normal-b">评论数</b></div></li>
-          <li value="2211" class="liHide"><div><input type="checkbox" class="input_check" id="check2211"><label for="check2211"></label><b class = "normal-b">发货速度</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">特定类目规则</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">产品信息</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">详细描述</b></div></li>
         </ul>
       </div> 
     </div>
     <div class="twocolor">
-      <form class="grey grey-option">
+      <form class="grey">
         <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          商家信用等级规则
+        <div class="item condition-name">审查批准文号</div>
+        <div class="item">
+          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
+          <label class="smallname">名称：</label> <input type="text"  class="inputbox checkView"   value="" autocomplete="on" >
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
     </div>
     <div class="heads">
       关联页面模板
-      <router-link to="/cCEditPageTemplate" class = "link-btn link-btn-blue" style = "margin-left:330px;">配置页面业务能力</router-link>
     </div>
     <form  class="yellow">
       <div class="item">
@@ -192,8 +135,11 @@
       <div class="item">
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
         <label class="longname">关联的页面模板：</label>
+       
        <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+
       </div>
+        
     </form>
     <div class="heads">
       配置项
@@ -241,28 +187,6 @@
                 <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="人工1" autocomplete="on" >
               </div>
             </form>
-            <!-- <br/> -->
-            <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-              <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
-              </div>
-              <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="审核方1" autocomplete="on" >
-              </div>
-            </form>
-            <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-              <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
-              </div>
-              <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="机审1" autocomplete="on" >
-              </div>
-
-            </form>
-
             <br/>
           </div>
         </div>
@@ -270,7 +194,6 @@
       <div class="twocolor">
         <form class="grey">
           <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
           <div class="item">
             <label class="longname">角色的权限：</label>
             <select class="longinput" >
@@ -285,11 +208,9 @@
           <div class="item">
             <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="" autocomplete="on" >
           </div>
-
           <a href="#" class="addbottom">添加同类型配置项</a>
         </form>
         <div class="items2">
-
           <div class="item">
             <label class="longname">配置项值选项</label>
             <select class="inputbox" >
@@ -297,29 +218,8 @@
               <option value=''>多选</option>
             </select>
           </div>
-
-
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
-            <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-              <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
-              </div>
-              <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="可写"  autocomplete="on" >
-              </div>
-            </form>
-            <!-- <br/> -->
-            <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-              <div class="item">
-                <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
-              </div>
-              <div class="item">
-                <label class="smallname">名称: </label> <input type="text" class="inputbox checkView"  value="读写"  autocomplete="on" >
-              </div>
-            </form>
             <form class="grey">
               <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
@@ -566,6 +466,7 @@
         </div>
       </div>
     </div>
+    </div>
     <br/>
     <div class="bottom" >
       <router-link to="/bzprocess"  class="ok">确定</router-link>
@@ -580,6 +481,7 @@
       data(){
         return {
           nextState:1,
+          isshowActiviti:false,
           multiple: {
             originOptions: [],
             selectedList: []
@@ -631,13 +533,13 @@
         multipleCallback: function(data){
           this.multiple.selectedList = data;
         },
-        toggleShow:function(){
-
+        showActiviti:function(){
+          this.isshowActiviti = !this.isshowActiviti
         }
       }
     }   
   </script>
-<style scoped>
+<style>
   .xf-node-style{text-align:center;}
   .xf-node-ul li {
   float:left;
@@ -658,6 +560,7 @@
   height: 110px;
   padding-top: 25px;
   left: 70%;
+  top:-150px;
   margin-left: -40px;
   bottom: 100%;
   border-radius: 2%;
@@ -681,8 +584,8 @@
   opacity: 1;
 }
 .xf-tooltip-effect-1 .xf-tooltip-content {
-  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
-  transform: translate3d(0,10px,0) rotate3d(1,1,1,45deg);
+  -webkit-transform: translate3d(0,10px,0) rotate3d(1,1,1,0);
+  transform: translate3d(0,10px,0) rotate3d(1,1,1,0);
   -webkit-transform-origin: 70% 100%;
   transform-origin: 70% 100%;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -731,7 +634,7 @@
 .fa-node3{top: -60px;left: 10px;background: url(/static/img/node3.png);}
 .fa-node4{top: -60px;left: -15px;background: url(/static/img/node4.png);}
 .fa-node5{width:300px;top: -60px;left: -30px;background: url(/static/img/node5.png);}
-
+.node-top-fix{top:-100px;}
 .xf-process-style{text-align: center}
   .SelectList{
     border-style:none;
@@ -745,8 +648,6 @@
   .grey-option{
     margin-bottom: 20px;
   }
-  .cc-precondition-pre-des{float: left;}
-  .cc-precondition-search{float: left;}
 </style>
 
 
