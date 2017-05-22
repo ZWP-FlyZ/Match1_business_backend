@@ -43,7 +43,7 @@
 	 }
     }
 </script>
-<style>
+<style scoped>
 	.hideDialog{display: none}
 	.icon-delete{background-position: -248px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -9px;}
 	.deleteAability{

@@ -3,7 +3,7 @@
   <div>
   	<div class = "BBleft">
     	<div class = "BZProcess">
-    	    <div class="BZProcess-register">
+    	    <div class="BZProcess-register BZProcess-register-first">
     	      <ul>
     	          <li class = "BZProcess-classify">抽象流程模板</li>
     	      </ul>
@@ -129,7 +129,7 @@ import IMask from "../Mask"
     }
   }
 </script>
-<style>
+<style scoped>
  
   .BBright-part{
     width: 25%;
@@ -197,6 +197,9 @@ import IMask from "../Mask"
 .search-body-div{
   border:2px solid #448bc7;
   height: 150px;
+}
+.BZProcess-register-first{
+  margin-top: 0;
 }
 
 </style>

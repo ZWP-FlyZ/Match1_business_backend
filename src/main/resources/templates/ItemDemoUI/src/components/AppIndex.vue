@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
   import Sidebar from './AA/Sidebar.vue'
   
   export default{
