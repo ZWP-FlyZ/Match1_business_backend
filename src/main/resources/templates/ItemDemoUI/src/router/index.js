@@ -30,6 +30,7 @@ import CCIndex from '@/components/CCIndex'
 import CCprocess from '@/components/CC/CCprocess'
 import CIdentity from '@/components/CC/identity'
 import CCEditProcess from '@/components/CC/cCEditProcess'
+import CCRegisterProcess from '@/components/CC/cCRegisterProcess'
 
 Vue.use(Router)
 
@@ -164,6 +165,10 @@ export default new Router({
         {
           path:'/cCEditProcess',
           component:CCEditProcess
+        },
+        {
+          path:'/cCRegisterProcess',
+          component:CCRegisterProcess
         }
       ]
     },

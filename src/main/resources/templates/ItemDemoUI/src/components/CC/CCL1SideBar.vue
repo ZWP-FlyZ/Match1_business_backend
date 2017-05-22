@@ -67,7 +67,7 @@
       
 		</div>
 </template>
-<style>
+<style scoped>
   .application-active{font-weight: bold;color:#448bc7;}
 </style>
 

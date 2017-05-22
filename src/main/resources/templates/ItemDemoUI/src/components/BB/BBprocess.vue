@@ -141,7 +141,7 @@ import IMask from "../Mask"
     }
   }
 </script>
-<style>
+<style scoped>
   .table-checkbox{
   	margin-left: 0;
   	position:relative;

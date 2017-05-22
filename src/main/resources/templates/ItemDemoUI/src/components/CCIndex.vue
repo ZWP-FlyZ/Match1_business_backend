@@ -15,7 +15,7 @@
 </template>
 
 
-<script>
+<script scoped>
   import CCL1SideBar from './CC/CCL1SideBar.vue'
   export default{
     components: { 'CCL1SideBar': CCL1SideBar}

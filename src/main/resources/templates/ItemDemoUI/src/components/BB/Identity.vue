@@ -19,19 +19,21 @@
 						<router-link to="/bBprocess" class = "link-btn link-btn-blue identity-new">新建业务身份</router-link>
 					</div>
 				</div>
-				<div class = "delete-modal-footer">
+				<div class = "delete-modal-footer identity-footer">
 					<div class = "modal-footer-name">业务身份名称：<input type="text" class = "modal-footer-input"></div>
 					<div class = "modal-footer-name">业务归属方:<input type="text" class = "modal-footer-input" style="margin-left:25px;"></div>
+					<div class="identity-footer">
+						<button class = "link-btn link-btn-blue identity-confirm-button">确认</button>
+						<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+					</div>
 					
-					<button class = "link-btn link-btn-blue">确认</button>
-					<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
 				</div>
 			</div>
 		</div>
 	</div>	
 <!-- 全局div结束 -->
 </template>
-<style>
+<style scoped>
 	.identity-modal{width:500px;margin:0 auto;top:10px;}
 	.identity-header{color: #fff;font-size: 20px;}
 	.icon-android{background-position: 0px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/android.png);position: relative;top: 6px;left: -9px;}
@@ -41,4 +43,6 @@
 	.modal-footer-div{height: 300px;}
 	.modal-footer-name{text-align: left;}
 	.modal-footer-input{border:1px solid #000;height:20px;margin-bottom: 10px;}
+	.identity-confirm-button{margin-left: 80px;}
+	.identity-footer{margin-top: 10px;}
 </style>
