@@ -46,7 +46,7 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <img src="/static/img/glyphicons-28-search.png" alt="">
+              <!-- <img src="/static/img/glyphicons-28-search.png" alt=""> -->
             </div>
             <div class = "search-body-div">
               <div class="search-body">
@@ -66,7 +66,7 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <img src="/static/img/glyphicons-28-search.png" alt="">
+              <!-- <img src="/static/img/glyphicons-28-search.png" alt=""> -->
             </div>
             <div class = "search-body-div">
               <div class="search-body">
@@ -140,7 +140,7 @@ import IMask from "../Mask"
 <style scoped>
  
   .BBright-part{
-    width: 25%;
+    width: 30%;
     height: 200px;
     float: left;
     margin-left: 20px;
@@ -151,7 +151,7 @@ import IMask from "../Mask"
     float: left;
   }
   .search-header{
-    background: #448bc7;
+    background: #fff;
     height: 40px;
     border-radius: 6px;
     background-size: 16px 16px;

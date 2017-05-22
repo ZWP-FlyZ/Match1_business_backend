@@ -12,7 +12,16 @@
 					<br />
 					<label>描述：</label>
 					<textarea></textarea>
+          <br />
 				</div>
+        <div class="delete-modal-delete-content">
+          <br />
+          <label>开始时间：</label>
+          <input type="date" class="datetime-width" placeholder="开始时间">
+          <br /><br />
+          <label>结束时间：</label>
+          <input type="date" class="datetime-width" placeholder="结束时间">
+        </div>
 			</div>
 			<div class = "delete-modal-footer">
 				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
@@ -41,12 +50,14 @@
 </script>
 <style scoped>
 	.hide{display: none}
+  .delete-modal-delete-content label{width:10%;}
+  .datetime-width{width:62% !important;}
 	.icon-delete{background-position: -281px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -6px;}
 	.deleteAability{
 		width: 420px;
 		height: 260px;
 		position: fixed;
-		top: 30%;
+		top: 20%;
 		left: 35%;
 		z-index:103;
 	}
@@ -173,7 +184,7 @@
     margin-top: 10px;
     margin-left: 30px;
   }
-  .delete-modal-delete-content input[type="text"]{height: 34px;padding: 6px12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;
+  .delete-modal-delete-content input{height: 34px;padding: 6px12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);width:70%;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
   .delete-modal-delete-content textarea{position: relative;top:20px;  padding: 6px 12px;

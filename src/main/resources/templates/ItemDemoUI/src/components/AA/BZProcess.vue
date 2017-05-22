@@ -2,7 +2,7 @@
   <div class = "BZProcess">
     <div class = "BZProcess-total">流程定制总数：12</div>
     <!-- 流程模板 -->
-    <div class="BZProcess-register">
+    <!-- <div class="BZProcess-register">
       <ul>
           <li class = "BZProcess-classify">流程模板</li>
       </ul>
@@ -17,12 +17,12 @@
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
             <br /><br />
             <router-link to="/registerProcess" class = "link-btn link-btn-look">查看</router-link>
-            <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
+             <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
           </div>
         </div>
       </div>
       </div>
-    </div>
+    </div> -->
     <!-- 流程模板 -->
     <div class="BZProcess-register">
       <ul>

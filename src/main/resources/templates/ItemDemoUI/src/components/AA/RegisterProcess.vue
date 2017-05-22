@@ -58,23 +58,19 @@
     </div>
     <div class="items">
       <div class="grey-block xf-process-style" >
-        <img src="static/img/tbpublish.png" usemap="#processmap" alt="" />
+        <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
         <map name="processmap" id="processmap">
-        <area shape="circle" coords="102 159 15" href="http://www.baidu.com" />
-        <area shape="rect" coords="138 134 194 191" href="http://www.google.com" />
-        <area shape="rect" coords="138 134 194 191" href="http://www.google.com" />
-        <area shape="rect" coords="237 141 276 182" href="http://www.google.com" />
-        <area shape="rect" coords="315 100 399 143" href="http://www.google.com" />
-        <area shape="rect" coords="317 171 394 225" href="http://www.google.com" />
-        <area shape="rect" coords="434 178 509 221" href="http://www.google.com" />
-        <area shape="rect" coords="552 180 591 219" href="http://www.google.com" />
-        <area shape="rect" coords="627 168 693 219" href="http://www.google.com" />
-        <area shape="rect" coords="711 178 748 218" href="http://www.google.com" />
-        <area shape="rect" coords="626 31 702 82" href="http://www.google.com" />
+        <area shape="rect" coords="154 150 216 196" href="#1" />
+        <area shape="rect" coords="262 156 307 198" href="#2" />
+        <area shape="rect" coords="352 106 447 159" href="#3" />
+        <area shape="rect" coords="484 195 571 243" href="#4" />
+        <!-- <area shape="rect" coords="618 195 663 241" id="showActivitiid" /> --><!-- 审核 -->
+        <area shape="rect" coords="700 27 787 89" href="#6" />
+        <area shape="rect" coords="702 180 775 238" href="#7" />
         </map>
       </div>
     </div>
-
+     <div v-if="isshowActiviti">
       <div class="heads">
         节点基本信息
       </div>
@@ -99,7 +95,8 @@
       <div class = "condition-select">
         <ul id="myUl" class="condition-in-out inputbox condition-factory">
           <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
-          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
+          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check0"><label for="check0"></label><b class = "normal-b">商品类型</b></div></li>
+           <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
           <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">是否第一次进入该节点</b></div></li>
           <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">商家信用等级</b></div></li>
           <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">开店时间</b></div></li>
@@ -750,6 +747,7 @@
         </div>
       </div>
     </div>
+    </div>
     <br/>
     <div class="bottom" >
       <router-link to="/bzprocess"  class="ok">确定</router-link>
@@ -764,6 +762,7 @@
       data(){
         return {
           nextState:1,
+          isshowActiviti:false,
           multiple: {
             originOptions: [],
             selectedList: []
@@ -815,8 +814,8 @@
         multipleCallback: function(data){
           this.multiple.selectedList = data;
         },
-        toggleShow:function(){
-
+        showActiviti:function(){
+          this.isshowActiviti = !this.isshowActiviti
         }
       }
     }   
