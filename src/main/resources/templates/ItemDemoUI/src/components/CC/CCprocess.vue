@@ -2,8 +2,7 @@
   <!-- 全局div开始 -->
   <div>
   <div class = "BZProcess">
-      <div class = "BZProcess-total">流程定制总数：12</div>
-      <div class="BZProcess-register">
+      <div class="BZProcess-register cc-BZProcess-register">
         <ul>
             <li class = "BZProcess-classify">解决方案</li>
             <li class = "BZProcess-create"><router-link to="/cCEditProcess" class = "link-btn link-btn-default">新建解决方案</router-link></li>
@@ -13,13 +12,13 @@
        <div>
         <div class="BZProcess-des">
           <img src="" alt="">
-          <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
+          <a href="" ><router-link to="" class = "L1-name">商品发布（3）</router-link></a>
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝商品发布模板</div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女装商品发布</div>
             <div class="process"><img src="/static/img/tmpublish.png" /></div>
-            <div><input type="radio" name = "primary">选为主要方案</div>
+            <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
               <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -29,9 +28,8 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>天猫商品发布模板</div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
             <div class="process"><img src="/static/img/process1.png" /></div>
-            <div><input type="radio" name = "primary">选为主要方案</div>
             <div class = "process-button">
               <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -39,30 +37,10 @@
             </div>
           </div>
         </div>
-        </div>
-      </div>
-      <div class="BZProcess-table" style="border:0;">
-          <div class="BZ-edit">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-blue">编辑</router-link>
-          </div>
-      </div>
-
-      <div class="BZProcess-register">
-        <ul>
-            <li class = "BZProcess-classify">模板库</li>
-        </ul>
-      </div>
-       <div class = "classfy-table">
-       <div>
-        <div class="BZProcess-des">
-          <img src="" alt="">
-          <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
-        </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝商品发布模板</div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女鞋商品发布</div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
-            <div><input type="radio" name = "primary">选为主要方案</div>
             <div class = "process-button">
               <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -70,22 +48,8 @@
             </div>
           </div>
         </div>
-        <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>天猫商品发布模板</div>
-            <div class="process"><img src="/static/img/tmpublish.png" /></div>
-            <div><input type="radio" name = "primary">选为主要方案</div>
-            <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
-            </div>
-          </div>
-        </div>
-        
         </div>
       </div>
-
       <div class="BZProcess-table" style="border:0;">
           <div class="BZ-edit">
               <router-link to="/cCEditProcess" class = "link-btn link-btn-blue">编辑</router-link>
@@ -142,6 +106,7 @@ import IMask from "../Mask"
   }
 </script>
 <style scoped>
+  .cc-BZProcess-register{margin-top:0px;}
   .table-checkbox{
     margin-left: 20px;
     position:relative;
@@ -153,7 +118,7 @@ import IMask from "../Mask"
   .BZProcess-register{
     background: #F2F2F2;
     height: 45px;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
   }
   .BZProcess-classify{
     top:8px;

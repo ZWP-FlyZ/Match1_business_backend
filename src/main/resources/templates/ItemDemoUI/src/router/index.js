@@ -31,6 +31,8 @@ import CCprocess from '@/components/CC/CCprocess'
 import CIdentity from '@/components/CC/identity'
 import CCEditProcess from '@/components/CC/cCEditProcess'
 import CCRegisterProcess from '@/components/CC/cCRegisterProcess'
+import CCPageTemplate from '@/components/CC/cCPageTemplate'
+import CCEditPageTemplate from '@/components/CC/cCEditPageTemplate'
 
 Vue.use(Router)
 
@@ -169,6 +171,14 @@ export default new Router({
         {
           path:'/cCRegisterProcess',
           component:CCRegisterProcess
+        },
+        {
+          path:'/cCEditPageTemplate',
+          component:CCEditPageTemplate
+        },
+        {
+          path:'/cCPageTemplate',
+          component:CCPageTemplate
         }
       ]
     },

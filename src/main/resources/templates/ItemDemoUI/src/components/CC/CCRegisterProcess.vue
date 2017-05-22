@@ -347,7 +347,7 @@
       </form>
     </div>
     <div class="heads">
-      关联页面模板
+      关联页面模板<router-link to="/cCPageTemplate" class = "link-btn link-btn-blue multi-delete">编辑页面的业务能力</router-link>
     </div>
     <form  class="yellow">
       <div class="item">
