@@ -143,7 +143,7 @@ import IMask from "../Mask"
 </script>
 <style scoped>
   .table-checkbox{
-  	margin-left: 0;
+  	margin-left: 20px;
   	position:relative;
   	top: -9px;
   }

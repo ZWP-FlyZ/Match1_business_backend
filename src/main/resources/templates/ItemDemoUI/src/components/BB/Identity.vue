@@ -89,7 +89,7 @@
 	.xf-item-box-chooose span{font-size:18px;color:#333;}
 	.xf-item-box-chooose .xf-show-detail,.xf-item-box-des,.xf-item-box-des span{font-size:14px;color:#ccc;}
 	.xf-show-detail span{color:#448bc7;font-size:14px}
-	.xf-item-box:hover{transform:translate(0,-10px);border:1px solid #448bc7;}
+	.xf-item-box-chooose:hover{transform:translate(0,-10px);border:1px solid #448bc7;}
 	.new-big-bg{background: url("/static/img/new-big.png");width: 80px;height: 80px; margin: 10px auto;}
 	.xf-item-box-new:hover .new-big-bg{background: url("/static/img/new-big-blue.png")}
 	.xf-item-box-new p{text-align: center;margin-top:30px;}

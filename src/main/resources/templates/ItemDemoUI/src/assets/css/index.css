@@ -339,7 +339,23 @@ button{
 	color: #000;
 }
 .xf-clear{clear: both;}
-.xf-fade-enter{opacity: 0}
-.xf-fade-enter-active{opacity:1;}
-.xf-fade-leave{opacity: 1}
-.xf-fade-leave-active{opacity: 0}
+/*遮罩层的*/
+.fade-enter-active {
+  transition: all .3s ease;
+}
+.fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+/*弹出框的*/
+.xf-app-enter-active{
+  transform: translate(0,0);
+}
+.xf-app-leave-active{
+  transform: translate(0,-10px);
+}
+.xf-app-enter,.xf-app-active{
+  opacity: 0;
+}

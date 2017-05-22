@@ -1,5 +1,7 @@
 <template>
-  <div class="mask" v-bind:class="{'hideMask':hideMask}"></div>
+<transition name="fade">
+  <div class="mask" v-if="!hideMask"></div>
+</transition>
 </template>
 <script>
   export default{
@@ -21,5 +23,4 @@
     position: fixed;
     width:100%;
     }
-  .hideMask{display: none}
 </style>

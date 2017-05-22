@@ -1,44 +1,26 @@
 <template>
-  <transition name="xf-fade" v-if="">
-	<div class = "applicationReg" v-bind:class="{'hide-dialog':hideDialog}">
+  <transition name="xf-app">
+	<div class = "applicationReg" v-if="!hideDialog">
 		<div class = "applicationReg-des">
-			<form action="">
-			<div class="applicationReg-des-div">
-				<label for="">应用名称:</label>
-				<input type="text"  placeholder = "商品发布">
-			</div>
-			<div class="applicationReg-des-div">
-				<label for="">应用描述:</label>
-				<input type="text"  placeholder = "用于商品发布">
-			</div>
-			<div class="applicationReg-des-div">
-				<label for="">负责人:</label>
-				<input type="text"  placeholder="xxxx">
-			</div>
-			</form>
+			<span>注册应用</span>
+			<hr />
 		</div>
 		<div class = "theme-content">
-			<form action="" class = "form-theme">
-				<label for=""><b>主题：</b></label>
-				<input type="text"  placeholder = "" placeholder="请输入主题">
-			</form>
-			<form action="" class = "form-content">
-				<label for=""><b>内容：</b></label>
-				<textarea name="" id=""  rows="5" placeholder="请输入内容"></textarea>
-			</form>
+			<div class = "form-theme">
+				<span>名称：</span>
+				<input type="text" placeholder="请输入名称">
+			</div>
+			<div class = "form-content">
+				<span>描述：</span>
+				<textarea name="" id=""  rows="5" placeholder="请输入描述"></textarea>
+			</div>
 		</div>
 		<div class = "theme-content person">
-			<form action="" class = "form-theme">
-				<label for=""><b>对外服务人员:</b></label>
+			<div class = "form-theme">
+				<span>负责人:</span>
 				<input type="text" >
-			</form>
-		</div><!-- 
-		<div class = "theme-content person">
-			<form action="" class = "form-theme">
-				<label for=""><b>有权限编辑人员:</b></label>
-				<input type="text" >
-			</form>
-		</div> -->
+			</div>
+		</div>
 		<div class = "delete-modal-footer">
 			<button class = "link-btn link-btn-blue" >确认</button>
 			<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
@@ -56,9 +38,9 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
     .hide-dialog{display: none}
-    .applicationReg{width:900px;background-color: #fff;z-index:103;position: fixed;top: 1%;left: 15%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
+    .applicationReg{width:800px;background-color: #fff;z-index:103;position: fixed;top: 7%;left: 20%;border-radius: 4px;box-shadow: 2px 2px 1px #000}
 	.applicationReg-header{
 		text-align: left;
 	    font: 15px/40px Arial, sans-serif;
@@ -89,6 +71,7 @@
 		/*padding-left: 5%;*/
 		padding-left: 20px;
 	}
+	.applicationReg-des hr{width:98%;border:1px solid #e5e5e5;margin-top:5px;}
 	.applicationReg-des-div{
 		float: left;
 		margin-bottom: 30px;
@@ -120,7 +103,7 @@
 		/*font-size: 15px;*/
 		margin-right: 5px;
 		padding-left: 20px;
-		color: #666666;
+		/*color: #666666;*/
 	}
 	.form-theme{
 		padding-top:30px;
@@ -128,13 +111,12 @@
 	.form-theme input{
 		height: 30px;
 		width: 85%;
-		background: lightgoldenrodyellow;
 	}
 	.form-content{
 		margin-top: 40px;
 		padding-bottom: 40px;
 	}
-	.form-content label{
+	.form-content span{
 		float: left;
 		padding-left: 20px;
 		padding-right: -10px;
@@ -146,16 +128,9 @@
 		background-color:#fff;
 		margin-bottom: 40px;
 		width: 85%;
-		background: lightgoldenrodyellow;
-	}
-	.person input{
-		width: 75%;
 	}
 	.person{
-		height: 10%;
-	}
-	.person .form-theme{
-		padding-bottom: 40px;
+		padding-bottom:20px;
 	}
 	body{
 		font:15px/1.62 Helvetica,Arial,sans-serif;
@@ -174,5 +149,6 @@
 	input{
 		text-align: left;
 	}
+	.delete-modal-footer{margin: 20px;float: right}
 	
 </style>
