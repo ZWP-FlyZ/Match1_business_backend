@@ -1,13 +1,13 @@
 <template>
 		<div id="application">
 			<div class="application-heading">
-				<span>L1流程1</span>
+				<span>已选流程列表</span>
 			</div>
 			<div class="application-list">
 				<ul >
-					<li v-bind:class="{'application-li-active':isActive == item}" @click="addActive(item)" v-for="(item,index) in processL1">
-						<i class="icon-triangle-right"></i>
-						<router-link to="/cCprocess" class="application-router">{{item.name}}</router-link>
+					<li v-bind:class="{'application-li-active':isActive == item}" @click="addActive(item)" v-for="(item,index) in choosedList">
+						<!-- <i class="icon-triangle-right"></i> -->
+						<router-link to="/cCEditProcessFchoosed" class="application-router">{{item.name}}</router-link>
 					</li>
 				</ul>
 			</div>
@@ -17,6 +17,8 @@
 </template>
 <style scoped>
   .application-active{font-weight: bold;color:#448bc7;}
+  #application .application-list ul li{padding-left:0;}
+  #application .application-list .application-router{width:95%;margin-left:15px;}
 </style>
 
 <script>
@@ -24,7 +26,7 @@ export default {
   data(){
     return {
       isActive:'0',
-	    processL1:[]
+	    choosedList:[]
 	}
   },
   mounted:function(){
@@ -38,7 +40,7 @@ export default {
   	},
   	getApplication:function(){
   		this.$http.get("/api/getList").then(res=>{
-  			this.processL1 = JSON.parse(res.body.data).result.processL1;
+  			this.choosedList = JSON.parse(res.body.data).result.choosedList;
   		})
   	}
   }

@@ -122,7 +122,7 @@
     </div>
     <form  class="yellow" v-if="showwhat==7">
       <div class="item">
-        <label class="smallname">审核</label>
+        <label class="smallname">人工审核</label>
       </div>
       <div class="item">
         <label class="longname">关联的页面模板：</label>
@@ -159,7 +159,7 @@
     </div>
     <br/>
     <div class="bottom" >
-      <router-link to="/publishIdentity"  class="ok">确定</router-link>
+      <router-link to="/publishIdentity"  class="ok link-btn link-btn-default">确定</router-link>
     </div>
     <br/>
   </div>

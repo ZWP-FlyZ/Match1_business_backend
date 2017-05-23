@@ -15,7 +15,8 @@
 					<span class="icon-delete"></span>确认删除以下内容：
 				</div>
 				<div class = " delete-modal-delete-content">
-					{{message.item.name}}
+					<!-- {{message.item.name}} -->
+					删除东西
 				</div>
 			</div>
 			<div class = "delete-modal-footer">

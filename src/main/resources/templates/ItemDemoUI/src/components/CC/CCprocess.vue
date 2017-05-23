@@ -5,7 +5,7 @@
       <div class="BZProcess-register cc-BZProcess-register">
         <ul>
             <li class = "BZProcess-classify">解决方案</li>
-            <li class = "BZProcess-create"><router-link to="/cCEditProcess" class = "link-btn link-btn-default">新建解决方案</router-link></li>
+            <li class = "BZProcess-create"><router-link to="" class = "link-btn link-btn-default">新建解决方案</router-link></li>
         </ul>
       </div>
       <div class = "classfy-table">
@@ -115,7 +115,7 @@
       </div>
       <div class="BZProcess-table" style="border:0;">
           <div class="BZ-edit">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-blue">编辑</router-link>
+              <router-link to="/cCbeforeEdit" class = "link-btn link-btn-blue">确定</router-link>
           </div>
       </div>
       </div>

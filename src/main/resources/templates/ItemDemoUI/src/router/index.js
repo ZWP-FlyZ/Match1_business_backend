@@ -34,6 +34,7 @@ import CCPageTemplate from '@/components/CC/cCPageTemplate'
 import CCEditPageTemplate from '@/components/CC/cCEditPageTemplate'
 import PublishIdentity from '@/components/CC/PublishIdentity'
 import IdentityDetail from '@/components/CC/IdentityDetail'
+import CCbeforeEdit from '@/components/CC/CCbeforeEdit'
 Vue.use(Router)
 
 export default new Router({
@@ -103,16 +104,16 @@ export default new Router({
     ]
   },
   {
+    path: '/identity',
+    component: Identity
+  },
+  {
     path:'/bbindex',
     component:BBindex,
     children:[
       {
         path:'/',
         redirect:'/identity'
-      },
-      {
-        path: '/identity',
-        component: Identity
       },
       {
         path: '/bBprocess',
@@ -149,16 +150,26 @@ export default new Router({
      ]
     },
     {
+      path:'/cidentity',
+      component:CIdentity
+    },
+    {
+      path:'/cCbeforeEdit',
+      component:CCbeforeEdit,
+      children:[
+        {
+          path:'/cCEditProcessFchoosed',
+          component:CCEditProcess
+        }
+      ]
+    },
+    {
       path:'/ccindex',
       component:CCIndex,
       children:[
         {
           path:"/",
           redirect:'/cidentity'
-        },
-        {
-          path:'/cidentity',
-          component:CIdentity
         },
         {
           path:'/cCprocess',
