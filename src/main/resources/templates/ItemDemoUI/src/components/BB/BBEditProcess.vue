@@ -46,7 +46,7 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <!-- <img src="/static/img/glyphicons-28-search.png" alt=""> -->
+              <img src="/static/img/glyphicons-28-search.png" alt="">
             </div>
             <div class = "search-body-div">
               <div class="search-body">
@@ -66,7 +66,7 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <!-- <img src="/static/img/glyphicons-28-search.png" alt=""> -->
+              <img src="/static/img/glyphicons-28-search.png" alt="">
             </div>
             <div class = "search-body-div">
               <div class="search-body">
@@ -140,7 +140,7 @@ import IMask from "../Mask"
 <style scoped>
  
   .BBright-part{
-    width: 25%;
+    width: 30%;
     height: 200px;
     float: left;
     margin-left: 20px;
@@ -167,7 +167,7 @@ import IMask from "../Mask"
     font-weight: 700;
     margin-left: 23px;
     line-height: 23px;
-    padding: 5px 0;
+    padding: 8px 0;
     text-indent: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -175,8 +175,8 @@ import IMask from "../Mask"
     float: left;
 }
 .search-header img{
-  float: left;
-  margin-left: 3px;
+  float: right;
+  margin-right: 23px;
   margin-top: 5px;
 }
 .search-body{
@@ -186,7 +186,7 @@ import IMask from "../Mask"
 }
 .search-body span{
   display: inline-block;
-  width: 220px;
+  width: 270px;
   color:#448bc7;
   margin-left: 10px;
   margin-right:10px;
@@ -209,5 +209,17 @@ import IMask from "../Mask"
 .BZProcess-register-first{
   margin-top: 0;
 }
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #fff; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #fff; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #fff; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #fff; 
+} 
 
 </style>
