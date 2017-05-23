@@ -140,7 +140,7 @@ import IMask from "../Mask"
 <style scoped>
  
   .BBright-part{
-    width: 30%;
+    width: 25%;
     height: 200px;
     float: left;
     margin-left: 20px;
@@ -151,7 +151,7 @@ import IMask from "../Mask"
     float: left;
   }
   .search-header{
-    background: #fff;
+    background: #448bc7;
     height: 40px;
     border-radius: 6px;
     background-size: 16px 16px;

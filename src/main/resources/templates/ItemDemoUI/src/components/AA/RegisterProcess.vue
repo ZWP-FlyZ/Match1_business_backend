@@ -61,12 +61,25 @@
         <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
         <map name="processmap" id="processmap">
         <area shape="rect" coords="154 150 216 196" href="#1" />
+
         <area shape="rect" coords="262 156 307 198" href="#2" />
+        <div style="width: 70px;height: 54px;border: 1px solid transparent;position: absolute;top: 150px;left: 155px;" @click="showContent(2)"></div>
+
         <area shape="rect" coords="352 106 447 159" href="#3" />
+        <div style="width: 74px;height: 57px;border: 1px solid transparent;position: absolute;top: 114px;left: 370px;" @click="showContent(3)"></div>
+
         <area shape="rect" coords="484 195 571 243" href="#4" />
-        <!-- <area shape="rect" coords="618 195 663 241" id="showActivitiid" /> --><!-- 审核 -->
+        <div style="width: 74px;height: 57px;border: 1px solid transparent;position: absolute;top: 200px;left: 500px;" @click="showContent(4)"></div>
+
+        <area shape="rect" coords="618 195 663 241" id="showActivitiid" /> 
+        <div style="width: 45px;height: 45px;border: 1px solid transparent;position: absolute;top: 205px;left: 630px;" @click="showContent(5)"></div>
+
         <area shape="rect" coords="700 27 787 89" href="#6" />
+        <div style="width: 74px;height: 57px;border: 1px solid transparent;position: absolute;top: 39px;left: 719px;" @click="showContent(6)"></div>
+
         <area shape="rect" coords="702 180 775 238" href="#7" />
+        <div style="width: 74px;height: 57px;border: 1px solid transparent;position: absolute;top: 192px;left: 710px;" @click="showContent(7)"></div>
+        </map>
         </map>
       </div>
     </div>
@@ -763,6 +776,7 @@
         return {
           nextState:1,
           isshowActiviti:false,
+          showwhat :'5',
           multiple: {
             originOptions: [],
             selectedList: []
@@ -816,6 +830,9 @@
         },
         showActiviti:function(){
           this.isshowActiviti = !this.isshowActiviti
+        },
+        showContent:function(i){
+          this.showwhat=i
         }
       }
     }   
