@@ -140,14 +140,14 @@ import IMask from "../Mask"
 <style scoped>
  
   .BBright-part{
-    width: 30%;
+    width: 40%;
     height: 200px;
     float: left;
     margin-left: 20px;
     /*border:1px solid #0000ff;*/
   }
   .BBleft{
-    width: 60%;
+    width: 55%;
     float: left;
   }
   .search-header{
@@ -186,10 +186,10 @@ import IMask from "../Mask"
 }
 .search-body span{
   display: inline-block;
-  width: 270px;
+  width: 350px;
   color:#448bc7;
-  margin-left: 10px;
-  margin-right:10px;
+  margin-left: 40px;
+  margin-right:45px;
 }
 .search-body img{
   position: relative;
