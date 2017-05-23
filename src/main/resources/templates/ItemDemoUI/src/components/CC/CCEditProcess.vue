@@ -126,16 +126,17 @@
     <form  class="yellow">
       <div class="item">
         <label class="smallname">节点1</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value=""
+        <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput checkView"  value=""
          autocomplete="on" autofocus="autofocus">
       </div>
       <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
+        <label class="smallnamed">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
       </div>
       <div class="item">
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
-        <label class="longname">关联的页面模板：</label>
-       
+
+        <label class="longname longname-cc">关联的页面模板：</label>
+
        <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
 
       </div>
@@ -648,6 +649,11 @@
   .grey-option{
     margin-bottom: 20px;
   }
+
+  .cc-precondition-pre-des{float: left;}
+  .cc-precondition-search{float: left;}
+  .longname-cc{top:0;}
+
 </style>
 
 

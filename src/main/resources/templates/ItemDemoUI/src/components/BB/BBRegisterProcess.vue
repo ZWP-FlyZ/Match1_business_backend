@@ -352,19 +352,19 @@
     <form  class="yellow">
       <div class="item">
         <label class="smallname">节点1</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value=""
+        <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput checkView"  value=""
          autocomplete="on" autofocus="autofocus">
       </div>
       <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
+        <label class="smallnamed">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
       </div>
       <div class="item">
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
-        <label class="longname">关联的页面模板：</label>
-       
-       <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-       <button class = "link-btn link-btn-blue multi-delete" @click="showDialog(0)">添加页面模板</button>
       </div>
+      <div class="item">
+         <label class="longname longname-bb">关联的页面模板：</label> <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+      </div>
+      <button class = "link-btn link-btn-blue multi-delete-page" @click="showDialog(0)">添加页面模板</button>
         
     </form>
     <div class="heads">
@@ -852,6 +852,8 @@
     margin-bottom: 20px;
   }
   .multi-delete{border:1px solid green;margin-left: 480px;}
+  .multi-delete-page{float: right;margin-right: 5px;}
+  .longname-bb{top: 0;}
 </style>
 
 

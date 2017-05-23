@@ -361,7 +361,7 @@
     content: "";
     position: absolute;
     left: 1px;
-    bottom: 6px;
+    bottom: 3px;
     width: 9px;
     height: 4px;
     border: 3px solid #b6d7a8;

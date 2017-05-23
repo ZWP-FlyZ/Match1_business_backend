@@ -89,11 +89,11 @@
       <form  class="yellow">
         <div class="item-row">
           <div class="item item-select-relate ">
-            <label class="smallname">宝贝基本信息</label>
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+            <label class="smallname smallname-label">宝贝基本信息:</label>
+            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
@@ -110,11 +110,11 @@
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
-            <label class="smallname">支付信息</label>
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+            <label class="smallname smallname-label">支付信息:</label>
+            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
@@ -137,11 +137,11 @@
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
-            <label class="smallname">物流信息</label>
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+            <label class="smallname smallname-label">物流信息:</label>
+            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
@@ -164,11 +164,11 @@
         </div>
         <div class="item-row">
           <div class="item item-select-relate">
-            <label class="smallname">售后信息</label>
-            <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
+            <label class="smallname smallname-label">售后信息:</label>
+            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
           </div>
           <div class="item item-select-relate">
-            <label class="smallname">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
+            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
           </div>
           <div class="item item-select-relate">
             <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
@@ -368,7 +368,8 @@
       margin-right: 10px;
     }
     
-   /* .items{border:1px solid red;}*/
+   .smallname-label{width: 89px;text-align: right;}
+   .smallnamed-key{margin-left: 24px;}
 
 </style>
 
