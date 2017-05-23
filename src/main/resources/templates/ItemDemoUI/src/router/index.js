@@ -158,6 +158,10 @@ export default new Router({
       component:CCbeforeEdit,
       children:[
         {
+          path:'/',
+          redirect:'/cCEditProcessFchoosed'
+        },
+        {
           path:'/cCEditProcessFchoosed',
           component:CCEditProcess
         }

@@ -1,19 +1,28 @@
 <template>
-<!-- 全局div开始 -->
-<!-- <div>添加页面模板</div> -->
 	<div class="delete-modal-dialog identity-modal" v-bind:class="{'hide':hidePdialog}">
-			<div class="delete-modal-content">
-			<div class="delete-modal-header"><span class = "identity-header">申请添加</span></div>
-				<div class = "delete-modal-footer">
-					<div class = "modal-footer-name">页面名称：<input type="text" class = "modal-footer-input BB-modal-footer-input"></div>
-					<div class = "modal-footer-name">归属节点：<input type="text" class = "modal-footer-input BB-modal-footer-input"></div>
-					<div class = "modal-footer-name"><span class = "requirement">需求描述：</span><textarea name="" id="" cols="30" rows="10"></textarea></div>
-					<button class = "link-btn link-btn-blue bb-button">确认</button>
-					<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+		<div class="delete-modal-content">
+			<div class="delete-modal-body">
+				<div class = "delete-modal-delete-confirm">
+					<span class="icon-delete"></span>申请添加
+				</div>
+				<div class = "delete-modal-delete-content">
+					<label>页面名称：</label>
+					<input type="text" placeholder="输入名称">
+					<br /><br />
+					<label>归属节点：</label>
+					<input type="text" placeholder="输入名称">
+					<br />
+					<label>需求描述：</label>
+					<textarea></textarea>
+          			<br />
 				</div>
 			</div>
+			<div class = "delete-modal-footer">
+				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
+				<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+			</div>
+		</div>
 	</div>
-<!-- 全局div结束 -->
 </template>
 <script>
 	export default{

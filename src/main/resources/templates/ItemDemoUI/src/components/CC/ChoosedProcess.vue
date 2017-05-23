@@ -5,7 +5,7 @@
 			</div>
 			<div class="application-list">
 				<ul >
-					<li v-bind:class="{'application-li-active':isActive == item}" @click="addActive(item)" v-for="(item,index) in choosedList">
+					<li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in choosedList">
 						<!-- <i class="icon-triangle-right"></i> -->
 						<router-link to="/cCEditProcessFchoosed" class="application-router">{{item.name}}</router-link>
 					</li>

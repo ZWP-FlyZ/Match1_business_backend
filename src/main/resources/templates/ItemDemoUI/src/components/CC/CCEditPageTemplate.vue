@@ -49,10 +49,10 @@
 			<div class="CCBability">
 				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(1)">
 					<input type="checkbox" name="" />
-					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent==1}"></span>
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述标题</span>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent==1">
+				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent1">
 					<div class="CCability">
 						<p>标题长度：</p>
 						<div class="CCability-check CCability-check-limit">
@@ -70,10 +70,10 @@
 			<div class="CCBability">
 				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(2)">
 					<input type="checkbox" name="" />
-					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent==2}"></span>
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述宝贝卖点</span>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent==2">
+				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent2">
 					<div class="CCability">
 						<p>品牌:</p>
 						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>三星</label></div>
@@ -139,7 +139,8 @@
         hideDialog:true,
         hideMask:true,
         showAbilityContent:false,
-        showBilityContent:false
+        showBilityContent1:false,
+        showBilityContent2:false
       }
     },
     components:{"Delete":Delete,"IMask":IMask},
@@ -167,7 +168,12 @@
       	this.showAbilityContent = !this.showAbilityContent
       },
       showBility:function(i){
-      	this.showBilityContent = i
+      	if(i==1){
+      		this.showBilityContent1 = !this.showBilityContent1
+      	}else{
+      		this.showBilityContent2 = !this.showBilityContent2
+      	}
+      	
       }
     }
   }

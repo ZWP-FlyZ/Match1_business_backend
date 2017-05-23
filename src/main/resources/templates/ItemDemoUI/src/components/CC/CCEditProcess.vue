@@ -11,13 +11,13 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView"  value="弱管控商品发布" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView"  value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
         </div>
          <div class="item">
           <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="2"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="10"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
@@ -26,8 +26,8 @@
           <label class="nameid"> 流程分类: </label>
 
           <select class="inputbox checkView SelectList" >
-            <option >二级流程</option>
-            <option value='' >商品发布</option>
+            <option >商品发布</option>
+            <option value='' >一级流程</option>
           </select>
         </div>
 
@@ -48,7 +48,7 @@
         <map name="processmap" id="processmap">
         <area shape="rect" coords="154 150 216 196" href="#1" />
 
-        <area shape="rect" coords="262 156 307 198" href="#2" />
+        <area shape="rect" coords="262 156 307 198" nohref />
         <div style="width: 70px;height: 54px;border: 1px solid transparent;position: absolute;top: 150px;left: 155px;" @click="showContent(2)"></div>
 
         <area shape="rect" coords="352 106 447 159" href="#3" />
@@ -75,10 +75,19 @@
       <div class="items">
         <form  class="itemsform">
           <div class="item">
-            <label class="nameid">节点名称: </label><input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus">
+            <label class="nameid">
+            节点名称: 
+            </label>
+            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="showwhat==2">
+            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="showwhat==3">
+            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="showwhat==4">
+            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==5">
+            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==6">
+            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==7">
           </div>
           <div class="item">
-            <label class="nameid">节点功能描述: </label><input type="text" class="inputbox checkView"  placeholder="审核"  autocomplete="on" >
+            <label class="nameid">节点功能描述: </label>
+            <input type="text" class="inputbox checkView"  placeholder="审核"  autocomplete="on" >
           </div>
 
           <div class="item">
@@ -120,7 +129,7 @@
       关联页面模板
       <router-link to="/cCEditPageTemplate" class = "xf-go-edit-bzability">去编辑业务能力</router-link>
     </div>
-    <form  class="yellow" v-if="showwhat==7">
+    <form  class="yellow" v-if="showwhat==6">
       <div class="item">
         <label class="smallname">人工审核</label>
       </div>
@@ -131,13 +140,13 @@
     </form>
     <div class = "heads">
       <div class = "condition">内部前置条件</div>
-     <select class="longinput" v-if="showwhat==7">
+     <select class="longinput" v-if="showwhat==6">
           <option>商家信用等级</option>
           <option>开店时间</option>
           <option>转化率</option>
       </select>
     </div>
-     <div class="twocolor" v-if="showwhat==7">
+     <div class="twocolor" v-if="showwhat==6">
      <div class="grey grey-option">
       <div class="item ">
         商家信用等级 若
@@ -217,10 +226,10 @@
           var mySelf = this
           this.$http.get("/api/getList").then(res=>{
             console.log(JSON.parse(res.body.data).result.pageList.length)
-            mySelf.multiple.originOptions = [{"id":"0","name":"机器审核页面1"},{"id":"0","name":"机器审核页面2"}]
+            mySelf.multiple.originOptions = [{"id":"0","name":"人工审核页面1"},{"id":"0","name":"人工审核页面2"}]
             /*JSON.parse(res.body.data).result.pageList*/
           })
-          mySelf.multiple.selectedList = [{"id":"1","name":"机器审核页面1"}]
+          mySelf.multiple.selectedList = [{"id":"1","name":"人工审核页面1"}]
         },
         multipleCallback: function(data){
           this.multiple.selectedList = data;
@@ -229,6 +238,7 @@
           this.isshowActiviti = !this.isshowActiviti
         },
         showContent:function(i){
+          this.isshowActiviti=true
           this.showwhat=i
         }
       }

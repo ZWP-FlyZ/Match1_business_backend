@@ -16,8 +16,8 @@
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女装商品发布</div>
-            <div class="process"><img src="/static/img/tmpublish.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox" checked></div>淘宝女装T-shirt商品发布</div>
+            <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
@@ -28,8 +28,8 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
-            <div class="process"><img src="/static/img/process1.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox" checked></div>淘宝女装衬衫商品发布</div>
+            <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -53,12 +53,12 @@
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
-            <div class="process"><img src="/static/img/process1.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋-帆布鞋商品发布</div>
+            <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
+              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
+              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
             </div>
           </div>
         </div>
@@ -79,8 +79,8 @@
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女装商品发布</div>
-            <div class="process"><img src="/static/img/tmpublish.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝一口价商品发布</div>
+            <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
@@ -91,8 +91,8 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
-            <div class="process"><img src="/static/img/process1.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>天猫一口价商品发布</div>
+            <div class="process"><img src="/static/img/tmpublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -102,8 +102,8 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女鞋商品发布</div>
-            <div class="process"><img src="/static/img/tbpublish.png" /></div>
+            <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>聚划算一口价商品发布</div>
+            <div class="process"><img src="/static/img/jhspublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
@@ -227,7 +227,7 @@ import IMask from "../Mask"
     margin-top: 9px;
   }
   .BZProcess-table .BZ-num{
-    width: 20%;
+    width: 23%;
     position: relative;
   }
   .BZProcess-table .process{
