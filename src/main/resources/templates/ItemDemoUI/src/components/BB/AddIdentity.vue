@@ -48,7 +48,7 @@
 	 }
     }
 </script>
-<style scoped>
+<style>
 	.hide{display: none}
   .delete-modal-delete-content label{width:10%;}
   .datetime-width{width:62% !important;}

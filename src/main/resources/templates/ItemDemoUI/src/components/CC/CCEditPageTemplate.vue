@@ -38,8 +38,7 @@
 			    <br/>  <br/>
 				</div>
 				<div class = "template-confirm">
-					<router-link to="/publishIdentity"  class="link-btn link-btn-blue">生成业务身份</router-link>
-					<router-link to="/cCEditProcess"  class="link-btn link-btn-red">放弃配置</router-link>
+					<router-link to="/publishIdentity"  class="link-btn link-btn-blue">保存</router-link>
 				</div>
 		    <IMask :hide-mask.sync="hideMask"></IMask>
 		    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
@@ -124,6 +123,7 @@
 	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 120%;}
 	.CCEditPageTemplate-CCRight-bottom{width: 90%;}
 	.bottoms{right:114px;}
+	.template-confirm{margin-left: 30%;}
 </style>
 <script>
   import Delete from "../Delete"

@@ -2,15 +2,27 @@
 <!-- 全局div开始 -->
 		<div class="delete-modal-dialog identity-modal" v-bind:class="{'hide':hideCdialog}">
 			<div class="delete-modal-content">
-			<div class="delete-modal-header"><span class = "identity-header">申请添加</span></div>
-				<div class = "delete-modal-footer">
-					<div class = "modal-footer-name">条件名称：<input type="text" class = "modal-footer-input BB-modal-footer-input"></div>
-					<div class = "modal-footer-name">归属节点：<input type="text" class = "modal-footer-input BB-modal-footer-input"></div>
-					<div class = "modal-footer-name"><span class = "requirement">需求描述：</span><textarea name="" id="" cols="30" rows="10"></textarea></div>
-
-					<button class = "link-btn link-btn-blue bb-button">确认</button>
-					<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+			<div class="delete-modal-body">
+				<div class = "delete-modal-delete-confirm">
+					<span class="icon-delete"></span>添加前置条件
 				</div>
+				<div class = "delete-modal-delete-content">
+					<label>名称：</label>
+					<input type="text" placeholder="输入名称">
+					<br/><br>
+					<label>归属：</label>
+					<input type="text" placeholder="输入归属">
+					<br/>
+					<label>描述：</label>
+					<textarea></textarea>
+          		<br/>
+			</div>
+       
+			</div>
+			<div class = "delete-modal-footer">
+				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
+				<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+			</div>
 			</div>
 		</div>
 </template>
