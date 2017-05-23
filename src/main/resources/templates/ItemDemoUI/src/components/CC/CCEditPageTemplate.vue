@@ -7,36 +7,28 @@
 				    <div class="template-head">
 				      <div class="head-left">页面模板</div>
 				    </div>
-				    <div class="template-body">
+				    <div class="template-body" @click="showAbility">
 				        <div class="one-container cc-page-name" v-for="(item,index) in pageList">
-				          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：{{item.name}}</router-link>
+				          <span class="titem-name">页面模板名称：{{item.name}}</span>
 				          <div class="template-edit">
 				            <div class="template-view">
 				              <img v-bind:src="item.imgPath" class="template-img cc-img">
 				            </div>
 				            <div class="bottoms">
-				              <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link>
-				              <br/>
-				              <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
-				              <br/>
 				               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
 				            </div>
 				          </div>
 				        </div>
 				        <br/><br/>
 				    </div>
-				    <div class="template-body">
+				    <div class="template-body" @click="showAbility">
 				        <div class="one-container cc-page-name" v-for="(item,index) in pageList">
-				          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：{{item.name}}</router-link>
+				          <span class="titem-name">页面模板名称：{{item.name}}</span>
 				          <div class="template-edit">
 				            <div class="template-view">
 				              <img v-bind:src="item.imgPath" class="template-img cc-img">
 				            </div>
 				            <div class="bottoms">
-				              <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link>
-				              <br/>
-				              <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
-				              <br/>
 				               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
 				            </div>
 				          </div>
@@ -54,13 +46,14 @@
 		  	</div>
 		</div>
 <!-- 左侧边栏结束 -->
-		<div class="CCEditPageTemplate-CCRight">
+		<div class="CCEditPageTemplate-CCRight" v-if="showAbilityContent">
 			<div class="CCBability">
-				<div class="CCEditPageTemplate-CCRight-top">
-					<img src="/static/img/glyphicons-742-fingerprint.png" alt="">
-					<p>描述标题</p>
+				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(1)">
+					<input type="checkbox" name="" />
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent==1}"></span>
+					<span class="text">描述标题</span>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom">
+				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent==1">
 					<div class="CCability">
 						<p>标题长度：</p>
 						<div class="CCability-check CCability-check-limit">
@@ -76,11 +69,12 @@
 			</div>
 
 			<div class="CCBability">
-				<div class="CCEditPageTemplate-CCRight-top">
-					<img src="/static/img/glyphicons-744-fingerprint-ok-blue.png" alt="">
-					<p>描述宝贝卖点</p>
+				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(2)">
+					<input type="checkbox" name="" />
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent==2}"></span>
+					<span class="text">描述宝贝卖点</span>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom">
+				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent==2">
 					<div class="CCability">
 						<p>品牌:</p>
 						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>三星</label></div>
@@ -97,9 +91,19 @@
 	</div>
 </template>
 <style scoped>
+    .template-head{width:83%;min-width:;}
 	.CCEditPageTemplate-CCLeft{width: 50%;float: left;}
 	.CCEditPageTemplate-CCRight{width: 45%;float: left;margin-left: 20px;}
-	.CCEditPageTemplate-CCRight-top img{float: left;margin-top:10px;margin-left: 3px;}
+	.CCEditPageTemplate-CCRight-top .xf-ability-icon{background: url(/static/img/ability.png);
+    width: 24px;
+    height: 23px;
+    display: inline-block;
+    position: relative;
+    top: 9px;
+    left: 26%;}
+    .xf-ability-icon-active{background: url(/static/img/ability-choosed.png)!important;}
+    .CCEditPageTemplate-CCRight-top input[type="checkbox"]{margin-left:5%;margin-top:4px;}
+	.CCEditPageTemplate-CCRight-top span.text{font-size:16px;margin-left:35%;}
 	.CCBability{margin-bottom: 50px;}
 	.CCabiLlity-title{float: left;}
 	.CCability-check{float: left;width: 90px;margin-left: 5%;}
@@ -115,11 +119,11 @@
 	.cc-input-limit{border:1px solid #999;width:60px;float:left;border-radius: 2px;}
 	.CCability-check-limit{width:100%;}
 	.CCability-to{float: left;margin:-5px 20px 0;}
-	.CCEditPageTemplate-CCRight-top{border: 1px solid blue;width: 90%;height: 50px;border-radius: 6px;}
-	.CCEditPageTemplate-CCRight-top:hover{border: 1px solid red;background: #f5f5f5;}
-	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 110%;}
+	.CCEditPageTemplate-CCRight-top{border: 1px solid #ddd;width: 90%;height: 50px;border-radius: 6px;}
+	.CCEditPageTemplate-CCRight-top:hover{border: 1px solid #448bc7;background: #f0f0f0;}
+	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 120%;}
 	.CCEditPageTemplate-CCRight-bottom{width: 90%;}
-	.template-confirm{margin-left: 25%;}
+	.bottoms{right:114px;}
 </style>
 <script>
   import Delete from "../Delete"
@@ -133,7 +137,9 @@
           url:''//删除的url请求
         },
         hideDialog:true,
-        hideMask:true
+        hideMask:true,
+        showAbilityContent:false,
+        showBilityContent:false
       }
     },
     components:{"Delete":Delete,"IMask":IMask},
@@ -156,6 +162,12 @@
       closeDialog:function(childData){
         this.hideDialog = childData
         this.hideMask = childData
+      },
+      showAbility:function(){
+      	this.showAbilityContent = !this.showAbilityContent
+      },
+      showBility:function(i){
+      	this.showBilityContent = i
       }
     }
   }
