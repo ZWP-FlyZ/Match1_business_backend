@@ -118,7 +118,7 @@
     </div>
     <div class="heads">
       关联页面模板
-      <router-link to="/cCPageTemplate" class = "xf-go-edit-bzability">去编辑业务能力</router-link>
+      <router-link to="/cCEditPageTemplate" class = "xf-go-edit-bzability">去编辑业务能力</router-link>
     </div>
     <form  class="yellow" v-if="showwhat==7">
       <div class="item">
