@@ -139,8 +139,10 @@
 					<div class="CCability-check"><input type="checkbox">64G</div>
 				</div>
 			</div>
+
 		<!-- 能力3开始 -->
 		</div>
+		<div class="xf-clear"></div>
 	</div>
 </template>
 <style scoped>

@@ -118,6 +118,7 @@
     </div>
     <div class="heads">
       关联页面模板
+      <router-link to="/cCPageTemplate" class = "xf-go-edit-bzability">去编辑业务能力</router-link>
     </div>
     <form  class="yellow" v-if="showwhat==7">
       <div class="item">
@@ -216,9 +217,10 @@
           var mySelf = this
           this.$http.get("/api/getList").then(res=>{
             console.log(JSON.parse(res.body.data).result.pageList.length)
-            mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+            mySelf.multiple.originOptions = [{"id":"0","name":"机器审核页面1"},{"id":"0","name":"机器审核页面2"}]
+            /*JSON.parse(res.body.data).result.pageList*/
           })
-          mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
+          mySelf.multiple.selectedList = [{"id":"1","name":"机器审核页面1"}]
         },
         multipleCallback: function(data){
           this.multiple.selectedList = data;
@@ -345,6 +347,7 @@
   .cc-precondition-search{float: left;}
   .longname-cc{top:0;}
   .xf-mutipleselect-top-fix{top:3px;z-index:101px;}
+  .xf-go-edit-bzability{font-size:12px;color:#f7ba2a;}
 </style>
 
 
