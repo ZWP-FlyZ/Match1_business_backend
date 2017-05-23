@@ -2,8 +2,7 @@
 	<!-- 全局div开始 -->
 	<div>
 	<div class = "BZProcess">
-    	<div class = "BZProcess-total">流程定制总数：12</div>
-	    <div class="BZProcess-register">
+	    <div class="BZProcess-register bb-BZProcess-register">
 	      <ul>
 	          <li class = "BZProcess-classify">解决方案</li>
 	          <li class = "BZProcess-create"><router-link to="/bBEditProcess" class = "link-btn link-btn-default">新建解决方案</router-link></li>
@@ -234,7 +233,6 @@ import IMask from "../Mask"
     border: none;
     margin-top: 5px;
   }
-  .BZProcess-table{
-    margin-bottom: 20px;
-  }
+  .BZProcess-table{margin-bottom: 20px;}
+  .bb-BZProcess-register{margin-top:0px;}
 </style>
