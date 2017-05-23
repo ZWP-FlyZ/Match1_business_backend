@@ -20,9 +20,9 @@
             <div class="process"><img src="/static/img/tmpublish.png" /></div>
             <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>
@@ -31,9 +31,9 @@
             <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
             <div class="process"><img src="/static/img/process1.png" /></div>
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>
@@ -56,9 +56,9 @@
             <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
             <div class="process"><img src="/static/img/process1.png" /></div>
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>
@@ -83,9 +83,9 @@
             <div class="process"><img src="/static/img/tmpublish.png" /></div>
             <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>
@@ -94,9 +94,9 @@
             <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝男鞋商品发布2</div>
             <div class="process"><img src="/static/img/process1.png" /></div>
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>
@@ -105,9 +105,9 @@
             <div class="BZ-num"><div class = "table-checkbox"><input type="checkbox"></div>淘宝女鞋商品发布</div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
+              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
         </div>

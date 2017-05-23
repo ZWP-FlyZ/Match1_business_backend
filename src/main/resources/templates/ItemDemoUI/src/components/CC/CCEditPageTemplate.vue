@@ -45,6 +45,10 @@
 				    </div>
 			    <br/>  <br/>
 				</div>
+				<div class = "template-confirm">
+					<router-link to="/publishIdentity"  class="link-btn link-btn-blue">生成业务身份</router-link>
+					<router-link to="/cCEditProcess"  class="link-btn link-btn-red">放弃配置</router-link>
+				</div>
 		    <IMask :hide-mask.sync="hideMask"></IMask>
 		    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
 		  	</div>
@@ -101,10 +105,10 @@
 	.CCability-check{float: left;width: 90px;margin-left: 5%;}
 	.CCability-check input{padding:5px;}
 	.check-cc{width: 18px;height: 18px;margin-right: 5px;margin-top: 5px;}
-	.CCability-check label{font-size: 105%;position: relative;top:-3px;}
+	.CCability-check label{position: relative;top:-3px;}
 	.CCBusiness-ability{margin-bottom: 30px;}
 	.CCability{clear:both;}
-	.CCability p{margin-left: 20px;font-size: 110%;padding:10px;}
+	.CCability p{margin-left: 20px;font-size: 105%;padding:10px;}
 	.CCability>div{margin-left: 65px;}
 	.cc-page-name{width: 80%;}
 	.cc-img{margin:15px 130px;}
@@ -113,8 +117,9 @@
 	.CCability-to{float: left;margin:-5px 20px 0;}
 	.CCEditPageTemplate-CCRight-top{border: 1px solid blue;width: 90%;height: 50px;border-radius: 6px;}
 	.CCEditPageTemplate-CCRight-top:hover{border: 1px solid red;background: #f5f5f5;}
-	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 120%;}
+	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 110%;}
 	.CCEditPageTemplate-CCRight-bottom{width: 90%;}
+	.template-confirm{margin-left: 25%;}
 </style>
 <script>
   import Delete from "../Delete"
