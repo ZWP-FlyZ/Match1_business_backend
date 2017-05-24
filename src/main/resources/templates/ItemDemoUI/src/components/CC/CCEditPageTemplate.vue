@@ -7,7 +7,23 @@
 				    <div class="template-head">
 				      <div class="head-left">页面模板</div>
 				    </div>
-				    <div class="template-body" @click="showAbility">
+				    <div class="template-body">
+				        <div class="one-container cc-page-name cc-page-size" v-for="(item,index) in pageList">
+				          <span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span>
+				          <div class="template-edit">
+				            <div class="template-view">
+				              <img src="/static/img/shoe-publish.png" alt="图片" usemap="#tu">
+				              <div style="width: 480px;height: 19px;border: 1px solid transparent;position: absolute;top: 180px;left: 46px;" @click="showTitle"></div>
+				              <div style="width: 480px;height: 65px;border: 1px solid transparent;position: absolute;top: 205px;left: 46px;" @click="showSale"></div>
+				            </div>
+				            <div class="bottoms">
+				               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
+				            </div>
+				          </div>
+				        </div>
+				        <br/><br/>
+				    </div>
+				    <!-- <div class="template-body" @click="showAbility">
 				        <div class="one-container cc-page-name" v-for="(item,index) in pageList">
 				          <span class="titem-name">页面模板名称：{{item.name}}</span>
 				          <div class="template-edit">
@@ -20,21 +36,7 @@
 				          </div>
 				        </div>
 				        <br/><br/>
-				    </div>
-				    <div class="template-body" @click="showAbility">
-				        <div class="one-container cc-page-name" v-for="(item,index) in pageList">
-				          <span class="titem-name">页面模板名称：{{item.name}}</span>
-				          <div class="template-edit">
-				            <div class="template-view">
-				              <img v-bind:src="item.imgPath" class="template-img cc-img">
-				            </div>
-				            <div class="bottoms">
-				               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
-				            </div>
-				          </div>
-				        </div>
-				        <br/><br/>
-				    </div>
+				    </div> -->
 			    <br/>  <br/>
 				</div>
 				<div class = "template-confirm">
@@ -45,8 +47,8 @@
 		  	</div>
 		</div>
 <!-- 左侧边栏结束 -->
-		<div class="CCEditPageTemplate-CCRight" v-if="showAbilityContent">
-			<div class="CCBability">
+		<div class="CCEditPageTemplate-CCRight">
+			<div class="CCBability"  v-if="showTitleContent">
 				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(1)">
 					<input type="checkbox" name="" />
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
@@ -67,7 +69,7 @@
 				</div>
 			</div>
 
-			<div class="CCBability">
+			<div class="CCBability" v-if="showSaleContent">
 				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(2)">
 					<input type="checkbox" name="" />
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
@@ -93,13 +95,15 @@
     .template-head{width:83%;min-width:;}
 	.CCEditPageTemplate-CCLeft{width: 50%;float: left;}
 	.CCEditPageTemplate-CCRight{width: 45%;float: left;margin-left: 20px;}
-	.CCEditPageTemplate-CCRight-top .xf-ability-icon{background: url(/static/img/ability.png);
-    width: 24px;
-    height: 23px;
-    display: inline-block;
-    position: relative;
-    top: 9px;
-    left: 26%;}
+	.CCEditPageTemplate-CCRight-top .xf-ability-icon{
+		background: url(/static/img/ability.png);
+	    width: 24px;
+	    height: 23px;
+	    display: inline-block;
+	    position: relative;
+	    top: 9px;
+	    left: 26%;
+	}
     .xf-ability-icon-active{background: url(/static/img/ability-choosed.png)!important;}
     .CCEditPageTemplate-CCRight-top input[type="checkbox"]{margin-left:5%;margin-top:4px;}
 	.CCEditPageTemplate-CCRight-top span.text{font-size:16px;margin-left:35%;}
@@ -124,6 +128,8 @@
 	.CCEditPageTemplate-CCRight-bottom{width: 90%;}
 	.bottoms{right:114px;}
 	.template-confirm{margin-left: 30%;}
+	.cc-page-size{height: 520px;}
+	.template-view img{margin-top: 20px;}
 </style>
 <script>
   import Delete from "../Delete"
@@ -139,8 +145,11 @@
         hideDialog:true,
         hideMask:true,
         showAbilityContent:false,
-        showBilityContent1:false,
-        showBilityContent2:false
+
+        showBilityContent:false,
+        showTitleContent:false,
+        showSaleContent:false
+
       }
     },
     components:{"Delete":Delete,"IMask":IMask},
@@ -166,6 +175,11 @@
       },
       showAbility:function(){
       	this.showAbilityContent = !this.showAbilityContent
+      },
+      showTitle:function(){
+      	this.showTitleContent = !this.showTitleContent
+      },showSale:function(){
+      	this.showSaleContent = !this.showSaleContent
       },
       showBility:function(i){
       	if(i==1){
