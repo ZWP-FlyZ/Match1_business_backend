@@ -203,11 +203,6 @@ h3{
 	margin: 20px;
 }
 
-.wrapper{
-	width: 800px;
-	margin: 20px 0px 50px 20px;
-}
-
 /*功能下拉框 整体壁纸*/
 .functional-select-wrapper{
 	width: 40%;

@@ -44,7 +44,7 @@
     </div>
     <div class="items">
       <div class="grey-block xf-process-style" >
-        <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
+        <img src="static/img/tbpublish.png" usemap="#processmap" alt="" />
         <map name="processmap" id="processmap">
         <area shape="rect" coords="154 150 216 196" href="#1" />
 
@@ -86,12 +86,19 @@
             <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==7">
           </div>
           <div class="item">
-            <label class="nameid">节点功能描述: </label>
-            <input type="text" class="inputbox checkView"  placeholder="审核"  autocomplete="on" >
+            <label class="nameid">节点类型: </label>
+            <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="showwhat!=5">
+            <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="showwhat==5">
           </div>
 
           <div class="item">
-            <label class="nameid">KEY: </label> <input type="text" class="inputbox checkView"  placeholder="121"  autocomplete="on" >
+            <label class="nameid">节点描述: </label> 
+            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="showwhat==2">
+            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="showwhat==3">
+            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="showwhat==4">
+            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==5">
+            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==6">
+            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="showwhat==7">
           </div>
         </form>
       </div>
@@ -109,29 +116,29 @@
     </div>
     <div class="twocolor" v-if="showwhat==5">
     <form class="grey grey-option">
-      <div class="item ">
-        商品类型 若等于
-        <select class="longinput" >
+      <div class="item xf-item">
+        <span class="xf-span-fix">商品类型 若等于</span>
+        <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
+        <!-- <select class="longinput" >
           <option>达尔文</option>
           <option>商品类型1</option>
-        </select>
-        则执行 <b>机器审核</b> 活动; 
-        若等于
-        <select class="longinput" >
-          <option>达尔文</option>
-          <option>商品类型1</option>
-        </select>
-        则执行 <b>人工审核</b> 活动
+        </select> -->
+        <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
+        否则执行 <b>人工审核</b> 活动</span>
       </div>
     </form>
     </div>
     <div class="heads">
       关联页面模板
-      <router-link to="/cCEditPageTemplate" class = "xf-go-edit-bzability">去编辑业务能力</router-link>
+      <router-link to="/cCEditPageTemplate" class = "xf-go-edit-bzability" v-if="showwhat==2||showwhat==3||showwhat==4||showwhat==6">去编辑业务能力</router-link>
     </div>
-    <form  class="yellow" v-if="showwhat==6">
+
+    <form  class="yellow" v-if="showwhat==6||showwhat==2||showwhat==3||showwhat==4">
       <div class="item">
-        <label class="smallname">人工审核</label>
+        <label class="smallname" v-if="showwhat==6">人工审核</label>
+        <label class="smallname" v-if="showwhat==2">选择类目</label>
+        <label class="smallname" v-if="showwhat==3">选择货品模板</label>
+        <label class="smallname" v-if="showwhat==4">填写商品信息</label>
       </div>
       <div class="item">
         <label class="longname">关联的页面模板：</label>
@@ -175,6 +182,7 @@
 </template>
 <script>
     import MutipleSelectDelete from "../AA/MutipleSelectDelete"
+    import SingleSelect from '../CC/SingleSelect'
     export default{
       data(){
         return {
@@ -185,6 +193,10 @@
             originOptions: [],
             selectedList: []
           },
+          single:{
+            originOptions:[],
+            selected: {}
+          },
           nodeList:[
             {"imgUrl":"static/img/node1.png","nodeText":"互斥网关","className":"fa-node1"},
             {"imgUrl":"static/img/node2.png","nodeText":"并行网关","className":"fa-node2"},
@@ -194,57 +206,53 @@
           ]
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete},
+      components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();
         })
       },
       methods:{
-        change:function(obj){
-          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
-          var arr = liArray.getElementsByTagName("li")
-          var i=1;
-          var length=liArray.length;
-          switch(this.nextState){
-            case 1:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
-              for(;i<arr.length;i++){
-              arr[i].className="liShow";
-              }
-              this.nextState=0;
-            break;
-            case 0:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
-              for(;i<arr.length;i++){
-              arr[i].className="liHide";
-              }
-              this.nextState=1;
-          }
-        },
         queryData:function(){
           var mySelf = this
+          /*单选的*/
+          mySelf.single.originOptions = [{"id":"1","name":"达尔文"},{"id":"2","name":"类型1"},{"id":"3","name":"类型2"},{"id":"4","name":"类型3"},{"id":"5","name":"类型4"},{"id":"6","name":"类型5"}];
+          mySelf.single.selected = {"id":"1","name":"达尔文"}
+          /*多选的*/
           this.$http.get("/api/getList").then(res=>{
             console.log(JSON.parse(res.body.data).result.pageList.length)
-            mySelf.multiple.originOptions = [{"id":"0","name":"人工审核页面1"},{"id":"0","name":"人工审核页面2"}]
+            mySelf.multiple.originOptions = [{"id":"1","name":"人工审核页面1"},{"id":"2","name":"人工审核页面2"}]
             /*JSON.parse(res.body.data).result.pageList*/
           })
           mySelf.multiple.selectedList = [{"id":"1","name":"人工审核页面1"}]
+        },
+        singleCallback: function(data){
+            this.single.selected = data;
+            // console.log('父级元素调用singleCallback 选中的是' + JSON.stringify(data))
         },
         multipleCallback: function(data){
           this.multiple.selectedList = data;
         },
         showActiviti:function(){
           this.isshowActiviti = !this.isshowActiviti
+          this.$nextTick(function(){
+            this.queryData();
+          })
         },
         showContent:function(i){
           this.isshowActiviti=true
           this.showwhat=i
+          this.$nextTick(function(){
+            this.queryData();
+          })
         }
       }
     }   
   </script>
-<style>
+<style> 
+  .xf-item{width:100%;}
+  .xf-item span.xf-span-fix{position: relative;top: -19px;}
+  .xf-single-fix{display: inline-block;}
   .xf-node-style{text-align:center;}
   .xf-node-ul li {
   float:left;

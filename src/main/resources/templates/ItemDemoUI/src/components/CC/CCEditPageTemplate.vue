@@ -8,17 +8,28 @@
 				      <div class="head-left">页面模板</div>
 				    </div>
 				    <div class="template-body">
-				        <div class="one-container cc-page-name cc-page-size" v-for="(item,index) in pageList">
+				        <div class="one-container cc-page-name cc-page-size">
 				          <span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span>
 				          <div class="template-edit">
 				            <div class="template-view">
-				              <img src="/static/img/shoe-publish.png" alt="图片" usemap="#tu">
-				              <div style="width: 480px;height: 19px;border: 1px solid transparent;position: absolute;top: 180px;left: 46px;" @click="showTitle"></div>
-				              <div style="width: 480px;height: 65px;border: 1px solid transparent;position: absolute;top: 205px;left: 46px;" @click="showSale"></div>
+				            <div v-bind:class="{'delet':show==1}">
+				              <img src="/static/img/a-title.png" alt="图片" style="    float: left;width: 95%;" @click="showXf(1)"><img src="/static/img/delete-blue.png" style="float:left" @click="deletel(1)" ></div>
+				              <div class="xf-clear"></div>
+
+				              <div v-bind:class="{'delet':show==2}">
+				              <img src="/static/img/a-type.png" style="float: left;width: 95%;" alt="图片" @click="showXf(2)"><img src="/static/img/delete-blue.png" style="float:left" @click="deletel(2)"></div>
+<div class="xf-clear"></div>
+                              <div v-bind:class="{'delet':show==3}">
+				              <img src="/static/img/a-maidian.png" alt="图片" @click="showXf(3)" style="    float: left;width: 95%;" ><img src="/static/img/delete-blue.png" style="float:left" @click="deletel(3)"></div>
+<div class="xf-clear"></div>
+				              <img src="/static/img/a-img.png" alt="图片" @click="showXf(4)" >
+				              <div class="xf-clear"></div>
+				              <!-- <div style="width: 480px;height: 19px;border: 1px solid transparent;position: absolute;top: 180px;left: 46px;" @click="showTitle"></div>
+				              <div style="width: 480px;height: 65px;border: 1px solid transparent;position: absolute;top: 205px;left: 46px;" @click="showSale"></div> -->
 				            </div>
-				            <div class="bottoms">
+				            <!-- <div class="bottoms">
 				               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
-				            </div>
+				            </div> -->
 				          </div>
 				        </div>
 				        <br/><br/>
@@ -48,44 +59,71 @@
 		</div>
 <!-- 左侧边栏结束 -->
 		<div class="CCEditPageTemplate-CCRight">
-			<div class="CCBability"  v-if="showTitleContent">
-				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(1)">
-					<input type="checkbox" name="" />
+			<div class="CCBability" v-if="clickContent==1||clickContent==5">
+				<div class="CCEditPageTemplate-CCRight-top">
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述标题</span>
 					<button class = "link-btn link-btn-primary title-button">保存</button>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent1">
+				<div class="CCEditPageTemplate-CCRight-bottom">
 					<div class="CCability">
-						<p>标题长度：</p>
+						<p>标题长度范围：</p>
 						<div class="CCability-check CCability-check-limit">
-							<input type="text" class = "cc-input-limit" placeholder="单位：字"><div class="CCability-to"> - </div><input type="text"  class = "cc-input-limit" placeholder="单位：字">
+							<input type="text" class = "cc-input-limit" placeholder="单位：字"> - <input type="text"  class = "cc-input-limit" placeholder="单位：字">
 						</div>
 					</div>
 					<div class="CCability">
-						<p>敏感词过滤:</p>
+						<p>是否敏感词过滤:</p>
 						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
 						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
 					</div>
 				</div>
 			</div>
 
-			<div class="CCBability" v-if="showSaleContent">
-				<div class="CCEditPageTemplate-CCRight-top" @click="showBility(2)">
-					<input type="checkbox" name="" />
+			<div class="CCBability" v-if="clickContent==2||clickContent==5">
+				<div class="CCEditPageTemplate-CCRight-top">
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
+					<span class="text">描述宝贝类型</span>
+					<button class = "link-btn link-btn-primary title-button">保存</button>
+				</div>
+				<div class="CCEditPageTemplate-CCRight-bottom">
+					<div class="CCability">
+						<span>单选框1：</span>
+							<input type="text" class = "cc-input-limit" placeholder="12">
+						<span>单选框2：</span>
+							<input type="text" class = "cc-input-limit" placeholder="12">
+					</div>
+				</div>
+			</div>
+
+			<div class="CCBability" v-if="clickContent==3||clickContent==5">
+				<div class="CCEditPageTemplate-CCRight-top">
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述宝贝卖点</span>
 					<button class = "link-btn link-btn-primary title-button">保存</button>
 				</div>
-				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent2">
+				<div class="CCEditPageTemplate-CCRight-bottom">
 					<div class="CCability">
-						<p>品牌:</p>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>三星</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>小米</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>华为</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>苹果</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>中兴</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>OPPO</label></div>
+						<span>字数限制：</span>
+							不超过<input type="text" class = "cc-input-limit" placeholder="">个字
+					</div>
+				</div>
+			</div>
+			<div class="xf-clear"></div>
+			<div class="CCBability" v-if="clickContent==4||clickContent==5">
+				<div class="CCEditPageTemplate-CCRight-top">
+					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
+					<span class="text">描述宝贝图片</span>
+					<button class = "link-btn link-btn-primary title-button">保存</button>
+				</div>
+				<div class="CCEditPageTemplate-CCRight-bottom">
+					<div class="CCability">
+						<span>长度：</span>
+						<input type="text" class = "cc-input-limit" placeholder="12">
+						<span>宽度：</span>
+						<input type="text" class = "cc-input-limit" placeholder="12">
+						<span>路径：</span>
+						<input type="text" class = "cc-input-limit" placeholder="C://桌面/帆布鞋.png">
 					</div>
 				</div>
 			</div>
@@ -109,7 +147,7 @@
     .xf-ability-icon-active{background: url(/static/img/ability-choosed.png)!important;}
     .CCEditPageTemplate-CCRight-top input[type="checkbox"]{margin-left:5%;margin-top:4px;}
 	.CCEditPageTemplate-CCRight-top span.text{font-size:16px;margin-left:35%;}
-	.CCBability{margin-bottom: 50px;}
+	.CCBability{margin-bottom: 50px;border:1px solid #f0f0f0;}
 	.CCabiLlity-title{float: left;}
 	.CCability-check{float: left;width: 90px;margin-left: 5%;}
 	.CCability-check input{padding:5px;}
@@ -121,19 +159,20 @@
 	.CCability>div{margin-left: 65px;}
 	.cc-page-name{width: 80%;}
 	.cc-img{margin:15px 130px;}
-	.cc-input-limit{border:1px solid #999;width:65px;float:left;border-radius: 2px;}
+	.cc-input-limit{border:1px solid #999;width:65px;border-radius: 2px;}
 	.CCability-check-limit{width:100%;}
 	.CCability-to{float: left;margin:-5px 20px 0;}
-	.CCEditPageTemplate-CCRight-top{border: 1px solid #ddd;width: 90%;height: 50px;border-radius: 6px;}
+	.CCEditPageTemplate-CCRight-top{border: 1px solid #ddd;width: 100%;height: 50px;border-radius: 6px;clear:both;}
 	.CCEditPageTemplate-CCRight-top:hover{border: 1px solid #448bc7;background: #f0f0f0;}
 	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 120%;}
-	.CCEditPageTemplate-CCRight-bottom{width: 90%;}
+	.CCEditPageTemplate-CCRight-bottom{width: 90%;padding:15px 10px;}
 	.bottoms{right:114px;}
 	.template-confirm{margin-left: 30%;}
-	.cc-page-size{height: 520px;}
+	.cc-page-size{height:auto;}
 	.template-view img{margin-top: 20px;}
 	/*.title-button{margin-left: 120px;margin-top: 10px;}*/
 	.title-button{float: right;margin-right: 20px;margin-top: 8px;}
+	.delet{display: none}
 </style>
 <script>
   import Delete from "../Delete"
@@ -148,13 +187,8 @@
         },
         hideDialog:true,
         hideMask:true,
-        showAbilityContent:false,
-        showBilityContent1:false,
-        showBilityContent2:false,
-        showBilityContent:false,
-        showTitleContent:false,
-        showSaleContent:false
-
+        show:'5',
+        clickContent:'5'
       }
     },
     components:{"Delete":Delete,"IMask":IMask},
@@ -178,21 +212,11 @@
         this.hideDialog = childData
         this.hideMask = childData
       },
-      showAbility:function(){
-      	this.showAbilityContent = !this.showAbilityContent
+      showXf:function(i){
+      	this.clickContent = i
       },
-      showTitle:function(){
-      	this.showTitleContent = !this.showTitleContent
-      },showSale:function(){
-      	this.showSaleContent = !this.showSaleContent
-      },
-      showBility:function(i){
-      	if(i==1){
-      		this.showBilityContent1 = !this.showBilityContent1
-      	}else{
-      		this.showBilityContent2 = !this.showBilityContent2
-      	}
-      	
+      deletel:function(i){
+      	this.show = i
       }
     }
   }

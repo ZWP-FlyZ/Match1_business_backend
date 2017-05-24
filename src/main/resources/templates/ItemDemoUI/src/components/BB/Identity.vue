@@ -10,7 +10,7 @@
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/bBprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">业务身份1</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝女装-T-shirt商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
@@ -34,7 +34,7 @@
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/bBprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">业务身份1</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝女装-衬衫商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
@@ -58,7 +58,7 @@
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/bBprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">业务身份1</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝男鞋-帆布鞋商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
