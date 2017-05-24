@@ -53,12 +53,13 @@
 					<input type="checkbox" name="" />
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述标题</span>
+					<button class = "link-btn link-btn-primary title-button">保存</button>
 				</div>
 				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent1">
 					<div class="CCability">
 						<p>标题长度：</p>
 						<div class="CCability-check CCability-check-limit">
-							<input type="text" class = "cc-input-limit"><div class="CCability-to"> - </div><input type="text"  class = "cc-input-limit">
+							<input type="text" class = "cc-input-limit" placeholder="单位：字"><div class="CCability-to"> - </div><input type="text"  class = "cc-input-limit" placeholder="单位：字">
 						</div>
 					</div>
 					<div class="CCability">
@@ -74,6 +75,7 @@
 					<input type="checkbox" name="" />
 					<span class="xf-ability-icon" v-bind:class="{'xf-ability-icon-active':showBilityContent}"></span>
 					<span class="text">描述宝贝卖点</span>
+					<button class = "link-btn link-btn-primary title-button">保存</button>
 				</div>
 				<div class="CCEditPageTemplate-CCRight-bottom" v-if="showBilityContent2">
 					<div class="CCability">
@@ -119,7 +121,7 @@
 	.CCability>div{margin-left: 65px;}
 	.cc-page-name{width: 80%;}
 	.cc-img{margin:15px 130px;}
-	.cc-input-limit{border:1px solid #999;width:60px;float:left;border-radius: 2px;}
+	.cc-input-limit{border:1px solid #999;width:65px;float:left;border-radius: 2px;}
 	.CCability-check-limit{width:100%;}
 	.CCability-to{float: left;margin:-5px 20px 0;}
 	.CCEditPageTemplate-CCRight-top{border: 1px solid #ddd;width: 90%;height: 50px;border-radius: 6px;}
@@ -130,6 +132,8 @@
 	.template-confirm{margin-left: 30%;}
 	.cc-page-size{height: 520px;}
 	.template-view img{margin-top: 20px;}
+	/*.title-button{margin-left: 120px;margin-top: 10px;}*/
+	.title-button{float: right;margin-right: 20px;margin-top: 8px;}
 </style>
 <script>
   import Delete from "../Delete"
