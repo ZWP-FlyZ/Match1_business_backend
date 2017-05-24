@@ -145,7 +145,8 @@
         hideDialog:true,
         hideMask:true,
         showAbilityContent:false,
-
+        showBilityContent1:false,
+        showBilityContent2:false,
         showBilityContent:false,
         showTitleContent:false,
         showSaleContent:false
