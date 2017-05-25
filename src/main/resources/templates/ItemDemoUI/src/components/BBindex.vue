@@ -5,7 +5,7 @@
 </style>
 <template>
 <div>
-    <BBL1SideBar></BBL1SideBar>
+    <Sidebar :message="message"></Sidebar>
     <div id="content">
     <div class="content-main-fix">
       <transition name="fade"><router-view></router-view></transition>
@@ -16,9 +16,14 @@
 
 
 <script>
-  import BBL1SideBar from './BB/BBL1SideBar.vue'
+  import Sidebar from './Sidebar.vue'
   export default{
-    components: { 'BBL1SideBar': BBL1SideBar}
+    data(){
+      return{
+        message:'2'
+      }
+    },
+    components: { 'Sidebar': Sidebar}
   };
   
 </script>

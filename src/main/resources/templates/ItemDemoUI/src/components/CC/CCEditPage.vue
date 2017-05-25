@@ -12,8 +12,8 @@
 	import Sidebar from '../Sidebar'
 	export default{
     data(){
-      return{
-        message:'4'
+      return {
+        message:'5'
       }
     },
 		components:{'Sidebar':Sidebar}

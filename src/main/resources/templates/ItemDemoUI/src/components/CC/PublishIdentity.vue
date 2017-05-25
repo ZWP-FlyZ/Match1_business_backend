@@ -1,15 +1,15 @@
 <template>
 	<div class="xf-publish-main">
-		<div class="xf-publish-box">
+		<!-- <div class="xf-publish-box">
 		  <img class="xf-new-identity-img" src="static/img/new-identity.png" />
 		  <div class="xf-publish-footer-new">
 		  	<button class="link-btn link-btn-look" @click="addIdentity">另存为新的业务身份</button>
 		  </div>
-		</div>
+		</div> -->
 		<div class="xf-publish-box">
 		  <img class="xf-update-identity-img" src="static/img/update-identity.png" />
 		  <div class="xf-publish-footer-update">
-		    <button class="link-btn link-btn-primary" @click="openClick">更新原有业务身份</button>
+		    <button class="link-btn link-btn-primary" @click="openClick">确定保存业务身份</button>
 		  </div>
 		</div>
 		<IMask :hide-mask.sync="hideMask"></IMask>

@@ -4,7 +4,7 @@
 	   	 <i class="xf-icon-chooseidentity"></i><span>选择业务身份</span>
 	   </div>
 	   <div>
-	   	 <div class="xf-item-box xf-item-box-new" @click="addIdentity">
+	   	 <div v-if="!addAndUse" class="xf-item-box xf-item-box-new" @click="addIdentity" >
 	   	 	<div class="new-big-bg"></div>
 	   	 	<p>新建业务身份</p>
 	   	 </div>
@@ -82,8 +82,11 @@
 	   	 </div>
 	   	 <div class="xf-clear"></div>
 	   </div>
+	   <div class="xf-skip-step">
+	   	 <router-link to="/cCprocess"><span>跳过此步骤？</span></router-link>	   	
+	   </div>
 	   <IMask :hide-mask.sync="hideMask"></IMask>
-       <AddIdentity :hide-identity.sync="hideIdentity" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></AddIdentity>
+       <AddIdentity :hide-identity.sync="hideIdentity" :hide-mask.sync="hideMask" v-on:increment="closeDialog" v-on:confirm="confirm"></AddIdentity>
 	</div>
 </template>
 <script>
@@ -93,8 +96,12 @@
 		data(){
 			return{
 				hideIdentity:true,
-				hideMask:true
+				hideMask:true,
+				addAndUse:false
 			}
+		},
+		destroyed:function(){
+			this.addAndUse = false;
 		},
 		components:{'AddIdentity':AddIdentity,'IMask':IMask},
 		methods:{
@@ -105,12 +112,17 @@
 			closeDialog:function(data){
 				this.hideIdentity = data
 				this.hideMask = data
+			},
+			confirm:function(data){
+				this.hideIdentity = data
+				this.hideMask = data
+				this.addAndUse = data
 			}
 		}
 	}
 </script>
 <style scoped>
-	.xf-identity-main{margin-top:-40px;background: #f7f7f9;padding:5% 5%;}
+	.xf-identity-main{height:650px;margin-top:-40px;background: #f7f7f9;padding:5% 5%;}
 	.xf-item-header span{font-size:20px;margin-left:10px;}
 	.xf-item-header{margin-bottom:10px;}
 	.xf-item-box{background:#fff;transition:All 0.3s ease-in-out;border:1px solid;border-color: #f0f0f0;float: left;margin-right: 4%;width:26%;height:200px;margin-bottom:20px;padding:15px 10px;overflow: hidden;white-space:normal;word-wrap:break-word; }
@@ -126,4 +138,7 @@
 	.xf-icon-chooseidentity{background: url("/static/img/choose-identity.png");width:20px;height:20px;display: inline-block;position: relative;top:4px;}
 	.xf-icon-identity{background: url("/static/img/identity.png");width:19px;height:17px;display: inline-block;position: relative;margin-right:10px;}
 	.xf-show-detail-box{width:31%;display: inline-block;text-align: center;}
+	.xf-skip-step{float:right;}
+	.xf-skip-step span{color:#000;cursor: pointer;}
+	.xf-skip-step span:hover{color:#448bc7;}
 </style>

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import vuex from 'vuex'
 import VueRouter from 'vue-router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 import VueResource from 'vue-resource'
 import router from './router'
 
@@ -12,7 +14,7 @@ import './assets/css/login.css'
 
 Vue.use(VueResource)
 Vue.use(vuex)
-
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

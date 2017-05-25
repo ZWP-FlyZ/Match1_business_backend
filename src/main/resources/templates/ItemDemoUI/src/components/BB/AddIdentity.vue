@@ -14,8 +14,12 @@
 					<textarea></textarea>
           <br />
 				</div>
+        <br />
+        <div class="block">
+          <label>选择类目：</label>
+          <el-cascader placeholder="试试搜索：女装" :options="category" filterable="" change-on-select></el-cascader>
+        </div>
         <div class="delete-modal-delete-content">
-          <br />
           <label>开始时间：</label>
           <input type="date" class="datetime-width" placeholder="开始时间">
           <br /><br />
@@ -34,7 +38,17 @@
 </template>
 <script>
 	export default{
+    data(){
+      return {
+        category:[]
+      }
+    },
 	  props:['hideIdentity','hideMask'],
+    mounted:function(){
+      this.$nextTick(function(){
+        this.getCategory();
+      })
+    },
 	  methods:{
 	  	closeDialog:function(){
 	  		this.$emit("increment",!this.hideIdentity)
@@ -44,20 +58,30 @@
           console.log(res.bodyText);
         }).then((error)=>{
         })*/
+        this.$emit("confirm",true)
+	     },
+       handleChange(value){
+         console.log(value)
+       },
+       getCategory:function(){
+        this.$http.get('/api/getList').then((res)=>{
+          this.category = JSON.parse(res.body.data).result.category
+        })
+       }
 	  }
-	 }
-    }
+  }
 </script>
 <style>
 	.hide{display: none}
-  .delete-modal-delete-content label{width:10%;}
-  .datetime-width{width:62% !important;}
+  .block{margin-left:30px;}
+  .delete-modal-delete-content label{width:22.2%;display: inline-block;}
+  .datetime-width{width:63.2% !important;}
 	.icon-delete{background-position: -281px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -6px;}
 	.deleteAability{
 		width: 420px;
 		height: 260px;
 		position: fixed;
-		top: 20%;
+		top: 16%;
 		left: 35%;
 		z-index:103;
 	}
@@ -184,14 +208,14 @@
     margin-top: 10px;
     margin-left: 30px;
   }
-  .delete-modal-delete-content input{height: 34px;padding: 6px12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);width:70%;
+  .delete-modal-delete-content input{height: 34px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);width:63.3%;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
   .delete-modal-delete-content textarea{position: relative;top:20px;  padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
-    width:70%;
+    width:63.3%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -1,6 +1,7 @@
 <template>
 	<!-- <div>为页面模板配置业务能力yy版本</div> -->
 	<div>
+	   <HistoryPath :historyPathTitle="historyPathTitle"></HistoryPath>
 		<div class="CCEditPageTemplate-CCLeft">
 			<div class="template-page">
 			    <div class="template-center">
@@ -577,10 +578,12 @@
 <script>
   import Delete from "../Delete"
   import IMask from "../Mask"
+  import HistoryPath from "../HistoryPath"
   export default{
     data(){
       return {
         pageList:[],
+        historyPathTitle:'业务方：选择业务身份 / 选择流程 / 配置流程 / 配置业务能力',
         deleteContent:{
           item:'',
           url:''//删除的url请求
@@ -596,7 +599,7 @@
         AlignStyleUI:0
       }
     },
-    components:{"Delete":Delete,"IMask":IMask},
+    components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath},
     mounted:function(){
       this.$nextTick(function(){
         this.getPages();

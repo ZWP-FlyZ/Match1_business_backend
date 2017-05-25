@@ -16,7 +16,6 @@ import RegisterPageTemplate from '@/components/AA/RegisterPageTemplate'
 import ConfigPreCondition from '@/components/AA/ConfigPreCondition'
 import Identity from '@/components/BB/Identity'
 import BBprocess from '@/components/BB/bBprocess'
-import BBL1SideBar from '@/components/BB/bBL1SideBar'
 import BBEditProcess from '@/components/BB/bBEditProcess'
 import BBConfigProcess from '@/components/BB/BBConfigProcess'
 import BBRegisterProcess from '@/components/BB/BBRegisterProcess'
@@ -35,6 +34,7 @@ import CCEditPageTemplate from '@/components/CC/cCEditPageTemplate'
 import PublishIdentity from '@/components/CC/PublishIdentity'
 import IdentityDetail from '@/components/CC/IdentityDetail'
 import CCbeforeEdit from '@/components/CC/CCbeforeEdit'
+import CCEditPage from '@/components/CC/CCEditPage'
 Vue.use(Router)
 
 export default new Router({
@@ -120,10 +120,6 @@ export default new Router({
         component: BBprocess
       },
       {
-        path: '/bBL1SideBar',
-        component: BBprocess
-      },
-      {
         path: '/bBEditProcess',
         component: BBEditProcess
       },
@@ -167,6 +163,20 @@ export default new Router({
         }
       ]
     },
+    { 
+      path:'/cCEditPage',
+      component:CCEditPage,
+      children:[
+        {
+          path:'/',
+          redirect:'/cCEditPageTemplate'
+        },
+        {
+          path:'/cCEditPageTemplate',
+          component:CCEditPageTemplate
+        }
+      ]
+    },
     {
       path:'/ccindex',
       component:CCIndex,
@@ -182,10 +192,6 @@ export default new Router({
         {
           path:'/cCEditProcess',
           component:CCEditProcess
-        },
-        {
-          path:'/cCEditPageTemplate',
-          component:CCEditPageTemplate
         },
         {
           path:'/cCPageTemplate',

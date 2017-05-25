@@ -359,3 +359,5 @@ button{
 .xf-app-enter,.xf-app-active{
   opacity: 0;
 }
+/*修改默认样式*/
+.el-checkbox__input.is-checked .el-checkbox__inner{background-color: #448bc7;}

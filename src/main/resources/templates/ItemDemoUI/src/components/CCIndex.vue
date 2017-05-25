@@ -5,7 +5,7 @@
 </style>
 <template>
 <div>
-    <CCL1SideBar></CCL1SideBar>
+    <Sidebar :message="message"></Sidebar>
     <div id="content">
     <div class="content-main-fix">
       <transition name="fade"><router-view></router-view></transition>
@@ -16,9 +16,14 @@
 
 
 <script scoped>
-  import CCL1SideBar from './CC/CCL1SideBar.vue'
+  import Sidebar from './Sidebar.vue'
   export default{
-    components: { 'CCL1SideBar': CCL1SideBar}
+    data(){
+      return{
+        message:'3'
+      }
+    },
+    components: { 'Sidebar': Sidebar}
   };
   
 </script>
