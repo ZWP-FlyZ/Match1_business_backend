@@ -102,6 +102,28 @@
               <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
               <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
               否则执行 <b>人工审核</b> 活动</span>
+              <i class="el-icon-plus xf-edit-icon xf-el-icon-plus" @click="showAdvance"></i>
+            </div>
+            <div v-bind:class="{'showAdvance':showadvance}">
+            <select class="smallinput">
+                  <option>与</option>
+                  <option>或</option>
+                  <option>非</option>
+            </select>
+            <div class="item xf-item">
+              <span class="xf-span-fix">
+                <select class="longinput">
+                  <option>商品类型</option>
+                  <option>目标时限节点</option>
+                  <option>是否第一次进入该节点</option>
+                </select>
+               若等于</span>
+              <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
+              <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
+              否则执行 <b>人工审核</b> 活动</span>
+              <i class="el-icon-plus xf-edit-icon xf-el-icon-plus"></i>
+              <i class="el-icon-minus xf-edit-icon xf-el-icon-plus" @click="hideAdvance"></i>
+            </div>
             </div>
           </form>
           </div>
@@ -192,7 +214,8 @@
           ],
           editableTabsValue2: '0',
           editableTabs2: [],
-          tabIndex: 0
+          tabIndex: 0,
+          showadvance:true
         }
       },
       components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'HistoryPath':HistoryPath},
@@ -266,6 +289,12 @@
             });
             this.editableTabsValue2 = name;
           }
+        },
+        showAdvance:function(){
+          this.showadvance = false;
+        },
+        hideAdvance:function(){
+          this.showadvance = true;
         }
       }
     }   
@@ -399,4 +428,6 @@
   .xf-items-addBottom{margin-bottom: 0px}
   .item .xf-name-fix{position: relative;top:6px;}
   .xf-content-height{margin-bottom: 100px;padding:20px;}
+  .xf-el-icon-plus{position: relative;top:-15px;left:5%;margin-right:4px;}
+  .showAdvance{display: none}
 </style>

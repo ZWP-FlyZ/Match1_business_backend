@@ -178,6 +178,10 @@ export default new Router({
       ]
     },
     {
+      path:'/identityDetail',
+      component:IdentityDetail
+    },
+    {
       path:'/ccindex',
       component:CCIndex,
       children:[
@@ -200,10 +204,6 @@ export default new Router({
         {
           path:'/publishIdentity',
           component:PublishIdentity
-        },
-        {
-          path:'/identityDetail',
-          component:IdentityDetail
         }
       ]
     }

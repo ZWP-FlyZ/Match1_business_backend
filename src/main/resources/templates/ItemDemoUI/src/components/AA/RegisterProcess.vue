@@ -57,8 +57,8 @@
       </div>
     </div>
     <div class="items">
-      <div class="grey-block xf-process-style" >
-        <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
+      <div class=" xf-process-style" >
+        <!-- <img @click="showActiviti" src="static/img/tbpublish.png" usemap="#processmap" alt="" />
         <map name="processmap" id="processmap">
         <area shape="rect" coords="154 150 216 196" href="#1" />
 
@@ -79,26 +79,42 @@
 
         <area shape="rect" coords="702 180 775 238" href="#7" />
         <div style="width: 74px;height: 57px;border: 1px solid transparent;position: absolute;top: 192px;left: 710px;" @click="showContent(7)"></div>
-        </map>
-        </map>
-      </div>
-    </div>
-     <div v-if="isshowActiviti">
+        </map> -->
+        <ProcessImg class="xf-process-img" v-on:show="showContent"></ProcessImg>
+         <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab">
+         <el-tab-pane class="xf-content-height" v-for="(item, index) in editableTabs2" :key="item.name" :label="item.title" :name="item.name" >
+            <div v-if="isshowActiviti">
       <div class="heads">
         节点基本信息
       </div>
       <div class="items">
         <form  class="itemsform">
           <div class="item">
-            <label class="nameid">节点名称: </label><input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus">
+            <label class="nameid">节点名称: </label>
+            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
+            <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
           </div>
           <div class="item">
-            <label class="nameid">节点功能描述: </label><input type="text" class="inputbox checkView"  placeholder="审核"  autocomplete="on" >
+            <label class="nameid">节点类型: </label>
+            <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
+            <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
           </div>
-
           <div class="item">
-            <label class="nameid">KEY: </label> <input type="text" class="inputbox checkView"  placeholder="121"  autocomplete="on" >
+            <label class="nameid">节点描述: </label> 
+            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
+            <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
           </div>
+                  
         </form>
       </div>
 
@@ -211,7 +227,7 @@
       <a href="#" class="addbottom">添加同类型配置项</a>
     </form>
 
-    <form class="grey">
+    <form class="grey grey-option">
       <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
       销售记录
@@ -356,7 +372,7 @@
         </div>
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
-      <form class="grey">
+      <form class="grey grey-option">
         <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">审查批准文号</div>
         <div class="item">
@@ -373,7 +389,13 @@
     </div>
     <form  class="yellow">
       <div class="item">
-        <label class="smallname">节点1</label>
+        <label class="smallname" v-if="item.id==0">选择类目</label>
+        <label class="smallname"  v-if="item.id==1">是否选择货品模板</label>
+        <label class="smallname"  v-if="item.id==2">获取货品模板</label>
+        <label class="smallname"  v-if="item.id==3">填写商品信息</label>
+        <label class="smallname"  v-if="item.id==4">审核</label>
+        <label class="smallname"  v-if="item.id==5">机器审核</label>
+        <label class="smallname"  v-if="item.id==6">人工审核</label>
         <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value=""
          autocomplete="on" autofocus="autofocus">
       </div>
@@ -384,7 +406,7 @@
         <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
         <label class="longname">关联的页面模板：</label>
        
-       <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+       <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" class="xf-multiple-fix-width"></MutipleSelectDelete>
 
       </div>
         
@@ -761,6 +783,10 @@
       </div>
     </div>
     </div>
+         </el-tab-pane>
+         </el-tabs>
+      </div>
+    </div>
     <br/>
     <div class="bottom" >
       <router-link to="/bzprocess"  class="ok">确定</router-link>
@@ -771,6 +797,7 @@
 </template>
 <script>
     import MutipleSelectDelete from "./MutipleSelectDelete"
+    import ProcessImg from '../CC/ProcessImg'
     export default{
       data(){
         return {
@@ -787,10 +814,13 @@
             {"imgUrl":"static/img/node3.png","nodeText":"网关","className":"fa-node3"},
             {"imgUrl":"static/img/node4.png","nodeText":"子活动","className":"fa-node4"},
             {"imgUrl":"static/img/node5.png","nodeText":"连接线","className":"fa-node5"}
-          ]
+          ],
+          editableTabsValue2: '0',
+          editableTabs2: [],
+          tabIndex: 0
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete},
+      components:{'MutipleSelectDelete':MutipleSelectDelete,'ProcessImg':ProcessImg},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();
@@ -825,19 +855,58 @@
           })
           mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
         },
+        showContent:function(i,name){
+          this.editableTabsValue2 = i
+          this.isshowActiviti=true
+          this.showwhat=i
+          this.addTab(i,name);
+          this.$nextTick(function(){
+            this.queryData();
+          })
+        },
+        removeTab:function(targetName) {
+          let tabs = this.editableTabs2;
+          let activeName = this.editableTabsValue2;
+          if (activeName === targetName) {
+            tabs.forEach((tab, index) => {
+              if (tab.name === targetName) {
+                let nextTab = tabs[index + 1] || tabs[index - 1];
+                  if (nextTab) {
+                    activeName = nextTab.name;
+                  }
+              }
+            });
+          }
+          this.editableTabsValue2 = activeName;
+          this.editableTabs2 = tabs.filter(tab => tab.name !== targetName);
+        },
+        addTab:function(targetName,name) {
+          let newTabName = ++this.tabIndex + '';
+          let tabs = this.editableTabs2;
+          var isAdd = true;
+          tabs.forEach((tab, index) =>{
+            if(tab.id == targetName){
+              this.editableTabsValue2 = targetName;
+              isAdd = false;
+            }
+          })
+          if(isAdd){
+             this.editableTabs2.push({
+               id: targetName,
+               title: name,
+               name: name,
+               content: 'New'
+            });
+            this.editableTabsValue2 = name;
+          }
+        },
         multipleCallback: function(data){
           this.multiple.selectedList = data;
-        },
-        showActiviti:function(){
-          this.isshowActiviti = !this.isshowActiviti
-        },
-        showContent:function(i){
-          this.showwhat=i
         }
       }
     }   
   </script>
-<style>
+<style scoped>
   .xf-node-style{text-align:center;}
   .xf-node-ul li {
   float:left;
@@ -946,6 +1015,10 @@
   .grey-option{
     margin-bottom: 20px;
   }
+  .xf-process-img{width:95%;}
+  .items,.grey-option,.yellow{text-align: left;width:94%;}
+  .xf-multiple-fix-width{width:30% !important;}
+  .twocolor{left:0px;}
 </style>
 
 

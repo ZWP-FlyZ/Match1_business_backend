@@ -1,5 +1,7 @@
 <template>
-	<div class="xf-identity-detail-main">业务身份详情
+	<div class="xf-identity-detail-main">
+      <div class="xf-identity-detail-body">
+	   <i class="el-icon-star-off"></i>  <span class="detail">业务身份详情</span>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务KEY：</label>
 	   	 <span>TB_MENS</span>
@@ -36,9 +38,12 @@
 	   	 <label>业务详情：</label>
 	   	 <span>业务详情业务详情业务详情业务详情业务详情业务详情</span>
 	   </div>
+	  </div>
 	</div>
 </template>
 <style>
-	.xf-identity-detail-main{margin:0 auto;}
+	.xf-identity-detail-main{height:650px;margin-top:-40px;background: #f7f7f9;padding:5% 5%;}
+	.xf-identity-detail-body{background: #fff;transform: rotate(0deg);box-shadow:2px 2px 3px #aaa;width:60%;margin:0 auto;padding:30px;}
+	.xf-identity-detail-body span.detail{font-size: 18px;}
 	.xf-identity-detail-box{margin:20px;}
 </style>

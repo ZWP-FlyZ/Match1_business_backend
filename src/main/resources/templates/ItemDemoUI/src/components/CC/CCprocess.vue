@@ -17,7 +17,7 @@
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox v-model="checked">淘宝女装T-shirt商品发布</el-checkbox></div></div>
+            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝女装T-shirt商品发布</el-checkbox></div></div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
@@ -29,7 +29,7 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox v-model="checked">淘宝女装衬衫商品发布</el-checkbox></div></div>
+            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝女装衬衫商品发布</el-checkbox></div></div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
@@ -54,7 +54,7 @@
         </div> 
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox v-model="checked">淘宝男鞋-帆布鞋商品发布</el-checkbox></div></div>
+            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝男鞋-帆布鞋商品发布</el-checkbox></div></div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
             <div class = "process-button">
               <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -82,7 +82,7 @@
           <div class="BZ-edit">
             <div class="BZ-num">
             <div class = "table-checkbox">
-              <el-checkbox v-model="checked">淘宝一口价商品发布</el-checkbox>
+              <el-checkbox>淘宝一口价商品发布</el-checkbox>
             </div>
             </div>
             <div class="process"><img src="/static/img/tbpublish.png" /></div>
@@ -96,7 +96,7 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox v-model="checked">天猫一口价商品发布</el-checkbox></div></div>
+            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >天猫一口价商品发布</el-checkbox></div></div>
             <div class="process"><img src="/static/img/tmpublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
@@ -107,7 +107,7 @@
         </div>
         <div class="BZProcess-table">
           <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox v-model="checked">聚划算一口价商品发布</el-checkbox></div></div>
+            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >聚划算一口价商品发布</el-checkbox></div></div>
             <div class="process"><img src="/static/img/jhspublish.png" /></div>
             <div class = "process-button">
               <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
@@ -146,7 +146,6 @@ import HistoryPath from "../HistoryPath"
         hideDialog:true,
         hideMask:true,
         historyPathTitle:'业务方：选择业务身份 / 选择流程',
-        checked:''
 
       }
     },
