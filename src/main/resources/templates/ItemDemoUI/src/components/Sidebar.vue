@@ -139,7 +139,7 @@ export default {
     },
     getProcessL1:function(){
       this.$http.get("/api/getList").then(res=>{
-        this.processL1 = JSON.parse(res.body.data).result.processL1;
+        this.processL1 = JSON.parse(res.body.data).result.processL11;
       })
     },
     getApplication:function(){
