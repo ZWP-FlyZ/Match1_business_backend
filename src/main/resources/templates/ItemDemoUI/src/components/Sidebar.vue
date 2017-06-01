@@ -102,20 +102,20 @@ export default {
       processL1:[],
       activeNames:['1'],
       componentImg1:[
-        {src:'/static/img/component8.png'},
-        {src:'/static/img/component9.png'},
-        {src:'/static/img/component10.png'}
+        {src:'static/img/component8.png'},
+        {src:'static/img/component9.png'},
+        {src:'static/img/component10.png'}
       ],
       componentImg2:[
-        {src:'/static/img/component5.png'},
-        {src:'/static/img/component6.png'},
-        {src:'/static/img/component7.png'}
+        {src:'static/img/component5.png'},
+        {src:'static/img/component6.png'},
+        {src:'static/img/component7.png'}
       ],
       componentImg3:[
-        {src:'/static/img/component1.png'},
-        {src:'/static/img/component2.png'},
-        {src:'/static/img/component3.png'},
-        {src:'/static/img/component4.png'}
+        {src:'static/img/component1.png'},
+        {src:'static/img/component2.png'},
+        {src:'static/img/component3.png'},
+        {src:'static/img/component4.png'}
       ]
     }
   },

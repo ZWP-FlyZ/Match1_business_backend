@@ -84,7 +84,7 @@
         <!-- 自定义样式select框开始 -->
       <div class = "condition-select">
         <ul id="myUl" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../../assets/img/glyphicons-368-expand.png" alt=""></div></li>
           <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
           <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">是否第一次进入该节点</b></div></li>
           <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">商家信用等级</b></div></li>
@@ -104,7 +104,7 @@
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         目标节点时限
       </div>
@@ -118,7 +118,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         是否第一次进入该节点
       </div>
@@ -132,7 +132,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         商家信用等级
       </div>
@@ -146,7 +146,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         开店时间
       </div>
@@ -160,7 +160,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         转化率
       </div>
@@ -174,7 +174,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         违规记录
       </div>
@@ -188,7 +188,7 @@
     </form>
 
     <form class="grey">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
       销售记录
       </div>
@@ -202,7 +202,7 @@
     </form>
 
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         是否是良心卖家
       </div>
@@ -215,7 +215,7 @@
       <a href="#" class="addbottom">添加同类型配置项</a>
     </form>
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         七天无理由退货
       </div>
@@ -228,7 +228,7 @@
       <a href="#" class="addbottom">添加同类型配置项</a>
     </form>
     <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+      <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
       <div class="item condition-name">
         置顶入选规则
       </div>
@@ -246,7 +246,7 @@
       <div class = "condition">内部前置条件</div>
       <div class = "condition-select">
         <ul id="myUl1" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
+          <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="../../assets/img/glyphicons-368-expand.png" alt=""></div></li>
           <li value="221" class="liHide"><div><input type="checkbox" class="input_check" id="check221"><label for="check221"></label><b class = "normal-b">商家信用等级规则</b></div></li>
           <li value = "222" class="liHide"><div><input type="checkbox" class="input_check" id="check222"><label for="check222"></label><b class = "normal-b">开店时间</b></div></li>
           <li value="223" class="liHide"><div><input type="checkbox" class="input_check" id="check223"><label for="check223"></label><b class = "normal-b">转化率</b></div></li>
@@ -270,7 +270,7 @@
     </div>
     <div class="twocolor">
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           商家信用等级规则
         </div>
@@ -283,7 +283,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           销售记录
         </div>
@@ -296,7 +296,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           产品信息
         </div>
@@ -309,7 +309,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           价格库存物流
         </div>
@@ -322,7 +322,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">
           特定类目规则
         </div>
@@ -335,7 +335,7 @@
         <a href="#" class="addbottom">添加同类型配置项</a>
       </form>
       <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item condition-name">审查批准文号</div>
         <div class="item">
           <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
@@ -374,7 +374,7 @@
     <div class="items">
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
           <div class="item">
             <label class="longname">参与角色：</label>
             <select class="longinput" >
@@ -406,7 +406,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
@@ -416,7 +416,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
@@ -425,7 +425,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -442,7 +442,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">角色的权限：</label>
@@ -475,7 +475,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -485,7 +485,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -494,7 +494,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -510,7 +510,7 @@
       </div>
        <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">角色的期限：</label>
@@ -542,7 +542,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -552,7 +552,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -561,7 +561,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -576,7 +576,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">节点状态：</label>
@@ -607,7 +607,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -616,7 +616,7 @@
               </div>
             </form>
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -631,7 +631,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">是否可以撤回：</label>
@@ -661,7 +661,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -671,7 +671,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -686,7 +686,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">关联的数据来源：</label>
@@ -716,7 +716,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -726,7 +726,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>

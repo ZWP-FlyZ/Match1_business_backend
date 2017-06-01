@@ -120,10 +120,10 @@
 	.xf-show-detail{margin-top:20px;}
 	.xf-show-detail span{color:#448bc7;font-size:16px}
 	.xf-item-box:hover{transform:translate(0,-4px);border:1px solid #448bc7;}
-	.new-big-bg{background: url("/static/img/new-big.png");width: 80px;height: 80px; margin: 10px auto;}
-	.xf-item-box-new:hover .new-big-bg{background: url("/static/img/new-big-blue.png")}
+	.new-big-bg{background: url("../../assets/img/new-big.png");width: 80px;height: 80px; margin: 10px auto;}
+	.xf-item-box-new:hover .new-big-bg{background: url("../../assets/img/new-big-blue.png")}
 	.xf-item-box-new p{text-align: center;margin-top:30px;}
-	.xf-icon-chooseidentity{background: url("/static/img/choose-identity.png");width:20px;height:20px;display: inline-block;position: relative;top:4px;}
-	.xf-icon-identity{background: url("/static/img/identity.png");width:19px;height:17px;display: inline-block;position: relative;margin-right:10px;}
+	.xf-icon-chooseidentity{background: url("../../assets/img/choose-identity.png");width:20px;height:20px;display: inline-block;position: relative;top:4px;}
+	.xf-icon-identity{background: url("../../assets/img/identity.png");width:19px;height:17px;display: inline-block;position: relative;margin-right:10px;}
 	.xf-show-detail-box{width:31%;display: inline-block;text-align: center;}
 </style>

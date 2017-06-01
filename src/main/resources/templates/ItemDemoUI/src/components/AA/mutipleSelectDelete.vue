@@ -213,11 +213,11 @@ h3{
 /*展示容器*/
 .functional-select-wrapper .display-container{
 	width: 100%;
-	min-height: 34px;
+	min-height: 30px;
 	box-sizing: border-box;
 	position: relative;
 	display: block;
-	padding: 6px 12px 6px 12px;
+	padding: 4px 12px 6px 12px;
 	color: #555;
 	background-color: #FFF;
 	border: 1px solid #CCC;
@@ -228,6 +228,7 @@ h3{
 
 .functional-select-wrapper .display-container .single-selected{
 	float: left;
+
 }
 
 /*单选 搜索框获取焦点后 display-container下边框圆弧去掉radius*/

@@ -219,3 +219,5 @@ display: table-cell;
   /*background: #fff;*/
   transform: scale(1.2,1.2);
 }
+.xf-preCondition-width{width:80%;}
+.xf-singleSelect-box{position: relative;top: -36px;left: 15%;}

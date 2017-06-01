@@ -46,16 +46,16 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <img src="/static/img/glyphicons-28-search.png" alt="">
+              <img src="../../assets/img/glyphicons-28-search.png" alt="">
             </div>
             <div class = "search-body-div">
               <div class="search-body">
-                <img src="/static/img/glyphicons-61-compass.png" alt="">
+                <img src="../../assets/img/glyphicons-61-compass.png" alt="">
                 <span>淘宝节点配置项1</span>
                 <input type="checkbox" @click="choose(1)">
               </div>
               <div class="search-body">
-                <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
+                <img src="../../assets/img/glyphicons-65-lightbulb.png" alt="">
                 <span>淘宝节点配置项1</span>
                 <input type="checkbox" @click="choose(1)">
               </div>
@@ -66,16 +66,16 @@
           <div class="bbright-div bbright-top">
             <div class="search-header">
               <input type="search" class="todo-search-field" placeholder="淘宝商品发布配置项">
-              <img src="/static/img/glyphicons-28-search.png" alt="">
+              <img src="../../assets/img/glyphicons-28-search.png" alt="">
             </div>
             <div class = "search-body-div">
               <div class="search-body">
-                <img src="/static/img/glyphicons-61-compass.png" alt="">
+                <img src="../../assets/img/glyphicons-61-compass.png" alt="">
                 <span>淘宝节点配置项1</span>
                 <input type="checkbox" @click="choose(2)">
               </div>
               <div class="search-body">
-                <img src="/static/img/glyphicons-65-lightbulb.png" alt="">
+                <img src="../../assets/img/glyphicons-65-lightbulb.png" alt="">
                 <span>淘宝节点配置项1</span>
                 <input type="checkbox" @click="choose(2)">
               </div>

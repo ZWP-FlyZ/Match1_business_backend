@@ -21,69 +21,69 @@
 				          <div>
 				            <div class="template-view">
 					            <div v-bind:class="{'delet':show==1}">
-					            	<img src="/static/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
+					            	<img src="../../assets/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
 					            </div>
 
 				            	<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				             		<img src="/static/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
+				             		<img src="../../assets/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
 				            	</div>
 				            	<!-- 宝贝类型选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==2)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-if="((show==-1)||(show==1)||(show==2)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				             		<img src="/static/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
+				             		<img src="../../assets/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
 				            	</div>
 				            	<!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==3)&&((show==-1)||(show==1)||(show==2)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					            	<img src="/static/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
+					            	<img src="../../assets/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<!-- <div v-bind:class="{'delet':show==5}">
-									<img src="/static/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)">
+									<img src="../../assets/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)">
 					            </div> -->
 					            <!-- 宝贝属性选中后要显示的边框 -->
 				            	<!-- <div v-if="clickBorderContent==5">
 				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 19px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 640px;" @click="deletel(5)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 640px;" @click="deletel(5)">
 				            	</div> -->
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					            	<img src="/static/img/page1/pic.png" alt="图片" @click="showRight(6)">
+					            	<img src="../../assets/img/page1/pic.png" alt="图片" @click="showRight(6)">
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 815px;" @click="deletel(6)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 815px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-bind:class="{'delet':show==7}">
-					              <img src="/static/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
+					              <img src="../../assets/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
 					            </div>
 
 								<div v-bind:class="{'delet':show==8}">
-					              <img src="/static/img/page1/service.png" alt="售后服务" @click="showRight(8)">
+					              <img src="../../assets/img/page1/service.png" alt="售后服务" @click="showRight(8)">
 					            </div>
 
 								<div v-bind:class="{'delet':show==9}">
-					              <img src="/static/img/page1/other.png" alt="其他信息" @click="showRight(9)">
+					              <img src="../../assets/img/page1/other.png" alt="其他信息" @click="showRight(9)">
 					            </div>
 				            </div>
 				          </div>
@@ -101,42 +101,42 @@
 				          <div>
 				            <div class="template-view">
 					            <div v-bind:class="{'delet':show==1}">
-					            	<img src="/static/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
+					            	<img src="../../assets/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
 					            </div>
 
 				            	<div v-bind:class="{'delet':show==2}">
-				             		<img src="/static/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
+				             		<img src="../../assets/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
 				            	</div>
 				            	
 								<!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-bind:class="{'delet':show==3}">
-				             		<img src="/static/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
+				             		<img src="../../assets/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
 				            	</div>
 				            	<!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==3">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					            	<img src="/static/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
+					            	<img src="../../assets/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<!-- <div v-bind:class="{'delet':show==5}">
-									<img src="/static/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)"><img src="/static/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
+									<img src="../../assets/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
 					            </div> -->
 					            <!-- 宝贝属性选中后要显示的边框 -->
 				            	<!-- <div v-if="clickBorderContent==5">
@@ -145,25 +145,25 @@
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					            	<img src="/static/img/page4-align-only/pic.png" alt="图片" @click="showRight(6)">
+					            	<img src="../../assets/img/page4-align-only/pic.png" alt="图片" @click="showRight(6)">
 					            </div>
 					             <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 255px;height: 430px;border: 2px dashed red;position: absolute;top: 325px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 430px;" @click="deletel(6)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 430px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-bind:class="{'delet':show==7}">
-					              <img src="/static/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
+					              <img src="../../assets/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
 					            </div>
 
 								<div v-bind:class="{'delet':show==8}">
-					              <img src="/static/img/page1/service.png" alt="售后服务" @click="showRight(8)">
+					              <img src="../../assets/img/page1/service.png" alt="售后服务" @click="showRight(8)">
 					            </div>
 
 								<div v-bind:class="{'delet':show==9}">
-					              <img src="/static/img/page1/other.png" alt="其他信息" @click="showRight(9)">
+					              <img src="../../assets/img/page1/other.png" alt="其他信息" @click="showRight(9)">
 					            </div>
 				            </div>
 				          </div>
@@ -181,41 +181,41 @@
 				          <div>
 				            <div class="template-view">
 					            <div v-bind:class="{'delet':show==1}">
-					              <img src="/static/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
+					              <img src="../../assets/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
 					            </div>
 
 					            <div v-bind:class="{'delet':show==2}">
-					              <img src="/static/img/page3-align/type-1.png" alt="宝贝类型" @click="showRight(2)">
+					              <img src="../../assets/img/page3-align/type-1.png" alt="宝贝类型" @click="showRight(2)">
 					            </div>
 					             <!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
 				            		<div style="width: 635px;height: 53px;border: 2px dashed red;position: absolute;top: 92px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 78px;left: 815px;" @click="deletel(2)">
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 78px;left: 815px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-bind:class="{'delet':show==3}">
-					              <img src="/static/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
+					              <img src="../../assets/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
 					            </div>
 					            <!-- 宝贝标题选中后要显示的边框 -->
 				            	<div  v-if="clickBorderContent==3">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 160px;left: 200px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 145px;left: 815px;" @click="deletel(3)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 145px;left: 815px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					              <img src="/static/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
+					              <img src="../../assets/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))" >
 				            		<div style="width: 635px;height: 130px;border: 2px dashed red;position: absolute;top: 209px;left: 205px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 195px;left: 820px;" @click="deletel(4)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 195px;left: 820px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<!-- <div v-bind:class="{'delet':show==5}">
-								  <img src="/static/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="/static/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
+								  <img src="../../assets/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
 					            </div> -->
 					            <!-- 宝贝属性选中后要显示的边框 -->
 				            	<!-- <div v-if="clickBorderContent==5">
@@ -224,26 +224,26 @@
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					              <img src="/static/img/page3-align/pic.png" alt="图片" @click="showRight(6)">
+					              <img src="../../assets/img/page3-align/pic.png" alt="图片" @click="showRight(6)">
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 255px;height: 410px;border: 2px dashed red;position: absolute;top: 345px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 337px;left: 430px;" @click="deletel(6)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 337px;left: 430px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 
 								<div v-bind:class="{'delet':show==7}">
-					              <img src="/static/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
+					              <img src="../../assets/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
 					            </div>
 
 								<div v-bind:class="{'delet':show==8}">
-					              <img src="/static/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
+					              <img src="../../assets/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
 					            </div>
 
 								<div v-bind:class="{'delet':show==9}">
-					              <img src="/static/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
+					              <img src="../../assets/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
 					            </div>
 				            </div>
 				          </div>
@@ -261,7 +261,7 @@
 				          <div>
 				            <div class="template-view">
 					            <div v-bind:class="{'delet':show==1}">
-					              <img src="/static/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
+					              <img src="../../assets/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
 					            </div>
 
 					            <!-- 名称选中后要显示的边框 -->
@@ -271,37 +271,37 @@
 						        <!-- 选中后要显示的边框 -->
 
 					            <div v-bind:class="{'delet':show==2}">
-					              <img src="/static/img/page2-color/type-1.png" alt="宝贝类型" @click="showRight(2)">
+					              <img src="../../assets/img/page2-color/type-1.png" alt="宝贝类型" @click="showRight(2)">
 					            </div>
 					            <!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 83px;left: 815px;" @click="deletel(2)">
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 83px;left: 815px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<div v-bind:class="{'delet':show==3}">
-					              <img src="/static/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
+					              <img src="../../assets/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
 					            </div>
 					            <!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==3">
 				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 138px;left: 200px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 128px;left: 815px;" @click="deletel(3)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 128px;left: 815px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					              <img src="/static/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
+					              <img src="../../assets/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
 								<!-- <div v-bind:class="{'delet':show==5}">
-								  <img src="/static/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="/static/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
+								  <img src="../../assets/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
 					            </div> -->
 					            <!-- 宝贝属性选中后要显示的边框 -->
 				            	<!-- <div v-if="clickBorderContent==5">
@@ -311,24 +311,24 @@
 
 
 								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					              <img src="/static/img/page2-color/pic.png" alt="图片" @click="showRight(6)">
+					              <img src="../../assets/img/page2-color/pic.png" alt="图片" @click="showRight(6)">
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
 				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 310px;left: 199px;"></div>
-				            		<img src="/static/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 307px;left: 815px;" @click="deletel(6)">
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 307px;left: 815px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 								<div v-bind:class="{'delet':show==7}">
-					              <img src="/static/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
+					              <img src="../../assets/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
 					            </div>
 
 								<div v-bind:class="{'delet':show==8}">
-					              <img src="/static/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
+					              <img src="../../assets/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
 					            </div>
 
 								<div v-bind:class="{'delet':show==9}">
-					              <img src="/static/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
+					              <img src="../../assets/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
 					            </div>
 				            </div>
 				          </div>
@@ -356,33 +356,33 @@
 				<div class="CCEditPageTemplate-CCRight-bottom">
 					<div class="ccright-UI">
 						<div v-if="AlignStyle==-1"><!-- 初始化进来时 -->
-							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option img-out" src="/static/img/align-justify.png" alt="" title = "横向显示" @click="showAlign(0)"><img src="/static/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;" class = "img-out" @click="showAlign(1)">
+							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option img-out" src="../../assets/img/align-justify.png" alt="" title = "横向显示" @click="showAlign(0)"><img src="../../assets/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;" class = "img-out" @click="showAlign(1)">
 							<hr>
 						</div>
 						<div v-if="AlignStyle==1"><!-- 选中“横向显示” -->
-							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option img-out" src="/static/img/align-justify.png" alt="" title = "横向显示" @click="showAlign(0)"><img src="/static/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;width:20px;height:20px;">
+							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option img-out" src="../../assets/img/align-justify.png" alt="" title = "横向显示" @click="showAlign(0)"><img src="../../assets/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;width:20px;height:20px;">
 							<hr>
 						</div>
 						<div v-if="AlignStyle==0"><!-- 选中“纵向显示” -->
-							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option" src="/static/img/align-justify.png" alt="" title = "横向显示" style="width:20px;height:20px;"><img src="/static/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;" class = "img-out" @click="showAlign(1)">
+							<label for="" class= "UI-name" >页面排列</label><img class = "UI-option" src="../../assets/img/align-justify.png" alt="" title = "横向显示" style="width:20px;height:20px;"><img src="../../assets/img/align-left.png" alt="" title = "纵向显示" style = "margin-left:10px;" class = "img-out" @click="showAlign(1)">
 							<hr>
 						</div>
 						<div v-if="ColorStyle==-1"><!-- 初始化 -->
 							<label for="" class= "UI-name">背景颜色</label>
-							<img src="/static/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;" class = "img-out" @click="showColor(1)">
-							<img src="/static/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;" class = "img-out" @click="showColor(0)">
+							<img src="../../assets/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;" class = "img-out" @click="showColor(1)">
+							<img src="../../assets/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;" class = "img-out" @click="showColor(0)">
 							<hr>
 						</div>
 						<div v-if="ColorStyle==1"><!-- 选中“淡黄色” -->
 							<label for="" class= "UI-name">背景颜色</label>
-							<img src="/static/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;width:20px;height:20px;">
-							<img src="/static/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;" class = "img-out" @click="showColor(0)">
+							<img src="../../assets/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;width:20px;height:20px;">
+							<img src="../../assets/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;" class = "img-out" @click="showColor(0)">
 							<hr>
 						</div>
 						<div v-if="ColorStyle==0"><!-- 选中“默认色” -->
 							<label for="" class= "UI-name">背景颜色</label>
-							<img src="/static/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;" class = "img-out" @click="showColor(1)">
-							<img src="/static/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;width:20px;height:20px;" >
+							<img src="../../assets/img/yellow.png" alt="" title = "淡黄色" style = "margin-left:10px;" class = "img-out" @click="showColor(1)">
+							<img src="../../assets/img/grey.png" alt="" title = "默认色" style = "margin-left:10px;width:20px;height:20px;" >
 							<hr>
 						</div>
 						<form action="">
@@ -521,7 +521,7 @@
     .template-head{min-width:;}
 	.CCEditPageTemplate-CCLeft{width: 70%;float: left;}
 	.CCEditPageTemplate-CCRight{width: 28%;float: left;margin-left: 2px;background: #f2f2f2;}
-    .xf-ability-icon-active{background: url(/static/img/ability-choosed.png)!important;}
+    .xf-ability-icon-active{background: url(../../assets/img/ability-choosed.png)!important;}
     .CCEditPageTemplate-CCRight-top input[type="checkbox"]{margin-left:5%;margin-top:4px;}
     .CCEditPageTemplate-CCRight-top span{position: relative;top: 12px;}
 	.CCEditPageTemplate-CCRight-top span.text{font-size:16px;margin-left:35%;}

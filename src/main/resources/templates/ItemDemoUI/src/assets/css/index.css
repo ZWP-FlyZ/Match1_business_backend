@@ -89,7 +89,7 @@ span.tabs-BZ-total{
   min-width:122px;
   text-overflow:ellipsis;
 }
-.nav li .tab-icon{display: inline-block;width: 25px;height: 20px; background: url(/static/img/icon.png);float: left;margin-top: 16px;margin-left: 11%;}
+.nav li .tab-icon{display: inline-block;width: 25px;height: 20px; background: url(../img/icon.png);float: left;margin-top: 16px;margin-left: 11%;}
 .nav li .tab-icon-process{background-position: -187px 0px}
 .nav .tab-active .tab-icon-process-active{background-position: -215px 0px}
 .nav li .tab-icon-temp{background-position:-126px 0px}

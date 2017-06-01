@@ -175,10 +175,12 @@ h3{
     border-radius: 4px;
     word-break: break-all;
     cursor: pointer;
+    height:30px;
 }
 
 .functional-select-wrapper .display-container .single-selected{
     float: left;
+    margin-top:-5px;
 }
 
 /*单选 搜索框获取焦点后 display-container下边框圆弧去掉radius*/
@@ -190,7 +192,7 @@ h3{
 
 .functional-select-wrapper .display-container .drop{
     position: absolute;
-    top: 4px;
+    top: -5px;
     right: 6px;
     float: right;
     font-style: normal;

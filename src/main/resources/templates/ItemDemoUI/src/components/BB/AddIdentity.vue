@@ -76,7 +76,7 @@
   .block{margin-left:30px;}
   .delete-modal-delete-content label{width:22.2%;display: inline-block;}
   .datetime-width{width:63.2% !important;}
-	.icon-delete{background-position: -281px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -6px;}
+	.icon-delete{background-position: -281px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(../../assets/img/icon.png);position: relative;top: 6px;left: -6px;}
 	.deleteAability{
 		width: 420px;
 		height: 260px;

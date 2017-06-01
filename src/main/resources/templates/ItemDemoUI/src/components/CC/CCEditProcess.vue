@@ -53,11 +53,9 @@
               <i class="el-icon-share xf-edit-icon"></i> 节点基本信息
             </div>
             <div class="items">
-              <form  class="xf-yellow">
+              <div  class="xf-yellow">
                 <div class="item">
-                  <label class="nameid">
-                  节点名称: 
-                  </label>
+                  <label class="nameid">节点名称: </label>
                   <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
                   <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
                   <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
@@ -65,14 +63,11 @@
                   <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
                   <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
                   <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
-                </div>
-                <div class="item">
+
                   <label class="nameid">节点类型: </label>
                   <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
                   <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
-                </div>
-
-                <div class="item">
+                  
                   <label class="nameid">节点描述: </label> 
                   <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
                   <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
@@ -81,13 +76,12 @@
                   <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
                   <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
                   <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
-                </div>
-              </form>
+                </div> 
+              </div>
             </div>
 
           <div class = "heads xf-heads-half">
-            <div class = "condition">
-            <i class="el-icon-d-arrow-left xf-edit-icon"></i> 外部前置条件</div>
+            <i class="el-icon-d-arrow-left xf-edit-icon"></i> 外部前置条件
           </div>
           <div class="items xf-items-addBottom" v-if="item.id==4">
           <form class="xf-yellow">
@@ -148,7 +142,7 @@
           </form>
           </div>
           <div class = "heads xf-heads-half">
-            <div class = "condition"><i class="el-icon-d-arrow-right xf-edit-icon"></i> 内部前置条件</div>
+            <i class="el-icon-d-arrow-right xf-edit-icon"></i> 内部前置条件
           </div>
            <div class="items xf-items-addBottom" v-if="item.id==6">
            <div class="xf-yellow">
@@ -173,6 +167,7 @@
           <div class="heads xf-heads-half">
             <i class="el-icon-date xf-edit-icon"></i> 配置项
           </div>
+
           </div>
          </el-tab-pane>
        </el-tabs>
@@ -299,9 +294,9 @@
       }
     }   
   </script>
-<style scoped> 
+<style> 
   .xf-item{width:100%;}
-  .xf-edit-icon{color:#448bc7;}
+  .xf-edit-icon{color:#448bc7;cursor: pointer;}
   .xf-item span.xf-span-fix{position: relative;top: -19px;}
   .xf-single-fix{display: inline-block;height:30px;}
   .xf-node-style{text-align:center;}
@@ -393,11 +388,11 @@
     position: relative
     
 }
-.fa-node1{top: -60px;left: 10px;background: url(/static/img/node1.png);}
-.fa-node2{top: -60px;left: 10px;background: url(/static/img/node2.png);}
-.fa-node3{top: -60px;left: 10px;background: url(/static/img/node3.png);}
-.fa-node4{top: -60px;left: -15px;background: url(/static/img/node4.png);}
-.fa-node5{width:300px;top: -60px;left: -30px;background: url(/static/img/node5.png);}
+.fa-node1{top: -60px;left: 10px;background: url(../../assets/img/node1.png);}
+.fa-node2{top: -60px;left: 10px;background: url(../../assets/img/node2.png);}
+.fa-node3{top: -60px;left: 10px;background: url(../../assets/img/node3.png);}
+.fa-node4{top: -60px;left: -15px;background: url(../../assets/img/node4.png);}
+.fa-node5{width:300px;top: -60px;left: -30px;background: url(../../assets/img/node5.png);}
 .node-top-fix{top:-100px;}
 .xf-process-style{text-align: center}
   .SelectList{
@@ -420,11 +415,11 @@
   .xf-process-img{width:95%;}
   /*wxfei*/
   .xf-mutiple-position{position: relative;}
-  .xf-mutiple-width{width:500%;left: 131px;}
+  .xf-mutiple-width{width:500% !important;left: 131px;}
   .xf-heads{background:#fff;border:1px dashed #448bc7;border-radius: 0px}
   .xf-heads-half{background:#fff;border:1px dashed #448bc7;border-radius: 0px;border-top:0px;border-right:0px;}
   .xf-yellow{background: #fff;text-align: left;margin-left:2%;}
-  .xf-yellow div{margin:0px;padding:0px;}
+  /*.xf-yellow div{margin:0px;padding:0px;}*/
   .xf-items-addBottom{margin-bottom: 0px}
   .item .xf-name-fix{position: relative;top:6px;}
   .xf-content-height{margin-bottom: 100px;padding:20px;}

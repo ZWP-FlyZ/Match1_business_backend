@@ -5,8 +5,8 @@
 </style>
 <template>
   <div class=" regisiterpage">
-    <div class="heads">
-      流程基本信息
+    <div class="heads xf-heads">
+      <i class="el-icon-share xf-edit-icon"></i> 流程基本信息
     </div>
     <div class="items">
       <form  class="itemsform">
@@ -39,8 +39,8 @@
         </div>
       </form>
     </div>
-    <div class="heads">
-      流程图形化表达
+    <div class="heads xf-heads">
+      <i class="el-icon-picture xf-edit-icon"></i> 流程图形化表达
     </div>
     <div class="items">
       <div class="yellow-block xf-node-style" >
@@ -84,11 +84,11 @@
          <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab">
          <el-tab-pane class="xf-content-height" v-for="(item, index) in editableTabs2" :key="item.name" :label="item.title" :name="item.name" >
             <div v-if="isshowActiviti">
-      <div class="heads">
-        节点基本信息
+      <div class="heads xf-heads">
+        <i class="el-icon-share xf-edit-icon"></i> 节点基本信息
       </div>
       <div class="items">
-        <form  class="itemsform">
+        <div  class="xf-yellow">
           <div class="item">
             <label class="nameid">节点名称: </label>
             <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
@@ -98,13 +98,11 @@
             <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
             <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
             <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
-          </div>
-          <div class="item">
+
             <label class="nameid">节点类型: </label>
             <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
             <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
-          </div>
-          <div class="item">
+            
             <label class="nameid">节点描述: </label> 
             <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
             <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
@@ -113,311 +111,87 @@
             <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
             <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
             <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+          </div> 
+        </div>
+      </div>
+
+    <div class = "heads xf-heads">
+        <i class="el-icon-d-arrow-left xf-edit-icon"></i> 外部前置条件
+        <div class="xf-singleSelect-box">
+          <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback">
+          </SingleSelect>
+        </div>
+    </div>
+    <div class="items xf-items-addBottom">
+        <div class="item xf-item">
+
+          <div class="xf-precondition-box" v-for="i in 10">
+           <div class="xf-predition-label"><label>商品类型11111111</label></div>
+           <div class="xf-predition-label"><label>可配置的值：</label></div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
           </div>
-                  
-        </form>
-      </div>
 
-    <div class = "heads">
-      <div class = "condition">外部前置条件</div>
-        <!-- 自定义样式select框开始 -->
-      <div class = "condition-select">
-        <ul id="myUl" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select-out" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
-          <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check0"><label for="check0"></label><b class = "normal-b">商品类型</b></div></li>
-           <li value="1" class="liHide"><div><input type="checkbox" class="input_check" id="check1"><label for="check1"></label><b class = "normal-b">目标节点时限</b></div></li>
-          <li value = "2" class="liHide"><div><input type="checkbox" class="input_check" id="check2"><label for="check2"></label><b class = "normal-b">是否第一次进入该节点</b></div></li>
-          <li value="3" class="liHide"><div><input type="checkbox" class="input_check" id="check3"><label for="check3"></label><b class = "normal-b">商家信用等级</b></div></li>
-          <li value="4" class="liHide"><div><input type="checkbox" class="input_check" id="check4"><label for="check4"></label><b class = "normal-b">开店时间</b></div></li>
-          <li value="5" class="liHide"><div><input type="checkbox" class="input_check" id="check5"><label for="check5"></label><b class = "normal-b">转化率</b></div></li>
-          <li value="6" class="liHide"><div><input type="checkbox" class="input_check" id="check6"><label for="check6"></label><b class = "normal-b">违规记录</b></div></li>
-          <li value="7" class="liHide"><div><input type="checkbox" class="input_check" id="check7"><label for="check7"></label><b class = "normal-b">销售记录</b></div></li>
-          <li value="8" class="liHide"><div><input type="checkbox" class="input_check" id="check8"><label for="check8"></label><b class = "normal-b">是否是良心卖家</b></div></li>
-          <li value="9" class="liHide"><div><input type="checkbox" class="input_check" id="check9"><label for="check9"></label><b class = "normal-b">七天无理由退货</b></div></li>
-          <li value="10" class="liHide"><div><input type="checkbox" class="input_check" id="check10"><label for="check10"></label><b class = "normal-b">商家信用等级规则</b></div></li>
-          <li value="11" class="liHide"><div><input type="checkbox" class="input_check" id="check11"><label for="check11"></label><b class = "normal-b">知名品牌高危质检</b></div></li>
-           <li value="12" class="liHide"><div><input type="checkbox" class="input_check" id="check12"><label for="check12"></label><b class = "normal-b">冲突管理规则</b></div></li>
-        </ul>
-      </div>
-      <!-- 自定义样式select框结束 -->
-
+        </div>
     </div>
-    <div class="twocolor">
-      <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        目标节点时限
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        是否第一次进入该节点
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = "" autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        商家信用等级
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        开店时间
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        转化率
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        违规记录
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-      销售记录
-      </div>
-      <div class="item">
-        <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"    value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"    value = "" autocomplete="on" autofocus="autofocus">
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        是否是良心卖家
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        七天无理由退货
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
-    <form class="grey grey-option">
-      <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-      <div class="item condition-name">
-        置顶入选规则
-      </div>
-      <div class="item">
-        <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称：</label> <input type="text" class="inputbox checkView"   value ="" autocomplete="on" >
-      </div>
-      <a href="#" class="addbottom">添加同类型配置项</a>
-    </form>
+    <br /><br />
+    <div class = "heads xf-heads">
+        <i class="el-icon-d-arrow-right xf-edit-icon"></i> 内部前置条件
+        <div class="xf-singleSelect-box">
+          <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback">
+          </SingleSelect>
+        </div>
     </div>
-    
-    <div class = "heads">
-      <div class = "condition">内部前置条件</div>
-      <div class = "condition-select">
-        <ul id="myUl1" class="condition-in-out inputbox condition-factory">
-          <li class="liMenu" id = "liMenu-select-in" @click="change($event)"><div><b class = "normal-b">前置条件库</b><img src="/static/img/glyphicons-368-expand.png" alt=""></div></li>
-          <li value="221" class="liHide"><div><input type="checkbox" class="input_check" id="check221"><label for="check221"></label><b class = "normal-b">商家信用等级规则</b></div></li>
-          <li value = "222" class="liHide"><div><input type="checkbox" class="input_check" id="check222"><label for="check222"></label><b class = "normal-b">开店时间</b></div></li>
-          <li value="223" class="liHide"><div><input type="checkbox" class="input_check" id="check223"><label for="check223"></label><b class = "normal-b">转化率</b></div></li>
-          <li value="224" class="liHide"><div><input type="checkbox" class="input_check" id="check224"><label for="check224"></label><b class = "normal-b">消保协议</b></div></li>
-          <li value="225" class="liHide"><div><input type="checkbox" class="input_check" id="check225"><label for="check225"></label><b class = "normal-b">违规记录</b></div></li>
-          <li value="226" class="liHide"><div><input type="checkbox" class="input_check" id="check226"><label for="check226"></label><b class = "normal-b">销售记录</b></div></li>
-          <li value="227" class="liHide"><div><input type="checkbox" class="input_check" id="check227"><label for="check227"></label><b class = "normal-b">是否是良心卖家</b></div></li>
-          <li value="228" class="liHide"><div><input type="checkbox" class="input_check" id="check228"><label for="check228"></label><b class = "normal-b">七天无理由退货</b></div></li>
-          <li value="229" class="liHide"><div><input type="checkbox" class="input_check" id="check229"><label for="check229"></label><b class = "normal-b">退货率</b></div></li>
-          <li value="2210" class="liHide"><div><input type="checkbox" class="input_check" id="check2210"><label for="check2210"></label><b class = "normal-b">评论数</b></div></li>
-          <li value="2211" class="liHide"><div><input type="checkbox" class="input_check" id="check2211"><label for="check2211"></label><b class = "normal-b">发货速度</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">特定类目规则</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">产品信息</b></div></li>
-          <li value="2212" class="liHide"><div><input type="checkbox" class="input_check" id="check2212"><label for="check2212"></label><b class = "normal-b">详细描述</b></div></li>
-        </ul>
-      </div> 
+    <div class="items xf-items-addBottom">
+        <div class="item xf-item">
 
-
+          <div class="xf-precondition-box" v-for="i in 10">
+           <div class="xf-predition-label"><label>ssssss</label></div>
+           <div class="xf-predition-label"><label>可配置的值：</label></div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
+          </div>
+        </div>
     </div>
-    <div class="twocolor">
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          商家信用等级规则
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          销售记录
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          产品信息
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          价格库存物流
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">
-          特定类目规则
-        </div>
-        <div class="item">
-          <label class="smallname">KEY： </label><input type="text" class="inputbox checkView"   value = " "  autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称： </label> <input type="text" class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-      <form class="grey grey-option">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item condition-name">审查批准文号</div>
-        <div class="item">
-          <label class="smallname">KEY：</label><input type="text" class="inputbox checkView"   value = " " autocomplete="on" autofocus="autofocus">
-        </div>
-        <div class="item">
-          <label class="smallname">名称：</label> <input type="text"  class="inputbox checkView"   value="" autocomplete="on" >
-        </div>
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
+    <br /><br />
+    <div class="heads xf-heads">
+      <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
     </div>
-    <div class="heads">
-      关联页面模板
+    <div class="items xf-items-addBottom">
+        <div class="item xf-item">
+          <div class="xf-precondition-box">
+           <div class="xf-predition-label">
+              <label v-if="item.id==0">选择类目</label>
+              <label v-if="item.id==1">是否选择货品模板</label>
+              <label v-if="item.id==2">获取货品模板</label>
+              <label v-if="item.id==3">填写商品信息</label>
+              <label v-if="item.id==4">审核</label>
+              <label v-if="item.id==5">机器审核</label>
+              <label v-if="item.id==6">人工审核</label>
+           </div>
+           <div class="xf-predition-label"><label>关联的页面模板：</label></div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" class="xf-multiple-fix-width"></MutipleSelectDelete>
+           </div>
+          </div>
+        </div>
     </div>
-    <form  class="yellow">
-      <div class="item">
-        <label class="smallname" v-if="item.id==0">选择类目</label>
-        <label class="smallname"  v-if="item.id==1">是否选择货品模板</label>
-        <label class="smallname"  v-if="item.id==2">获取货品模板</label>
-        <label class="smallname"  v-if="item.id==3">填写商品信息</label>
-        <label class="smallname"  v-if="item.id==4">审核</label>
-        <label class="smallname"  v-if="item.id==5">机器审核</label>
-        <label class="smallname"  v-if="item.id==6">人工审核</label>
-        <label class="smallname">KEY: </label><input type="text" class="smallinput checkView"  value=""
-         autocomplete="on" autofocus="autofocus">
-      </div>
-      <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
-      </div>
-      <div class="item">
-        <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput checkView"  value="121" autocomplete="on" >
-        <label class="longname">关联的页面模板：</label>
-       
-       <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" class="xf-multiple-fix-width"></MutipleSelectDelete>
-
-      </div>
-        
-    </form>
-    <div class="heads">
-      配置项
+    <br /><br />
+    <div class="heads xf-heads">
+      <i class="el-icon-date xf-edit-icon"></i> 配置项
     </div>
     <div class="items">
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
           <div class="item">
             <label class="longname">参与角色：</label>
             <select class="longinput" >
@@ -449,7 +223,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
@@ -459,7 +233,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1"  autocomplete="on" autofocus="autofocus">
               </div>
@@ -468,7 +242,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -485,7 +259,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">角色的权限：</label>
@@ -518,7 +292,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -528,7 +302,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -537,7 +311,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -553,7 +327,7 @@
       </div>
        <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">角色的期限：</label>
@@ -585,7 +359,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -595,7 +369,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -604,7 +378,7 @@
               </div>
             </form>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
@@ -619,7 +393,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">节点状态：</label>
@@ -650,7 +424,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -659,7 +433,7 @@
               </div>
             </form>
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -674,7 +448,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">是否可以撤回：</label>
@@ -704,7 +478,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -714,7 +488,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -729,7 +503,7 @@
       </div>
       <div class="twocolor">
         <form class="grey">
-          <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+          <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
             <label class="longname">关联的数据来源：</label>
@@ -759,7 +533,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="1" autocomplete="on" autofocus="autofocus">
               </div>
@@ -769,7 +543,7 @@
             </form>
             <!-- <br/> -->
             <form class="grey grey-option">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
               <div class="item">
                 <label class="smallname">KEY: </label><input type="text" class="inputbox checkView"  value="2" autocomplete="on" autofocus="autofocus">
               </div>
@@ -798,6 +572,7 @@
 <script>
     import MutipleSelectDelete from "./MutipleSelectDelete"
     import ProcessImg from '../CC/ProcessImg'
+    import SingleSelect from '../CC/SingleSelect'
     export default{
       data(){
         return {
@@ -817,43 +592,32 @@
           ],
           editableTabsValue2: '0',
           editableTabs2: [],
-          tabIndex: 0
+          tabIndex: 0,
+
+          single:{
+            originOptions:[],
+            selected: {}
+          },
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete,'ProcessImg':ProcessImg},
+      components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();
         })
       },
       methods:{
-        change:function(obj){
-          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
-          var arr = liArray.getElementsByTagName("li")
-          var i=1;
-          var length=liArray.length;
-          switch(this.nextState){
-            case 1:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
-              for(;i<arr.length;i++){
-              arr[i].className="liShow";
-              }
-              this.nextState=0;
-            break;
-            case 0:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
-              for(;i<arr.length;i++){
-              arr[i].className="liHide";
-              }
-              this.nextState=1;
-          }
-        },
         queryData:function(){
           var mySelf = this
           this.$http.get("/api/getList").then(res=>{
             mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+
+            mySelf.outPreCondition = JSON.parse(res.body.data).result.outPreCondition;
           })
-          mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
+          mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}];
+          /*单选的*/
+          mySelf.single.originOptions = [{"id":"1","name":"达尔文"},{"id":"2","name":"类型1"},{"id":"3","name":"类型2"},{"id":"4","name":"类型3"},{"id":"5","name":"类型4"},{"id":"6","name":"类型5"}];
+          mySelf.single.selected = {"id":"1","name":"达尔文"}
         },
         showContent:function(i,name){
           this.editableTabsValue2 = i
@@ -996,11 +760,11 @@
     position: relative
     
 }
-.fa-node1{top: -60px;left: 10px;background: url(/static/img/node1.png);}
-.fa-node2{top: -60px;left: 10px;background: url(/static/img/node2.png);}
-.fa-node3{top: -60px;left: 10px;background: url(/static/img/node3.png);}
-.fa-node4{top: -60px;left: -15px;background: url(/static/img/node4.png);}
-.fa-node5{width:300px;top: -60px;left: -30px;background: url(/static/img/node5.png);}
+.fa-node1{top: -60px;left: 10px;background: url(../../assets/img/node1.png);}
+.fa-node2{top: -60px;left: 10px;background: url(../../assets/img/node2.png);}
+.fa-node3{top: -60px;left: 10px;background: url(../../assets/img/node3.png);}
+.fa-node4{top: -60px;left: -15px;background: url(../../assets/img/node4.png);}
+.fa-node5{width:300px;top: -60px;left: -30px;background: url(../../assets/img/node5.png);}
 .node-top-fix{top:-100px;}
 .xf-process-style{text-align: center}
   .SelectList{
@@ -1019,6 +783,11 @@
   .items,.grey-option,.yellow{text-align: left;width:94%;}
   .xf-multiple-fix-width{width:30% !important;}
   .twocolor{left:0px;}
+  .xf-heads .xf-singleSelect-box{position: relative;top: -36px;left: 15%;}
+  .xf-precondition-box {display:flex;justify-content:flex-start;align-items:flex-start;border:1px solid #f0f0f0;padding-left:2%;text-align: left;height:50px;padding-top:7px;margin-bottom:10px;}
+  .xf-precondition-box div{margin-right:3%;}
+  .xf-precondition-box .xf-predition-label{margin-top:5px;width:15%;}
+  .xf-precondition-box .xf-predition-delete{margin-left:58%;margin-top: 5px}
 </style>
 
 

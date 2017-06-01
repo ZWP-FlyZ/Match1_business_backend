@@ -68,14 +68,14 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">天猫一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div>
           <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">淘宝一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -130,7 +130,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">预售</div>
-                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -153,7 +153,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">运费模板</div>
-                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -180,7 +180,7 @@
           <!-- <div class="relate-choose-list">
             <div class="back-color">
                 <div class="relate-choose-button">发票</div>
-                <div class="relate-choose-delete"><a href=""><img src="/static/img/delete-ability.png" alt="" /></a>
+                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
                 </div>
             </div>
           </div> -->
@@ -194,7 +194,7 @@
     <div class="items">
       <div class="twocolor">
       <form class="grey">
-        <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
         <div class="item">
         <label class="longname">卖家信用等级</label>
         <select class="longinput" >
@@ -222,7 +222,7 @@
           <a href="#" class="rightaddbottom">添加值选项</a>
           <div class="items3">
           <form class="grey">
-            <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+            <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
 
@@ -235,7 +235,7 @@
           </form>
             <br/>
             <form class="grey">
-              <router-link to="/bzprocess"><img src="/static/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
+              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
 
           <div class="item">
               <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"  autocomplete="on" autofocus="autofocus">

@@ -6,7 +6,7 @@
 				<!-- <div class = "deleteAability-header">
 					 <h4 class="delete-modal-title">删除确认</h4>
 					 <div class = "delete-modal-delete-div">
-		             <img src="/static/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
+		             <img src="static/img/delete.png" alt="" @click="closeDialog"class = "delete-moda-delete">
 		            </div>
 				</div> -->
 
@@ -46,7 +46,7 @@
 </script>
 <style scoped>
 	.hideDialog{display: none}
-	.icon-delete{background-position: -248px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(/static/img/icon.png);position: relative;top: 6px;left: -9px;}
+	.icon-delete{background-position: -248px 0px;width: 22px;height: 22px;display: inline-block;background-image: url(../assets/img/icon.png);position: relative;top: 6px;left: -9px;}
 	.deleteAability{
 		/*border:1px solid red;*/
 		width: 420px;
