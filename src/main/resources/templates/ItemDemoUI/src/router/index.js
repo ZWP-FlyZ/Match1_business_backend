@@ -35,6 +35,8 @@ import PublishIdentity from '@/components/CC/PublishIdentity'
 import IdentityDetail from '@/components/CC/IdentityDetail'
 import CCbeforeEdit from '@/components/CC/CCbeforeEdit'
 import CCEditPage from '@/components/CC/CCEditPage'
+import CCLookUpProcess from '@/components/CC/CCLookUpProcess'
+import CCLookUpIdentity from '@/components/CC/CCLookUpIdentity'
 Vue.use(Router)
 
 export default new Router({
@@ -204,6 +206,14 @@ export default new Router({
         {
           path:'/publishIdentity',
           component:PublishIdentity
+        },
+        {
+          path:'/cCLookUpProcess',
+          component:CCLookUpProcess
+        },
+        {
+          path:'/cCLookUpIdentity',
+          component:CCLookUpIdentity
         }
       ]
     }

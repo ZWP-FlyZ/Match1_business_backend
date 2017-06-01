@@ -12,36 +12,36 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView basic-inputbox"  value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView basic-inputbox lookUp-input" disabled="disabled" value="淘宝女装T-shirt商品发布">
         </div>
          <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="10"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="10"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox checkView SelectList basic-select" >
+          <select class="inputbox checkView SelectList basic-select  lookUp-input" disabled="disabled">
             <option >商品发布</option>
             <option value='' >一级流程</option>
           </select>
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView  lookUp-input" disabled="disabled" value="xxx">
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView  lookUp-input" disabled="disabled" value="2017-05-13" style="width:180px;">
         </div>
       </form>
     </div>
     <div class="heads xf-heads">
-      <i class="el-icon-picture xf-edit-icon"></i> 流程图形化表达
+      <i class="el-icon-picture xf-edit-icon"></i> 流程节点基本信息
     </div>
     <div class="items">
       <div class="xf-process-style" >
@@ -56,26 +56,26 @@
               <div  class="xf-yellow">
                 <div class="item">
                   <label class="nameid">节点名称: </label>
-                  <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-                  <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-                  <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-                  <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-                  <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-                  <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="选择类目"  v-if="item.id==0">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="是否选择货品模板"  v-if="item.id==1">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="获取货品模板"  v-if="item.id==2">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="填写商品信息"  v-if="item.id==3">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="审核"  v-if="item.id==4">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="人工审核" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="机器审核" v-if="item.id==5">
 
                   <label class="nameid">节点类型: </label>
-                  <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
                   <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
                   
                   <label class="nameid">节点描述: </label> 
-                  <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-                  <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-                  <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-                  <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-                  <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-                  <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
                 </div> 
               </div>
             </div>
@@ -87,16 +87,16 @@
           <form class="xf-yellow">
             <div class="item xf-item">
               <span class="xf-span-fix">
-                <select class="longinput">
+              <input type="text" value="商品类型" class = "inputbox checkView  lookUp-input" disabled="disabled">
+               <!--  <select class="longinput inputbox checkView  basic-select  lookUp-input" disabled="disabled">
                   <option>商品类型</option>
                   <option>目标时限节点</option>
                   <option>是否第一次进入该节点</option>
-                </select>
+                </select> -->
                若等于</span>
               <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
               <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
               否则执行 <b>人工审核</b> 活动</span>
-              <i class="el-icon-plus xf-edit-icon xf-el-icon-plus" @click="showAdvance"></i>
             </div>
             <div v-bind:class="{'showAdvance':showadvance}">
             <select class="smallinput">
@@ -106,7 +106,7 @@
             </select>
             <div class="item xf-item">
               <span class="xf-span-fix">
-                <select class="longinput">
+                <select class="longinput inputbox checkView SelectList basic-select  lookUp-input" disabled="disabled">
                   <option>商品类型</option>
                   <option>目标时限节点</option>
                   <option>是否第一次进入该节点</option>
@@ -123,7 +123,7 @@
           </div>
           <div class="heads xf-heads-half">
             <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
-            <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link>
+            <!-- <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link> -->
           </div>
           <div class="items" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
           <form  class="xf-yellow">
@@ -134,10 +134,8 @@
               <label class="xf-name-fix" v-if="item.id==3">填写商品信息</label>
             </span>
             <span class="item xf-mutiple-position" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
-              <label class="xf-name-fix">关联的页面模板：</label>
-             <MutipleSelectDelete class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-
-
-      bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+              <label class="xf-name-fix" >关联的页面模板：</label>
+             <MutipleSelectDelete class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" checked = "checked" disabled = "disabled"></MutipleSelectDelete>
             </span>
           </form>
           </div>
@@ -146,18 +144,11 @@
           </div>
            <div class="items xf-items-addBottom" v-if="item.id==6">
            <div class="xf-yellow">
+           	<input type="text" value="商家信用等级" class = "inputbox checkView  lookUp-input" disabled="disabled">
             <div class="item " >
-              <select class="longinput">
-                <option>商家信用等级</option>
-                <option>开店时间</option>
-                <option>转化率</option>
-              </select> 若
-              <select class="longinput" >
-                <option>大于</option>
-                <option>小于</option>
-                <option>等于</option>
-              </select>
-              <input type="text" value="1" class="longinput">颗星
+             若
+            <input type="text" value="大于" class = "inputbox checkView  lookUp-input" disabled="disabled">
+              <input type="text" value="1" class = "inputbox checkView  lookUp-input" disabled="disabled">颗星
               则呈现 <b>页面模板1</b> ; 
               否则，呈现<b>页面模板1</b> ;
             </div>
@@ -176,7 +167,7 @@
     </div>
     <br/>
     <div class="bottom" >
-      <router-link to="/publishIdentity"  class="ok link-btn link-btn-default">确定</router-link>
+      <router-link to="/CCprocess"  class="ok link-btn link-btn-default">关闭</router-link>
     </div>
     <br/>
   </div>
@@ -294,7 +285,7 @@
       }
     }   
   </script>
-<style> 
+<style scoped> 
   .xf-item{width:100%;}
   .xf-edit-icon{color:#448bc7;cursor: pointer;}
   .xf-item span.xf-span-fix{position: relative;top: -19px;}
@@ -427,4 +418,5 @@
   .showAdvance{display: none}
   .basic-inputbox{width: 220px;}
   .basic-select{padding:7px 4px 2px;}
+  .lookUp-input{background-color: #fff;}
 </style>

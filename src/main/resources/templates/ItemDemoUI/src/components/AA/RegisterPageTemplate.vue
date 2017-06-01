@@ -7,21 +7,21 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView"  value="淘宝选择类目页面模板" autocomplete="on" autofocus="autofocus">
+        <label class="nameid">模板名称: </label><input type="text" class="inputbox checkView AA-inputbox"  value="淘宝选择类目页面模板" autocomplete="on" autofocus="autofocus">
         </div>
 
         <div class="item">
-        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView"  value="淘宝选择类目页面模板" autocomplete="on" >
+        <label class="nameid">模板描述: </label> <input type="text" class="inputbox checkView AA-inputbox"  value="淘宝选择类目页面模板" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView"  value="TBPUBLISH" autocomplete="on" >
+          <label class="nameid"> 模板KEY: </label> <input type="text" class="inputbox checkView AA-inputbox"  value="TBPUBLISH" autocomplete="on" >
         </div>
 
         <div class="item">
-        <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView"  value="淘宝" autocomplete="on" >
+        <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView AA-inputbox"  value="淘宝" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView"  value="2017-05-19"  autocomplete="on" >
+          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView " style="width:180px;" value="2017-05-19"  autocomplete="on" >
         </div>
 
 
@@ -370,6 +370,7 @@
     
    .smallname-label{width: 89px;text-align: right;}
    .smallnamed-key{margin-left: 24px;}
+   .AA-inputbox{width: 220px;}
 
 </style>
 

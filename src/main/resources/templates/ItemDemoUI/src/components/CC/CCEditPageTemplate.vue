@@ -29,8 +29,8 @@
 				            	</div>
 				            	<!-- 宝贝类型选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==2)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 1015px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -39,8 +39,8 @@
 				            	</div>
 				            	<!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==3)&&((show==-1)||(show==1)||(show==2)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 135px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 1035px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -49,8 +49,8 @@
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 180px;left: 415px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 1030px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -69,8 +69,8 @@
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 815px;" @click="deletel(6)">
+				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 1035px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -110,8 +110,8 @@
 				            	
 								<!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 815px;" @click="deletel(2)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 1015px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -120,8 +120,8 @@
 				            	</div>
 				            	<!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 815px;" @click="deletel(3)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 409px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 1025px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -130,8 +130,8 @@
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 178px;left: 415px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 170px;left: 1030px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -149,8 +149,8 @@
 					            </div>
 					             <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 255px;height: 430px;border: 2px dashed red;position: absolute;top: 325px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 430px;" @click="deletel(6)">
+				            		<div style="width: 255px;height: 430px;border: 2px dashed red;position: absolute;top: 325px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 660px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -189,8 +189,8 @@
 					            </div>
 					             <!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 53px;border: 2px dashed red;position: absolute;top: 92px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 78px;left: 815px;" @click="deletel(2)">
+				            		<div style="width: 635px;height: 53px;border: 2px dashed red;position: absolute;top: 92px;left: 399px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 78px;left: 1015px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -199,8 +199,8 @@
 					            </div>
 					            <!-- 宝贝标题选中后要显示的边框 -->
 				            	<div  v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 160px;left: 200px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 145px;left: 815px;" @click="deletel(3)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 165px;left: 415px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 149px;left: 1035px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -209,8 +209,8 @@
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))" >
-				            		<div style="width: 635px;height: 130px;border: 2px dashed red;position: absolute;top: 209px;left: 205px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 195px;left: 820px;" @click="deletel(4)">
+				            		<div style="width: 635px;height: 130px;border: 2px dashed red;position: absolute;top: 209px;left: 415px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 195px;left: 1030px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -228,8 +228,8 @@
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 255px;height: 410px;border: 2px dashed red;position: absolute;top: 345px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 337px;left: 430px;" @click="deletel(6)">
+				            		<div style="width: 255px;height: 410px;border: 2px dashed red;position: absolute;top: 345px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 337px;left: 660px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -275,8 +275,8 @@
 					            </div>
 					            <!-- 宝贝类型选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 83px;left: 815px;" @click="deletel(2)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 83px;left: 1015px;" @click="deletel(2)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -285,8 +285,8 @@
 					            </div>
 					            <!-- 宝贝标题选中后要显示的边框 -->
 				            	<div v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 138px;left: 200px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 128px;left: 815px;" @click="deletel(3)">
+				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 138px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 128px;left: 1035px;" @click="deletel(3)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -295,8 +295,8 @@
 					            </div>
 					            <!-- 宝贝卖点选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 173px;left: 205px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 820px;" @click="deletel(4)">
+				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 178px;left: 415px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 1030px;" @click="deletel(4)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 
@@ -315,8 +315,8 @@
 					            </div>
 					            <!-- 图片选中后要显示的边框 -->
 				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 310px;left: 199px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 307px;left: 815px;" @click="deletel(6)">
+				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 320px;left: 419px;"></div>
+				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 307px;left: 1035px;" @click="deletel(6)">
 				            	</div>
 				            	<!-- 选中后要显示的边框 -->
 								<div v-bind:class="{'delet':show==7}">
@@ -341,6 +341,7 @@
 				</div>
 				<div class = "template-confirm">
 					<router-link to="/publishIdentity"  class="link-btn link-btn-blue">保存</router-link>
+					<label @click="showRight(110)"><router-link to=""  class="link-btn link-btn-primary" style="margin-left:10px;">查看所有业务能力</router-link></label>
 				</div>
 		    <IMask :hide-mask.sync="hideMask"></IMask>
 		    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
@@ -395,6 +396,11 @@
 							<input type="radio" class = "UI-option check-cc" name="radio"><label>多选</label>
 							<hr>
 						</form>
+						<form action="">
+							<label for="" class= "UI-name" >页面名称</label>
+							<input type="text"  class = "UI-option" value = "淘宝童鞋一口价商品发布页面模板" style="width:320px;padding:5px;">
+							<hr>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -408,9 +414,9 @@
 					</div>
 					<div class="CCEditPageTemplate-CCRight-bottom">
 						<div class="CCability">
-							<p>限制类型:</p>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>全新</label></div>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>二手</label></div>
+							<p><input type="checkbox" class = "check-cc">限制类型:</p>
+							<div class="CCability-check"><input type="radio" name = "type" class = "check-cc"><label>全新</label></div>
+							<div class="CCability-check"><input type="radio" name = "type" class = "check-cc"><label>二手</label></div>
 						</div>
 					</div>
 				</div>
@@ -423,20 +429,16 @@
 					</div>
 					<div class="CCEditPageTemplate-CCRight-bottom">
 						<div class="CCability">
-							<p>标题长度范围：</p>
+							<p><input type="checkbox" class = "check-cc">标题长度范围：</p>
 							<div class="CCability-check CCability-check-limit">
 								<input type="text" class = "cc-input-limit" placeholder="单位：字"> - <input type="text"  class = "cc-input-limit" placeholder="单位：字">
 							</div>
 						</div>
 						<div class="CCability">
-							<p>是否敏感词过滤:</p>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+							<p><input type="checkbox" class = "check-cc">是否敏感词过滤</p>
 						</div>
 						<div class="CCability">
-							<p>标题堆砌检测:</p>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-							<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+							<p><input type="checkbox" class = "check-cc">标题堆砌检测</p>
 						</div>
 					</div>
 				</div>
@@ -448,15 +450,13 @@
 						<button class = "link-btn link-btn-primary title-button">保存</button>
 					</div>
 					<div class="CCability">
-						<p>字数限制：</p>
+						<p><input type="checkbox" class = "check-cc">字数限制：</p>
 						<div class="CCability-check CCability-check-limit">
 							不超过&nbsp;<input type="text" class = "cc-input-limit" placeholder="30"> &nbsp;个字 
 						</div>
 					</div>
 					<div class="CCability">
-						<p>对接KFC，过滤敏感词:</p>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+						<p><input type="checkbox" class = "check-cc">对接KFC，过滤敏感词</p>
 					</div>
 				</div>
 				<!-- 业务能力-描述宝贝卖点 -->
@@ -478,37 +478,31 @@
 						</div>
 					</div> -->
 					<div class="CCability">
-						<p>图片宽度：</p>
+						<p><input type="checkbox" class = "check-cc">图片宽度：</p>
 						<div class="CCability-check CCability-check-limit">
 							不超过&nbsp;<input type="text" class = "cc-input-limit" placeholder="24"> &nbsp;px
 						</div>
 					</div>
 					<div class="CCability">
-						<p>图片高度：</p>
+						<p><input type="checkbox" class = "check-cc">图片高度：</p>
 						<div class="CCability-check CCability-check-limit">
 							不超过&nbsp;<input type="text" class = "cc-input-limit" placeholder="24"> &nbsp;px
 						</div>
 					</div>
 					<div class="CCability">
-						<p>图片路径：</p>
+						<p><input type="checkbox" class = "check-cc">图片路径：</p>
 						<div class="CCability-check CCability-check-limit">
 							<input type="file" class = "cc-input-limit" placeholder="C://桌面/帆布鞋.png" style="width:300px;">
 						</div>
 					</div>
 					<div class="CCability">
-						<p>系统默认图片:</p>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+						<p><input type="checkbox" class = "check-cc">系统默认图片</p>
 					</div>
 					<div class="CCability">
-						<p>原创保护:</p>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+						<p><input type="checkbox" class = "check-cc">原创保护</p>
 					</div>
 					<div class="CCability">
-						<p>盗图盗链检测:</p>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>是</label></div>
-						<div class="CCability-check"><input type="checkbox" class = "check-cc"><label>否</label></div>
+						<p><input type="checkbox" class = "check-cc">盗图盗链检测</p>
 					</div>
 				</div>
 				<!-- 业务能力-描述宝贝图片 -->
@@ -527,7 +521,7 @@
 	.CCEditPageTemplate-CCRight-top span.text{font-size:16px;margin-left:35%;}
 	.CCBability{margin-bottom: 50px;border:1px solid #f0f0f0;}
 	.CCabiLlity-title{float: left;}
-	.CCability-check{float: left;width: 90px;margin-left: 5%;}
+	.CCability-check{float: left;margin-left: 5%;}/*width: 90px;*/
 	.CCability-check input{padding:5px;}
 	.check-cc{width: 18px;height: 18px;margin-right: 5px;margin-top: 5px;}
 	.CCability-check label{position: relative;top:-3px;}
@@ -537,7 +531,7 @@
 	.CCability>div{margin-left: 65px;}
 	.cc-page-name{width: 100%;}
 	.cc-img{margin:15px 130px;}
-	.cc-input-limit{border:1px solid #999;width:75px;border-radius: 2px;}
+	.cc-input-limit{border:1px solid #999;width:85px;border-radius: 2px;}
 	.CCability-check-limit{width:100%;}
 	.CCability-to{float: left;margin:-5px 20px 0;}
 	.CCEditPageTemplate-CCRight-top{border: 1px solid #ddd;width: 100%;height: 50px;border-radius: 6px;clear:both;}
@@ -545,7 +539,7 @@
 	.CCEditPageTemplate-CCRight-top p{text-align: center;margin-top: 12px;font-size: 120%;}
 	.CCEditPageTemplate-CCRight-bottom{padding:15px 10px;}
 	.bottoms{right:114px;}
-	.template-confirm{margin-left: 50%;}
+	.template-confirm{margin-left: 45%;}
 	.cc-page-size{height:auto;}
 	.axure-img{margin-top: 20px;}
 	/*.title-button{margin-left: 120px;margin-top: 10px;}*/

@@ -15,28 +15,33 @@
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
         </div> 
-        <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝女装T-shirt商品发布</el-checkbox></div></div>
-            <div class="process"><img src="../../assets/img/tbpublish.png" /></div>
-            <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
-            <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
-            </div>
+        <div>
+          <div class = "table-background">
+             <div align="center">
+               <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" />
+               </router-link>  
+             </div>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝女装T-shirt商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
           </div>
-        </div>
-        <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝女装衬衫商品发布</el-checkbox></div></div>
-            <div class="process"><img src="../../assets/img/tbpublish.png" /></div>
-            <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
-            </div>
+
+          <div class = "table-background">
+             <div align="center">
+              <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic"/>
+              </router-link>
+             </div>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝女装衬衫商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
           </div>
+
         </div>
         </div>
       </div>
@@ -52,7 +57,7 @@
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（1）</router-link></a>
         </div> 
-        <div class="BZProcess-table">
+        <!-- <div class="BZProcess-table">
           <div class="BZ-edit">
             <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >淘宝男鞋-帆布鞋商品发布</el-checkbox></div></div>
             <div class="process"><img src="../../assets/img/tbpublish.png" /></div>
@@ -62,7 +67,29 @@
               <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
             </div>
           </div>
-        </div>
+        </div> -->
+        <div class = "table-background">
+             <div align="center">
+              <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic"/>
+              </router-link>
+             </div>
+             <div class = "table-title"><div class = "table-checkbox" ><el-checkbox ><label for="">淘宝男鞋-帆布鞋商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button-my" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title-my">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
+             <router-link to="" class = "link-btn table-button-my" align="center">
+                 <img src="../../assets/img/glyphicons-446-floppy-remove.png">
+                  <label for="" class = "table-button-title-my">删除</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
+             <!-- <router-link to="" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">删除</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link> -->
+          </div>
         </div>
       </div>
 
@@ -78,7 +105,49 @@
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（3）</router-link></a>
         </div> 
-        <div class="BZProcess-table">
+        <div>
+          <div class = "table-background">
+             <div align="center">
+               <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic" />
+               </router-link>  
+             </div>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝一口价商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
+          </div>
+
+          <div class = "table-background">
+             <div align="center">
+              <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic"/>
+              </router-link>
+             </div>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">天猫一口价商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
+          </div>
+
+          <div class = "table-background">
+             <div align="center">
+              <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic"/>
+              </router-link>
+             </div>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">聚划算一口价商品发布</label></el-checkbox></div></div>
+             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
+                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
+                  <label for="" class = "table-button-title">配置</label>
+                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
+             </router-link>
+          </div>
+
+        </div>
+
+        <!-- <div class="BZProcess-table">
           <div class="BZ-edit">
             <div class="BZ-num">
             <div class = "table-checkbox">
@@ -86,36 +155,29 @@
             </div>
             </div>
             <div class="process"><img src="../../assets/img/tbpublish.png" /></div>
-            <!-- <div><input type="radio" name = "primary">选为主要方案</div> -->
             <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
-        </div>
-        <div class="BZProcess-table">
+        </div> -->
+        <!-- <div class="BZProcess-table">
           <div class="BZ-edit">
             <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >天猫一口价商品发布</el-checkbox></div></div>
             <div class="process"><img src="../../assets/img/tmpublish.png" /></div>
             <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
-        </div>
-        <div class="BZProcess-table">
+        </div> -->
+        <!-- <div class="BZProcess-table">
           <div class="BZ-edit">
             <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >聚划算一口价商品发布</el-checkbox></div></div>
             <div class="process"><img src="../../assets/img/jhspublish.png" /></div>
             <div class = "process-button">
-              <!-- <router-link to="/cCEditProcess" class = "link-btn link-btn-primary">编辑</router-link> -->
               <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-              <!-- <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li> -->
             </div>
           </div>
-        </div>
+        </div> -->
         </div>
       </div>
       <div class="BZProcess-table" style="border:0;">
@@ -273,4 +335,77 @@ import HistoryPath from "../HistoryPath"
   .BZProcess-table{
     margin-bottom: 20px;
   }
+  .table-background{
+     background:#f8f4f3;
+     height:380px;
+     width:520px;
+     border-radius:6px;
+     display: inline-block;
+     margin:20px 0 20px 50px;
+  }
+  .table-button-title{
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 50%;
+    font-size: 150%;
+  }
+  .table-title{
+    text-align:center;
+    margin-top:40px;
+    margin-bottom: 30px;
+  }
+  .table-title label{
+    font-size: 140%;
+  }
+  .table-button-title-my{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 25%;
+    font-size: 150%;
+  }
+  .table-title-my{
+    text-align:center;
+    margin-top:40px;
+    margin-bottom: 30px;
+  }
+  .table-title-my label{
+    font-size: 140%;
+  }
+  .table-button-my{
+    border:3px solid #ebe8e7;
+    padding: 14px 20px;
+    text-align: left;
+    transition: all .5s ease-out;
+    color: #8d8d8d;
+    width: 40%;
+    border-radius: 5px;
+    margin-left: 30px;
+  }
+  .table-button-my:hover{
+    transition: all .5s ease-out;
+    border:3px solid #169BD5;
+  }
+  .table-button{
+    border:3px solid #ebe8e7;
+    padding: 14px 20px;
+    text-align: left;
+    transition: all .5s ease-out;
+    color: #8d8d8d;
+    width: 90%;
+    border-radius: 5px;
+    margin-left: 30px;
+  }
+  .table-button:hover{
+    transition: all .5s ease-out;
+    border:3px solid #169BD5;
+  }
+ .table-process-pic{
+  width:85%;
+  margin-top:40px;
+  transition:all 0.3s; 
+ }
+ .table-process-pic:hover{
+  transform: scale(1.5,1.5);
+ }
+
 </style>
