@@ -338,7 +338,7 @@ import HistoryPath from "../HistoryPath"
   .table-background{
      background:#f8f4f3;
      height:380px;
-     width:520px;
+     width:460px;
      border-radius:6px;
      display: inline-block;
      margin:20px 0 20px 50px;

@@ -15,28 +15,28 @@
           <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView basic-inputbox"  value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
         </div>
          <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="10"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="10"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView basic-inputbox"  value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox checkView SelectList basic-select" >
+          <select class="inputbox checkView SelectList basic-select basic-inputbox" >
             <option >商品发布</option>
             <option value='' >一级流程</option>
           </select>
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="xxx"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView basic-inputbox"  value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>

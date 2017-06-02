@@ -15,28 +15,28 @@
           <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView basic-inputbox lookUp-input" disabled="disabled" value="淘宝女装T-shirt商品发布">
         </div>
          <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="121" autocomplete="on" >
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView lookUp-input basic-inputbox" disabled="disabled" value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="10"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView lookUp-input basic-inputbox" disabled="disabled" value="10"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView lookUp-input basic-inputbox" disabled="disabled" value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox checkView SelectList basic-select  lookUp-input" disabled="disabled">
+          <select class="inputbox checkView SelectList basic-select  lookUp-input basic-inputbox" disabled="disabled">
             <option >商品发布</option>
             <option value='' >一级流程</option>
           </select>
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView  lookUp-input" disabled="disabled" value="xxx">
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView  lookUp-input basic-inputbox" disabled="disabled" value="xxx">
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView  lookUp-input" disabled="disabled" value="2017-05-13" style="width:180px;">
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView  lookUp-input basic-inputbox" disabled="disabled" value="2017-05-13" style="width:180px;">
         </div>
       </form>
     </div>

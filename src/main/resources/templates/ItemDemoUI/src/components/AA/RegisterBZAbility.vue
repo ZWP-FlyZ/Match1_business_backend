@@ -6,19 +6,19 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">业务能力名称: </label><input type="text" class="inputbox checkView"  placeholder="描述标题" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">业务能力名称: </label><input type="text" class="inputbox checkView AA-inputbox"  placeholder="描述标题" autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="nameid">业务能力描述: </label> <input type="text" class="inputbox checkView"  placeholder="描述标题"  autocomplete="on" >
+          <label class="nameid">业务能力描述: </label> <input type="text" class="inputbox checkView AA-inputbox"  placeholder="描述标题"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="smallname"> KEY: </label> <input type="text" class="inputbox checkView"  placeholder="xxx"  autocomplete="on" >
+          <label class="smallname"> KEY: </label> <input type="text" class="inputbox checkView AA-inputbox"  placeholder="xxx"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView"  placeholder="222"  autocomplete="on" >
+          <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView AA-inputbox"  placeholder="222"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView" value="2017-05-13" autocomplete="on" >
+          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView " value="2017-05-13" autocomplete="on" style="width:160px;">
         </div>
       </form>
     </div>

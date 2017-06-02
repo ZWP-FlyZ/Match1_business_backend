@@ -11,330 +11,110 @@
 				    <div class="template-body">
 				    <!-- 普通样式 -->
 				        <div class="one-container cc-page-name cc-page-size" v-if="(AlignStyle==-1&&ColorStyle==-1)||(AlignStyle==-1&&ColorStyle==0)||(AlignStyle==0&&ColorStyle==-1)||(AlignStyle==0&&ColorStyle==0)">
-				          <div @click="showRight(0)"  style="width: 100%;height: 37px;top: 2px;left: 19px;"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
-						<!-- 名称选中后要显示的边框 -->
-				          <div v-if="clickBorderContent==0">
-				          	<div style="width: 650px;height: 37px;border: 2px dashed red;position: absolute;top: 2px;left:30%;"></div>
-				          </div>
-				        <!-- 选中后要显示的边框 -->
+				          <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
+						   <div class= "classify-title">1.宝贝基本信息</div>
 
-				          <div>
-				            <div class="template-view">
-					            <div v-bind:class="{'delet':show==1}">
-					            	<img src="../../assets/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
-					            </div>
-
-				            	<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				             		<img src="../../assets/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
-				            	</div>
-				            	<!-- 宝贝类型选中后要显示的边框 -->
-				            	<div  v-if="(clickBorderContent==2)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 1015px;" @click="deletel(2)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-if="((show==-1)||(show==1)||(show==2)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				             		<img src="../../assets/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
-				            	</div>
-				            	<!-- 宝贝标题选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==3)&&((show==-1)||(show==1)||(show==2)||(show==4)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 135px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 1035px;" @click="deletel(3)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					            	<img src="../../assets/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
-					            </div>
-					            <!-- 宝贝卖点选中后要显示的边框 -->
-				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 180px;left: 415px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 1030px;" @click="deletel(4)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<!-- <div v-bind:class="{'delet':show==5}">
-									<img src="../../assets/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)">
-					            </div> -->
-					            <!-- 宝贝属性选中后要显示的边框 -->
-				            	<!-- <div v-if="clickBorderContent==5">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 19px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 640px;" @click="deletel(5)">
-				            	</div> -->
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					            	<img src="../../assets/img/page1/pic.png" alt="图片" @click="showRight(6)">
-					            </div>
-					            <!-- 图片选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 1035px;" @click="deletel(6)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-bind:class="{'delet':show==7}">
-					              <img src="../../assets/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
-					            </div>
-
-								<div v-bind:class="{'delet':show==8}">
-					              <img src="../../assets/img/page1/service.png" alt="售后服务" @click="showRight(8)">
-					            </div>
-
-								<div v-bind:class="{'delet':show==9}">
-					              <img src="../../assets/img/page1/other.png" alt="其他信息" @click="showRight(9)">
-					            </div>
-				            </div>
-				          </div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
+						   		<label for="" class ="basic-bzability-title">宝贝类型</label><input type="radio" name = "basic-type" class = "basic-bzability-option">全新<input type="radio" name = "basic-type" class = "basic-bzability-option" style="margin-left:30px;">二手<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability" v-if = "LogoNum!=3">
+						   		<label for="" class ="basic-bzability-title">宝贝标题</label><input type="text" name = "basic-type" class = "basic-title-input  beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)" placeholder="描述宝贝标题"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability" v-if = "LogoNum!=4">
+						   		<label for="" class ="basic-bzability-title sale">宝贝卖点</label><textarea name="" id="" cols="58" rows="10" placeholder="描述宝贝卖点" class = " beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)" ></textarea><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" style="width:17px;height:17px;float:right;">
+						   	</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)" v-if = "LogoNum!=6">
+						   		<label for="" class ="basic-bzability-title basic-pic">宝贝图片</label>
+						   		<img src="../../assets/img/page-pic1.jpg" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/page-pic2.png" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/page-pic3.png" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   <div class= "classify-title">2.宝贝物流</div>
+						   <div class= "classify-title">3.售后保障信息</div>
+						   <div class= "classify-title">4.宝贝其他信息</div>
 				        </div>
 				        <!-- 普通样式结束 -->
+
 				        <!-- 左对齐样式 -->
 				        <div class="one-container cc-page-name cc-page-size" v-if="(AlignStyle==1&&ColorStyle==-1)||(AlignStyle==1&&ColorStyle==0)">
-				           <div @click="showRight(0)"  style="width: 100%;height: 37px;top: 2px;left: 19px;"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
-
-				          <!-- 名称选中后要显示的边框 -->
-				          <div v-if="clickBorderContent==0">
-				          	<div style="width: 650px;height: 37px;border: 2px dashed red;position: absolute;top: 2px;left: 30%;"></div>
-				          </div>
-				        <!-- 选中后要显示的边框 -->
-				          <div>
-				            <div class="template-view">
-					            <div v-bind:class="{'delet':show==1}">
-					            	<img src="../../assets/img/page1/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
-					            </div>
-
-				            	<div v-bind:class="{'delet':show==2}">
-				             		<img src="../../assets/img/page1/type-1.png" alt="宝贝类型" @click="showRight(2)">
-				            	</div>
-				            	
-								<!-- 宝贝类型选中后要显示的边框 -->
-				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 88px;left: 1015px;" @click="deletel(2)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-bind:class="{'delet':show==3}">
-				             		<img src="../../assets/img/page1/title-1.png" alt="宝贝标题" @click="showRight(3)">
-				            	</div>
-				            	<!-- 宝贝标题选中后要显示的边框 -->
-				            	<div v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 133px;left: 409px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 123px;left: 1025px;" @click="deletel(3)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					            	<img src="../../assets/img/page1/sale.png"  alt="宝贝卖点" @click="showRight(4)">
-					            </div>
-					            <!-- 宝贝卖点选中后要显示的边框 -->
-				            	<div  v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 178px;left: 415px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 170px;left: 1030px;" @click="deletel(4)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<!-- <div v-bind:class="{'delet':show==5}">
-									<img src="../../assets/img/page1/attribute-1.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
-					            </div> -->
-					            <!-- 宝贝属性选中后要显示的边框 -->
-				            	<!-- <div v-if="clickBorderContent==5">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 19px;"></div>
-				            	</div> -->
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					            	<img src="../../assets/img/page4-align-only/pic.png" alt="图片" @click="showRight(6)">
-					            </div>
-					             <!-- 图片选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 255px;height: 430px;border: 2px dashed red;position: absolute;top: 325px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 317px;left: 660px;" @click="deletel(6)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-bind:class="{'delet':show==7}">
-					              <img src="../../assets/img/page1/transport.png" alt="物流运输" @click="showRight(7)" >
-					            </div>
-
-								<div v-bind:class="{'delet':show==8}">
-					              <img src="../../assets/img/page1/service.png" alt="售后服务" @click="showRight(8)">
-					            </div>
-
-								<div v-bind:class="{'delet':show==9}">
-					              <img src="../../assets/img/page1/other.png" alt="其他信息" @click="showRight(9)">
-					            </div>
-				            </div>
-				          </div>
+				           <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
+				          <div class= "classify-title">1.宝贝基本信息</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
+						   		<label for="" class ="basic-bzability-title">宝贝类型</label><input type="radio" name = "basic-type" class = "basic-bzability-option">全新
+						   		<br><input type="radio" name = "basic-type" class = "basic-bzability-option" style="margin-left:100px;">二手<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability"   v-if = "LogoNum!=3">
+						   		<label for="" class ="basic-bzability-title">宝贝标题</label><input type="text" name = "basic-type" class = "basic-title-input  beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)"placeholder="描述宝贝标题"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability "  v-if = "LogoNum!=4">
+						   		<label for="" class ="basic-bzability-title sale">宝贝卖点</label><textarea name="" id="" cols="58" rows="10" placeholder="描述宝贝卖点" class = "beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)"></textarea><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" style="width:17px;height:17px;float:right;">
+						   	</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)" v-if = "LogoNum!=6">
+						   		<label for="" class ="basic-bzability-title basic-pic">宝贝图片</label>
+						   		<img src="../../assets/img/page-pic1.jpg" alt="图片" class="basic-bzability-img"><br>
+						   		<img src="../../assets/img/page-pic2.png" alt="图片" class="basic-bzability-img" style="margin-left:106px;"><br>
+						   		<img src="../../assets/img/page-pic3.png" alt="图片" class="basic-bzability-img" style="margin-left:106px;">
+						   		<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" style="float:right;width:17px;height:17px;position:relative;top:-230px;">
+						   	</div>
+						   <div class= "classify-title">2.宝贝物流</div>
+						   <div class= "classify-title">3.售后保障信息</div>
+						   <div class= "classify-title">4.宝贝其他信息</div>
+				          
 				        </div>
 				        <!-- 左对齐样式结束 -->
 
 				        <!-- 对齐方式+颜色变换开始 -->
 				         <div class="one-container cc-page-name cc-page-size" v-if="AlignStyle==1&&ColorStyle==1">
-				           <div @click="showRight(0)"  style="width: 100%;height: 37px;top: 2px;left: 19px;"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
-				          <!-- 名称选中后要显示的边框 -->
-				          <div v-if="clickBorderContent==0">
-				          	<div style="width: 650px;height: 37px;border: 2px dashed red;position: absolute;top: 2px;left: 30%;"></div>
-				          </div>
-				        <!-- 选中后要显示的边框 -->
-				          <div>
-				            <div class="template-view">
-					            <div v-bind:class="{'delet':show==1}">
-					              <img src="../../assets/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
-					            </div>
-
-					            <div v-bind:class="{'delet':show==2}">
-					              <img src="../../assets/img/page3-align/type-1.png" alt="宝贝类型" @click="showRight(2)">
-					            </div>
-					             <!-- 宝贝类型选中后要显示的边框 -->
-				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 53px;border: 2px dashed red;position: absolute;top: 92px;left: 399px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 78px;left: 1015px;" @click="deletel(2)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-bind:class="{'delet':show==3}">
-					              <img src="../../assets/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
-					            </div>
-					            <!-- 宝贝标题选中后要显示的边框 -->
-				            	<div  v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 165px;left: 415px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 149px;left: 1035px;" @click="deletel(3)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					              <img src="../../assets/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
-					            </div>
-					            <!-- 宝贝卖点选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))" >
-				            		<div style="width: 635px;height: 130px;border: 2px dashed red;position: absolute;top: 209px;left: 415px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 195px;left: 1030px;" @click="deletel(4)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<!-- <div v-bind:class="{'delet':show==5}">
-								  <img src="../../assets/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
-					            </div> -->
-					            <!-- 宝贝属性选中后要显示的边框 -->
-				            	<!-- <div v-if="clickBorderContent==5">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 19px;"></div>
-				            	</div> -->
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					              <img src="../../assets/img/page3-align/pic.png" alt="图片" @click="showRight(6)">
-					            </div>
-					            <!-- 图片选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 255px;height: 410px;border: 2px dashed red;position: absolute;top: 345px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 337px;left: 660px;" @click="deletel(6)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-
-								<div v-bind:class="{'delet':show==7}">
-					              <img src="../../assets/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
-					            </div>
-
-								<div v-bind:class="{'delet':show==8}">
-					              <img src="../../assets/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
-					            </div>
-
-								<div v-bind:class="{'delet':show==9}">
-					              <img src="../../assets/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
-					            </div>
-				            </div>
-				          </div>
+				           <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
+				          <div class= "classify-title">1.宝贝基本信息</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
+						   		<label for="" class ="basic-bzability-title">宝贝类型</label><input type="radio" name = "basic-type" class = "basic-bzability-option">全新
+						   		<br><input type="radio" name = "basic-type" class = "basic-bzability-option" style="margin-left:100px;">二手<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" style="float:right;width:17px;height:17px;position:relative;top:-25px;">
+						   	</div>
+						   	<div class= "basic-bzability " v-if = "LogoNum!=3">
+						   		<label for="" class ="basic-bzability-title">宝贝标题</label><input type="text" name = "basic-type" class = "basic-title-input basic-title-input-color beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)" placeholder="描述宝贝标题"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability "  v-if = "LogoNum!=4">
+						   		<label for="" class ="basic-bzability-title sale">宝贝卖点</label><textarea name="" id="" cols="58" rows="10" placeholder="描述宝贝卖点" class = "basic-title-input-color beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)"></textarea><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" style="width:17px;height:17px;float:right;">
+						   	</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)" v-if = "LogoNum!=6">
+						   		<label for="" class ="basic-bzability-title basic-pic">宝贝图片</label>
+						   		<img src="../../assets/img/page-pic4.png" alt="图片" class="basic-bzability-img"><br>
+						   		<img src="../../assets/img/page-pic5.png" alt="图片" class="basic-bzability-img" style="margin-left:106px;"><br>
+						   		<img src="../../assets/img/page-pic6.png" alt="图片" class="basic-bzability-img" style="margin-left:106px;">
+						   		<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" style="float:right;width:17px;height:17px;position:relative;top:-230px;">
+						   	</div>
+						   <div class= "classify-title">2.宝贝物流</div>
+						   <div class= "classify-title">3.售后保障信息</div>
+						   <div class= "classify-title">4.宝贝其他信息</div>
 				        </div>
 						<!-- 对齐方式+颜色变换结束 -->
 						<!-- 变色样式 开始-->
 				        <div class="one-container cc-page-name cc-page-size" v-if="(AlignStyle==0&&ColorStyle==1)||(AlignStyle==-1&&ColorStyle==1)">
-				           <div @click="showRight(0)"  style="height: 37px;top: 2px;left: 19px;"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
-				           <!-- 名称选中后要显示的边框 -->
-				          <div v-if="clickBorderContent==0">
-				          	<div style="width: 650px;height: 37px;border: 2px dashed red;position: absolute;top: 2px;left: 30%;"></div>
-				          </div>
-				        <!-- 选中后要显示的边框 -->
-
-				          <div>
-				            <div class="template-view">
-					            <div v-bind:class="{'delet':show==1}">
-					              <img src="../../assets/img/page2-color/basic-info.png" alt="宝贝基本信息" class = "axure-img" @click="showRight(1)">
-					            </div>
-
-					            <!-- 名称选中后要显示的边框 -->
-						          <!-- <div v-if="clickBorderContent==0">
-						          	<div style="width: 650px;height: 37px;border: 2px dashed red;position: absolute;top: 2px;left: 19px;"></div>
-						          </div> -->
-						        <!-- 选中后要显示的边框 -->
-
-					            <div v-bind:class="{'delet':show==2}">
-					              <img src="../../assets/img/page2-color/type-1.png" alt="宝贝类型" @click="showRight(2)">
-					            </div>
-					            <!-- 宝贝类型选中后要显示的边框 -->
-				            	<div v-if="clickBorderContent==2">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 93px;left: 399px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style="width: 25px;height:23px;position: absolute;top: 83px;left: 1015px;" @click="deletel(2)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<div v-bind:class="{'delet':show==3}">
-					              <img src="../../assets/img/page2-color/title.png" alt="宝贝标题" @click="showRight(3)">
-					            </div>
-					            <!-- 宝贝标题选中后要显示的边框 -->
-				            	<div v-if="clickBorderContent==3">
-				            		<div style="width: 635px;height: 37px;border: 2px dashed red;position: absolute;top: 138px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 128px;left: 1035px;" @click="deletel(3)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-	                            <div  v-if="((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-					              <img src="../../assets/img/page2-color/sale.png"  alt="宝贝卖点" @click="showRight(4)">
-					            </div>
-					            <!-- 宝贝卖点选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==4)&&((show==-1)||(show==1)||(show==2)||(show==3)||(show==5)||(show==6)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 140px;border: 2px dashed red;position: absolute;top: 178px;left: 415px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 167px;left: 1030px;" @click="deletel(4)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-
-								<!-- <div v-bind:class="{'delet':show==5}">
-								  <img src="../../assets/img/page2-color/attribute.png"  alt="宝贝属性" @click="showRight(5)"><img src="../../assets/img/delete-blue.png" style= "margin-left:2px;" @click="deletel(5)">
-					            </div> -->
-					            <!-- 宝贝属性选中后要显示的边框 -->
-				            	<!-- <div v-if="clickBorderContent==5">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 325px;left: 19px;"></div>
-				            	</div> -->
-				            	<!-- 选中后要显示的边框 -->
-
-
-								<div v-if="((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-					              <img src="../../assets/img/page2-color/pic.png" alt="图片" @click="showRight(6)">
-					            </div>
-					            <!-- 图片选中后要显示的边框 -->
-				            	<div v-if="(clickBorderContent==6)&&((show==-1)||(show==1)||(show==3)||(show==4)||(show==5)||(show==2)||(show==7)||(show==8)||(show==9))">
-				            		<div style="width: 635px;height: 137px;border: 2px dashed red;position: absolute;top: 320px;left: 419px;"></div>
-				            		<img src="../../assets/img/delete-3.png" style= "margin-left:2px;width: 25px;height:23px;position: absolute;top: 307px;left: 1035px;" @click="deletel(6)">
-				            	</div>
-				            	<!-- 选中后要显示的边框 -->
-								<div v-bind:class="{'delet':show==7}">
-					              <img src="../../assets/img/page2-color/transport.png" alt="物流运输" @click="showRight(7)" >
-					            </div>
-
-								<div v-bind:class="{'delet':show==8}">
-					              <img src="../../assets/img/page2-color/service.png" alt="售后服务" @click="showRight(8)">
-					            </div>
-
-								<div v-bind:class="{'delet':show==9}">
-					              <img src="../../assets/img/page2-color/other.png" alt="其他信息" @click="showRight(9)">
-					            </div>
-				            </div>
-				          </div>
+				           <div style="height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
+				          <div class= "classify-title">1.宝贝基本信息</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
+						   		<label for="" class ="basic-bzability-title">宝贝类型</label><input type="radio" name = "basic-type" class = "basic-bzability-option">全新<input type="radio" name = "basic-type" class = "basic-bzability-option" style="margin-left:30px;">二手<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability"  v-if = "LogoNum!=3">
+						   		<label for="" class ="basic-bzability-title">宝贝标题</label><input type="text" name = "basic-type" class = "basic-title-input basic-title-input-color beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)" placeholder="描述宝贝标题"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   	<div class= "basic-bzability " v-if = "LogoNum!=4">
+						   		<label for="" class ="basic-bzability-title sale">宝贝卖点</label><textarea name="" id="" cols="58" rows="10" placeholder="描述宝贝卖点" class = "basic-title-input-color beforeCheck"  v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)" ></textarea><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" style="width:17px;height:17px;float:right;">
+						   	</div>
+						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)"  v-if = "LogoNum!=6">
+						   		<label for="" class ="basic-bzability-title basic-pic">宝贝图片</label>
+						   		<img src="../../assets/img/page-pic4.png" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/page-pic5.png" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/page-pic6.png" alt="图片" class="basic-bzability-img">
+						   		<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" style="float:right;width:17px;height:17px;">
+						   	</div>
+						   <div class= "classify-title">2.宝贝物流</div>
+						   <div class= "classify-title">3.售后保障信息</div>
+						   <div class= "classify-title">4.宝贝其他信息</div>
 				        </div>
 						<!-- 变色样式结束 -->
-
 				        <br/><br/>
 				    </div>
 			    <br/>  <br/>
@@ -523,7 +303,7 @@
 	.CCabiLlity-title{float: left;}
 	.CCability-check{float: left;margin-left: 5%;}/*width: 90px;*/
 	.CCability-check input{padding:5px;}
-	.check-cc{width: 18px;height: 18px;margin-right: 5px;margin-top: 5px;}
+	.check-cc{width: 15px;height: 15px;margin-right: 5px;margin-top: 5px;}
 	.CCability-check label{position: relative;top:-3px;}
 	.CCBusiness-ability{margin-bottom: 30px;}
 	.CCability{clear:both;}
@@ -552,6 +332,47 @@
 	.img-out{transition:All 0.3s ease-in-out;}
 	.img-out:hover{width: 20px;height: 20px;}
 	/*.template-total-name{border:1px solid green;margin-left: 40%;}*/
+	.classify-title{
+		text-align: left;
+		margin-left: 20%;
+		width: 60%;
+		margin-top: 20px;
+	}
+	.basic-bzability{
+		text-align: left;
+		margin-left: 21%;
+		width:62%;
+		margin-top: 20px;
+	}
+	.basic-bzability-title{
+		display: inline-block;
+		width:100px;
+		/*margin-right: 30px;*/
+	}
+	.basic-bzability-option{
+		margin-right: 10px;
+	}
+	.basic-title-input{
+		border:1px solid #999;
+		width: 76%;
+		border-radius: 2px;
+		padding:5px;
+	}
+	.sale{
+		position: relative;
+		top: -130px;
+	}
+	.basic-bzability-img{
+		margin-right: 5px;
+	}
+	.basic-pic{
+		position: relative;
+		top: -90px;
+	}
+	.beforeCheck:hover{border:1px solid #448bc7;}
+	.afterCheck{border:2px solid #448bc7;}
+	.hide{display: none;}
+	.basic-title-input-color{background: #ffff66;}
 </style>
 <script>
   import Delete from "../Delete"
@@ -573,7 +394,9 @@
         clickBorderContent:'110',//控制选中后边框的显示效果，默认是110。
         UIStyle:'0',//UIStyle=0表示是正常显示，UIStyle=1表示要向左对齐显示，要唤醒新的div，UIStyle=2表示要换颜色
         AlignStyle:'-1',//AlignStyle=0 正常样式，AlignStyle = 1，左对齐样式
-        ColorStyle:'-1'//ColorStyle=0,正常样式，ColorStyle = 1，变色样式
+        ColorStyle:'-1',//ColorStyle=0,正常样式，ColorStyle = 1，变色样式
+        DeleteLogoNums:'-1',//DeleteLogoNums = 3时，表示删除的logo要出现，不能触发Hide类，用户选中某个业务能力，触发showRight（i），DeleteLogoNums=i;hide类不能被触发。
+        LogoNum:'-1'//LogoNum=3时，说明删除按钮被点击，应该调用hide类将表示删除的logo去掉，并且！将该div因此掉，也就是说该div只能在LogoNum！=3时出现（即if语句中添加LogoNum！=3）
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath},
@@ -603,12 +426,16 @@
       showRight:function(i){
       	this.clickLeftContent = i;//gm  控制选中后右侧区域显示出相应的业务能力配置项。默认是110；
       	this.clickBorderContent = i;//控制选中后边框的显示效果，默认是110。
+      	this.DeleteLogoNums = i;//设为i后，表示删除的图标出现，也就是说不能调用hide类
       },
       showAlign:function(i){
       	this.AlignStyle = i;
       },
       showColor:function(i){
       	this.ColorStyle = i;
+      },
+      showLogo:function(i){
+      	this.LogoNum = i;
       }
     }
   }
