@@ -6,11 +6,11 @@
                     <span v-else>没有选项</span>
                 </p>
                 <p class="single-selected">{{ selected.name }}</p>
-                <i class="drop" v-bind:class="(show)?'drop-up':''">▼</i>
+                <i class="el-input__icon el-icon-caret-top" v-bind:class="(show)?'drop-up':''"> </i>
             </label>
             <div class="options-container" v-show="show">
                 <div class="search-container">
-                    <input placeholder="search here" class="search-input" v-model="search" v-on:keyup="singleSearch()" v-on:click.stop />
+                    <input placeholder="在这里搜索" class="search-input" v-model="search" v-on:keyup="singleSearch()" v-on:click.stop />
                 </div>
                 <ul class="options-ul-list">
                     <li v-show="displayOptions.length == 0">没有查询到数据</li>
@@ -105,7 +105,7 @@
             this.search = '';
             //传递给父级组件
             // console.log('派发！！')
-            this.$dispatch('selected', this.selected)
+            //this.$dispatch('selected', this.selected)
             // console.log('选中的是' + JSON.stringify(this.selected))
         },
         singleSearch: function(){
@@ -135,7 +135,6 @@
     }
 </script>
 <style scoped>
-    @charset "UTF-8";
 body,div,section,ul,li,p,img,dl,dt,dd,table,tr,td,input,button,h1,h2,h3,h4,h5,h6,fieldset{margin: 0px;padding: 0px;font-family: "Microsoft Yahei";}
 input{
     border: 1px solid #ccc;
@@ -294,5 +293,5 @@ h3{
     font-weight: bolder;
     color: #000;
 }
-
+.display-container span{color:#bfcbd9;}
 </style>

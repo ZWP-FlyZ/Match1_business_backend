@@ -65,17 +65,17 @@
       </div>
       <div class="application-list">
         <el-collapse v-model="activeNames" @change="handleChange">
-          <el-collapse-item title="描述类业务能力" name="1">
+          <el-collapse-item title="宝贝基本信息" name="1">
             <div class="xf-component-item" v-for="(item,index) in componentImg1">
               <img v-bind:src="item.src" />
             </div>
           </el-collapse-item>
-          <el-collapse-item title="校验类业务能力" name="2">
+          <el-collapse-item title="支付信息" name="2">
             <div class="xf-component-item" v-for="(item,index) in componentImg2">
               <img v-bind:src="item.src" />
             </div>
           </el-collapse-item>
-          <el-collapse-item title="其他类业务能力" name="3">
+          <el-collapse-item title="物流信息" name="3">
             <div class="xf-component-item" v-for="(item,index) in componentImg3">
               <img v-bind:src="item.src" />
             </div>
@@ -100,22 +100,18 @@ export default {
       choosedList:[],
       appList:[],
       processL1:[],
-      activeNames:['1'],
+      activeNames:['1','2','3'],
       componentImg1:[
-        {src:'static/img/component8.png'},
-        {src:'static/img/component9.png'},
-        {src:'static/img/component10.png'}
-      ],
-      componentImg2:[
-        {src:'static/img/component5.png'},
-        {src:'static/img/component6.png'},
-        {src:'static/img/component7.png'}
-      ],
-      componentImg3:[
         {src:'static/img/component1.png'},
         {src:'static/img/component2.png'},
         {src:'static/img/component3.png'},
         {src:'static/img/component4.png'}
+      ],
+      componentImg2:[
+        {src:'static/img/component10.png'}
+      ],
+      componentImg3:[
+        {src:'static/img/component6.png'}
       ]
     }
   },

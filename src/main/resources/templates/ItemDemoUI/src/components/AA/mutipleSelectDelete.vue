@@ -8,11 +8,11 @@
       <p class="multiple-selected-item" v-for="item in selectedList" track-by="$index">{{ item.name }}
         <i v-on:click.stop.prevent="multipleRemove(item.id)">×</i>
       </p>
-      <i class="drop" v-bind:class="(show)?'drop-up':''">▼</i>
+      <i class="el-input__icon el-icon-caret-top" v-bind:class="(show)?'drop-up':''"> </i>
     </label>
     <div class="options-container" v-show="show">
       <div class="search-container">
-        <input placeholder="search here" class="search-input" v-model="search" v-on:keyup="multipleSearch($event)" v-on:click.stop />
+        <input placeholder="在这里搜索" class="search-input" v-model="search" v-on:keyup="multipleSearch($event)" v-on:click.stop />
       </div>
       <ul class="options-ul-list">
         <li v-show="displayOptions.length == 0">没有查询到数据</li>
@@ -246,7 +246,7 @@ h3{
 	font-style: normal;
 	transition: all 0.5s ease;
 }
-
+.el-input__icon .el-icon-caret-top{transform: rotate(0deg);}
 .functional-select-wrapper .display-container .drop-up{
 	transform: rotate(180deg);
 }
@@ -357,5 +357,5 @@ h3{
 	font-weight: bolder;
 	color: #000;
 }
-
+.display-container span{color:#bfcbd9;}
 </style>

@@ -5,7 +5,7 @@
     <div class="Ability-register">
       <ul>
           <li class = "ability-reg">能力</li>
-          <li class = "ability-create"><router-link to="/registerAbility" class = "link-btn link-btn-default">创建能力</router-link></li>
+          <li class = "ability-create"><router-link to="/registerAbility" class = "link-btn link-btn-default">注册能力</router-link></li>
       </ul>
     </div>
     <div class = "Ability-list">

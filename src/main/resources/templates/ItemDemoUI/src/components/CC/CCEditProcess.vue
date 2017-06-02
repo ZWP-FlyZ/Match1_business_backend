@@ -85,42 +85,60 @@
           </div>
           <div class="items xf-items-addBottom" v-if="item.id==4">
           <form class="xf-yellow">
-            <div class="item xf-item">
-              <span class="xf-span-fix">
-                <select class="longinput">
-                  <option>商品类型</option>
-                  <option>目标时限节点</option>
-                  <option>是否第一次进入该节点</option>
-                </select>
-               若等于</span>
-              <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
+          <br />
+            <div class="item xf-item xf-item-fix">
+             <div style="width:13%">
+               <el-select v-model="value1" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+             </div>
+              <div style="width:65%">
+                <span class="xf-span-fix">若等于</span>
+                <el-select v-model="value2" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
               <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
               否则执行 <b>人工审核</b> 活动</span>
-              <i class="el-icon-plus xf-edit-icon xf-el-icon-plus" @click="showAdvance"></i>
+              </div>
+              <div style="width:13%">
+                <el-select v-model="value3" filterable placeholder="请选择">
+                  <el-option v-for="item in options" :key="item.value" :label="item.value" :value="item.value"></el-option>
+                </el-select>
+              </div>
+              <div class="xf-predition-delete">
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+              </div>
             </div>
             <div v-bind:class="{'showAdvance':showadvance}">
-            <select class="smallinput">
-                  <option>与</option>
-                  <option>或</option>
-                  <option>非</option>
-            </select>
-            <div class="item xf-item">
-              <span class="xf-span-fix">
-                <select class="longinput">
-                  <option>商品类型</option>
-                  <option>目标时限节点</option>
-                  <option>是否第一次进入该节点</option>
-                </select>
-               若等于</span>
-              <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></SingleSelect>
+              <div class="item xf-item xf-item-fix">
+             <div style="width:13%">
+               <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+             </div>
+              <div style="width:65%">
+                <span class="xf-span-fix">若等于</span>
+                <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
               <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
               否则执行 <b>人工审核</b> 活动</span>
-              <i class="el-icon-plus xf-edit-icon xf-el-icon-plus"></i>
-              <i class="el-icon-minus xf-edit-icon xf-el-icon-plus" @click="hideAdvance"></i>
+              </div>
+              <div style="width:13%">
+                <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                </el-select>
+              </div>
+              <div class="xf-predition-delete">
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance"></i>
+              </div>
             </div>
+              
             </div>
           </form>
           </div>
+          <br /><br />
           <div class="heads xf-heads-half">
             <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
             <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link>
@@ -144,7 +162,7 @@
           <div class = "heads xf-heads-half">
             <i class="el-icon-d-arrow-right xf-edit-icon"></i> 内部前置条件
           </div>
-           <div class="items xf-items-addBottom" v-if="item.id==6">
+           <!-- <div class="items xf-items-addBottom" v-if="item.id==6">
            <div class="xf-yellow">
             <div class="item " >
               <select class="longinput">
@@ -162,7 +180,64 @@
               否则，呈现<b>页面模板1</b> ;
             </div>
            </div>
+          </div>  -->
+
+          <div class="items xf-items-addBottom" v-if="item.id==6">
+          <form class="xf-yellow">
+          <br />
+            <div class="item xf-item xf-item-fix">
+             <div style="width:13%">
+               <el-select v-model="value4" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+             </div>
+              <div style="width:65%">
+                <span class="xf-span-fix">若等于</span>
+                <el-select v-model="value5" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+              <span class="xf-span-fix">则呈现 <b>页面1</b> ; 
+              否则呈现 <b>页面2</b> </span>
+              </div>
+              <div style="width:13%">
+                <el-select v-model="value6" filterable placeholder="请选择">
+                  <el-option v-for="item in options" :key="item.value" :label="item.value" :value="item.value"></el-option>
+                </el-select>
+              </div>
+              <div class="xf-predition-delete">
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+              </div>
+            </div>
+            <div v-bind:class="{'showAdvance':showadvance}">
+              <div class="item xf-item xf-item-fix">
+             <div style="width:13%">
+               <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+             </div>
+              <div style="width:65%">
+                <span class="xf-span-fix">若等于</span>
+                <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                </el-select>
+              <span class="xf-span-fix">则呈现 <b>页面1</b>; 
+              否则呈现 <b>页面2</b></span>
+              </div>
+              <div style="width:13%">
+                <el-select v-model="value8" filterable placeholder="请选择">
+                  <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                </el-select>
+              </div>
+              <div class="xf-predition-delete">
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance"></i>
+              </div>
+            </div>
+              
+            </div>
+          </form>
           </div>
+
           
           <div class="heads xf-heads-half">
             <i class="el-icon-date xf-edit-icon"></i> 配置项
@@ -210,7 +285,19 @@
           editableTabsValue2: '0',
           editableTabs2: [],
           tabIndex: 0,
-          showadvance:true
+          showadvance:true,
+          outPreOptions:[],
+          options:[
+            {value:'无'},
+            {value:'与'},
+            {value:'或'}
+          ],
+          value1:'',
+          value2:'',
+          value3:'',
+          value4:'',
+          value5:'',
+          value6:''
         }
       },
       components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'HistoryPath':HistoryPath},
@@ -223,11 +310,11 @@
         queryData:function(){
           var mySelf = this
           /*单选的*/
-          mySelf.single.originOptions = [{"id":"1","name":"达尔文"},{"id":"2","name":"类型1"},{"id":"3","name":"类型2"},{"id":"4","name":"类型3"},{"id":"5","name":"类型4"},{"id":"6","name":"类型5"}];
+          mySelf.outPreCondition = [{"id":"1","name":"达尔文"},{"id":"2","name":"类型1"},{"id":"3","name":"类型2"},{"id":"4","name":"类型3"},{"id":"5","name":"类型4"},{"id":"6","name":"类型5"}];
           mySelf.single.selected = {"id":"1","name":"达尔文"}
           /*多选的*/
           this.$http.get("/api/getList").then(res=>{
-            console.log(JSON.parse(res.body.data).result.pageList.length)
+            mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
             mySelf.multiple.originOptions = [{"id":"1","name":"人工审核页面1"},{"id":"2","name":"人工审核页面2"}]
             /*JSON.parse(res.body.data).result.pageList*/
           })
@@ -273,6 +360,7 @@
             if(tab.id == targetName){
               this.editableTabsValue2 = targetName;
               isAdd = false;
+              this.editableTabsValue2 = tab.name;
             }
           })
           if(isAdd){
@@ -294,10 +382,14 @@
       }
     }   
   </script>
+  <style scoped>
+  .xf-item-fix{display:flex;justify-content:flex-start;align-items:flex-start;margin-bottom:20px;}
+  .xf-predition-delete{margin-left:15px;margin-top:2px;}
+  </style>
 <style> 
   .xf-item{width:100%;}
   .xf-edit-icon{color:#448bc7;cursor: pointer;}
-  .xf-item span.xf-span-fix{position: relative;top: -19px;}
+  .xf-item span.xf-span-fix{margin:0.3%;}
   .xf-single-fix{display: inline-block;height:30px;}
   .xf-node-style{text-align:center;}
   .xf-node-ul li {

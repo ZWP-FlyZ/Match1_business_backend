@@ -1,8 +1,8 @@
 <template>
 
   <div class="regisiterpage">
-    <div class="heads">
-      页面模板基本信息
+    <div class="heads xf-heads">
+      <i class="el-icon-share xf-edit-icon"></i> 页面模板基本信息
     </div>
     <div class="items">
       <form  class="itemsform">
@@ -23,235 +23,105 @@
         <div class="item">
           <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView " style="width:180px;" value="2017-05-19"  autocomplete="on" >
         </div>
-
-
       </form>
     </div>
 
-    <div class="heads">
-      页面流程节点关联
+    <div class="heads xf-heads">
+      <i class="el-icon-picture xf-edit-icon"></i> 关联流程节点
     </div>
-    <div class="yellow yellow-div">
-      <div class="items">
-          <select class="longinput checkView page-SelectList" >
-            <option value=''>组织货品</option>
-            <option value=''>招商</option>
-            <option value=''>导购</option>
-          </select>
-          <select class="longinput checkView page-SelectList" >
-            <option value=''>淘宝一口价商品发布</option>
-            <option value=''>淘宝拍卖商品发布</option>
-            <option value=''>天猫一口价商品发布</option>
-            <option value=''>天猫拍卖商品发布</option>
-            <option value=''>聚划一口价算商品发布</option>
-            <option value=''>天猫一口价算商品发布</option>
-          </select>
-          <select class="longinput checkView page-SelectList" >
-            <option value=''>获取类目列表</option>
-            <option value=''>选择货品类目</option>
-            <option value=''>是否使用产品模板</option>
-            <option value=''>填写商品信息</option>
-            <option value=''>搜索获取货品模板</option>
-            <option value=''>审核</option>
-            <option value=''>机器审核</option>
-          </select>
-          <!--<select class="longinput checkView page-SelectList" >
-            <option>活动小二</option>
-            <option>流量小二</option>
-            <option>渠道小二</option>
-            <option>商家</option>
-          </select> -->
-           <select class="longinput checkView page-SelectList" >
-            <option>天猫一口价--填写商品信息</option>
-            <option>淘宝一口价--填写商品信息</option>
-          </select>
-          <!-- <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">天猫一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div>
-          <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">淘宝一口价--填写商品信息</div>
-                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div> -->
+    <div class="items xf-items-addBottom">
+      <div class="item xf-item">
+        <div class="xf-precondition-box xf-precondition-box-fix" v-for="i in 1">
+          <el-cascader placeholder="试试搜索：商品发布" :options="processNode" filterable style="width:70%">
+          </el-cascader>
+        </div>
       </div>
-      
-    </div>
-    <div class="heads">
-      关联的业务能力剖面
     </div>
 
-      <form  class="yellow">
-        <div class="item-row">
-          <div class="item item-select-relate ">
-            <label class="smallname smallname-label">宝贝基本信息:</label>
-            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="longname">业务能力剖面：</label>
-            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 宝贝卖点， </label>
-            <label class="smallnamed"> 宝贝类型， </label>
-            <label class="smallnamed"> 描述帆布鞋 </label>
-          </div>
-        </div>
-        <div class="item-row">
-          <div class="item item-select-relate">
-            <label class="smallname smallname-label">支付信息:</label>
-            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="longname">业务能力剖面：</label>
-            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 会员打折， </label>
-            <label class="smallnamed"> 预售 </label>
-          </div>
-          <!-- <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">预售</div>
-                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div> -->
-        </div>
-        <div class="item-row">
-          <div class="item item-select-relate">
-            <label class="smallname smallname-label">物流信息:</label>
-            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="longname">业务能力剖面：</label>
-            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-          </div>
-          <!-- <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">运费模板</div>
-                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div> -->
-           <div class="item item-select-relate">
-            <label class="smallnamed"> 运费模板， </label>
-            <label class="smallnamed"> 电子凭证 </label>
-          </div>
-        </div>
-        <div class="item-row">
-          <div class="item item-select-relate">
-            <label class="smallname smallname-label">售后信息:</label>
-            <label class="smallnamed smallnamed-key">KEY: </label><input type="text" class="smallinput"  placeholder="" autocomplete="on" autofocus="autofocus">
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed">名称: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="smallnamed"> 描述: </label> <input type="text" class="smallinput"  placeholder="121"  autocomplete="on" >
-          </div>
-          <div class="item item-select-relate">
-            <label class="longname">业务能力剖面：</label>
-            <MutipleSelectDelete v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata = "multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-          </div>
-          <!-- <div class="relate-choose-list">
-            <div class="back-color">
-                <div class="relate-choose-button">发票</div>
-                <div class="relate-choose-delete"><a href=""><img src="../../assets/img/delete-ability.png" alt="" /></a>
-                </div>
-            </div>
-          </div> -->
-          
-        </div>
-      </form>
-
-    <div class="heads">
-      前置条件
+    <div class="heads xf-heads">
+      <i class="el-icon-menu xf-edit-icon"></i>  
+      关联业务能力剖面
     </div>
-    <div class="items">
-      <div class="twocolor">
-      <form class="grey">
-        <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-        <div class="item">
-        <label class="longname">卖家信用等级</label>
-        <select class="longinput" >
-          <option>前置条件库</option>
-          <option value=''></option>
-        </select>
+    <div class="items xf-items-addBottom">
+      <div class="item xf-item">
+        <div class="xf-precondition-box xf-page-pm xf-precondition-box-fix1" v-for="i in 1">
+          <div class="xf-page-pm-label"><label>名称</label></div>
+           <div class=""><el-input placeholder="宝贝基本信息"></el-input></div>
+           <div class="xf-page-pm-label"><label>描述</label></div>
+           <div class=""><el-input placeholder="描述"></el-input></div>
+           <div class="xf-page-pm-label"><label>剖面</label></div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.bbjbxx" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
         </div>
-      <div class="item">
-        <label class="smallname">KEY: </label><input type="text" class="smallinput"  placeholder="Star" autocomplete="on" autofocus="autofocus">
+        <div class="xf-precondition-box xf-page-pm xf-precondition-box-fix1" v-for="i in 1">
+           <div class="xf-page-pm-label">名称</div>
+           <div class=""><el-input placeholder="支付信息"></el-input></div>
+           <div class="xf-page-pm-label">描述</div>
+           <div class=""><el-input placeholder="描述"></el-input></div>
+           <div class="xf-page-pm-label">剖面</div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.zfxx" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
+        </div>
+        <div class="xf-precondition-box xf-page-pm xf-precondition-box-fix1" v-for="i in 1">
+          <div class="xf-page-pm-label">名称</div>
+           <div class=""><el-input placeholder="物流信息"></el-input></div>
+           <div class="xf-page-pm-label">描述</div>
+           <div class=""><el-input placeholder="描述"></el-input></div>
+           <div class="xf-page-pm-label">剖面</div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.wlxx"  v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
+        </div>
+        <div class="xf-precondition-box xf-page-pm xf-precondition-box-fix1" v-for="i in 1">
+           <div class="xf-page-pm-label">名称</div>
+           <div class=""><el-input placeholder="售后信息"></el-input></div>
+           <div class="xf-page-pm-label">描述</div>
+           <div class=""><el-input placeholder="描述"></el-input></div>
+           <div class="xf-page-pm-label">剖面</div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.shxx" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
+        </div>
       </div>
-        <div class="item">
-        <label class="smallname">名称: </label> <input type="text" class="smallinput checkView"  value="121"  autocomplete="on" >
-        </div>
-
-        <a href="#" class="addbottom">添加同类型配置项</a>
-      </form>
-        <!-- <div class="items2">
-          <div class="item">
-          <label class="longname">配置项值选项</label>
-          <select class="inputbox" >
-            <option>多选</option>
-            <option value=''></option>
-          </select>
-          </div>
-          <a href="#" class="rightaddbottom">添加值选项</a>
-          <div class="items3">
-          <form class="grey">
-            <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-          <div class="item">
-
-            <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="1" autocomplete="on" autofocus="autofocus">
-          </div>
-            <div class="item">
-            <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="一颗星" autocomplete="on" >
-            </div>
-
-          </form>
-            <br/>
-            <form class="grey">
-              <router-link to="/bzprocess"><img src="../../assets/img/delete-red.png" alt="" class = "bzprocess-delete"></router-link>
-
-          <div class="item">
-              <label class="smallname">KEY: </label><input type="text" class="inputbox"  placeholder="2"  autocomplete="on" autofocus="autofocus">
-          </div>
-              <div class="item">
-              <label class="smallname">名称: </label> <input type="text" class="inputbox"  placeholder="两颗星" autocomplete="on" >
-              </div>
-
-            </form>
-            <br/>
-          </div>
-        </div> -->
-      </div>
-      
     </div>
-  <br/>
+    <br /><br />
+    <div class = "heads xf-heads">
+        <i class="el-icon-d-arrow-left xf-edit-icon"></i> 前置条件
+        <div class="xf-singleSelect-box">
+          <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.outPreOptions" v-bind:selecteddata="single.outPreselected" v-on:selected="singleCallback">
+          </SingleSelect>
+        </div>
+    </div>
+    <div class="items xf-items-addBottom">
+        <div class="item xf-item">
+
+          <div class="xf-precondition-box xf-precondition-box-fix1" v-for="i in 4">
+           <div class="xf-predition-label"><label>ssssss</label></div>
+           <div class="xf-predition-label"><label>可配置的值：</label></div>
+           <div>
+              <MutipleSelectDelete v-bind:optionsdata="multiple.inPreEdit" v-bind:selecteddata="multiple.inPreEditSelected" v-on:selected="multipleCallback" ></MutipleSelectDelete>
+           </div>
+           <div class="xf-predition-delete">
+             <i class="el-icon-circle-cross xf-edit-icon"></i>
+           </div>
+          </div>
+        </div>
+    </div>
+    <br/><br/><br/>
     <div class="bottom" >
       <router-link to="/pagetemplate"  class="ok">确定</router-link>
     </div>
@@ -261,6 +131,7 @@
 </template>
   <script>
   import MutipleSelectDelete from './mutipleSelectDelete'
+  import SingleSelect from '../CC/SingleSelect'
     export default{
       
       data:function(){
@@ -269,47 +140,63 @@
         multiple:{
           originOptions: [],
           selectedList: []
-      }
+        },
+        single:{
+          outPreOptions:[]
+        },
+        processNode:[
+          {
+            value:'买家卖家注册',
+            label:'买家卖家注册',
+            children:[
+              {value:'淘宝-买家卖家注册',label:'淘宝-买家卖家注册',children:[
+                  {value:'身份认证',label:'身份认证'},
+                  {value:'填写信息',label:'填写信息'}
+                ]},
+              {value:'天猫-买家卖家注册',label:'天猫-买家卖家注册'}
+            ]
+          },
+          {
+            value:'商品发布',
+            label:'商品发布',
+            children:[
+              {value:'淘宝-一口价商品发布',label:'淘宝-一口价商品发布',children:[
+                  {value:'选择类目',label:'选择类目'},
+                  {value:'选择货品模板',label:'选择货品模板'},
+                  {value:'填写商品信息',label:'填写商品信息'},
+                  {value:'机器审核',label:'机器审核'},
+                  {value:'人工审核',label:'人工审核'}
+                ]},
+              {value:'淘宝-拍卖流程',label:'淘宝-拍买流程'}
+            ]
+          },
+        ]
      }
     },
-    components:{'MutipleSelectDelete':MutipleSelectDelete},
+    components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect},
     mounted:function(){
       this.$nextTick(function(){
         this.queryData();
       })
     },
     methods:{
-        change:function(obj){
-          var liArray=document.getElementById(obj.currentTarget.parentNode.id);
-          var arr = liArray.getElementsByTagName("li")
-          var i=1;
-          var length=liArray.length;
-          switch(this.nextState){
-            case 1:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↑";
-              for(;i<arr.length;i++){
-              arr[i].className="liShow";
-              }
-              this.nextState=0;
-            break;
-            case 0:
-              document.getElementById(obj.currentTarget.id).innerHTML="当前选择↓";
-              for(;i<arr.length;i++){
-              arr[i].className="liHide";
-              }
-              this.nextState=1;
-          }
-        },
         queryData:function(){
           var mySelf = this
           this.$http.get("/api/getList").then(res=>{
             mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+            mySelf.single.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
+            mySelf.multiple.inPreEdit = [{"id":"21","name":"良好"},{"id":"22","name":"类型1"},{"id":"23","name":"类型3"}];
+            mySelf.multiple.bbjbxx = [{"id":"bb001","name":"描述标题"},{"id":"bb002","name":"宝贝卖点"}];
+            mySelf.multiple.zfxx = [{"id":"zf001","name":"支付方式"},{"id":"zf002","name":"电子凭证"}];
+            mySelf.multiple.wlxx = [{"id":"wl001","name":"提货方式"},{"id":"wl002","name":"运费模板"}];
+            mySelf.multiple.shxx = [{"id":"sh001","name":"无理由退货"},{"id":"sh002","name":"售后信息"}];
           })
           mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
         },
         multipleCallback: function(data){
             this.multiple.selectedList = data;
-        }
+        },
+        singleCallback:function(){}
       }
     }   
   </script>
@@ -371,7 +258,18 @@
    .smallname-label{width: 89px;text-align: right;}
    .smallnamed-key{margin-left: 24px;}
    .AA-inputbox{width: 220px;}
-
+   .xf-heads .xf-singleSelect-box{position: relative;top: -36px;left: 15%;}
+  .xf-precondition-box {display:flex;justify-content:flex-start;align-items:flex-start;border:1px solid #f0f0f0;padding-left:2%;text-align: left;height:50px;padding-top:7px;margin-bottom:10px;}
+  .xf-precondition-box div{margin-right:1%;}
+  .xf-precondition-box .xf-predition-label{margin-top:5px;width:21%;}
+  .xf-precondition-box .xf-predition-delete{margin-left:58%;margin-top: 5px}
+  .xf-precondition-box-fix{margin-left:20px;border:none;}
+  .xf-precondition-box-fix1{margin-left:20px;}
+  .el-input__inner{height:30px;color: #555;background-color: #FFF;border: 1px solid #CCC;border-radius: 4px;}
+</style>
+<style>
+  .xf-page-pm .xf-predition-delete{margin-left: 48%}
+  .xf-page-pm-label{width:5%;margin-top: 5px}
 </style>
 
 
