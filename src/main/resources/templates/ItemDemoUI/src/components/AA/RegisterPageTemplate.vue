@@ -21,7 +21,7 @@
         <label class="nameid">应用方: </label> <input type="text" class="inputbox checkView AA-inputbox"  value="淘宝" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView " style="width:180px;" value="2017-05-19"  autocomplete="on" >
+          <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView " style="width:160px;" value="2017-05-19"  autocomplete="on" >
         </div>
       </form>
     </div>
