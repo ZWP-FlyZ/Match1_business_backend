@@ -67,9 +67,14 @@
     },
     methods:{
       getPages:function(){
-        this.$http.get("/api/getList").then((res)=>{
+        /*this.$http.get("/api/getList").then((res)=>{
           this.pageList = JSON.parse(res.body.data).result.pageList;
-        })
+        })*/
+        this.pageList = [{
+        "id":"10001",
+        "name":"淘宝一口价商品发布页面模板",
+        "imgPath":"static/img/page1.png"
+      }]
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog

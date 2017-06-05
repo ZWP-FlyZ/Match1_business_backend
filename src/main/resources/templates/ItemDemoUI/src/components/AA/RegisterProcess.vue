@@ -94,7 +94,7 @@
       </div>
 
     <div class = "heads xf-heads">
-        <i class="el-icon-d-arrow-left xf-edit-icon"></i> 页面模板前置条件
+        <i class="el-icon-d-arrow-left xf-edit-icon"></i> 节点前置条件
         <div class="xf-singleSelect-box">
           <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.outPreOptions" v-bind:selecteddata="single.outPreselected" v-on:selected="singleCallback">
           </SingleSelect>
@@ -118,7 +118,7 @@
     </div>
     <br /><br />
     <div class = "heads xf-heads">
-        <i class="el-icon-d-arrow-right xf-edit-icon"></i> 节点前置条件
+        <i class="el-icon-d-arrow-right xf-edit-icon"></i> 页面模板前置条件
         <div class="xf-singleSelect-box">
           <SingleSelect class="xf-single-fix" v-bind:optionsdata="single.inPreOptions" v-bind:selecteddata="single.inPreSelected" v-on:selected="singleCallback">
           </SingleSelect>
@@ -163,7 +163,7 @@
         </div>
     </div>
     <br /><br />
-    <div class="heads xf-heads">
+    <!-- <div class="heads xf-heads">
       <i class="el-icon-date xf-edit-icon"></i> 配置项
     </div>
     <div class="items xf-items-addBottom">
@@ -179,7 +179,8 @@
            </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
     </div>
    </el-tab-pane>
   </el-tabs>
@@ -234,12 +235,39 @@
       methods:{
         queryData:function(){
           var mySelf = this
-          this.$http.get("/api/getList").then(res=>{
+          /*this.$http.get("/api/getList").then(res=>{
             mySelf.multiple.pages = JSON.parse(res.body.data).result.pageList 
 
             mySelf.single.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
             mySelf.single.inPreOptions = JSON.parse(res.body.data).result.inPreCondition;
-          })
+          })*/
+          mySelf.multiple.pages = [{
+        "id":"10001",
+        "name":"淘宝一口价商品发布页面模板",
+        "imgPath":"static/img/page1.png"
+      }]
+          mySelf.single.outPreOptions = [{"id":"1","name":"商品类型"},
+      {"id":"2","name":"目标节点时限"},
+      {"id":"3","name":"是否首次进入该节点"},
+      {"id":"4","name":"商家信用等级"},
+      {"id":"5","name":"开店时间"},
+      {"id":"6","name":"转化率"},
+      {"id":"7","name":"违规记录"},
+      {"id":"8","name":"销售记录"},
+      {"id":"9","name":"是否是良心卖家"},
+      {"id":"10","name":"知名品牌高危质检"},
+      {"id":"11","name":"冲突管理规则"}]
+            mySelf.single.inPreOptions = [{"id":"in11","name":"销售记录"},
+      {"id":"in12","name":"价格库存物流"},
+      {"id":"in13","name":"产品信息"},
+      {"id":"in14","name":"特定类目规则"},
+      {"id":"in15","name":"开店时间"},
+      {"id":"in16","name":"转化率"},
+      {"id":"in17","name":"违规记录"},
+      {"id":"in18","name":"销售记录"},
+      {"id":"in19","name":"是否是良心卖家"},
+      {"id":"in20","name":"知名品牌高危质检"},
+      {"id":"in21","name":"冲突管理规则"}]
           mySelf.multiple.outPreEdit = [{"id":"11","name":"达尔文"},{"id":"12","name":"类型1"},{"id":"13","name":"类型3"}];
           mySelf.multiple.inPreEdit = [{"id":"21","name":"良好"},{"id":"22","name":"类型1"},{"id":"23","name":"类型3"}];
           mySelf.multiple.configure = [{"id":"331","name":"良好"},{"id":"332","name":"类型1"},{"id":"333","name":"类型3"}];

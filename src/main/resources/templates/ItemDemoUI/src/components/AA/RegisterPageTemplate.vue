@@ -182,15 +182,31 @@
     methods:{
         queryData:function(){
           var mySelf = this
-          this.$http.get("/api/getList").then(res=>{
-            mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
-            mySelf.single.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
+          //this.$http.get("/api/getList").then(res=>{
+            /*mySelf.multiple.originOptions = JSON.parse(res.body.data).result.pageList
+            mySelf.single.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;*/
+            mySelf.multiple.originOptions = [{
+        "id":"10001",
+        "name":"淘宝一口价商品发布页面模板",
+        "imgPath":"static/img/page1.png"
+      }]
+            mySelf.single.outPreOptions = [{"id":"1","name":"商品类型"},
+      {"id":"2","name":"目标节点时限"},
+      {"id":"3","name":"是否首次进入该节点"},
+      {"id":"4","name":"商家信用等级"},
+      {"id":"5","name":"开店时间"},
+      {"id":"6","name":"转化率"},
+      {"id":"7","name":"违规记录"},
+      {"id":"8","name":"销售记录"},
+      {"id":"9","name":"是否是良心卖家"},
+      {"id":"10","name":"知名品牌高危质检"},
+      {"id":"11","name":"冲突管理规则"}]
             mySelf.multiple.inPreEdit = [{"id":"21","name":"良好"},{"id":"22","name":"类型1"},{"id":"23","name":"类型3"}];
-            mySelf.multiple.bbjbxx = [{"id":"bb001","name":"描述标题"},{"id":"bb002","name":"宝贝卖点"}];
-            mySelf.multiple.zfxx = [{"id":"zf001","name":"支付方式"},{"id":"zf002","name":"电子凭证"}];
-            mySelf.multiple.wlxx = [{"id":"wl001","name":"提货方式"},{"id":"wl002","name":"运费模板"}];
-            mySelf.multiple.shxx = [{"id":"sh001","name":"无理由退货"},{"id":"sh002","name":"售后信息"}];
-          })
+            mySelf.multiple.bbjbxx = [{"id":"bb001","name":"描述标题-采集"},{"id":"bb002","name":"宝贝卖点-采集"}];
+            mySelf.multiple.zfxx = [{"id":"zf001","name":"支付方式-采集"},{"id":"zf002","name":"电子凭证-采集"}];
+            mySelf.multiple.wlxx = [{"id":"wl001","name":"提货方式-采集"},{"id":"wl002","name":"运费模板-采集"}];
+            mySelf.multiple.shxx = [{"id":"sh001","name":"无理由退货-采集"},{"id":"sh002","name":"售后信息-采集"}];
+          //})
           mySelf.multiple.selectedList = [{"id":"1","name":"天猫商品发布"}]
         },
         multipleCallback: function(data){

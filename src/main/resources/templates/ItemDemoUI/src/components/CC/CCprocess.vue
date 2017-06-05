@@ -6,7 +6,7 @@
       <div class="BZProcess-register cc-BZProcess-register">
         <ul>
             <li class = "BZProcess-classify">解决方案</li>
-            <li class = "BZProcess-create"><router-link to="" class = "link-btn link-btn-default">新建解决方案</router-link></li>
+            <!-- <li class = "BZProcess-create"><router-link to="" class = "link-btn link-btn-default">新建解决方案</router-link></li> -->
         </ul>
       </div>
       <div class = "classfy-table">
@@ -79,11 +79,11 @@
                   <label for="" class = "table-button-title-my">配置</label>
                  <img src="../../assets/img/glyphicons-224-chevron-right.png">
              </router-link>
-             <router-link to="" class = "link-btn table-button-my" align="center">
+             <a @click="deleteDialog(item)" class = "link-btn table-button-my" align="center">
                  <img src="../../assets/img/glyphicons-446-floppy-remove.png">
-                  <label for="" class = "table-button-title-my">删除</label>
+                  <label for="" class = "table-button-title-my" >删除</label>
                  <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             </a>
              <!-- <router-link to="" class = "link-btn table-button" align="center">
                  <img src="../../assets/img/glyphicons-137-cogwheel.png">
                   <label for="" class = "table-button-title">删除</label>
@@ -182,12 +182,13 @@
       </div>
       <div class="BZProcess-table" style="border:0;">
           <div class="BZ-edit">
-              <router-link to="/cCbeforeEdit" class = "link-btn link-btn-blue">确定</router-link>
+              <button class="link-btn link-btn-blue" @click="processPre">确定</button>
           </div>
       </div>
       </div>
       <IMask :hide-mask.sync="hideMask"></IMask>
       <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
+      <ProcessPre :hide-pre.sync="hidePre" :hide-mask.sync="hideMask" v-on:closePre="closePre"></ProcessPre>
     </div>  
     
   </div>
@@ -197,6 +198,7 @@
 import Delete from "../Delete"
 import IMask from "../Mask"
 import HistoryPath from "../HistoryPath"
+import ProcessPre from '../CC/ProcessL1Pre'
   export default{
     data(){
       return {
@@ -207,11 +209,12 @@ import HistoryPath from "../HistoryPath"
         },
         hideDialog:true,
         hideMask:true,
+        hidePre:true,
         historyPathTitle:'业务方：选择业务身份 / 选择流程',
 
       }
     },
-    components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath},
+    components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
@@ -222,7 +225,6 @@ import HistoryPath from "../HistoryPath"
         this.$http.get("/api/getList").then(res=>{
           console.log(JSON.parse(res.body.data).result.processList)
           this.processList = JSON.parse(res.body.data).result.processList
-
         })
       },
       deleteDialog:function(i){
@@ -234,6 +236,17 @@ import HistoryPath from "../HistoryPath"
       closeDialog:function(childData){
         this.hideDialog = childData
         this.hideMask = childData
+      },
+      closePre:function(childData,i){
+        this.hideMask = childData
+        this.hidePre = childData
+        if(i==1){
+          this.$router.push("/cCbeforeEdit");
+        }
+      },
+      processPre:function(){
+        this.hidePre = !this.hidePre
+        this.hideMask = !this.hideMask
       }
     }
   }
@@ -347,7 +360,7 @@ import HistoryPath from "../HistoryPath"
     text-align: center;
     margin-left: 30%;
     margin-right: 50%;
-    font-size: 150%;
+    font-size: 15px;
   }
   .table-title{
     text-align:center;
@@ -355,13 +368,13 @@ import HistoryPath from "../HistoryPath"
     margin-bottom: 30px;
   }
   .table-title label{
-    font-size: 140%;
+    font-size: 14px;
   }
   .table-button-title-my{
     text-align: center;
     margin-left: 10%;
     margin-right: 25%;
-    font-size: 150%;
+    font-size: 15px;
   }
   .table-title-my{
     text-align:center;

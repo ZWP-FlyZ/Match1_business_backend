@@ -80,10 +80,65 @@ import IMask from "../Mask"
     },
     methods: {
       getProcess:function(){
-        this.$http.get("/api/getList").then(res=>{
+        /*this.$http.get("/api/getList").then(res=>{
           this.processList = JSON.parse(res.body.data).result.processList
           this.tempList = JSON.parse(res.body.data).result.processTemp
-        })
+        })*/
+        this.processList = [
+          {
+        "name":"商品发布流程",
+        "count":"3",
+        "preList":[
+          {
+            "id":"10001",
+            "name":"账号从属于天猫还是淘宝"
+          },
+          {
+            "id":"10001",
+            "name":"登陆地在中国还是外国"
+          }
+        ],
+        "pList":[
+          {
+            "id":"10001",
+            "name":"淘宝一口价商品发布流程",
+            "imgPath":"static/img/tbpublish.png"
+          },
+          {
+            "id":"10002",
+            "name":"天猫一口价商品发布流程",
+            "imgPath":"static/img/tmpublish.png"
+          }
+        ]
+      },
+      {
+        "name":"交易流程",
+        "count":"1",
+        "preList":[
+          {
+            "id":"10001",
+            "name":"虚拟还是实物"
+          },
+          {
+            "id":"10001",
+            "name":"担保还是电子凭证"
+          }
+        ],
+        "pList":[
+          {
+            "id":"10001",
+            "name":"淘宝交易流程",
+            "imgPath":"static/img/process1.png"
+          }
+        ]
+      }
+        ],
+        this.tempList = [
+        {
+        "name":"商品发布流程模板",
+        "imgPath":"static/img/publish.png"
+      }
+        ]
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog

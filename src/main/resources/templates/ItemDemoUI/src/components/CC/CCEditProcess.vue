@@ -12,31 +12,31 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView basic-inputbox"  value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView" value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
         </div>
          <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="121" autocomplete="on" >
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="10"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="10"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView basic-inputbox"  value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox checkView SelectList basic-select basic-inputbox" >
+          <select class="inputbox checkView SelectList basic-select" >
             <option >商品发布</option>
             <option value='' >一级流程</option>
           </select>
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView basic-inputbox"  value="xxx"  autocomplete="on" >
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView basic-inputbox"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>
@@ -79,14 +79,35 @@
                 </div> 
               </div>
             </div>
-
-          <div class = "heads xf-heads-half">
-            <i class="el-icon-d-arrow-left xf-edit-icon"></i> 外部前置条件
+          <br />
+          <div class="heads xf-heads-half" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
+            <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
+            <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link>
+          </div>
+          <div class="items" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
+          <form  class="xf-yellow">
+            <span class="item">
+              <label class="xf-name-fix" v-if="item.id==6">人工审核</label>
+              <label class="xf-name-fix" v-if="item.id==0">选择类目</label>
+              <label class="xf-name-fix" v-if="item.id==2">选择货品模板</label>
+              <label class="xf-name-fix" v-if="item.id==3">填写商品信息</label>
+            </span>
+            <span class="item xf-mutiple-position" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
+              <label class="xf-name-fix">关联的页面模板：</label>
+             <MutipleSelectDelete v-if="item.id==6" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+             <MutipleSelectDelete v-if="item.id==0" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.lms" v-bind:selecteddata="multiple.selectedlm" v-on:selected="multipleCallback"></MutipleSelectDelete>
+             <MutipleSelectDelete v-if="item.id==2" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.hps" v-bind:selecteddata="multiple.selectedhp" v-on:selected="multipleCallback"></MutipleSelectDelete>
+             <MutipleSelectDelete v-if="item.id==3" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.sps" v-bind:selecteddata="multiple.selectedsp" v-on:selected="multipleCallback"></MutipleSelectDelete>
+            </span>
+          </form>
+          </div>
+          <div class = "heads xf-heads-half" v-if="item.id==4">
+            <i class="el-icon-d-arrow-left xf-edit-icon"></i> 节点前置条件
           </div>
           <div class="items xf-items-addBottom" v-if="item.id==4">
           <form class="xf-yellow">
           <br />
-            <div class="item xf-item xf-item-fix">
+            <div class="item xf-item xf-item-fix" v-for="i in precount">
              <div style="width:13%">
                <el-select v-model="value1" filterable placeholder="请选择">
                   <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
@@ -106,86 +127,19 @@
                 </el-select>
               </div>
               <div class="xf-predition-delete">
-                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance(0)"></i>
+                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance(0)" v-if="i!=1"></i>
               </div>
-            </div>
-            <div v-bind:class="{'showAdvance':showadvance}">
-              <div class="item xf-item xf-item-fix">
-             <div style="width:13%">
-               <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
-                </el-select>
-             </div>
-              <div style="width:65%">
-                <span class="xf-span-fix">若等于</span>
-                <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
-                </el-select>
-              <span class="xf-span-fix">则执行 <b>机器审核</b> 活动; 
-              否则执行 <b>人工审核</b> 活动</span>
-              </div>
-              <div style="width:13%">
-                <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
-                </el-select>
-              </div>
-              <div class="xf-predition-delete">
-                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
-                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance"></i>
-              </div>
-            </div>
-              
             </div>
           </form>
           </div>
-          <br /><br />
-          <div class="heads xf-heads-half">
-            <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
-            <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link>
+          <div class = "heads xf-heads-half" v-if="item.id==6">
+            <i class="el-icon-d-arrow-right xf-edit-icon"></i> 页面模板前置条件
           </div>
-          <div class="items" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
-          <form  class="xf-yellow">
-            <span class="item">
-              <label class="xf-name-fix" v-if="item.id==6">人工审核</label>
-              <label class="xf-name-fix" v-if="item.id==0">选择类目</label>
-              <label class="xf-name-fix" v-if="item.id==2">选择货品模板</label>
-              <label class="xf-name-fix" v-if="item.id==3">填写商品信息</label>
-            </span>
-            <span class="item xf-mutiple-position" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
-              <label class="xf-name-fix">关联的页面模板：</label>
-             <MutipleSelectDelete class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-
-
-      bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
-            </span>
-          </form>
-          </div>
-          <div class = "heads xf-heads-half">
-            <i class="el-icon-d-arrow-right xf-edit-icon"></i> 内部前置条件
-          </div>
-           <!-- <div class="items xf-items-addBottom" v-if="item.id==6">
-           <div class="xf-yellow">
-            <div class="item " >
-              <select class="longinput">
-                <option>商家信用等级</option>
-                <option>开店时间</option>
-                <option>转化率</option>
-              </select> 若
-              <select class="longinput" >
-                <option>大于</option>
-                <option>小于</option>
-                <option>等于</option>
-              </select>
-              <input type="text" value="1" class="longinput">颗星
-              则呈现 <b>页面模板1</b> ; 
-              否则，呈现<b>页面模板1</b> ;
-            </div>
-           </div>
-          </div>  -->
-
           <div class="items xf-items-addBottom" v-if="item.id==6">
           <form class="xf-yellow">
           <br />
-            <div class="item xf-item xf-item-fix">
+            <div class="item xf-item xf-item-fix" v-for="pagei in pagecount">
              <div style="width:13%">
                <el-select v-model="value4" filterable placeholder="请选择">
                   <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
@@ -205,35 +159,9 @@
                 </el-select>
               </div>
               <div class="xf-predition-delete">
-                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
+                <i class="el-icon-plus xf-edit-icon" @click="showAdvance(1)"></i>
+                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance(1)" v-if="pagei!=1"></i>
               </div>
-            </div>
-            <div v-bind:class="{'showAdvance':showadvance}">
-              <div class="item xf-item xf-item-fix">
-             <div style="width:13%">
-               <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
-                </el-select>
-             </div>
-              <div style="width:65%">
-                <span class="xf-span-fix">若等于</span>
-                <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
-                </el-select>
-              <span class="xf-span-fix">则呈现 <b>页面1</b>; 
-              否则呈现 <b>页面2</b></span>
-              </div>
-              <div style="width:13%">
-                <el-select v-model="value8" filterable placeholder="请选择">
-                  <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
-                </el-select>
-              </div>
-              <div class="xf-predition-delete">
-                <i class="el-icon-plus xf-edit-icon" @click="showAdvance"></i>
-                <i class="el-icon-minus xf-edit-icon" @click="hideAdvance"></i>
-              </div>
-            </div>
-              
             </div>
           </form>
           </div>
@@ -269,7 +197,13 @@
           showwhat :'5',
           multiple: {
             originOptions: [],
-            selectedList: []
+            selectedList: [],
+            lms:[],
+            hps:[],
+            sps:[],
+            selectedlm:[],
+            selectedhp:[],
+            selectedsp:[]
           },
           single:{
             originOptions:[],
@@ -285,7 +219,9 @@
           editableTabsValue2: '0',
           editableTabs2: [],
           tabIndex: 0,
-          showadvance:true,
+          //showadvance:true,
+          precount:1,
+          pagecount:1,
           outPreOptions:[],
           options:[
             {value:'无'},
@@ -313,12 +249,32 @@
           mySelf.outPreCondition = [{"id":"1","name":"达尔文"},{"id":"2","name":"类型1"},{"id":"3","name":"类型2"},{"id":"4","name":"类型3"},{"id":"5","name":"类型4"},{"id":"6","name":"类型5"}];
           mySelf.single.selected = {"id":"1","name":"达尔文"}
           /*多选的*/
-          this.$http.get("/api/getList").then(res=>{
+          /*this.$http.get("/api/getList").then(res=>{
             mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
-            mySelf.multiple.originOptions = [{"id":"1","name":"人工审核页面1"},{"id":"2","name":"人工审核页面2"}]
-            /*JSON.parse(res.body.data).result.pageList*/
-          })
+            JSON.parse(res.body.data).result.pageList
+          })*/          
+          mySelf.outPreOptions = [{"id":"1","name":"商品类型"},
+      {"id":"2","name":"目标节点时限"},
+      {"id":"3","name":"是否首次进入该节点"},
+      {"id":"4","name":"商家信用等级"},
+      {"id":"5","name":"开店时间"},
+      {"id":"6","name":"转化率"},
+      {"id":"7","name":"违规记录"},
+      {"id":"8","name":"销售记录"},
+      {"id":"9","name":"是否是良心卖家"},
+      {"id":"10","name":"知名品牌高危质检"},
+      {"id":"11","name":"冲突管理规则"}]
+          mySelf.multiple.originOptions = [{"id":"1","name":"人工审核页面1"},{"id":"2","name":"人工审核页面2"}]
           mySelf.multiple.selectedList = [{"id":"1","name":"人工审核页面1"}]
+          
+          mySelf.multiple.lms = [{"id":"lm1","name":"选择类目页面模板"}]
+          mySelf.multiple.selectedlm = [{"id":"lm1","name":"选择类目页面模板"}]
+
+          mySelf.multiple.hps = [{"id":"hp1","name":"选择货品模板页面"}]
+          mySelf.multiple.selectedhp = [{"id":"hp1","name":"选择货品模板页面"}]
+
+          mySelf.multiple.sps = [{"id":"sp1","name":"填写商品信息页面"}]
+          mySelf.multiple.selectedsp = [{"id":"sp1","name":"填写商品信息页面"}]
         },
         singleCallback: function(data){
             this.single.selected = data;
@@ -373,11 +329,19 @@
             this.editableTabsValue2 = name;
           }
         },
-        showAdvance:function(){
-          this.showadvance = false;
+        showAdvance:function(i){
+          if(i==0)
+            this.precount++;
+          else
+            this.pagecount++;
+          //this.showadvance = false;
         },
-        hideAdvance:function(){
-          this.showadvance = true;
+        hideAdvance:function(i){
+          if(i==0)
+            this.precount--;
+          else
+            this.pagecount--;
+          //this.showadvance = true;
         }
       }
     }   
@@ -516,7 +480,6 @@
   .item .xf-name-fix{position: relative;top:6px;}
   .xf-content-height{margin-bottom: 100px;padding:20px;}
   .xf-el-icon-plus{position: relative;top:-15px;left:5%;margin-right:4px;}
-  .showAdvance{display: none}
   .basic-inputbox{width: 220px;}
   .basic-select{padding:7px 4px 2px;}
 </style>

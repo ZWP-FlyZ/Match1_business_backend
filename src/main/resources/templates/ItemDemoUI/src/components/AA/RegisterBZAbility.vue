@@ -92,10 +92,35 @@
     methods:{
         queryData:function(){
           var mySelf = this
-          this.$http.get("/api/getList").then(res=>{
+          /*this.$http.get("/api/getList").then(res=>{
             mySelf.multiple.ability = JSON.parse(res.body.data).result.abilityList
             mySelf.multiple.pages = JSON.parse(res.body.data).result.pageList
-          })
+          })*/
+          mySelf.multiple.ability = [{
+        "id":"10001",
+        "name":"字体颜色"
+      },
+      {
+        "id":"10002",
+        "name":"字体大小"
+      },
+      {
+        "id":"10003",
+        "name":"字体样式"
+      },
+      {
+        "id":"10004",
+        "name":"长度不超过30个汉字"
+      },
+      {
+        "id":"10005",
+        "name":"过滤敏感词汇"
+      }]
+          mySelf.multiple.pages = [{
+        "id":"10001",
+        "name":"淘宝一口价商品发布页面模板",
+        "imgPath":"static/img/page1.png"
+      }]
         },
         multipleCallback: function(data){
             this.multiple.selectedList = data;

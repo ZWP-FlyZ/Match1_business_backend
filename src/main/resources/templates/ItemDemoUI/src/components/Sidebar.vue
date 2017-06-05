@@ -129,19 +129,103 @@ export default {
       this.isActive = item;
     },
     getChoosedList:function(){
-      this.$http.get("/api/getList").then(res=>{
+      /*this.$http.get("/api/getList").then(res=>{
         this.choosedList = JSON.parse(res.body.data).result.choosedList;
-      })
+      })*/
+      this.choosedList = [
+        {
+        "id":"1001",
+        "name":"淘宝女装T-shirt商品发布",
+        "imgPath":"static/img/tbpublish.png"
+      },
+      {
+        "id":"1002",
+        "name":"淘宝女装衬衫商品发布",
+        "imgPath":"static/img/tbpublish.png"
+      }
+      ]
     },
     getProcessL1:function(){
-      this.$http.get("/api/getList").then(res=>{
+      /*this.$http.get("/api/getList").then(res=>{
         this.processL1 = JSON.parse(res.body.data).result.processL11;
-      })
+      })*/
+      this.processL1 = [
+        {
+        "id":"1123",
+        "name":"商业计划"
+      },
+      {
+        "id":"1123",
+        "name":"快速验证"
+      },
+      {
+        "id":"1123",
+        "name":"找场（建场）"
+      },
+      {
+        "id":"1123",
+        "name":"品类规划"
+      },
+      {
+        "id":"1123",
+        "name":"招商"
+      },
+      {
+        "id":"1123",
+        "name":"组织货品"
+      },
+      {
+        "id":"1123",
+        "name":"会员管理"
+      },
+      {
+        "id":"1123",
+        "name":"导购"
+      },
+      {
+        "id":"1123",
+        "name":"引流"
+      },
+      {
+        "id":"1123",
+        "name":"促销活动"
+      },
+      {
+        "id":"1123",
+        "name":"交易"
+      },
+      {
+        "id":"1123",
+        "name":"售后"
+      },
+      {
+        "id":"1123",
+        "name":"资金结算"
+      },
+      {
+        "id":"1123",
+        "name":"财务"
+      }
+      ]
     },
     getApplication:function(){
-      this.$http.get("/api/getList").then(res=>{
+      /*this.$http.get("/api/getList").then(res=>{
         this.appList = JSON.parse(res.body.data).result.appList;
-      })
+      })*/
+      this.appList = [
+        {
+        "id":"10001",
+        "name":"应用1"
+      },
+      {
+        "id":"10002",
+        "name":"应用2"
+      },
+      {
+        "id":"10003",
+        "name":"应用3"
+      }
+      ]
     },
     openApp:function(){
       this.hideMask = !this.hideMask

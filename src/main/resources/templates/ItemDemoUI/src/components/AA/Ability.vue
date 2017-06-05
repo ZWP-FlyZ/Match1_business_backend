@@ -45,11 +45,76 @@ import IMask from "../Mask"
     },
     methods: {
       getProcess:function(){
-        this.$http.get("/api/getList").then(res=>{
-          console.log(JSON.parse(res.body.data).result.abilityList)
+        /*this.$http.get("/api/getList").then(res=>{
           this.abilityList = JSON.parse(res.body.data).result.abilityList
 
-        })
+        })*/
+        this.abilityList = [
+          {
+        "id":"10001",
+        "name":"字体颜色"
+      },
+      {
+        "id":"10002",
+        "name":"字体大小"
+      },
+      {
+        "id":"10003",
+        "name":"字体样式"
+      },
+      {
+        "id":"10004",
+        "name":"长度不超过30个汉字"
+      },
+      {
+        "id":"10005",
+        "name":"过滤敏感词汇"
+      },
+      {
+        "id":"10006",
+        "name":"盗图盗链检测"
+      },
+      {
+        "id":"10007",
+        "name":"原创保护"
+      },
+      {
+        "id":"10009",
+        "name":"数字纽扣"
+      },
+      {
+        "id":"10008",
+        "name":"库存扣减"
+      },
+      {
+        "id":"100010",
+        "name":"总大小限制"
+      },
+      {
+        "id":"100011",
+        "name":"匹配条码库"
+      },
+      {
+        "id":"100012",
+        "name":"要求开店"
+      },
+      {
+        "id":"100013",
+        "name":"要求保证金"
+      },
+      {
+        "id":"100014",
+        "name":"要求经营凭证"
+      },
+      {
+        "id":"100015",
+        "name":"账号安全验证"
+      },
+      {
+        "id":"100016",
+        "name":"炒信效率规则"
+      }
+        ]
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog

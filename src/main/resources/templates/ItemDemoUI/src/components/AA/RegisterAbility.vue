@@ -84,10 +84,80 @@
     methods:{
         queryData:function(){
           var mySelf = this
-          this.$http.get("/api/getList").then(res=>{
+          mySelf.multiple.configure = [{"id":"331","name":"良好"},{"id":"332","name":"类型1"},{"id":"333","name":"类型3"}];
+            /*mySelf.multiple.bzabilityList = JSON.parse(res.body.data).result.bzabilityList*/
+            mySelf.multiple.bzabilityList = [
+              {
+        "id":"10101",
+        "name":"宝贝属性"
+      },
+      {
+        "id":"10102",
+        "name":"宝贝类型"
+      },
+      {
+        "id":"10103",
+        "name":"宝贝标题"
+      },
+      {
+        "id":"10104",
+        "name":"宝贝卖点"
+      },
+      {
+        "id":"10002",
+        "name":"宝贝图片"
+      },
+      {
+        "id":"10105",
+        "name":"描述"
+      },
+      {
+        "id":"10106",
+        "name":"商家编码"
+      },
+      {
+        "id":"10107",
+        "name":"条形码"
+      }
+            ]
+          /*this.$http.get("/api/getList").then(res=>{
             mySelf.multiple.configure = [{"id":"331","name":"良好"},{"id":"332","name":"类型1"},{"id":"333","name":"类型3"}];
-            mySelf.multiple.bzabilityList = JSON.parse(res.body.data).result.bzabilityList
-          })
+            /*mySelf.multiple.bzabilityList = JSON.parse(res.body.data).result.bzabilityList*/
+            mySelf.multiple.bzabilityList = [
+              {
+        "id":"10101",
+        "name":"宝贝属性"
+      },
+      {
+        "id":"10102",
+        "name":"宝贝类型"
+      },
+      {
+        "id":"10103",
+        "name":"宝贝标题"
+      },
+      {
+        "id":"10104",
+        "name":"宝贝卖点"
+      },
+      {
+        "id":"10002",
+        "name":"宝贝图片"
+      },
+      {
+        "id":"10105",
+        "name":"描述"
+      },
+      {
+        "id":"10106",
+        "name":"商家编码"
+      },
+      {
+        "id":"10107",
+        "name":"条形码"
+      }
+            ]
+          //})
         },
         multipleCallback: function(data){
             this.multiple.selectedList = data;

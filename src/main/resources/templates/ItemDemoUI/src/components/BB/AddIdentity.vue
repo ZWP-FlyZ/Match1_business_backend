@@ -64,9 +64,72 @@
          console.log(value)
        },
        getCategory:function(){
-        this.$http.get('/api/getList').then((res)=>{
+        /*this.$http.get('/api/getList').then((res)=>{
           this.category = JSON.parse(res.body.data).result.category
-        })
+        })*/
+        this.category = [
+      {
+        "value":"quanqiugou",
+        "label":"全球购",
+        "children":[
+          {
+            "value":"C2B",
+            "label":"C2B"
+          }
+        ]
+      },
+      {
+        "value":"nvzhuang",
+        "label":"女装/女士精品",
+        "children":[
+          {
+            "value":"lianyiqun",
+            "label":"连衣裙"
+          },
+          {
+            "value":"T-恤",
+            "label":"T-恤"
+          },
+          {
+            "value":"衬衫",
+            "label":"衬衫"
+          },
+          {
+            "value":"裤子",
+            "label":"裤子",
+            "children":[
+              {
+                "value":"休闲裤",
+                "label":"休闲裤"
+              },
+              {
+                "value":"西装裤/正装裤",
+                "label":"西装裤/正装裤"
+              },
+              {
+                "value":"打底裤",
+                "label":"打底裤"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "value":"ziyongxianshizhuanrang",
+        "label":"自用闲置转让",
+        "children":[
+          {
+            "value":"女装",
+            "label":"女装"
+          },
+          {
+            "value":"服饰/服装",
+            "label":"服饰/服装"
+          }
+        ]
+      }
+    ];
+
        }
 	  }
   }

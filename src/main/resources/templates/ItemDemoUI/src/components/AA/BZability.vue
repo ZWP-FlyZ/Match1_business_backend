@@ -45,11 +45,65 @@ import IMask from "../Mask"
     },
     methods: {
       getProcess:function(){
-        this.$http.get("/api/getList").then(res=>{
+        /*this.$http.get("/api/getList").then(res=>{
           console.log(JSON.parse(res.body.data).result.bzabilityList)
           this.bzabilityList = JSON.parse(res.body.data).result.bzabilityList
 
-        })
+        })*/
+        this.bzabilityList = [
+          {
+        "id":"10101",
+        "name":"宝贝属性"
+      },
+      {
+        "id":"10102",
+        "name":"宝贝类型"
+      },
+      {
+        "id":"10103",
+        "name":"宝贝标题"
+      },
+      {
+        "id":"10104",
+        "name":"宝贝卖点"
+      },
+      {
+        "id":"10002",
+        "name":"宝贝图片"
+      },
+      {
+        "id":"10105",
+        "name":"描述"
+      },
+      {
+        "id":"10106",
+        "name":"商家编码"
+      },
+      {
+        "id":"10107",
+        "name":"条形码"
+      },
+      {
+        "id":"10002",
+        "name":"价格"
+      },
+      {
+        "id":"10108",
+        "name":"库存"
+      },
+      {
+        "id":"10009",
+        "name":"库存扣减"
+      },
+      {
+        "id":"101010",
+        "name":"卖家准入"
+      },
+      {
+        "id":"101011",
+        "name":"安全性校验"
+      }
+        ]
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog
