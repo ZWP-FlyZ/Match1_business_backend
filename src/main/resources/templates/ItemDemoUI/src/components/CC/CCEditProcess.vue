@@ -12,31 +12,31 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView" value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView gm-input" value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
         </div>
          <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView"  value="121" autocomplete="on" >
+          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView gm-input"  value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView"  value="10"  autocomplete="on" >
+          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView gm-input"  value="10"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView"  value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView gm-input"  value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid"> 流程分类: </label>
 
-          <select class="inputbox checkView SelectList basic-select" >
+          <select class="inputbox checkView SelectList basic-select gm-input" >
             <option >商品发布</option>
             <option value='' >一级流程</option>
           </select>
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView"  value="xxx"  autocomplete="on" >
+          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView gm-input"  value="xxx"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView"  value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView gm-input"  value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>
@@ -56,26 +56,26 @@
               <div  class="xf-yellow">
                 <div class="item">
                   <label class="nameid">节点名称: </label>
-                  <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-                  <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-                  <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-                  <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-                  <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-                  <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0" >
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
 
                   <label class="nameid">节点类型: </label>
-                  <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
-                  <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
                   
                   <label class="nameid">节点描述: </label> 
-                  <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-                  <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-                  <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-                  <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-                  <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-                  <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView gm-edit-input"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
                 </div> 
               </div>
             </div>
@@ -482,4 +482,7 @@
   .xf-el-icon-plus{position: relative;top:-15px;left:5%;margin-right:4px;}
   .basic-inputbox{width: 220px;}
   .basic-select{padding:7px 4px 2px;}
+  .gm-input{width: 220px;position: relative;top: 4px;padding:0 4px;}
+  .checkView{border:1px solid transparent;}
+  .gm-edit-input{padding:0 4px;position: relative;top: 4px;}
 </style>

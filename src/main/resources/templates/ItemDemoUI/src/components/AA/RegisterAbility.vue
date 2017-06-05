@@ -7,19 +7,19 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">能力名称: </label><input type="text" class="inputbox checkView AA-inputbox"   value="定价" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">能力名称: </label><input type="text" class="inputbox checkView gm-input"   value="定价" autocomplete="on" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="nameid">能力描述: </label> <input type="text" class="inputbox checkView AA-inputbox"   value="121" autocomplete="on" >
+          <label class="nameid">能力描述: </label> <input type="text" class="inputbox checkView gm-input "   value="121" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid"> KEY: </label> <input type="text" class="inputbox checkView AA-inputbox"   value="23232 "  autocomplete="on" >
+          <label class="nameid"> KEY: </label> <input type="text" class="inputbox checkView gm-input"   value="23232 "  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">存储位置: </label> <input type="text" class="inputbox checkView AA-inputbox"   value="222" autocomplete="on" >
+          <label class="nameid">存储位置: </label> <input type="text" class="inputbox checkView gm-input"   value="222" autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">开发者: </label> <input type="text" class="inputbox checkView AA-inputbox"   value="222" autocomplete="on" >
+          <label class="nameid">开发者: </label> <input type="text" class="inputbox checkView gm-input"   value="222" autocomplete="on" >
         </div>
         <div class="item">
           <label class="nameid">开发日期: </label><input type="datetime-local" class="inputbox checkView" value="2017-05-13"  autocomplete="on" style="width:160px;">
