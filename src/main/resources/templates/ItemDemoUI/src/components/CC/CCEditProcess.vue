@@ -179,7 +179,12 @@
     </div>
     <br/>
     <div class="bottom" >
-      <router-link to="/publishIdentity"  class="ok link-btn link-btn-default">确定</router-link>
+      <div class="BZProcess-table" style="border:0;">
+          <div class="BZ-edit">
+            <router-link to="/cCprocess"  class="link-btn link-btn-blue">上一步</router-link>
+            <router-link to="/publishIdentity"  class="link-btn link-btn-blue">下一步</router-link>
+          </div>
+      </div>
     </div>
     <br/>
   </div>

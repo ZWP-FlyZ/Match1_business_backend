@@ -124,6 +124,13 @@
 					<router-link to="/cCEditprocess"  class="link-btn link-btn-blue">保存</router-link>
 					<label @click="showRight(110)"><router-link to=""  class="link-btn link-btn-primary" style="margin-left:10px;">查看所有业务能力</router-link></label>
 				</div>
+				<!-- <div class="BZProcess-table" style="border:0;">
+		          <div class="BZ-edit">
+		            <router-link to="/cCEditprocess"  class="link-btn link-btn-blue">上一步</router-link>
+		            <router-link to="/cCEditprocess"  class="link-btn link-btn-blue">下一步</router-link>
+		            <label @click="showRight(110)"><router-link to=""  class="link-btn link-btn-primary" style="margin-left:10px;">查看所有业务能力</router-link></label>
+		          </div>
+		        </div> -->
 		    <IMask :hide-mask.sync="hideMask"></IMask>
 		    <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
 		  	</div>

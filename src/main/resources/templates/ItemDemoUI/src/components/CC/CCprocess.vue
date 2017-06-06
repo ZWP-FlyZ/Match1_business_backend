@@ -182,7 +182,8 @@
       </div>
       <div class="BZProcess-table" style="border:0;">
           <div class="BZ-edit">
-              <button class="link-btn link-btn-blue" @click="processPre">确定</button>
+              <router-link to="/cidentity"  class="link-btn link-btn-blue">上一步</router-link>
+              <button class="link-btn link-btn-blue" @click="processPre">下一步</button>
           </div>
       </div>
       </div>

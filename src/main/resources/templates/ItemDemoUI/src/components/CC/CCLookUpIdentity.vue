@@ -65,7 +65,7 @@
                   <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="机器审核" v-if="item.id==5">
 
                   <label class="nameid">节点类型: </label>
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
                   <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
                   
                   <label class="nameid">节点描述: </label> 

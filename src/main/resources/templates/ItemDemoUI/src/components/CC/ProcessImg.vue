@@ -553,20 +553,20 @@
 				}
 				if(i==1){
 					name="是否选择模板";//
-					this.chooseTemplate = 0;
+					this.chooseTemplate = 1;
 				}
 				if(i==2){
 					name="搜索、获取货品模板";//
-					this.searchTemplate = 0;
+					this.searchTemplate = 1;
 				}
 				if(i==3){
 					name="填写商品信息";//
-					this.goodsInfo = 0;
+					this.goodsInfo = 1;
 				}
 				if(i==4){
 					name="审核";
-					this.PersonOrCom = 0;
-					alert("bbb:"+PersonOrCom)
+					this.PersonOrCom = 1;
+					// alert("bbb:"+PersonOrCom)
 				}
 				if(i==5){
 					name="机器审核";
@@ -583,4 +583,5 @@
 </script>
 <style>
 	.choose{fill:#f0f0f0;stroke:#448bc7;}
+	.classifyChecked{fill:red;stroke:#448bc7;}
 </style>

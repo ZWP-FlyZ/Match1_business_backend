@@ -166,8 +166,15 @@
       </div>
     </div>
     <br/>
-    <div class="bottom" >
+    <!-- <div class="bottom" >
       <router-link to="/CCprocess"  class="ok link-btn link-btn-default">关闭</router-link>
+    </div> -->
+     <div class="bottom" >
+      <div class="BZProcess-table" style="border:0;">
+          <div class="BZ-edit">
+            <router-link to="/cCprocess"  class="link-btn link-btn-blue">关闭</router-link>
+          </div>
+      </div>
     </div>
     <br/>
   </div>

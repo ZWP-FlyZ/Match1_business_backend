@@ -36,7 +36,7 @@
 	   </div>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务详情：</label>
-	   	  <router-link to="/cCLookUpProcess"><span>业务详情业务详情业务详情业务详情业务详情业务详情</span></router-link>
+	   	  <router-link to="/cCLookUpProcess"><span style="color:#169BD5;">业务详情业务详情业务详情业务详情业务详情业务详情</span></router-link>
 	   	 
 	   </div>
 	  </div>
