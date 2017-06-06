@@ -26,7 +26,7 @@
     <!-- 流程模板 -->
     <div class="BZProcess-register">
       <ul>
-          <li class = "BZProcess-classify">分类</li>
+          <li class = "BZProcess-classify"></li>
           <li class = "BZProcess-create"><router-link to="/registerProcess" class = "link-btn link-btn-default">注册流程</router-link></li>
       </ul>
     </div>
@@ -34,13 +34,13 @@
      <div v-for="(item,index) in processList">
       <div class="BZProcess-des">
         <img src="" alt="">
-        <a href="" ><router-link to="" class = "L1-name">{{item.name}}（{{item.count}}）</router-link></a>
+        <a href="" ><router-link to="" class = "L1-name">流程分类：{{item.name}}（{{item.count}}）</router-link></a>
         <a href="" ><router-link to="/configPreCondition" class = "L1-edit">配置前置条件</router-link></a>
         <a href="" ><router-link to="/configPreCondition" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
       <div class="BZProcess-table">
         <div class="BZ-edit" v-for="i in item.pList">
-          <div class="BZ-num">{{i.name}}</div>
+          <div class="BZ-num">流程名称：{{i.name}}</div>
           <div class="process"><img v-bind:src="i.imgPath" /></div>
           <div class = "process-button">
             <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
@@ -206,12 +206,12 @@ import IMask from "../Mask"
     margin-top: 9px;
   }
   .BZProcess-table .BZ-num{
-    width: 20%;
+    width: 30%;
     position: relative;
   }
   .BZProcess-table .process{
     width: 46%;
-    margin-right: 15%;
+    margin-right: 5%;
     position: relative;
   }
   .BZProcess-table .process-button{

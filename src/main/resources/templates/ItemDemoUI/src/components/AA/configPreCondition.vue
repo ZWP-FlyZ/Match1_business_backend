@@ -25,7 +25,7 @@
     </div>
     <br/><br/><br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>
+      <router-link to="/bZProcess"  class="link-btn link-btn-default f-fr">确定</router-link>
     </div>
     <br/>
   </div>

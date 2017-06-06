@@ -16,7 +16,9 @@
       </div>
       <ul class="options-ul-list">
         <li v-show="displayOptions.length == 0">没有查询到数据</li>
-        <li v-for="item in displayOptions" v-on:click.stop.prevent="multipleSelect(item.id)" v-bind:class=" selectedIdList.indexOf(item.id)!=-1?'selected':'' ">{{ item.name }}</li>
+        <li v-for="item in displayOptions" v-on:click.stop.prevent="multipleSelect(item.id)" v-bind:class=" selectedIdList.indexOf(item.id)!=-1?'selected':'' ">{{ item.name}}
+        <router-link to="" class="" v-if="preview"><i>www</i></router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -24,7 +26,7 @@
 
 <script>
     export default{
-      props: ['optionsdata','selecteddata'],
+      props: ['optionsdata','selecteddata','preview'],
       data: function() {
         var data = {
             originOptions: [],
@@ -97,6 +99,9 @@
                 if (item.id == id){
                     selectedList.push(item);
                     selectedIdList.push(id);
+
+                    //加图片
+
                     mySelf.multipleInitSearch();
                     mySelf.multipleSearch();
                     mySelf.dispatchData();
@@ -121,6 +126,9 @@
                     selectedList.splice(i,1);
                     var index = selectedIdList.indexOf(item.id)
                     selectedIdList.splice(index,1)
+
+                    //删除图片
+
                     mySelf.multipleInitSearch();
                     mySelf.multipleSearch();
                     mySelf.dispatchData();

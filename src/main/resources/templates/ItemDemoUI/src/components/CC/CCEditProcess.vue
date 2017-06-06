@@ -82,7 +82,6 @@
           <br />
           <div class="heads xf-heads-half" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
             <i class="el-icon-document xf-edit-icon"></i> 关联页面模板
-            <router-link to="/cCEditPage" class = "xf-go-edit-bzability" v-if="item.id==0||item.id==2||item.id==3||item.id==6">去编辑业务能力</router-link>
           </div>
           <div class="items" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
           <form  class="xf-yellow">
@@ -94,12 +93,42 @@
             </span>
             <span class="item xf-mutiple-position" v-if="item.id==0||item.id==2||item.id==3||item.id==6">
               <label class="xf-name-fix">关联的页面模板：</label>
-             <MutipleSelectDelete v-if="item.id==6" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback"></MutipleSelectDelete>
+             <MutipleSelectDelete v-if="item.id==6" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.originOptions" v-bind:selecteddata="multiple.selectedList" v-on:selected="multipleCallback" v-bind:preview="true"></MutipleSelectDelete>
              <MutipleSelectDelete v-if="item.id==0" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.lms" v-bind:selecteddata="multiple.selectedlm" v-on:selected="multipleCallback"></MutipleSelectDelete>
              <MutipleSelectDelete v-if="item.id==2" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.hps" v-bind:selecteddata="multiple.selectedhp" v-on:selected="multipleCallback"></MutipleSelectDelete>
              <MutipleSelectDelete v-if="item.id==3" class="xf-mutipleselect-top-fix xf-mutiple-width" v-bind:optionsdata="multiple.sps" v-bind:selecteddata="multiple.selectedsp" v-on:selected="multipleCallback"></MutipleSelectDelete>
             </span>
           </form>
+          <br />
+
+          <!-- 页面图片 -->
+          <transition name="showImg">
+          <div class="xf-precondition-box xf-precondition-box-fix-height" v-if="item.id==2">
+            <div v-for="i in multiple.selectedhp">
+              <img src="../../assets/img/pages1.png" />
+            </div>
+          </div>
+          <div class="xf-precondition-box xf-precondition-box-fix-height" v-if="item.id==3">
+            <div v-for="i in multiple.selectedsp">
+              <img src="../../assets/img/pages1.png" />
+            </div>
+          </div>
+          <div class="xf-precondition-box xf-precondition-box-fix-height" v-if="item.id==6">
+            <div v-for="i in multiple.selectedList">
+              <img src="../../assets/img/pages1.png" />
+            </div>
+          </div>
+          <div class="xf-precondition-box xf-precondition-box-fix-height" v-if="item.id==0">
+            <div v-for="i in multiple.selectedlm">
+              <img src="../../assets/img/pages1.png" />
+            </div>
+          </div>
+          </transition>
+          <!-- class = "xf-go-edit-bzability" -->
+          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==0&&multiple.selectedlm.length!=0">去编辑业务能力</router-link>
+          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==2&&multiple.selectedhp.length!=0">去编辑业务能力</router-link>
+          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==3&&multiple.selectedsp.length!=0">去编辑业务能力</router-link>
+          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==6&&multiple.selectedList.length!=0">去编辑业务能力</router-link>
           </div>
           <div class = "heads xf-heads-half" v-if="item.id==4">
             <i class="el-icon-d-arrow-left xf-edit-icon"></i> 节点前置条件
@@ -238,7 +267,8 @@
           value3:'',
           value4:'',
           value5:'',
-          value6:''
+          value6:'',
+          preview:true
         }
       },
       components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'HistoryPath':HistoryPath},
@@ -354,6 +384,15 @@
   <style scoped>
   .xf-item-fix{display:flex;justify-content:flex-start;align-items:flex-start;margin-bottom:20px;}
   .xf-predition-delete{margin-left:15px;margin-top:2px;}
+  .xf-precondition-box-fix-height{height:auto;border:1px solid transparent;}
+  .xf-precondition-box-fix-height img{width:100%;}
+  .xf-precondition-box-fix-height div{border:1px solid #f0f0f0;width:30%;margin-right:1.5%;}
+  .showImg-enter-active, .showImg-leave-active {
+    transition: opacity .5s
+  }
+  .showImg-enter, .showImg-leave-active {
+    opacity: 0
+  }
   </style>
 <style> 
   .xf-item{width:100%;}
@@ -472,7 +511,7 @@
   .cc-precondition-search{float: left;}
   .longname-cc{top:0;}
   .xf-mutipleselect-top-fix{top:3px;z-index:101px;}
-  .xf-go-edit-bzability{font-size:12px;color:#f7ba2a;}
+  .xf-go-edit-bzability{font-size:14px;color:#f7ba2a;}
   .xf-process-img{width:95%;}
   /*wxfei*/
   .xf-mutiple-position{position: relative;}

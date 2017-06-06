@@ -234,7 +234,7 @@
 				<path id="ProcessOnPath1036"
 			d="M0.0 4.0Q0.0 0.0 4.0 0.0L78.98120760917664 0.0Q82.98120760917664 0.0 82.98120760917664 4.0L82.98120760917664 53.0Q82.98120760917664 57.0 78.98120760917664 57.0L4.0 57.0Q0.0 57.0 0.0 53.0Z"
 			stroke="#323232" stroke-width="2.0" stroke-dasharray="none"
-			opacity="1.0" fill="#ffffff" v-bind:class="{'choose':isBind==0 || isClassify == 0}"/>
+			opacity="1.0" fill="#ffffff" v-bind:class="{'choose':isBind==0,'isClassify': isClassify == 0}"/>
 				<g id="ProcessOnG1037"
 			transform="matrix(1.0,0.0,0.0,1.0,10.0,20.375)">
 					<text id="ProcessOnText1038" fill="#000000" font-weight="normal"
@@ -566,15 +566,14 @@
 				if(i==4){
 					name="审核";
 					this.PersonOrCom = 1;
-					// alert("bbb:"+PersonOrCom)
 				}
 				if(i==5){
 					name="机器审核";
-					this.comCheck = 0;
+					this.comCheck = 1;
 				}
 				if(i==6){
 					name="人工审核";
-					this.personCheck = 0;
+					this.personCheck = 1;
 				}
 				this.$emit("show",i,name);
 			}
@@ -582,6 +581,6 @@
 	}
 </script>
 <style>
-	.choose{fill:#f0f0f0;stroke:#448bc7;}
-	.classifyChecked{fill:red;stroke:#448bc7;}
+	.choose{fill:#f0f0f0 !important;stroke:#448bc7 !important;}
+	.isClassify{fill:#20a0ff;stroke:#d1dbe5;}
 </style>

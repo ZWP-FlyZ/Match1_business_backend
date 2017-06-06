@@ -1,6 +1,7 @@
 <template>
   <!-- 全局div开始 -->
   <div>
+  <el-checkbox-group v-model="checkList">
   <HistoryPath :historyPathTitle="historyPathTitle"></HistoryPath>
   <div class = "BZProcess">
       <div class="BZProcess-register cc-BZProcess-register">
@@ -11,6 +12,7 @@
       </div>
       <div class = "classfy-table">
        <div>
+
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
@@ -21,12 +23,8 @@
                <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" />
                </router-link>  
              </div>
-             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝女装T-shirt商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox label="淘宝女装T-shirt商品发布"></el-checkbox></div></div>
+
           </div>
 
           <div class = "table-background">
@@ -34,12 +32,8 @@
               <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic"/>
               </router-link>
              </div>
-             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝女装衬衫商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox label="淘宝女装衬衫商品发布"></el-checkbox></div></div>
+
           </div>
 
         </div>
@@ -73,12 +67,8 @@
               <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic"/>
               </router-link>
              </div>
-             <div class = "table-title"><div class = "table-checkbox" ><el-checkbox ><label for="">淘宝男鞋-帆布鞋商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button-my" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title-my">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox" ><el-checkbox label="淘宝男鞋-帆布鞋商品发布"></el-checkbox></div></div>
+
              <a @click="deleteDialog(item)" class = "link-btn table-button-my" align="center">
                  <img src="../../assets/img/glyphicons-446-floppy-remove.png">
                   <label for="" class = "table-button-title-my" >删除</label>
@@ -111,12 +101,8 @@
                <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic" />
                </router-link>  
              </div>
-             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">淘宝一口价商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox label="淘宝一口价商品发布"></el-checkbox></div></div>
+
           </div>
 
           <div class = "table-background">
@@ -124,12 +110,7 @@
               <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic"/>
               </router-link>
              </div>
-             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">天猫一口价商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox label="天猫一口价商品发布"></el-checkbox></div></div>
           </div>
 
           <div class = "table-background">
@@ -137,47 +118,9 @@
               <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic"/>
               </router-link>
              </div>
-             <div class = "table-title"><div class = "table-checkbox"><el-checkbox ><label for="">聚划算一口价商品发布</label></el-checkbox></div></div>
-             <router-link to="/cCEditprocess" class = "link-btn table-button" align="center">
-                 <img src="../../assets/img/glyphicons-137-cogwheel.png">
-                  <label for="" class = "table-button-title">配置</label>
-                 <img src="../../assets/img/glyphicons-224-chevron-right.png">
-             </router-link>
+             <div class = "table-title"><div class = "table-checkbox"><el-checkbox label="聚划算一口价商品发布"></el-checkbox></div></div>
           </div>
-
         </div>
-
-        <!-- <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num">
-            <div class = "table-checkbox">
-              <el-checkbox>淘宝一口价商品发布</el-checkbox>
-            </div>
-            </div>
-            <div class="process"><img src="../../assets/img/tbpublish.png" /></div>
-            <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >天猫一口价商品发布</el-checkbox></div></div>
-            <div class="process"><img src="../../assets/img/tmpublish.png" /></div>
-            <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="BZProcess-table">
-          <div class="BZ-edit">
-            <div class="BZ-num"><div class = "table-checkbox"><el-checkbox >聚划算一口价商品发布</el-checkbox></div></div>
-            <div class="process"><img src="../../assets/img/jhspublish.png" /></div>
-            <div class = "process-button">
-              <router-link to="/cCEditProcess" class = "link-btn link-btn-look">查看</router-link>
-            </div>
-          </div>
-        </div> -->
         </div>
       </div>
       <div class="BZProcess-table" style="border:0;">
@@ -187,11 +130,11 @@
           </div>
       </div>
       </div>
+      </el-checkbox-group>
       <IMask :hide-mask.sync="hideMask"></IMask>
       <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
       <ProcessPre :hide-pre.sync="hidePre" :hide-mask.sync="hideMask" v-on:closePre="closePre"></ProcessPre>
     </div>  
-    
   </div>
   <!-- 全局div结束 -->
 </template>
@@ -212,7 +155,7 @@ import ProcessPre from '../CC/ProcessL1Pre'
         hideMask:true,
         hidePre:true,
         historyPathTitle:'业务方：选择业务身份 / 选择流程',
-
+        checkList:[]
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre},
@@ -246,8 +189,15 @@ import ProcessPre from '../CC/ProcessL1Pre'
         }
       },
       processPre:function(){
-        this.hidePre = !this.hidePre
-        this.hideMask = !this.hideMask
+        if(this.checkList.length==0){
+          alert("请选择流程")
+        }else if(this.checkList.length>1){
+          this.hidePre = !this.hidePre
+          this.hideMask = !this.hideMask
+        }else{
+          this.$router.push("/cCEditProcess");
+        }
+        
       }
     }
   }
