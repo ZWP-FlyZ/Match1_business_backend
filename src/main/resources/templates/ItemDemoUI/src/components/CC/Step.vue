@@ -51,8 +51,9 @@
       </router-link>
       </div>
       <div class="xf-cc-step-box xf-cc-step-box-button" v-if="step!=5">
-        <button @click="preStep" class="link-btn link-btn-default">上一步</button>
-        <button @click="nextStep" class="link-btn link-btn-default">下一步</button>
+        <button v-if="step!=4" @click="preStep" class="link-btn link-btn-default">上一步</button >
+        <button v-if="step==4" @click="preStep" class="link-btn link-btn-default">保存</button > 
+        <button @click="nextStep" v-if="step!=4" class="link-btn link-btn-default">下一步</button>
       </div>
     </div>
 </div>
@@ -111,15 +112,15 @@
     margin:15px 0px;
     padding-left:0%;
     height:105px;
+    padding-left:5%;
   }
   .xf-cc-step-big-box .xf-cc-step-box{width:10%;text-align: center}
   .xf-cc-step-big-box .xf-cc-step-line{width:5%;text-align: center}
   .scroll{top:-15px;padding-top:10px;background: #fff;position: fixed;margin-bottom:10px;border:1px solid #f0f0f0;}
   .xf-cc-step-box{display: inline-block;margin-top:-10px;}
   .xf-cc-step-text{font-size:13px;color:#ccc;display: block;position: relative;top:-10px;left:-10px;}
-  .xf-cc-step-img{width:60%;}
-  .xf-cc-step-line{width:60px;height:3px;border:3px dashed #f0f0f0;display: inline-block;margin: 0px 10px 31px;    position: relative;top:-25px;}
-   .step-a{width:20%;}
+  .xf-cc-step-img{width:50%;}
+  .xf-cc-step-line{width:60px;height:3px;border:3px dashed #f0f0f0;display: inline-block;margin: 0px 10px 31px;    position: relative;top:-12px;}
    .xf-cc-step-box-button{width:18% !important;position: relative;top:-40px;}
 </style>
 

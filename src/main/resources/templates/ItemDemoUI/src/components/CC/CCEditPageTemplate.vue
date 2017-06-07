@@ -14,29 +14,53 @@
 				          <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
 						   <div class= "classify-title">1.宝贝基本信息</div>
 						   <br />
-						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
-						   		<label for="" class ="basic-bzability-title">宝贝类型</label><input type="radio" name = "basic-type" class = "basic-bzability-option">全新<input type="radio" name = "basic-type" class = "basic-bzability-option" style="margin-left:30px;">二手<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" style="float:right;width:17px;height:17px;position:relative;top:-5px;left:5px;">
+						   	<div class= "basic-bzability xf-basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
+						   		<div style="width:17%">
+						   			<label for="" class ="basic-bzability-title">宝贝类型</label>
+						   		</div>
+						   		<div  style="width:80%">
+						   			<el-radio class="radio" v-model="type" label="1">全新</el-radio>
+  									<el-radio class="radio" v-model="type" label="2">二手</el-radio>
+						   		</div>
+						   		<div>
+						   			<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=2}" @click="showLogo(2)" class="xf-red-delete">
+						   		</div>
 						   	</div>
-						   	<div class= "basic-bzability" v-if = "LogoNum!=3" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)">
-						   		<label for="" class ="basic-bzability-title">宝贝标题</label><input type="text" name = "basic-type" class = "basic-title-input  beforeCheck"   placeholder="描述宝贝标题"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" style="width:17px;height:17px;float:right;position:relative;left:5px;top:-5px;">
+						   	<div class= "basic-bzability xf-basic-bzability" v-if = "LogoNum!=3" v-bind:class="{'afterCheck':clickBorderContent==3}" @click="showRight(3)">
+						   		<div style="width:17%">
+						   			<label for="" class ="basic-bzability-title">宝贝标题</label>
+						   		</div>
+						   		<div  style="width:80%">
+						   			<el-input placeholder="请输入内容"></el-input>
+						   		</div>
+						   		<div>
+						   			<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=3}" @click="showLogo(3)" class="xf-red-delete">
+						   		</div>
 						   	</div>
-						   	<div class= "basic-bzability" v-if = "LogoNum!=4" v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)">
-						   	<table>
-						   		<tr>
-						   			<td valign="top"><label for="" class ="basic-bzability-title">宝贝卖点</label></td>
-						   			<td>
-						   				<textarea name="" id="" cols="58" rows="10" placeholder="描述宝贝卖点" class = " beforeCheck"  style="border-radius:2px;"></textarea>
-						   			</td>
-						   			<td valign="top"><img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" style="width:17px;height:17px;float:right;position:relative;left:5px;top:-5px;"></td>
-						   		</tr>
-						   	</table>
+						   	<div class= "basic-bzability xf-basic-bzability" v-if = "LogoNum!=4" v-bind:class="{'afterCheck':clickBorderContent==4}" @click="showRight(4)">
+						   		<div style="width:17%">
+						   			<label for="" class ="basic-bzability-title">宝贝卖点</label>
+						   		</div>
+						   		<div style="width:80%">
+						   			<el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
+						   			</el-input>
+						   		</div>
+						   		<div>
+						   			<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=4}" @click="showLogo(4)" class="xf-red-delete">
+						   		</div>
 						   	</div>
-						   	<div class= "basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)" v-if = "LogoNum!=6">
-						   		<label for="" class ="basic-bzability-title basic-pic">宝贝图片</label>
-						   		<img src="../../assets/img/page-pic1.jpg" alt="图片" class="basic-bzability-img">
-						   		<img src="../../assets/img/page-pic2.png" alt="图片" class="basic-bzability-img">
-						   		<img src="../../assets/img/page-pic3.png" alt="图片" class="basic-bzability-img">
-						   		<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" style="float:right;width:17px;height:17px;position:relative;top:-125px;left:5px;">
+						   	<div class= "basic-bzability xf-basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==6}" @click="showRight(6)" v-if = "LogoNum!=6">
+						   		<div style="width:17%">
+						   			<label for="" class ="basic-bzability-title">宝贝图片</label>
+						   		</div>
+						   		<div style="width:80%">
+						   			<img src="../../assets/img/page-pic1.jpg" alt="图片" class="basic-bzability-img">
+						   			<img src="../../assets/img/page-pic2.png" alt="图片" class="basic-bzability-img">
+						   			<img src="../../assets/img/page-pic3.png" alt="图片" class="basic-bzability-img">
+						   		</div>
+						   		<div>
+						   			<img src="../../assets/img/delete-3.png" alt="" v-bind:class = "{'hide':DeleteLogoNums!=6}" @click="showLogo(6)" class="xf-red-delete">
+						   		</div>
 						   	</div>
 						   <div class= "classify-title">2.宝贝物流</div>
 						   <div class= "classify-title">3.售后保障信息</div>
@@ -342,7 +366,7 @@
 	.CCability-check label{position: relative;top:-3px;}
 	.CCBusiness-ability{margin-bottom: 30px;}
 	.CCability{clear:both;}
-	.CCability p{margin-left: 20px;font-size: 105%;padding:10px;}
+	.CCability p{margin-left: 20px;font-size: 15px;padding:10px;}
 	.CCability>div{margin-left: 65px;}
 	.cc-page-name{width: 100%;}
 	.cc-img{margin:15px 130px;}
@@ -376,9 +400,10 @@
 	.basic-bzability{
 		text-align: left;
 		margin-left: 11%;
-		width:62%;
 		margin-top: 20px;
+		display: flex
 	}
+	.xf-basic-bzability{display: flex;width:80%;border:2px solid transparent;padding:5px;}
 	.basic-bzability-title{
 		display: inline-block;
 		width:100px;
@@ -411,6 +436,7 @@
 	.afterCheck{border:2px solid #448bc7;padding: 5px;}
 	.hide{display: none;}
 	.basic-title-input-color{background: #ffff66;}
+	.xf-red-delete{width:17px;height:17px;position:relative;}
 </style>
 <script>
   import Delete from "../Delete"
@@ -434,7 +460,8 @@
         AlignStyle:'-1',//AlignStyle=0 正常样式，AlignStyle = 1，左对齐样式
         ColorStyle:'-1',//ColorStyle=0,正常样式，ColorStyle = 1，变色样式
         DeleteLogoNums:'-1',//DeleteLogoNums = 3时，表示删除的logo要出现，不能触发Hide类，用户选中某个业务能力，触发showRight（i），DeleteLogoNums=i;hide类不能被触发。
-        LogoNum:'-1'//LogoNum=3时，说明删除按钮被点击，应该调用hide类将表示删除的logo去掉，并且！将该div因此掉，也就是说该div只能在LogoNum！=3时出现（即if语句中添加LogoNum！=3）
+        LogoNum:'-1',//LogoNum=3时，说明删除按钮被点击，应该调用hide类将表示删除的logo去掉，并且！将该div因此掉，也就是说该div只能在LogoNum！=3时出现（即if语句中添加LogoNum！=3）
+        type:''
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath},

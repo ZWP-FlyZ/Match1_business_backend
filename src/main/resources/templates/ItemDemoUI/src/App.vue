@@ -14,6 +14,7 @@
          <img src="" alt="">
           <span>OS建模小组</span>
       </div>
+      <br />
       <div class="test-btn">
           <router-link to="/aaindex" class = "link-btn link-btn-primary log-out">应用方</router-link>
           <router-link to="/bbindex" class = "link-btn link-btn-primary log-out">老师版业务方</router-link>
