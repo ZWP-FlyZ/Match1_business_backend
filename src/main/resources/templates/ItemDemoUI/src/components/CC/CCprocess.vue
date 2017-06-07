@@ -19,13 +19,11 @@
         <!-- 淘宝女装T-shirt开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(0)" id = "0" v-if = "tbtshirt == 0">
-            <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "tbtshirt == 1"> 
+            <input type="checkbox" id="0" class = "chk_1">
+            <label for="0"> </label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
-          
           <div style = "text-align:center;clear:both;">淘宝女装T-shirt商品发布</div>
-                  
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
@@ -38,13 +36,12 @@
           <div><a href="javascript:void(0);" @click="picClose()" class="link-btn link-btn-blue">关闭</a></div> 
         </div>
         <!-- 弹窗大图结束 -->
-        
         <!-- 淘宝女装衬衫开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(1)" id = "1" v-if = "tbchenshan == 0">
-             <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "tbchenshan == 1"> 
-            <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
+           <input type="checkbox"  style = "width:17px;height:17px;" id="1" class = "chk_1">
+           <label for="1"> </label>
+           <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
           
           <div style = "text-align:center;clear:both;">淘宝女装衬衫商品发布</div>
@@ -71,8 +68,8 @@
         </div> 
         <div class="table-background" v-if = "deleteLogoNums!=1">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(2)" id = "2" v-if = "tbBoyshoe == 0">
-            <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "tbBoyshoe == 1"> 
+            <input type="checkbox"  style = "width:17px;height:17px;" id="2" class = "chk_1">
+            <label for="2"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
           
@@ -101,8 +98,8 @@
          <!-- 淘宝一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(3)" id = "3" v-if = "tbSell == 0">
-            <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "tbSell == 1"> 
+          <input type="checkbox"  style = "width:17px;height:17px;" id="3" class = "chk_1">
+          <label for="3"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
@@ -116,9 +113,9 @@
         <!-- 天猫一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(4)" id = "4" v-if = "tmSell == 0">
-            <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "tmSell == 1"> 
-            <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
+           <input type="checkbox"  style = "width:17px;height:17px;" id="4" class = "chk_1">
+           <label for="4"></label>
+             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
           <div style = "text-align:center;clear:both;">天猫一口价商品发布</div>
@@ -131,8 +128,8 @@
         <!-- 聚划算一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <img src="../../assets/img/blue-unchecked.png" alt="" class = "blue-check" @click="showProcessChecked(5)" id = "5" v-if = "jhsSell == 0">
-            <img src="../../assets/img/blue-check.png" alt="" style="float:left;" class = "blue-checked" v-if = "jhsSell == 1">
+           <input type="checkbox"  style = "width:17px;height:17px;" id="5" class = "chk_1">
+           <label for="5"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
@@ -396,6 +393,8 @@ import Step from '../CC/Step.vue'
  }
  .table-background img.blue-check{opacity:0;}
  .table-background:hover img.blue-check{opacity: 1}
+ /*.table-background input.blue-check-checkbox{opacity:0;}
+ .table-background:hover input.blue-check-checkbox{opacity: 1;}*/
  .look-into{float:right;position: relative;top:-3px;}
  .pic-bigger{transform: scale(2,2);}
  *{margin:0;padding:0;}
@@ -410,4 +409,39 @@ import Step from '../CC/Step.vue'
     left:300px;
     top:200px;
  }
+.chk_1 { 
+    display: none; 
+} 
+ 
+.chk_1 + label { 
+    background-color: #FFF; 
+    border: 1px solid #C1CACA; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); 
+    border-radius: 3px; 
+    display: inline-block; 
+    position: relative; 
+    width: 17px;
+    height: 17px;
+    margin-right: 30px; 
+} 
+.chk_1 + label:active { 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); 
+} 
+ 
+.chk_1:checked + label { 
+    background-color: #ECF2F7; 
+    border: 1px solid #92A1AC; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); 
+    color: #243441; 
+} 
+ 
+.chk_1:checked + label:after { 
+    content: '\2714'; /*//勾选符号 */
+    position: relative; 
+    top: -4px; 
+    left: 1px; 
+    color: #758794; 
+    text-align: center; 
+    vertical-align: text-top; 
+} 
 </style>
