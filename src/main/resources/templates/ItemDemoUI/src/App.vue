@@ -14,7 +14,7 @@
          <img src="" alt="">
           <span>OS建模小组</span>
       </div>
-      <div>
+      <div class="test-btn">
           <router-link to="/aaindex" class = "link-btn link-btn-primary log-out">应用方</router-link>
           <router-link to="/bbindex" class = "link-btn link-btn-primary log-out">老师版业务方</router-link>
           <router-link to="/ccindex" class = "link-btn link-btn-primary log-out">Ali版业务方</router-link>
@@ -27,6 +27,7 @@
   .log-out{
     margin-left: 30px;
   }
+  .test-btn{position: relative;top:-30px;}
 </style>
 
 

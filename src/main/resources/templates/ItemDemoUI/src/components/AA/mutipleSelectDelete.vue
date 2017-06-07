@@ -254,9 +254,9 @@ h3{
 	font-style: normal;
 	transition: all 0.5s ease;
 }
-.el-input__icon .el-icon-caret-top{transform: rotate(0deg);}
+.el-input__icon{transform: rotate(180deg);}
 .functional-select-wrapper .display-container .drop-up{
-	transform: rotate(180deg);
+	transform: rotate(0deg);
 }
 
 /*选项容器*/

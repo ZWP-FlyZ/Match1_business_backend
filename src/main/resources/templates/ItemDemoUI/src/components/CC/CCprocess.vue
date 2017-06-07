@@ -1,6 +1,7 @@
 <template>
   <!-- 全局div开始 -->
   <div>
+  <Step :step="step" style="margin-left:-23.05%"></Step>
   <el-checkbox-group v-model="checkList">
   <HistoryPath :historyPathTitle="historyPathTitle"></HistoryPath>
   <div class = "BZProcess">
@@ -166,6 +167,7 @@ import Delete from "../Delete"
 import IMask from "../Mask"
 import HistoryPath from "../HistoryPath"
 import ProcessPre from '../CC/ProcessL1Pre'
+import Step from '../CC/Step.vue'
   export default{
     data(){
       return {
@@ -187,10 +189,11 @@ import ProcessPre from '../CC/ProcessL1Pre'
         tbBoyshoe:'0',
         tbSell:'0',
         tmSell:'0',
-        jhsSell:'0'
+        jhsSell:'0',
+        step:'2'
       }
     },
-    components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre},
+    components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre,Step},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
@@ -227,7 +230,9 @@ import ProcessPre from '../CC/ProcessL1Pre'
           this.hidePre = !this.hidePre
           this.hideMask = !this.hideMask
         }else{
-          this.$router.push("/cCEditProcess");
+          //this.$router.push("/cCEditProcess");
+          this.$router.push("/cCEditProcessFchoosed");
+
         }
         
       },
@@ -265,6 +270,7 @@ import ProcessPre from '../CC/ProcessL1Pre'
   }
 </script>
 <style scoped>
+  #content{margin-top: 123px}
   .cc-BZProcess-register{margin-top:0px;}
   .table-checkbox{
     margin-left: 20px;

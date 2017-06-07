@@ -15,7 +15,7 @@
 </template>
 
 
-<script scoped>
+<script>
   import Sidebar from './Sidebar.vue'
   export default{
     data(){
@@ -23,9 +23,11 @@
         message:'3'
       }
     },
-    components: { 'Sidebar': Sidebar}
+    components: {Sidebar}
   };
   
 </script>
-
+<style scoped>
+  #content{margin-top:123px;}
+</style>
 

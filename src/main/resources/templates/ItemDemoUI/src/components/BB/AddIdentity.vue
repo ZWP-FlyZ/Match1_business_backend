@@ -16,6 +16,11 @@
 				</div>
         <br />
         <div class="block">
+          <label>业&nbsp; 务&nbsp; 树：</label>
+          <el-cascader placeholder="试试搜索：女装" :options="bztree" filterable="" change-on-select></el-cascader>
+        </div>
+        <br />
+        <div class="block">
           <label>选择类目：</label>
           <el-cascader placeholder="试试搜索：女装" :options="category" filterable="" change-on-select></el-cascader>
         </div>
@@ -40,7 +45,8 @@
 	export default{
     data(){
       return {
-        category:[]
+        category:[],
+        bztree:[]
       }
     },
 	  props:['hideIdentity','hideMask'],
@@ -67,68 +73,94 @@
         /*this.$http.get('/api/getList').then((res)=>{
           this.category = JSON.parse(res.body.data).result.category
         })*/
-        this.category = [
-      {
-        "value":"quanqiugou",
-        "label":"全球购",
-        "children":[
+        this.bztree = [
           {
-            "value":"C2B",
-            "label":"C2B"
-          }
-        ]
-      },
-      {
-        "value":"nvzhuang",
-        "label":"女装/女士精品",
-        "children":[
-          {
-            "value":"lianyiqun",
-            "label":"连衣裙"
-          },
-          {
-            "value":"T-恤",
-            "label":"T-恤"
-          },
-          {
-            "value":"衬衫",
-            "label":"衬衫"
-          },
-          {
-            "value":"裤子",
-            "label":"裤子",
+            "value":"quanqiugou",
+            "label":"全球购",
             "children":[
               {
-                "value":"休闲裤",
-                "label":"休闲裤"
+                "value":"C2B",
+                "label":"C2B"
+              }
+            ]
+          },
+          {
+            "value":"ziyongxianshizhuanrang",
+            "label":"天猫",
+            "children":[
+              {
+                "value":"女装",
+                "label":"女装"
               },
               {
-                "value":"西装裤/正装裤",
-                "label":"西装裤/正装裤"
-              },
-              {
-                "value":"打底裤",
-                "label":"打底裤"
+                "value":"服饰/服装",
+                "label":"服饰/服装"
               }
             ]
           }
-        ]
-      },
-      {
-        "value":"ziyongxianshizhuanrang",
-        "label":"自用闲置转让",
-        "children":[
+        ];
+        this.category = [
           {
-            "value":"女装",
-            "label":"女装"
+            "value":"quanqiugou",
+            "label":"全球购",
+            "children":[
+              {
+                "value":"C2B",
+                "label":"C2B"
+              }
+            ]
           },
           {
-            "value":"服饰/服装",
-            "label":"服饰/服装"
+            "value":"nvzhuang",
+            "label":"女装/女士精品",
+            "children":[
+              {
+                "value":"lianyiqun",
+                "label":"连衣裙"
+              },
+              {
+                "value":"T-恤",
+                "label":"T-恤"
+              },
+              {
+                "value":"衬衫",
+                "label":"衬衫"
+              },
+              {
+                "value":"裤子",
+                "label":"裤子",
+                "children":[
+                  {
+                    "value":"休闲裤",
+                    "label":"休闲裤"
+                  },
+                  {
+                    "value":"西装裤/正装裤",
+                    "label":"西装裤/正装裤"
+                  },
+                  {
+                    "value":"打底裤",
+                    "label":"打底裤"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "value":"ziyongxianshizhuanrang",
+            "label":"自用闲置转让",
+            "children":[
+              {
+                "value":"女装",
+                "label":"女装"
+              },
+              {
+                "value":"服饰/服装",
+                "label":"服饰/服装"
+              }
+            ]
           }
-        ]
-      }
-    ];
+        ];
 
        }
 	  }

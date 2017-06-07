@@ -121,7 +121,7 @@
 			    <br/>  <br/>
 				</div>
 				<div class = "template-confirm">
-					<router-link to="/cCEditprocess"  class="link-btn link-btn-blue">保存</router-link>
+					<router-link to="/cCEditProcessFchoosed"  class="link-btn link-btn-blue">保存</router-link>
 					<label @click="showRight(110)"><router-link to=""  class="link-btn link-btn-primary" style="margin-left:10px;">查看所有业务能力</router-link></label>
 				</div>
 				<!-- <div class="BZProcess-table" style="border:0;">

@@ -294,4 +294,8 @@ h3{
     color: #000;
 }
 .display-container span{color:#bfcbd9;}
+.el-input__icon{transform: rotate(180deg);}
+.functional-select-wrapper .display-container .drop-up{
+    transform: rotate(0deg);
+}
 </style>

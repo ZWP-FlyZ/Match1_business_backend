@@ -1,5 +1,6 @@
 <template>
 	<div class="xf-publish-main">
+	<Step :step="step" style="margin-left:-27%"></Step>
 		<!-- <div class="xf-publish-box">
 		  <img class="xf-new-identity-img" src="static/img/new-identity.png" />
 		  <div class="xf-publish-footer-new">
@@ -12,6 +13,15 @@
 		    <button class="link-btn link-btn-primary" @click="openClick">确定保存业务身份</button>
 		  </div>
 		</div>
+		<div class="xf-publish-box">
+			流程：1.ewew；2.二位翁无
+			页面模板：额问问；二位；问我 
+			流程：1.ewew；2.二位翁无
+			页面模板：额问问；二位；问我 
+			流程：1.ewew；2.二位翁无
+			页面模板：额问问；二位；问我 流程：1.ewew；2.二位翁无
+			页面模板：额问问；二位；问我 
+		</div>
 		<IMask :hide-mask.sync="hideMask"></IMask>
         <AddIdentity :hide-identity.sync="hideIdentity" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></AddIdentity>
         <Tip :hide-tip.sync="hideTip" v-on:closeTip="closeTip"></Tip>
@@ -21,16 +31,18 @@
 	import AddIdentity from "../BB/AddIdentity"
 	import IMask from "../Mask"
 	import Tip from "../Tip"
+	import Step from '../CC/Step.vue'
 	export default{
 		data(){
 			return{
 				hideIdentity:true,
 				hideMask:true,
 				hideTip:true,
-				toIdentityDetail:''
+				toIdentityDetail:'',
+				step:'5'
 			}
 		},
-		components:{'AddIdentity':AddIdentity,'IMask':IMask,"Tip":Tip},
+		components:{'AddIdentity':AddIdentity,'IMask':IMask,"Tip":Tip,Step},
 		methods:{
 			addIdentity:function(){
 				this.hideMask=!this.hideMask

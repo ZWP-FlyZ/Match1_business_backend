@@ -103,14 +103,14 @@
     <div class="items xf-items-addBottom">
         <div class="item xf-item">
 
-          <div class="xf-precondition-box">
+          <div class="xf-precondition-box" v-for="i in nodeCount">
            <div class="xf-predition-label"><label>商品类型</label></div>
            <div class="xf-predition-label"><label>可配置的值：</label></div>
            <div>
               <MutipleSelectDelete v-bind:optionsdata="multiple.outPreEdit" v-bind:selecteddata="multiple.outPreEditSelected" v-on:selected="multipleCallback" ></MutipleSelectDelete>
            </div>
            <div class="xf-predition-delete">
-             <i class="el-icon-circle-cross xf-edit-icon"></i>
+             <i class="el-icon-circle-cross xf-edit-icon" @click="deleteItem('nodeCount')"></i>
            </div>
           </div>
 
@@ -127,14 +127,14 @@
     <div class="items xf-items-addBottom">
         <div class="item xf-item">
 
-          <div class="xf-precondition-box" v-for="i in 4">
+          <div class="xf-precondition-box" v-for="i in pageCount">
            <div class="xf-predition-label"><label>ssssss</label></div>
            <div class="xf-predition-label"><label>可配置的值：</label></div>
            <div>
               <MutipleSelectDelete v-bind:optionsdata="multiple.inPreEdit" v-bind:selecteddata="multiple.inPreEditSelected" v-on:selected="multipleCallback" ></MutipleSelectDelete>
            </div>
            <div class="xf-predition-delete">
-             <i class="el-icon-circle-cross xf-edit-icon"></i>
+             <i class="el-icon-circle-cross xf-edit-icon"@click="deleteItem('pageCount')"></i>
            </div>
           </div>
         </div>
@@ -162,7 +162,6 @@
           </div>
         </div>
     </div>
-    <br /><br />
     <!-- <div class="heads xf-heads">
       <i class="el-icon-date xf-edit-icon"></i> 配置项
     </div>
@@ -187,7 +186,7 @@
   </div>
 </div>
     <div class="bottom" >
-      <button @click="openClick" class="link-btn link-btn-default">确定</button>
+      <button @click="openClick" class="link-btn link-btn-default f-fr">确定</button>
     </div>
     <br/>
   </div>
@@ -217,13 +216,14 @@
           editableTabsValue2: '0',
           editableTabs2: [],
           tabIndex: 0,
-
           single:{
             originOptions:[],
             outPreOptions:[],
-            outPreselected: {}
+            outPreselected: []
           },
-          hideTip:true
+          hideTip:true,
+          nodeCount:2,
+          pageCount:2
         }
       },
       components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'Tip':Tip},
@@ -327,13 +327,24 @@
           this.multiple.selectedList = data;
         },
         singleCallback:function(data){
-
         },
         openClick:function(){
           this.hideTip = false
         },
         closeTip:function(data){
           this.hideTip = data
+        },
+        deleteItem:function(type){
+          if(type='nodeCount'){
+            if(this.nodeCount!=0){
+              this.nodeCount--;
+            }
+          }
+          if(type='pageCount'){
+            if(this.pageCount!=0){
+              this.pageCount--;
+            }
+          }
         }
       }
     }   
