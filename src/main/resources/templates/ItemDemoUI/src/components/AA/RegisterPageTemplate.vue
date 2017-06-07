@@ -273,7 +273,7 @@
     
    .smallname-label{width: 89px;text-align: right;}
    .smallnamed-key{margin-left: 24px;}
-   .gm-input{width: 220px;}
+   /*.gm-input{width: 220px;}*/
    .xf-heads .xf-singleSelect-box{position: relative;top: -36px;left: 15%;}
   .xf-precondition-box {display:flex;justify-content:flex-start;align-items:flex-start;border:1px solid #f0f0f0;padding-left:2%;text-align: left;height:50px;padding-top:7px;margin-bottom:10px;}
   .xf-precondition-box div{margin-right:1%;}

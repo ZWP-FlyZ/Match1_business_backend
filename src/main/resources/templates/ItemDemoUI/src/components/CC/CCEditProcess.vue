@@ -211,7 +211,7 @@
       <div class="BZProcess-table" style="border:0;">
           <div class="BZ-edit">
             <router-link to="/cCprocess"  class="link-btn link-btn-blue">上一步</router-link>
-            <router-link to="/publishIdentity"  class="link-btn link-btn-blue">下一步</router-link>
+            <router-link to="/publishIdentity" class="link-btn link-btn-blue">下一步</router-link>
           </div>
       </div>
     </div>
@@ -524,9 +524,9 @@
   .item .xf-name-fix{position: relative;top:6px;}
   .xf-content-height{margin-bottom: 100px;padding:20px;}
   .xf-el-icon-plus{position: relative;top:-15px;left:5%;margin-right:4px;}
-  .basic-inputbox{width: 220px;}
+  .basic-inputbox{width: 200px;}
   .basic-select{padding:7px 4px 2px;}
-  .gm-input{width: 220px;position: relative;top: 4px;padding:0 4px;}
-  .checkView{border:1px solid transparent;}
-  .gm-edit-input{padding:0 4px;position: relative;top: 4px;}
+  .gm-input{width: 200px;position: relative;top: 4px;padding:0 4px;border-radius: 4px;}/*页面上方基本信息处的input框*/
+  .checkView{border:1px solid transparent;}/*去边框*/
+  .gm-edit-input{padding:0 4px;position: relative;top: 4px;border-radius: 4px;}/*配置信息和前置条件处的input框*/
 </style>

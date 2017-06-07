@@ -56,26 +56,26 @@
               <div  class="xf-yellow">
                 <div class="item">
                   <label class="nameid">节点名称: </label>
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="选择类目"  v-if="item.id==0">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="是否选择货品模板"  v-if="item.id==1">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="获取货品模板"  v-if="item.id==2">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="填写商品信息"  v-if="item.id==3">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="审核"  v-if="item.id==4">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="人工审核" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="机器审核" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled" value="选择类目"  v-if="item.id==0">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="是否选择货品模板"  v-if="item.id==1">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled" value="获取货品模板"  v-if="item.id==2">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled" value="填写商品信息"  v-if="item.id==3">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="审核"  v-if="item.id==4">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="人工审核" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="机器审核" v-if="item.id==5">
 
                   <label class="nameid">节点类型: </label>
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
                   <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
                   
                   <label class="nameid">节点描述: </label> 
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled" value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-                  <input type="text" class="inputbox checkView lookUp-input" disabled="disabled"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled" value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
+                  <input type="text" class="inputbox checkView lookUp-input gm-edt-input" disabled="disabled"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
                 </div> 
               </div>
             </div>
