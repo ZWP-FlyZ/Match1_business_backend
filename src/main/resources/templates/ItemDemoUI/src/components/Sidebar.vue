@@ -234,7 +234,7 @@ export default {
         {
         "id":"10001",
         "name":"应用1",
-        "img":"static/img/application1.png"
+        "img":"static/img/application2.png"
       },
       {
         "id":"10002",
@@ -244,7 +244,7 @@ export default {
       {
         "id":"10003",
         "name":"应用3",
-        "img":"static/img/application.png"
+        "img":"static/img/application2.png"
       }
       ]
     },
@@ -268,9 +268,9 @@ export default {
   .choose-fix-router{width:95%!important;margin-left:15px;}
   /*组件*/
   .xf-component-item{display: inline-block;width: 33.2%;height: 65px;overflow: hidden;padding: 5px 1px;}
-  #application .xf-application-list ul li{height:100px;line-height: 100px;text-align: center;cursor: pointer;}
-  .xf-application-list-img{width:75px;}
-  .xf-application-list-span{position: relative;top:14px;left:-36%;}
+  #application .xf-application-list ul li{height:78px;line-height: 78px;text-align: center;cursor: pointer;}
+  .xf-application-list-img{width:50px;}
+  .xf-application-list-span{position: relative;top:14px;left:-28%;}
   .xf-ta-center{text-align: center!important;}
   .xf-icon-app-new{color:white;position: relative;left:10px;top:8px;cursor: pointer;width:15px;height:15px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}
