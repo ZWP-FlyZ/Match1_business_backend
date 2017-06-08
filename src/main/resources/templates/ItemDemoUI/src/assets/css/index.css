@@ -51,7 +51,7 @@ a:link,a:visited{text-decoration:none;
 	background: #fff;
 }
 #application .application-heading{text-align: center;height:55px;color:#fff;background: #448bc7;border:0px solid #448bc7;}
-#application .application-heading span{font-size:20px;position:relative;top:10px;}
+#application .application-heading span{font-size:16px;position:relative;top:10px;left:0%;}
 #application .application-list{border:1px solid #f0f0f0;margin-bottom:50px;}
 #application .application-list ul li{padding-left:20px;line-height:50px;height:50px;text-align:left;font-size:16px;border:1px solid;border-color:#f0f0f0 transparent #f0f0f0 transparent;}
 #application .application-list ul li:hover{background: #f0f0f0;}

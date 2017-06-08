@@ -1,7 +1,7 @@
 <template>
   <!-- 全局div开始 -->
   <div>
-  <Step :step="step" style="margin-left:-23.05%"></Step>
+  <Step :step="step" v-on:choosePro="choosePro" style="margin-left:-23.05%"></Step>
   <el-checkbox-group v-model="checkList">
   <HistoryPath :historyPathTitle="historyPathTitle"></HistoryPath>
   <div class = "BZProcess">
@@ -19,7 +19,7 @@
         <!-- 淘宝女装T-shirt开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <input type="checkbox" id="0" class = "chk_1">
+            <input type="checkbox" value="0" v-model="checkList" id="0" class = "chk_1">
             <label for="0"> </label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -39,7 +39,7 @@
         <!-- 淘宝女装衬衫开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox"  style = "width:17px;height:17px;" id="1" class = "chk_1">
+           <input type="checkbox" v-model="checkList" style = "width:17px;height:17px;" id="1" value="1" class = "chk_1">
            <label for="1"> </label>
            <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -57,7 +57,7 @@
 <!-- 解决方案结束 -->
       <div class="BZProcess-register cc-BZProcess-register">
         <ul>
-            <li class = "BZProcess-classify">我的流程</li>
+            <li class = "BZProcess-classify">我定制的流程</li>
         </ul>
       </div>
       <div class = "classfy-table">
@@ -68,7 +68,7 @@
         </div> 
         <div class="table-background" v-if = "deleteLogoNums!=1">
           <div style= "border:1px solid transparent;height:32px;">
-            <input type="checkbox"  style = "width:17px;height:17px;" id="2" class = "chk_1">
+            <input type="checkbox"  value="2" v-model="checkList" style = "width:17px;height:17px;" id="2" class = "chk_1">
             <label for="2"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -98,7 +98,7 @@
          <!-- 淘宝一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-          <input type="checkbox"  style = "width:17px;height:17px;" id="3" class = "chk_1">
+          <input type="checkbox"  v-model="checkList" value="3" style = "width:17px;height:17px;" id="3" class = "chk_1">
           <label for="3"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -113,7 +113,7 @@
         <!-- 天猫一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox"  style = "width:17px;height:17px;" id="4" class = "chk_1">
+           <input type="checkbox"  value="4" v-model="checkList" style = "width:17px;height:17px;" id="4" class = "chk_1">
            <label for="4"></label>
              <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -128,7 +128,7 @@
         <!-- 聚划算一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox"  style = "width:17px;height:17px;" id="5" class = "chk_1">
+           <input type="checkbox" value="5" v-model="checkList" style = "width:17px;height:17px;" id="5" class = "chk_1">
            <label for="5"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -154,7 +154,7 @@
       </el-checkbox-group>
       <IMask :hide-mask.sync="hideMask"></IMask>
       <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
-      <ProcessPre :hide-pre.sync="hidePre" :hide-mask.sync="hideMask" v-on:closePre="closePre"></ProcessPre>
+      <ProcessPre :hide-pre.sync="hidePre" :hide-mask.sync="hideMask" v-on:closePre="closePre" :message="message"></ProcessPre>
     </div>  
   </div>
   <!-- 全局div结束 -->
@@ -187,7 +187,8 @@ import Step from '../CC/Step.vue'
         tbSell:'0',
         tmSell:'0',
         jhsSell:'0',
-        step:'2'
+        step:'2',
+        message:'process'
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre,Step},
@@ -220,6 +221,9 @@ import Step from '../CC/Step.vue'
           this.$router.push("/cCbeforeEdit");
         }
       },
+      choosePro:function(){
+        this.processPre();
+      },
       processPre:function(){
         if(this.checkList.length==0){
           alert("请选择流程")
@@ -231,7 +235,6 @@ import Step from '../CC/Step.vue'
           this.$router.push("/cCEditProcessFchoosed");
 
         }
-        
       },
       hideShow:function(i){
         this.deleteLogoNums = i;
@@ -398,16 +401,19 @@ import Step from '../CC/Step.vue'
  .look-into{float:right;position: relative;top:-3px;}
  .pic-bigger{transform: scale(2,2);}
  *{margin:0;padding:0;}
- .picBigShow{
-    position:fixed;
-    z-index:10;
-    display:none;
-    background-color:#000;
+
+  .picBigShow{
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    margin-top: -200px;
+    margin-left: -625px;
+    width: 1250px;
+    height: 400px;
+    background: #000;
+    z-index: 10;
     opacity: 0.9;
-    width:1250px;
-    height:400px;
-    left:300px;
-    top:200px;
+    display: none;
  }
 .chk_1 { 
     display: none; 

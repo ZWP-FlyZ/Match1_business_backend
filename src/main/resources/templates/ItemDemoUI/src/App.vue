@@ -24,6 +24,14 @@
     <router-view></router-view>
   </div>
 </template>
+<script>
+  export default{
+    beforeUpdate(){
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    }
+  }
+</script>
 <style>
   .log-out{
     margin-left: 30px;

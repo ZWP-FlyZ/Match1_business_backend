@@ -17,7 +17,7 @@
       <ul class="options-ul-list">
         <li v-show="displayOptions.length == 0">没有查询到数据</li>
         <li v-for="item in displayOptions" v-on:click.stop.prevent="multipleSelect(item.id)" v-bind:class=" selectedIdList.indexOf(item.id)!=-1?'selected':'' ">{{ item.name}}
-        <router-link to="" class="" v-if="preview"><i>www</i></router-link>
+        <router-link to="" class="" v-if="preview"></router-link>
         </li>
       </ul>
     </div>

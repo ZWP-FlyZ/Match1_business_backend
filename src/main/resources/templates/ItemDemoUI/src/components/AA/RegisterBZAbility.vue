@@ -59,13 +59,22 @@
               <MutipleSelectDelete v-bind:optionsdata="multiple.pages" v-bind:selecteddata="multiple.pageSelected" v-on:selected="multipleCallback" ></MutipleSelectDelete>
           </div>
         </div>
+        <div class="xf-precondition-box xf-page-pm xf-precondition-box-fix1">
+          <div class="xf-predition-label"><label>UI类型：</label>
+          </div>
+          <div>
+              <SingleSelect class="xf-single-fix xf-poumian-single-fix" v-bind:optionsdata="single.UIoptions" v-bind:selecteddata="single.UIoptionsselected" v-on:selected="singleCallback">
+              </SingleSelect>
+          </div>
+        </div>
+        
 
 
       </div>
     </div>
     <br/> <br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>
+      <button class="link-btn link-btn-default f-fr">确定</button>
     </div>
     <br/><br/>
   </div>
@@ -80,6 +89,11 @@
         multiple:{
           ability: [],
           pages:[]
+        },
+        single:{
+          UIoptions:[],
+          UIoptionsselected:[]
+
         }
      }
     },
@@ -97,37 +111,49 @@
             mySelf.multiple.pages = JSON.parse(res.body.data).result.pageList
           })*/
           mySelf.multiple.ability = [{
-        "id":"10001",
-        "name":"字体颜色"
-      },
-      {
-        "id":"10002",
-        "name":"字体大小"
-      },
-      {
-        "id":"10003",
-        "name":"字体样式"
-      },
-      {
-        "id":"10004",
-        "name":"长度不超过30个汉字"
-      },
-      {
-        "id":"10005",
-        "name":"过滤敏感词汇"
-      }]
+            "id":"10001",
+            "name":"字体颜色"
+          },
+          {
+            "id":"10002",
+            "name":"字体大小"
+          },
+          {
+            "id":"10003",
+            "name":"字体样式"
+          },
+          {
+            "id":"10004",
+            "name":"长度不超过30个汉字"
+          },
+          {
+            "id":"10005",
+            "name":"过滤敏感词汇"
+          }]
           mySelf.multiple.pages = [{
-        "id":"10001",
-        "name":"淘宝一口价商品发布页面模板",
-        "imgPath":"static/img/page1.png"
-      }]
+            "id":"10001",
+            "name":"淘宝一口价商品发布页面模板",
+            "imgPath":"static/img/page1.png"
+          }],
+          mySelf.single.UIoptions=[{"id":"ui1","name":"单选框"},
+                     {"id":"ui2","name":"复选框"},
+                     {"id":"ui3","name":"下拉框"},
+                     {"id":"ui4","name":"按钮"}]
         },
         multipleCallback: function(data){
             this.multiple.selectedList = data;
-        }
+        },
+        singleCallback:function(data){}
       }
     }   
   </script>
 <style>
   @import "../../assets/css/edit.css";
+</style>
+<style>
+  .xf-poumian-single-fix .display-container .single-selected{margin-top:4px !important;}
+</style>
+<style scoped>
+  .xf-single-fix{width:590%;}
+  
 </style>

@@ -58,16 +58,16 @@
           this.$http.get("/api/getList").then(res=>{
             /*mySelf.single.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;*/
             mySelf.single.outPreOptions = [{"id":"1","name":"商品类型"},
-      {"id":"2","name":"目标节点时限"},
-      {"id":"3","name":"是否首次进入该节点"},
-      {"id":"4","name":"商家信用等级"},
-      {"id":"5","name":"开店时间"},
-      {"id":"6","name":"转化率"},
-      {"id":"7","name":"违规记录"},
-      {"id":"8","name":"销售记录"},
-      {"id":"9","name":"是否是良心卖家"},
-      {"id":"10","name":"知名品牌高危质检"},
-      {"id":"11","name":"冲突管理规则"}]
+                                        {"id":"2","name":"目标节点时限"},
+                                        {"id":"3","name":"是否首次进入该节点"},
+                                        {"id":"4","name":"商家信用等级"},
+                                        {"id":"5","name":"开店时间"},
+                                        {"id":"6","name":"转化率"},
+                                        {"id":"7","name":"违规记录"},
+                                        {"id":"8","name":"销售记录"},
+                                        {"id":"9","name":"是否是良心卖家"},
+                                        {"id":"10","name":"知名品牌高危质检"},
+                                        {"id":"11","name":"冲突管理规则"}]
             mySelf.multiple.inPreEdit = [{"id":"21","name":"良好"},{"id":"22","name":"类型1"},{"id":"23","name":"类型3"}];
           })
         },

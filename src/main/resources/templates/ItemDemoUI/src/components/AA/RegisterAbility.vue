@@ -58,7 +58,7 @@
       </div>
     <br/><br/>
     <div class="bottom" >
-      <router-link to="/pagetemplate"  class="ok">确定</router-link>
+      <button class="link-btn link-btn-default f-fr">确定</button>
     </div>
     <br/><br/>
   </div>

@@ -41,7 +41,7 @@
 						   			<label for="" class ="basic-bzability-title">宝贝卖点</label>
 						   		</div>
 						   		<div style="width:80%">
-						   			<el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
+						   			<el-input type="textarea" :rows="2" placeholder="请输入内容">
 						   			</el-input>
 						   		</div>
 						   		<div>
@@ -99,7 +99,8 @@
 						   			<label for="" class ="basic-bzability-title">宝贝卖点</label>
 						   		</div>
 						   		<div style="width:80%">
-						   			<el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
+						   			<el-input type="textarea" :rows="2" placeholder="请输入内容" 
+						   			>
 						   			</el-input>
 						   		</div>
 						   		<div>
@@ -160,7 +161,8 @@
 						   			<label for="" class ="basic-bzability-title">宝贝卖点</label>
 						   		</div>
 						   		<div style="width:80%">
-						   			<el-input class="xf-classify-title" type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
+						   			<el-input class="xf-classify-title" type="textarea" :rows="2" placeholder="请输入内容" 
+						   			>
 						   			</el-input>
 						   		</div>
 						   		<div>
@@ -219,7 +221,9 @@
 						   			<label for="" class ="basic-bzability-title">宝贝卖点</label>
 						   		</div>
 						   		<div style="width:80%">
-						   			<el-input class="xf-classify-title" type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
+						   			<el-input class="xf-classify-title" 
+						   			:rows="2" placeholder="请输入内容"
+						   			>
 						   			</el-input>
 						   		</div>
 						   		<div>
@@ -550,7 +554,8 @@
         AlignStyle:'-1',//AlignStyle=0 正常样式，AlignStyle = 1，左对齐样式
         ColorStyle:'-1',//ColorStyle=0,正常样式，ColorStyle = 1，变色样式
         DeleteLogoNums:'-1',//DeleteLogoNums = 3时，表示删除的logo要出现，不能触发Hide类，用户选中某个业务能力，触发showRight（i），DeleteLogoNums=i;hide类不能被触发。
-        LogoNum:'-1'//LogoNum=3时，说明删除按钮被点击，应该调用hide类将表示删除的logo去掉，并且！将该div因此掉，也就是说该div只能在LogoNum！=3时出现（即if语句中添加LogoNum！=3）
+        LogoNum:'-1',//LogoNum=3时，说明删除按钮被点击，应该调用hide类将表示删除的logo去掉，并且！将该div因此掉，也就是说该div只能在LogoNum！=3时出现（即if语句中添加LogoNum！=3）
+        type:''
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath},

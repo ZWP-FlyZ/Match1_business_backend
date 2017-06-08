@@ -5,6 +5,7 @@
 </style>
 <template>
   <div class=" regisiterpage">
+    <!-- <Step :step="step" style="margin-left:-23.05%"></Step> -->
     <HistoryPath :historyPathTitle="historyPathTitle"></HistoryPath>
     <div class="heads xf-heads">
       <i class="el-icon-share xf-edit-icon"></i> 流程基本信息
@@ -184,10 +185,11 @@
     import SingleSelect from '../CC/SingleSelect'
     import ProcessImg from './ProcessImg'
     import HistoryPath from '../HistoryPath'
+    import Step from '../CC/Step.vue'
     export default{
       data(){
         return {
-          historyPathTitle:'业务方：选择业务身份 / 选择流程 / 配置流程',
+          historyPathTitle:'业务方：选择业务身份 / 选择流程 / 查看流程',
           isshowActiviti:false,
           showwhat :'5',
           multiple: {
@@ -208,10 +210,11 @@
           editableTabsValue2: '0',
           editableTabs2: [],
           tabIndex: 0,
-          showadvance:true
+          showadvance:true,
+          step:'3'
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'HistoryPath':HistoryPath},
+      components:{MutipleSelectDelete,SingleSelect,ProcessImg,HistoryPath,Step},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();

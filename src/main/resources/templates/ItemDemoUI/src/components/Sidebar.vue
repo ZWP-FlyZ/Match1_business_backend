@@ -46,8 +46,21 @@
     </div>
 
     <div id="application" v-if="message==3">
-      <div class="application-heading">
-        <span>L1流程</span>
+      <div class="application-heading xf-application-heading-fix">
+        <span>一级流程
+        </span>
+        <span style="font-size:12px" v-if="identitytype!='无'">当前选择：{{identitytype}}</span>
+        <i class="el-icon-caret-bottom xf-el-icon-caret-bottom"></i>
+        <el-select class="xf-identity-type-left" v-model="identitytype" filterable placeholder="筛选条件">
+        <el-option-group v-for="group in identitytypeList" :key="group.label" :label="group.label">
+          <el-option
+              v-for="item in group.options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.label">
+            </el-option>
+        </el-option-group>
+       </el-select>
       </div>
       <div class="application-list">
         <div class="xf-step-process">
@@ -81,7 +94,7 @@
         <span>可用业务能力</span>
       </div>
       <div class="application-list">
-        <el-collapse v-model="activeNames" @change="handleChange">
+        <el-collapse v-model="activeNames">
           <el-collapse-item title="宝贝基本信息" name="1">
             <div class="xf-component-item" v-for="(item,index) in componentImg1">
               <img v-bind:src="item.src" />
@@ -130,7 +143,24 @@ export default {
       componentImg3:[
         {src:'static/img/component6.png'}
       ],
-      whatprocess:''
+      whatprocess:'',
+      identitytype:'',
+        identitytypeList:[{
+                      label: '无',
+                      options:[{
+                        value:"无",
+                        label:'无'
+                      }]
+                    },{
+                      label: '全局业务身份',
+                      options: [{
+                        value: 'tm',
+                        label: '天猫'
+                      }, {
+                        value: 'tb',
+                        label: '淘宝'
+                      }]
+                    }],
     }
   },
   props:['message'],
@@ -169,60 +199,48 @@ export default {
       })*/
       this.processL1 = [
         {
-        "id":"1123",
-        "name":"商业计划"
+        "id":"1",
+        "name":"买\\卖家注册"
       },
       {
-        "id":"1123",
-        "name":"快速验证"
+        "id":"1",
+        "name":"货品发布"
       },
       {
-        "id":"1123",
-        "name":"找场（建场）"
+        "id":"1",
+        "name":"货品选品"
       },
       {
-        "id":"1123",
-        "name":"品类规划"
+        "id":"1",
+        "name":"商品发布"
       },
       {
-        "id":"1123",
-        "name":"招商"
+        "id":"1",
+        "name":"商品选品"
       },
       {
-        "id":"1123",
-        "name":"组织货品"
+        "id":"1",
+        "name":"投放"
       },
       {
-        "id":"1123",
-        "name":"会员管理"
+        "id":"1",
+        "name":"加购\\收藏"
       },
       {
-        "id":"1123",
-        "name":"导购"
+        "id":"1",
+        "name":"合同订立"
       },
       {
-        "id":"1123",
-        "name":"引流"
+        "id":"1",
+        "name":"合同履行"
       },
       {
-        "id":"1123",
-        "name":"促销活动"
+        "id":"1",
+        "name":"评价"
       },
       {
-        "id":"1123",
-        "name":"交易"
-      },
-      {
-        "id":"1123",
+        "id":"1",
         "name":"售后"
-      },
-      {
-        "id":"1123",
-        "name":"资金结算"
-      },
-      {
-        "id":"1123",
-        "name":"财务"
       }
       ]
     },
@@ -272,7 +290,7 @@ export default {
   .xf-application-list-img{width:50px;}
   .xf-application-list-span{position: relative;top:14px;left:-28%;}
   .xf-ta-center{text-align: center!important;}
-  .xf-icon-app-new{color:white;position: relative;left:10px;top:8px;cursor: pointer;width:15px;height:15px;}
+  .xf-icon-app-new{color:white;position: relative;cursor: pointer;width:15px;height:15px;left: -1px;top: 10px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}
   .xf-step-process{margin-left:50px;margin-top:10px;}
   .xf-l1process-heading{padding-left:0px;}
@@ -282,6 +300,12 @@ export default {
   .xf-step-line{width:2px;height:20px;background-color:#bfcbd9;position: relative;top: -2px;left: 12px;}
   .xf-step-font-active{color:#448bc7;}
   .xf-step-border-active{border:2px solid #448bc7;}
+  .xf-application-heading-fix{position: relative;}
+  .xf-el-icon-caret-bottom{margin-left:5px;font-size:12px;position: relative;
+    top: 10px;}
+    .xf-identity-type-left{
+      opacity:0;position: relative;top:-15px;
+    }
 </style>
 
 

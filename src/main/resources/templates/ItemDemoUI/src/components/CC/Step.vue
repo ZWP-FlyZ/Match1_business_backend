@@ -50,7 +50,7 @@
         <span class="xf-cc-step-text" style="left:3.5%">发布业务身份</span>
       </router-link>
       </div>
-      <div class="xf-cc-step-box xf-cc-step-box-button" v-if="step!=5">
+      <div class="xf-cc-step-box xf-cc-step-box-button" v-if="step==0||step==2||step==3||step==4">
         <button v-if="step!=4" @click="preStep" class="link-btn link-btn-default">上一步</button >
         <button v-if="step==4" @click="preStep" class="link-btn link-btn-default">保存</button > 
         <button @click="nextStep" v-if="step!=4" class="link-btn link-btn-default">下一步</button>
@@ -90,7 +90,8 @@
       nextStep:function(){
         if(this.step==2){
           //要判断有没有选择流程
-          this.$router.push("/cCEditProcessFchoosed");
+          this.$emit("choosePro");
+          //this.$router.push("/cCEditProcessFchoosed");
         }
         //要判断有没有配置页面模板
         if(this.step==3){

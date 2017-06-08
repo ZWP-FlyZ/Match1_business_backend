@@ -1,7 +1,7 @@
 <template>
   <div>
     <Sidebar :message="message"></Sidebar>
-    <Step :step="step"></Step>
+    <Step :step="step" ></Step>
     <div id="content">
      <div class="content-main-fix">
       <transition name="fade"><router-view></router-view></transition>
@@ -19,7 +19,7 @@
         step:'3'
       }
     },
-    components: {Sidebar,Step}
+    components: {Sidebar,Step},
   };
   
 </script>

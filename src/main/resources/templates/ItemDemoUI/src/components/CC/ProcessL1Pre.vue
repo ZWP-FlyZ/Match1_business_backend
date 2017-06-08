@@ -2,26 +2,26 @@
 	<div class = "deleteAability" v-bind:class="{'hidePre':hidePre}">
 	      <div class="delete-modal-dialog">
 	        <div class="delete-modal-content">
-			<div class="delete-modal-body">
+			<div class="delete-modal-body" v-if="message=='process'">
 				<div class = "delete-modal-delete-confirm">
 					<span class="icon-delete"></span>请为流程配置前置条件
 				</div>
 				<div class = "delete-modal-delete-content">
 				  <div class="item xf-item xf-item-fix" v-for="i in count">
-		            <div style="width:13%">
-		              <el-select v-model="value1" filterable placeholder="请选择">
+		            <div style="width:13%" >
+		              <el-select class="xf-prevue-fix" v-model="value1" filterable placeholder="请选择">
 		                  <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
 		               </el-select>
 		            </div>
               		<div style="width:60%">
                 	   <span class="xf-span-fix">若等于</span>
-                		<el-select v-model="value2" filterable placeholder="请选择">
+                		<el-select class="xf-prevue-fix" v-model="value2" filterable placeholder="请选择">
                           <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
                         </el-select>
                         <span class="xf-span-fix">则选择 <b>强管控流程</b>; 否则选择 <b>弱管控流程</b></span>
               		</div>
               		<div style="width:13%">
-                		<el-select v-model="value3" filterable placeholder="请选择">
+                		<el-select class="xf-prevue-fix" v-model="value3" filterable placeholder="请选择">
                   			<el-option v-for="item in options" :key="item.value" :label="item.value" :value="item.value"></el-option>
                 		</el-select>
               		</div>
@@ -33,6 +33,40 @@
             	   </div>
 				</div>
 			</div>
+
+      <div class="delete-modal-body" v-if="message=='page'">
+        <div class = "delete-modal-delete-confirm">
+          <span class="icon-delete"></span>请为页面模板配置前置条件
+        </div>
+        <div class = "delete-modal-delete-content">
+          <div class="item xf-item xf-item-fix" v-for="i in count">
+                <div style="width:13%">
+                  <el-select class="xf-prevue-fix" v-model="value1" filterable placeholder="请选择">
+                      <el-option v-for="item in outPreOptions" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                   </el-select>
+                </div>
+                  <div style="width:60%">
+                     <span class="xf-span-fix">若等于</span>
+                    <el-select class="xf-prevue-fix" v-model="value2" filterable placeholder="请选择">
+                          <el-option v-for="item in outPreCondition" :key="item.name" :label="item.name" :value="item.name"></el-option>
+                        </el-select>
+                        <span class="xf-span-fix">则呈现 <b>页面1</b>; 否则呈现 <b>页面2</b></span>
+                  </div>
+                  <div style="width:13%">
+                    <el-select class="xf-prevue-fix" v-model="value3" filterable placeholder="请选择">
+                        <el-option v-for="item in options" :key="item.value" :label="item.value" :value="item.value"></el-option>
+                    </el-select>
+                  </div>
+                  <div class="xf-predition-delete">
+                    <i class="el-icon-plus xf-edit-icon
+                    " @click="showAdvance"></i>
+                    <i v-if="i!=1" class="el-icon-minus xf-edit-icon" @click="hideAdvance"></i>
+                  </div>
+                 </div>
+        </div>
+      </div>
+
+
 			<div class = "delete-modal-footer">
 				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
 				<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
@@ -53,7 +87,10 @@
           ],
           outPreCondition:[],
           outPreOptions:[],
-          count:1
+          count:1,
+          value1:'',
+          value2:'',
+          value3:''
 	  	}
 	  },
 	  props:['message','hidePre','hideMask'],
@@ -65,11 +102,31 @@
 	  methods:{
 	  	queryData:function(){
           var mySelf = this
-          this.outPreOptions = [{"id":"1","name":"商家类型"},{"id":"2","name":"前置条件1"},{"id":"3","name":"前置条件2"},{"id":"4","name":"前置条件3"}];
-          this.outPreCondition = [{"id":"value1","name":"天猫商家"},{"id":"value2","name":"淘宝商家"},{"id":"value3","name":"聚划算商家"}];
-          /*this.$http.get("/api/getList").then(res=>{
-            mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
-          })*/
+          if(this.message=='process'){
+            this.outPreOptions = [{"id":"1","name":"商家类型"},{"id":"2","name":"前置条件1"},{"id":"3","name":"前置条件2"},{"id":"4","name":"前置条件3"}];
+            this.outPreCondition = [{"id":"value1","name":"天猫商家"},{"id":"value2","name":"淘宝商家"},{"id":"value3","name":"聚划算商家"}];
+            /*this.$http.get("/api/getList").then(res=>{
+              mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
+            })*/
+          }
+          if(this.message=='page'){
+            this.outPreOptions = [{"id":"1","name":"商品类型"},
+                                  {"id":"2","name":"目标节点时限"},
+                                  {"id":"3","name":"是否首次进入该节点"},
+                                  {"id":"4","name":"商家信用等级"},
+                                  {"id":"5","name":"开店时间"},
+                                  {"id":"6","name":"转化率"},
+                                  {"id":"7","name":"违规记录"},
+                                  {"id":"8","name":"销售记录"},
+                                  {"id":"9","name":"是否是良心卖家"},
+                                  {"id":"10","name":"知名品牌高危质检"},
+                                  {"id":"11","name":"冲突管理规则"}]
+            this.outPreCondition = [{"id":"value1","name":"达尔文"},{"id":"value2","name":"类型1"},{"id":"value3","name":"类型2"},{"id":"value4","name":"类型3"},{"id":"value5","name":"类型4"},{"id":"value6","name":"类型5"}];
+            /*this.$http.get("/api/getList").then(res=>{
+              mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
+            })*/
+          }
+          
         },
 	  	closeDialog:function(){
 	  		this.$emit("closePre",!this.hidePre,0)
@@ -101,12 +158,6 @@
 		top: 25%;
 		left: 15%;
 		z-index:103;
-	}/
-	.ability-delete:hover{
-		transform: scale(1.2,1.2);
-	}
-	.deleteAability-header a{
-		color: #fff;
 	}
 	.delete-confirm{
 		margin-top: 30px;
@@ -227,4 +278,8 @@
   .xf-item{display: flex;margin-bottom:20px;}
   .delete-modal-delete-content input{width:80%;}
   .xf-edit-icon{top:4px;position:relative;left:10px;}
+  
 </style>
+<style>
+  .xf-prevue-fix .el-input .el-input__icon+.el-input__inner{padding-right:0px;width:96.3%;}
+</style>   

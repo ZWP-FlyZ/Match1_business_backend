@@ -125,10 +125,10 @@
           </div>
           </transition>
           <!-- class = "xf-go-edit-bzability" -->
-          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==0&&multiple.selectedlm.length!=0">去编辑业务能力</router-link>
-          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==2&&multiple.selectedhp.length!=0">去编辑业务能力</router-link>
-          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==3&&multiple.selectedsp.length!=0">去编辑业务能力</router-link>
-          <router-link to="/cCEditPage" class = "link-btn link-btn-primary" v-if="item.id==6&&multiple.selectedList.length!=0">去编辑业务能力</router-link>
+          <button @click="pagePre('selectedlm')" class = "link-btn link-btn-default" v-if="(item.id==0)&&multiple.selectedlm.length!=0">去编辑业务能力</button>
+          <button @click="pagePre('selectedhp')" class = "link-btn link-btn-default" v-if="item.id==2&&multiple.selectedhp.length!=0">去编辑业务能力</button>
+          <button @click="pagePre('selectedsp')" class = "link-btn link-btn-default" v-if="item.id==3&&multiple.selectedsp.length!=0">去编辑业务能力</button>
+          <button @click="pagePre('selectedList')" class = "link-btn link-btn-default" v-if="item.id==6&&multiple.selectedList.length!=0">去编辑业务能力</button>
           </div>
           <div class = "heads xf-heads-half" v-if="item.id==4">
             <i class="el-icon-d-arrow-left xf-edit-icon"></i> 节点前置条件
@@ -162,10 +162,10 @@
             </div>
           </form>
           </div>
-          <div class = "heads xf-heads-half" v-if="item.id==6">
+          <div class = "heads xf-heads-half" v-if="item.id==100">
             <i class="el-icon-d-arrow-right xf-edit-icon"></i> 页面模板前置条件
           </div>
-          <div class="items xf-items-addBottom" v-if="item.id==6">
+          <div class="items xf-items-addBottom" v-if="item.id==100">
           <form class="xf-yellow">
           <br />
             <div class="item xf-item xf-item-fix" v-for="pagei in pagecount">
@@ -215,6 +215,8 @@
           </div>
       </div>
     </div>
+    <IMask :hide-mask.sync="hideMask"></IMask>
+    <ProcessPre :hide-pre.sync="hidePre" :hide-mask.sync="hideMask" v-on:closePre="closePre" :message="message"></ProcessPre>
     <br/>
   </div>
 </template>
@@ -223,6 +225,9 @@
     import SingleSelect from '../CC/SingleSelect'
     import ProcessImg from './ProcessImg'
     import HistoryPath from '../HistoryPath'
+    import ProcessPre from '../CC/ProcessL1Pre'
+    import IMask from "../Mask"
+
     export default{
       data(){
         return {
@@ -268,10 +273,13 @@
           value4:'',
           value5:'',
           value6:'',
-          preview:true
+          preview:true,
+          hidePre:true,
+          hideMask:true,
+          message:'page'
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'HistoryPath':HistoryPath},
+      components:{MutipleSelectDelete,SingleSelect,ProcessImg,HistoryPath,IMask,ProcessPre},
       mounted:function(){
         this.$nextTick(function(){
           this.queryData();
@@ -377,7 +385,24 @@
           else
             this.pagecount--;
           //this.showadvance = true;
-        }
+        },
+        pagePre:function(str){
+          var type = "this.multiple."+str+".length";
+          var a = eval(type);
+          if(a > 1){
+            this.hidePre = !this.hidePre
+            this.hideMask = !this.hideMask
+          }else{
+            this.$router.push("/cCEditPage");
+          }
+        },
+        closePre:function(childData,i){
+          this.hideMask = childData
+          this.hidePre = childData
+          if(i==1){
+            this.$router.push("/cCEditPageTemplate");
+          }
+        },
       }
     }   
   </script>
