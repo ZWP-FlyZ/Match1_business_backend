@@ -14,12 +14,15 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
+          <input type="checkbox"  @click="checkboxed(0,checkList)" class = "chk_2" name="checkName" id = "11">
+          <label for="11"> </label>全选
+         
         </div> 
         <div>
         <!-- 淘宝女装T-shirt开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-            <input type="checkbox" value="0" v-model="checkList" id="0" class = "chk_1">
+            <input type="checkbox" value="0" v-model="checkList" id="0" class = "chk_1" name = "checkNameSolved">
             <label for="0"> </label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -39,7 +42,7 @@
         <!-- 淘宝女装衬衫开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox" v-model="checkList" style = "width:17px;height:17px;" id="1" value="1" class = "chk_1">
+           <input type="checkbox" v-model="checkList" style = "width:17px;height:17px;" id="1" value="1" class = "chk_1" name = "checkNameSolved">
            <label for="1"> </label>
            <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -65,10 +68,12 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（1）</router-link></a>
+          <input type="checkbox"  @click="checkboxed(1,checkListMy)" class = "chk_2"  id = "12">
+          <label for="12"> </label>全选
         </div> 
         <div class="table-background" v-if = "deleteLogoNums!=1">
           <div style= "border:1px solid transparent;height:32px;">
-            <input type="checkbox"  value="2" v-model="checkList" style = "width:17px;height:17px;" id="2" class = "chk_1">
+            <input type="checkbox"  value="2" v-model="checkListMy" style = "width:17px;height:17px;" id="2" class = "chk_1">
             <label for="2"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
@@ -93,12 +98,14 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（3）</router-link></a>
+          <input type="checkbox"  @click="checkboxed(2,checkListRepository)" class = "chk_2"  id = "13">
+          <label for="13"> </label>全选
         </div> 
         <div>
          <!-- 淘宝一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-          <input type="checkbox"  v-model="checkList" value="3" style = "width:17px;height:17px;" id="3" class = "chk_1">
+          <input type="checkbox"  v-model="checkListRepository" value="3" style = "width:17px;height:17px;" id="3" class = "chk_1" name = "checkName">
           <label for="3"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -113,7 +120,7 @@
         <!-- 天猫一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox"  value="4" v-model="checkList" style = "width:17px;height:17px;" id="4" class = "chk_1">
+           <input type="checkbox"  value="4" v-model="checkListRepository" style = "width:17px;height:17px;" id="4" class = "chk_1" name = "checkName">
            <label for="4"></label>
              <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -128,7 +135,7 @@
         <!-- 聚划算一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
-           <input type="checkbox" value="5" v-model="checkList" style = "width:17px;height:17px;" id="5" class = "chk_1">
+           <input type="checkbox" value="5" v-model="checkListRepository" style = "width:17px;height:17px;" id="5" class = "chk_1" name = "checkName">
            <label for="5"></label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
@@ -177,16 +184,12 @@ import Step from '../CC/Step.vue'
         hideMask:true,
         hidePre:true,
         historyPathTitle:'业务方：选择业务身份 / 选择流程',
-        checkList:[],
+        checkList:[],//解决方案复选框数组
+        checkListMy:[],//我的流程 复选框数组
+        checkListRepository:[],//流程模板库，复选框数组
         deleteLogoNums:0,//deleteLogoNums为0时候 该div显示，若为1，则隐藏显示
         picBigger:'-1',//picBigger为0时显示缩略图状态  非0时，为放大状态
         depart:'-1',//depart=0 展示淘宝流程大图  depart=1展示聚划算流程大图
-        tbtshirt:'0',////解决方案--淘宝女装T-shirt商品发布 tbtshirt:'0'展示未选中复选框，为1时显示选中复选框
-        tbchenshan:'0',
-        tbBoyshoe:'0',
-        tbSell:'0',
-        tmSell:'0',
-        jhsSell:'0',
         step:'2',
         message:'process'
       }
@@ -239,21 +242,6 @@ import Step from '../CC/Step.vue'
       hideShow:function(i){
         this.deleteLogoNums = i;
       },
-      showProcessChecked:function(i){//点击复选框按钮，图片变换成选中状态
-        if (i == 0) {
-          this.tbtshirt = 1;//解决方案--淘宝女装T-shirt商品发布
-        }else if(i == 1){
-          this.tbchenshan = 1;//解决方案---淘宝女装衬衫商品发布
-        }else if(i == 2){
-          this.tbBoyshoe = 1;//我的流程--淘宝男鞋
-        }else if(i == 3){
-          this.tbSell = 1;//流程库---淘宝一口价
-        }else if(i == 4){
-          this.tmSell = 1;//流程库---天猫一口价
-        }else if(i ==5){
-          this.jhsSell = 1;//流程库---聚划算一口价
-        }        
-      },
       showProcessBigger:function(i){
         this.picBigger = i;
       },
@@ -265,9 +253,27 @@ import Step from '../CC/Step.vue'
       picClose:function(i){
         var v = document.getElementById('divCenter');
         v.style.display = "none";
+      },
+      checkboxed:function(num,list){
+        if(list.length == 0){
+          switch(num){
+            case 0:this.checkList.push("0","1");break;
+            case 1:this.checkListMy.push("2");break;
+            case 2:this.checkListRepository.push("3","4","5");break;
+            default:break;
+          }
+        }else{
+          switch(num){
+            case 0:this.checkList = [];break;
+            case 1:this.checkListMy = [];break;
+            case 2:this.checkListRepository = [];break;
+            default:break;
+          }
+        }
       }
     }
   }
+       
 </script>
 <style scoped>
   #content{margin-top: 123px}
@@ -402,7 +408,11 @@ import Step from '../CC/Step.vue'
  .pic-bigger{transform: scale(2,2);}
  *{margin:0;padding:0;}
 
+/*<<<<<<< Updated upstream*/
   .picBigShow{
+/*=======
+ .picBigShow{
+>>>>>>> Stashed changes*/
     position: fixed;
     top: 50%;
     left: 55%;
@@ -415,7 +425,7 @@ import Step from '../CC/Step.vue'
     opacity: 0.9;
     display: none;
  }
-.chk_1 { 
+.chk_1,.chk_2 { 
     display: none; 
 } 
  
@@ -430,18 +440,18 @@ import Step from '../CC/Step.vue'
     height: 17px;
     margin-right: 30px; 
 } 
-.chk_1 + label:active { 
+.chk_1 + label:active,.chk_2 + label:active  { 
     box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); 
 } 
  
-.chk_1:checked + label { 
+.chk_1:checked + label,.chk_2:checked + label { 
     background-color: #ECF2F7; 
     border: 1px solid #92A1AC; 
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); 
     color: #243441; 
 } 
  
-.chk_1:checked + label:after { 
+.chk_1:checked + label:after,.chk_2:checked + label:after { 
     content: '\2714'; /*//勾选符号 */
     position: relative; 
     top: -4px; 
@@ -449,5 +459,18 @@ import Step from '../CC/Step.vue'
     color: #758794; 
     text-align: center; 
     vertical-align: text-top; 
+} 
+
+.chk_2 + label { 
+    background-color: #FFF; 
+    border: 1px solid #C1CACA; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05); 
+    border-radius: 3px; 
+    display: inline-block; 
+    position: relative; 
+    width: 17px;
+    height: 17px;
+    top:3px;
+    margin-right: 3px; 
 } 
 </style>
