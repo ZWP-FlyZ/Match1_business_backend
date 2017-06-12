@@ -14,7 +14,7 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（2）</router-link></a>
-          <input type="checkbox"  @click="checkboxed(0,checkList)" class = "chk_2" name="checkName" id = "11">
+          <input type="checkbox"  @click="checkboxed(0,checkList,flag)" class = "chk_2" name="checkName" id = "11">
           <label for="11"> </label>全选
          
         </div> 
@@ -68,7 +68,7 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（1）</router-link></a>
-          <input type="checkbox"  @click="checkboxed(1,checkListMy)" class = "chk_2"  id = "12">
+          <input type="checkbox"  @click="checkboxed(1,checkListMy,flagMy)" class = "chk_2"  id = "12">
           <label for="12"> </label>全选
         </div> 
         <div class="table-background" v-if = "deleteLogoNums!=1">
@@ -98,7 +98,7 @@
         <div class="BZProcess-des">
           <img src="" alt="">
           <a href="" ><router-link to="" class = "L1-name">商品发布（3）</router-link></a>
-          <input type="checkbox"  @click="checkboxed(2,checkListRepository)" class = "chk_2"  id = "13">
+          <input type="checkbox"  @click="checkboxed(2,checkListRepository,flagRepository)" class = "chk_2"  id = "13">
           <label for="13"> </label>全选
         </div> 
         <div>
@@ -191,7 +191,10 @@ import Step from '../CC/Step.vue'
         picBigger:'-1',//picBigger为0时显示缩略图状态  非0时，为放大状态
         depart:'-1',//depart=0 展示淘宝流程大图  depart=1展示聚划算流程大图
         step:'2',
-        message:'process'
+        message:'process',
+        flag:false,
+        flagMy:false,
+        flagRepository:false
       }
     },
     components:{"Delete":Delete,"IMask":IMask,"HistoryPath":HistoryPath,"ProcessPre":ProcessPre,Step},
@@ -254,22 +257,41 @@ import Step from '../CC/Step.vue'
         var v = document.getElementById('divCenter');
         v.style.display = "none";
       },
-      checkboxed:function(num,list){
-        if(list.length == 0){
-          switch(num){
-            case 0:this.checkList.push("0","1");break;
-            case 1:this.checkListMy.push("2");break;
-            case 2:this.checkListRepository.push("3","4","5");break;
-            default:break;
+      checkboxed:function(num,list,flag){
+        // true  ok
+        if(num == 0){
+          this.flag = !this.flag;
+          if(!this.flag){
+            this.checkList = [];
+          }else{
+            this.checkList.push("0","1");
+
+            this.checkList = this.unique(this.checkList).slice(0);
           }
-        }else{
-          switch(num){
-            case 0:this.checkList = [];break;
-            case 1:this.checkListMy = [];break;
-            case 2:this.checkListRepository = [];break;
-            default:break;
+        }else if(num == 1){
+          this.flagMy = !this.flagMy;
+          if(!this.flagMy){
+            this.checkListMy = [];
+          }else{
+            this.checkListMy.push("2");
+            this.checkListMy = this.unique(this.checkListMy).slice(0);
+          }
+        }else if(num == 2){
+          this.flagRepository = !this.flagRepository;
+          if(!this.flagRepository){
+            this.checkListRepository = [];
+          }else{
+            this.checkListRepository.push("3","4","5");
+            this.checkListRepository = this.unique(this.checkListRepository).slice(0);
           }
         }
+      },
+      unique:function(arr){
+        var arrNew = [];
+        for(var i = 0; i < arr.length; i++){
+          if(arrNew.indexOf(arr[i]) == -1) arrNew.push(arr[i]);
+        }
+        return arrNew;
       }
     }
   }
