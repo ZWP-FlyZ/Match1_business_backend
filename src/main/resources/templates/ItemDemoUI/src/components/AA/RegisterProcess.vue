@@ -26,8 +26,18 @@
           <label class="nameid"> 流程分类: </label>
 
           <select class="inputbox checkView SelectList AA-inputbox gm-input" >
-            <option >二级流程</option>
-            <option value='' >商品发布</option>
+            <option >买\卖家入住</option>
+            <option value='' >货品选品</option>
+            <option>货品发布</option>
+            <option value='' >商品选品</option>
+            <option>商品发布</option>
+            <option >投放</option>
+            <option value='' >加购\收藏</option>
+            <option>合同订立</option>
+            <option>合同履约</option>
+            <option>下单</option>
+            <option>售后</option>
+            <option>评价</option>
           </select>
         </div>
 

@@ -5,7 +5,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueResource from 'vue-resource'
 import router from './router'
-
+import store from './store/'
 import App from './App'
 import Login from './Login'
 //import 'bootstrap/dist/css/bootstrap.css'
@@ -21,6 +21,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

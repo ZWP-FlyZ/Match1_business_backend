@@ -231,9 +231,9 @@ import Step from '../CC/Step.vue'
         this.processPre();
       },
       processPre:function(){
-        if(this.checkList.length==0){
+        if(this.checkList.length==0&&this.checkListMy.length==0&&this.checkListRepository.length==0){
           alert("请选择流程")
-        }else if(this.checkList.length>1){
+        }else if(this.checkList.length>1||this.checkListMy.length>1||this.checkListRepository.length>1){
           this.hidePre = !this.hidePre
           this.hideMask = !this.hideMask
         }else{
