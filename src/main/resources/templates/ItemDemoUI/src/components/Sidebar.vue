@@ -287,8 +287,8 @@ export default {
   /*组件*/
   .xf-component-item{display: inline-block;width: 33.2%;height: 65px;overflow: hidden;padding: 5px 1px;}
   #application .xf-application-list ul li{height:78px;line-height: 78px;text-align: center;cursor: pointer;}
-  .xf-application-list-img{width:50px;}
-  .xf-application-list-span{position: relative;top:14px;left:-28%;}
+  .xf-application-list-img{width:50px;display: block;position: relative;left:25%;}
+  .xf-application-list-span{position: relative;top:-28px;margin-left:-15px;}
   .xf-ta-center{text-align: center!important;}
   .xf-icon-app-new{color:white;position: relative;cursor: pointer;width:15px;height:15px;left: -1px;top: 10px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}

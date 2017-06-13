@@ -47,6 +47,9 @@
 	  		return this.$store.state.user
 	  	}*/
 	  },
+      mounted(){
+        
+      },
 	  methods:{
         ...mapActions([USER_SIGNIN]),
 	  	submit(){
