@@ -50,14 +50,12 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
-        <!--
-        <dependency>内存缓存数据库
+        <dependency><!-- 内存缓存数据库 -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-redis</artifactId>
             <version>1.4.5.RELEASE</version>
         </dependency>
-        <dependency>session
+        <!-- <dependency>session
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session</artifactId>
         </dependency> -->
@@ -81,6 +79,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	
 
 </project>

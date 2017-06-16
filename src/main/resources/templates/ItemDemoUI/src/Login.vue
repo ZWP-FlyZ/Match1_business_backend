@@ -18,7 +18,7 @@
             </div>
         </form><!-- form -->
         <div class="button">
-            <a href="#"> </a>
+            <span><i class="el-icon-information" style="color:red"></i> {{this.server_message}}</span>
         </div><!-- button -->
     </section><!-- content -->
 </div><!-- container -->
@@ -34,34 +34,38 @@
 	  data() {
 	  	return {
             hideMask:false,
-            isSubmit:false,
+            server_message:'',
 	  		user:{
 	  			username:'',
 	  			password:''
 	  		}
 	  	}
 	  },
-      components:{IMask},
-	  computed:{
-	  	/*user(){
-	  		return this.$store.state.user
-	  	}*/
-	  },
       mounted(){
-        
+        /*this.$http.post("/api/first",JSON.stringify(this.user)).then(function(res){
+            console.log(res.body)
+        })*/
       },
+      components:{IMask},
 	  methods:{
         ...mapActions([USER_SIGNIN]),
 	  	submit(){
-            this.isSubmit = true
             if(!this.user.username || !this.user.password) return
             this.USER_SIGNIN(this.user)
-
-	  		if(this.user.username=='taobao'){
-	  			this.$router.push("/ccindex")
-	  		}else if(this.user.username=='shangpin'){
-				this.$router.push("/aaindex")
-	  		}
+            this.$http.post("/api/login",JSON.stringify(this.user)).then(function(res){
+                console.log(res.body.code);
+                if(res.body.code ==404){
+                    this.server_message = "检查用户名密码是否正确";
+                }
+                if(res.body.code ==2001){
+                    this.server_message = "欢迎，应用方";
+                    this.$router.push("/aaindex")
+                }
+                if(res.body.code ==2000){
+                    this.server_message = "欢迎，业务方";
+                    this.$router.push("/ccindex")
+                }
+            })
 	  	}
 	  }
 	}
@@ -198,7 +202,7 @@ form:after {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+    background: #eae7e7 ;
     border: 1px solid #c8c8c8;
     color: #777;
     font: 13px Helvetica, Arial, sans-serif;
@@ -285,8 +289,7 @@ form:after {
     border-top: 1px solid #CFD5D9;
     padding: 15px 0;
 }
-.button a {
-    background: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
+.button a{
     color: #7E7E7E;
     font-size: 17px;
     padding: 2px 0 2px 40px;
@@ -295,6 +298,13 @@ form:after {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.button span {
+    color: red;
+    font-size: 13px;
+    padding: 2px 0 2px 40px;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 .button a:hover {

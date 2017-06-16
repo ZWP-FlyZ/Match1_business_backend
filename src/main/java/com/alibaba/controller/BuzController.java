@@ -18,43 +18,23 @@ import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 
 @RestController
-public class UserController extends BaseController {
+@RequestMapping("buz")
+public class BuzController extends BaseController {
 	@Autowired//别漏了
 	private UserRepository userRepository;
 	
 //	@Autowired
 //	private UserService userService;
 
-	private static final Logger logger = LoggerFactory.getLogger(TestEntityController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BuzController.class);
 	
 	//用户登录验证
 	@RequestMapping("/login")
 	@ResponseBody
 	public Map<String, Object> login(@RequestBody  User user){
-//				Map<String, Object> modelMap = new HashMap<String,Object>(3);
-				User user1 = userRepository.findByUsernameAndUserpassword(user.getUsername(), user.getUserpassword());
-				
-//				String status = null;
-//				if(user1!=null){
-//					status = "success";
-//					logger.debug("1111========");
-//				}
-//				else{
-//					status = "error";
-//					logger.debug("============2222");
-//				}
-//				modelMap.put("status",status);
-//				modelMap.put("user",user1);
-				
-				return writePage(user1,"用户登录失败");
-//				return userRepository.save(user);
+		logger.info("进入了");
+		User user1 = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		logger.info(user.getUsername());
+		return writePage(user,"用户登录失败");
 	}
-	
-	@RequestMapping("/delete")
-	@ResponseBody
-	public String delete(){
-		
-		return "hello";
-	}
-	
 }

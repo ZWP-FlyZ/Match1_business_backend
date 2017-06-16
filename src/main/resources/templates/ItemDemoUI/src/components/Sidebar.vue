@@ -11,7 +11,7 @@
           <li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in appList">
           <router-link to="/content" class="xf-ta-center">
             <img class="xf-application-list-img" v-bind:src="item.img" />
-            <span class="xf-application-list-span">{{item.name}}</span>
+            <span class="xf-application-list-span">{{item.appname}}</span>
           </router-link>
           </li>
         </ul>
@@ -166,7 +166,10 @@ export default {
   props:['message'],
   components:{'IMask':IMask,'RegisterApplication':RegisterApplication},
   mounted:function(){
-    this.$nextTick(function(){
+      this.$nextTick(function(){
+      if(this.message == 1){
+        this.getApplication();
+      }
       this.getChoosedList();
       this.getProcessL1();
       this.getApplication();
@@ -245,26 +248,12 @@ export default {
       ]
     },
     getApplication:function(){
-      /*this.$http.get("/api/getList").then(res=>{
-        this.appList = JSON.parse(res.body.data).result.appList;
-      })*/
-      this.appList = [
-        {
-        "id":"10001",
-        "name":"应用1",
-        "img":"static/img/application2.png"
-      },
-      {
-        "id":"10002",
-        "name":"应用2",
-        "img":"static/img/application2.png"
-      },
-      {
-        "id":"10003",
-        "name":"应用3",
-        "img":"static/img/application2.png"
-      }
-      ]
+      this.$http.get("/api/app/getApps").then(function(res){
+        this.appList = res.body;
+        this.appList.forEach((i)=>{
+          this.$set(i,'img','static/img/application2.png')
+        })
+      })
     },
     openApp:function(){
       this.hideMask = !this.hideMask
