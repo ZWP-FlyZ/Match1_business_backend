@@ -9,7 +9,7 @@
       <div class="application-list xf-application-list">
         <ul>
           <li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in appList">
-          <router-link to="/content" class="xf-ta-center">
+          <router-link :to="{path:'/content',query:{id:item.id}}" class="xf-ta-center">
             <img class="xf-application-list-img" v-bind:src="item.img" />
             <span class="xf-application-list-span">{{item.appname}}</span>
           </router-link>
@@ -249,7 +249,7 @@ export default {
     },
     getApplication:function(){
       this.$http.get("/api/app/getApps").then(function(res){
-        this.appList = res.body;
+        this.appList = res.body.list;
         this.appList.forEach((i)=>{
           this.$set(i,'img','static/img/application2.png')
         })

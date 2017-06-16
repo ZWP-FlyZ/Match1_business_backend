@@ -18,7 +18,7 @@
             </div>
         </form><!-- form -->
         <div class="button">
-            <span><i class="el-icon-information" style="color:red"></i> {{this.server_message}}</span>
+            <span v-if="server_message!=0"><i class="el-icon-information" style="color:red"></i> {{this.server_message}}</span>
         </div><!-- button -->
     </section><!-- content -->
 </div><!-- container -->
@@ -34,7 +34,7 @@
 	  data() {
 	  	return {
             hideMask:false,
-            server_message:'',
+            server_message:'0',
 	  		user:{
 	  			username:'',
 	  			password:''

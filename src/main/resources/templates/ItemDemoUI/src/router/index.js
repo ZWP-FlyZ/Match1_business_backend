@@ -37,7 +37,6 @@ import CCbeforeEdit from '@/components/CC/CCbeforeEdit'
 import CCEditPage from '@/components/CC/CCEditPage'
 import CCLookUpProcess from '@/components/CC/CCLookUpProcess'
 import CCLookUpIdentity from '@/components/CC/CCLookUpIdentity'
-import wxfei from '@/components/wxftest'
 Vue.use(Router)
 
 export default new Router({
@@ -49,10 +48,6 @@ export default new Router({
   {
     path: '/login',
     component: Login
-  },
-  {
-    path:'/wxftest',
-    component:wxfei
   },
   {
     path:'/aaindex',

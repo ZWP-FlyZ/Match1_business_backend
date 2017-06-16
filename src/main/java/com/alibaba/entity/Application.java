@@ -31,7 +31,7 @@ public class Application {
 	private String appdesc;
 	
 	@ManyToOne
-	@JoinColumn(name = "template")
+	@JoinColumn(name = "user")
 	private User user;
 
 	public int getId() {

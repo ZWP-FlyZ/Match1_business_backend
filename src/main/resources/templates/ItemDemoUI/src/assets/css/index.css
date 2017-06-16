@@ -363,3 +363,4 @@ button{
 .el-checkbox__input.is-checked .el-checkbox__inner{background-color: #448bc7;}
 .f-fr{float: right}
 .f-fl{float: left}
+.server-message{font-size:12px;color:#ff4949}

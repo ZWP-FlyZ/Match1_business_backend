@@ -41,7 +41,7 @@ public class HomeController extends BaseController {
 				if(usertype.equals("1")){
 					responseData.setCode("2001");
 				}
-				session.setAttribute("user", checkUser.getUsername());
+				session.setAttribute("user", checkUser);
 			}else{
 				responseData.setCode("404");
 			}
