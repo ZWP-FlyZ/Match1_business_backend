@@ -1,20 +1,28 @@
 <template>
   <div>
     <div id="application" v-if="message==1">
-      <div class="application-heading">
-        <span>我的应用</span>
+      <div class="application-heading ">
+        <span class="xf-app-header">我的应用</span>
         <i class="el-icon-plus xf-icon-app-new" title="注册应用" @click="openApp"></i>
        <!--  <button class = "link-btn link-btn-primary" >注册应用</button> -->
       </div>
       <div class="application-list xf-application-list">
-        <ul>
+        <!-- <ul>
           <li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in appList">
           <router-link :to="{path:'/content',query:{id:item.id}}" class="xf-ta-center">
             <img class="xf-application-list-img" v-bind:src="item.img" />
             <span class="xf-application-list-span">{{item.appname}}</span>
           </router-link>
           </li>
-        </ul>
+        </ul> -->
+        <el-collapse v-model="activeNames">
+          <el-collapse-item v-bind:title="item.appname" name="1" v-for="(item,index) in appList">
+            <div class="xf-app-item">
+              <img class="xf-application-list-img" v-bind:src="item.img" />
+              <span class="xf-application-list-span">{{item.appname}}</span>
+            </div>
+          </el-collapse-item>
+        </el-collapse>
       </div>
       <IMask :hide-mask.sync="hideMask"></IMask>
       <RegisterApplication :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask"  v-on:isClose="closeDialog"></RegisterApplication>
@@ -49,7 +57,7 @@
       <div class="application-heading xf-application-heading-fix">
         <span>一级流程
         </span>
-        <span style="font-size:12px" v-if="identitytype!='无'">当前选择：{{identitytype}}</span>
+        <!-- <span style="font-size:12px" v-if="identitytype!='无'">当前选择：{{identitytype}}</span>
         <i class="el-icon-caret-bottom xf-el-icon-caret-bottom"></i>
         <el-select class="xf-identity-type-left" v-model="identitytype" filterable placeholder="筛选条件">
         <el-option-group v-for="group in identitytypeList" :key="group.label" :label="group.label">
@@ -60,7 +68,7 @@
               :value="item.label">
             </el-option>
         </el-option-group>
-       </el-select>
+       </el-select> -->
       </div>
       <div class="application-list">
         <div class="xf-step-process">
@@ -114,19 +122,22 @@
       </div>
     </div>
 
-
+  <Loading v-if="hideLoading"></Loading>
   </div>
 </template>
 
 <script>
 import IMask from './Mask'
 import RegisterApplication from './AA/RegisterApplication'
+import Loading from './Loading'
+
 export default {
   data(){
     return {
       isActive:'0',
       hideMask:true,
       hideDialog:true,
+      hideLoading:true,
       choosedList:[],
       appList:[],
       processL1:[],
@@ -164,7 +175,7 @@ export default {
     }
   },
   props:['message'],
-  components:{'IMask':IMask,'RegisterApplication':RegisterApplication},
+  components:{IMask,RegisterApplication,Loading},
   mounted:function(){
       this.$nextTick(function(){
       if(this.message == 1){
@@ -172,7 +183,6 @@ export default {
       }
       this.getChoosedList();
       this.getProcessL1();
-      this.getApplication();
     })
   },
   methods: {
@@ -249,6 +259,10 @@ export default {
     },
     getApplication:function(){
       this.$http.get("/api/app/getApps").then(function(res){
+        if (res.body.code == 401) {
+          this.$router.push("/login")
+        }
+        this.hideLoading = false;
         this.appList = res.body.list;
         this.appList.forEach((i)=>{
           this.$set(i,'img','static/img/application2.png')
@@ -274,10 +288,13 @@ export default {
   .choose-fix-list div{margin-left:3px!important;}
   .choose-fix-router{width:95%!important;margin-left:15px;}
   /*组件*/
-  .xf-component-item{display: inline-block;width: 33.2%;height: 65px;overflow: hidden;padding: 5px 1px;}
+  .xf-app-header{text-align: left;margin-left:-70px;}
+  .xf-component-item,.xf-app-item{display: inline-block;width: 33.2%;height: 65px;overflow: hidden;padding: 5px 1px;}
+  .xf-app-item{width:48.5%;}
   #application .xf-application-list ul li{height:78px;line-height: 78px;text-align: center;cursor: pointer;}
-  .xf-application-list-img{width:50px;display: block;position: relative;left:25%;}
-  .xf-application-list-span{position: relative;top:-28px;margin-left:-15px;}
+  .xf-application-list-img{width:35px;display: block;position: relative;left:25%;}
+  /*.xf-application-list-span{position: relative;top:-28px;margin-left:-15px;}*/
+  .xf-application-list-span{position: relative;margin-left:9px;}
   .xf-ta-center{text-align: center!important;}
   .xf-icon-app-new{color:white;position: relative;cursor: pointer;width:15px;height:15px;left: -1px;top: 10px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}

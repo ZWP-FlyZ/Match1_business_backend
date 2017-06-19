@@ -5,7 +5,7 @@
 	   <div class="xf-item-header">
 	   	 <i class="xf-icon-chooseidentity"></i>
 	   	 <span>选择业务身份</span><sup class="xf-sup-identity">3</sup>
-	   	 <el-select style="margin-left:10px" v-model="identitytype" filterable placeholder="筛选条件">
+	   	 <!-- <el-select style="margin-left:10px" v-model="identitytype" filterable placeholder="筛选条件">
     		<el-option-group v-for="group in identitytypeList" :key="group.label" :label="group.label">
     			<el-option
 		          v-for="item in group.options"
@@ -14,14 +14,8 @@
 		          :value="item.label">
 		        </el-option>
 		      </el-option-group>
-  		    </el-select>
-		 <!-- <span style="font-size:16px;" @click="showFilter=!showFilter">全部<i style="margin-left:5px" class="el-icon-caret-bottom xf-edit-icon"></i></span>
-		 <transition name="fromtop">
-		 <select class="xf-identity-type-ul" v-if="showFilter==1">
-		 	<option class="xf-identity-type-li"><a>全部</a><sup class="xf-sup-identity" title="点我选择全局业务身份">3</sup></option>
-		 	<option class="xf-identity-type-li"><a>全局业务身份</a><sup class="xf-sup-identity" title="点我选择全局业务身份">3</sup></option>
-		 	<option class="xf-identity-type-li"><a>局部业务身份</a><sup class="xf-sup-identity" title="点我选择全局业务身份">3</sup></option>
-		 </select> -->
+  		    </el-select> -->
+  		<el-autocomplete style="margin-left:20px" class="inline-input" v-model="identitytype" :fetch-suggestions="querySearch" placeholder="请输入内容" :trigger-on-focus="false" @select="handleSelect"></el-autocomplete>
 		 </transition>
 	   </div>
 	   <div>
@@ -151,7 +145,7 @@
 			}
 		},
 		mounted() {
-
+			this.restaurants = this.loadAll();
     	},
 		destroyed:function(){
 			this.addAndUse = false;
@@ -170,7 +164,28 @@
 				this.hideIdentity = data
 				this.hideMask = data
 				this.addAndUse = data
-			}
+			},
+			querySearch(queryString, cb) {
+        		var restaurants = this.restaurants;
+        		var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
+        		// 调用 callback 返回建议列表的数据
+        		cb(results);
+      		},
+      		createFilter(queryString) {
+        		return (restaurant) => {
+          			return (restaurant.value.indexOf(queryString.toLowerCase()) === 0);
+        		};
+      		},
+      		//这是业务身份的列表，从后台读取
+      		loadAll() {
+        		return [
+		          { "value": "淘宝男鞋-帆布鞋商品发布", "address": "1" },
+		          { "value": "", "淘宝女装-衬衫商品发布": "2" },
+		          { "value": "淘宝女装-T-shirt商品发布", "address": "3" }]
+		    },
+		    handleSelect(item) {
+        		console.log(item);
+      		}
 		}
 	}
 </script>

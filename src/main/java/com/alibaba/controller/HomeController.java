@@ -14,15 +14,11 @@ import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.ResponseData;
-import com.alibaba.util.WebSecurityConfig;
 
 @RestController
 public class HomeController extends BaseController {
 	@Autowired//别漏了
 	private UserRepository userRepository;
-	
-//	@Autowired
-//	private UserService userService;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private ResponseData responseData = new ResponseData();
@@ -52,5 +48,12 @@ public class HomeController extends BaseController {
 			responseData.setCode("error");
 			return responseData;
 		}
+	}
+	
+	@RequestMapping("/reLogin")
+	public String toLogin(){
+		logger.info("进来了嘛");
+		responseData.setCode("2001");
+		return "test";
 	}
 }
