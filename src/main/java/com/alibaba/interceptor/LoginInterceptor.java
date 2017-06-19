@@ -1,7 +1,4 @@
 package com.alibaba.interceptor;
-import java.io.OutputStream;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,8 +9,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.util.ResponseData;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonAnyFormatVisitor;
+import com.alibaba.util.*;
 public class LoginInterceptor implements HandlerInterceptor {
 	 Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
@@ -23,10 +19,10 @@ public class LoginInterceptor implements HandlerInterceptor {
 	        //获取session
 	        HttpSession session = request.getSession(true);
 	        //判断用户ID是否存在，不存在就跳转到登录界面
-	        if(session.getAttribute("user") == null){
+	        if(session.getAttribute(Constants.Session_User) == null){
 	            logger.info("------:应该跳转到login页面！");
 	            ResponseData resp = new ResponseData();
-	            resp.setCode("401");
+	            resp.setCode(Constants.IDENTITY_FAIL);//401
 	            response.getWriter().append(JSON.toJSONString(resp));
 	            //response.sendRedirect("http://localhost:3000/");
 	            /*RequestDispatcher rd = request.getRequestDispatcher("/reLogin");
@@ -35,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	            
 	            return false;
 	        }else{
-	            session.setAttribute("user", session.getAttribute("user"));
+	            session.setAttribute(Constants.Session_User, session.getAttribute(Constants.Session_User));
 	            return true;
 	        }
 	    }

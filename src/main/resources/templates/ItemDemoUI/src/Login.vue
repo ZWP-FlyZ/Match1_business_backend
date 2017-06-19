@@ -23,11 +23,13 @@
     </section><!-- content -->
 </div><!-- container -->
 <IMask :hide-mask.sync="hideMask"></IMask>
+<Loading v-if="hideLoading"></Loading>
 </div>
 </template>
 
 <script>
     import IMask from "./components/Mask"
+    import Loading from "./components/Loading"
     import {mapActions} from 'vuex'
     import {USER_SIGNIN} from './store/user'
 	export default {
@@ -38,7 +40,8 @@
 	  		user:{
 	  			username:'',
 	  			password:''
-	  		}
+	  		},
+            hideLoading:false
 	  	}
 	  },
       mounted(){
@@ -46,14 +49,15 @@
             console.log(res.body)
         })*/
       },
-      components:{IMask},
+      components:{IMask,Loading},
 	  methods:{
         ...mapActions([USER_SIGNIN]),
 	  	submit(){
             if(!this.user.username || !this.user.password) return
             this.USER_SIGNIN(this.user)
+            this.hideLoading = true
             this.$http.post("/api/login",JSON.stringify(this.user)).then(function(res){
-                console.log(res.body.code);
+                this.hideLoading = false
                 if(res.body.code ==404){
                     this.server_message = "检查用户名密码是否正确";
                 }
@@ -65,6 +69,9 @@
                     this.server_message = "欢迎，业务方";
                     this.$router.push("/ccindex")
                 }
+                /*if(res.Headers.status==504){
+                    this.server_message = "服务器异常";
+                }*/
             })
 	  	}
 	  }

@@ -16,11 +16,13 @@
           </li>
         </ul> -->
         <el-collapse v-model="activeNames">
-          <el-collapse-item v-bind:title="item.appname" name="1" v-for="(item,index) in appList">
+          <el-collapse-item v-bind:title="item.appname" v-bind:name="index" v-for="(item,index) in appList">
+           <router-link :to="{path:'/content?id='+item.id}">
             <div class="xf-app-item">
               <img class="xf-application-list-img" v-bind:src="item.img" />
               <span class="xf-application-list-span">{{item.appname}}</span>
             </div>
+           </router-link>
           </el-collapse-item>
         </el-collapse>
       </div>
@@ -259,14 +261,18 @@ export default {
     },
     getApplication:function(){
       this.$http.get("/api/app/getApps").then(function(res){
+        console.log("sidebar:"+res.body.code)
         if (res.body.code == 401) {
+          console.log("login")
           this.$router.push("/login")
-        }
-        this.hideLoading = false;
-        this.appList = res.body.list;
-        this.appList.forEach((i)=>{
+        }else{
+          this.hideLoading = false;
+          this.appList = res.body.list;
+          this.appList.forEach((i)=>{
           this.$set(i,'img','static/img/application2.png')
         })
+        }
+        
       })
     },
     openApp:function(){

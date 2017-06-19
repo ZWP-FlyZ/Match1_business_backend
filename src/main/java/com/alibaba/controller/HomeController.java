@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
+import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
 
 @RestController
@@ -31,29 +32,22 @@ public class HomeController extends BaseController {
 			if(checkUser!=null){
 				String usertype = checkUser.getUsertype();
 				logger.info(usertype+","+user.getUsername());
-				if(usertype.equals("0")){
-					responseData.setCode("2000");
+				if(usertype.equals(Constants.ROLE_BUZ)){
+					responseData.setCode(Constants.ROLE_BUZ_LOGIN);
 				}
-				if(usertype.equals("1")){
-					responseData.setCode("2001");
+				if(usertype.equals(Constants.ROLE_APP)){
+					responseData.setCode(Constants.ROLE_APP_LOGIN);
 				}
-				session.setAttribute("user", checkUser);
+				session.setAttribute(Constants.Session_User, checkUser);
 			}else{
-				responseData.setCode("404");
+				responseData.setCode(Constants.IDENTITY_NOT_FOUND);
 			}
 			
 			return responseData;
 		}catch(Exception e){
 			e.printStackTrace();
-			responseData.setCode("error");
+			responseData.setCode(Constants.IDENTITY_ERROR);
 			return responseData;
 		}
-	}
-	
-	@RequestMapping("/reLogin")
-	public String toLogin(){
-		logger.info("进来了嘛");
-		responseData.setCode("2001");
-		return "test";
 	}
 }

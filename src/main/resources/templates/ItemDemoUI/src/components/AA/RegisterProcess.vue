@@ -9,30 +9,27 @@
       <i class="el-icon-share xf-edit-icon"></i> 流程基本信息
     </div>
     <div class="items">
-      <form  class="itemsform">
+      <form  class="itemsform xf-form-fix">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView AA-inputbox gm-input"  value="弱管控商品发布" autocomplete="on" autofocus="autofocus">
-        </div>
-         <div class="item">
-          <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView AA-inputbox gm-input"  value="121" autocomplete="on" >
+          <label class="nameid">流程名称：</label><input type="text" class="xf-input" v-model="process.name" placeholder="输入流程名称"  autocomplete="on" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" autofocus="autofocus">
         </div>
         <div class="item">
-          <label class="nameid">流程节点数: </label> <input type="text" class="inputbox checkView AA-inputbox gm-input"  value="2"  autocomplete="on" >
+          <label class="nameid">流程节点数：</label> <input type="text" class="xf-input"  v-model="process.nodeNum" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" placeholder="输入流程节点数" value="2"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid">流程描述: </label><input type="text" class="inputbox checkView AA-inputbox gm-input"  value ="发布商品"  autocomplete="on" >
+          <label class="nameid">流程描述：</label><input type="text" class="xf-input"  v-model="process.pdesc" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" placeholder="输入流程描述" value ="发布商品"  autocomplete="on" >
         </div>
         <div class="item">
-          <label class="nameid"> 流程分类: </label>
-
-          <select class="inputbox checkView SelectList AA-inputbox gm-input" >
+          <label class="nameid">流程分类：</label>
+          <select class="xf-input" v-model="process.type" v-bind:disabled="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}">
+            <option value='' disabled="disabled" selected = "selected">--请选择--</option>
             <option >买\卖家入住</option>
-            <option value='' >货品选品</option>
+            <option>货品选品</option>
             <option>货品发布</option>
-            <option value='' >商品选品</option>
+            <option>商品选品</option>
             <option>商品发布</option>
             <option >投放</option>
-            <option value='' >加购\收藏</option>
+            <option>加购\收藏</option>
             <option>合同订立</option>
             <option>合同履约</option>
             <option>下单</option>
@@ -42,10 +39,10 @@
         </div>
 
         <div class="item">
-          <label class="nameid">开发人员: </label> <input type="text" class="inputbox checkView AA-inputbox gm-input"  value="xxx"  autocomplete="on">
+          <label class="nameid">开发人员： </label> <input type="text" class="xf-input"  v-model="process.devauthor" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" placeholder="输入流程开发者" value="xxx"  autocomplete="on">
         </div>
         <div class="item">
-          <label class="nameid">开发日期: </label> <input type="date" class="inputbox checkView gm-input"  style="width:160px;" value="2017-05-13"  autocomplete="on" >
+          <label class="nameid">开发日期：</label> <input type="date" class="xf-input" v-model="process.devdate" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" placeholder="选择流程开发日期" value="2017-05-13"  autocomplete="on" >
         </div>
       </form>
     </div>
@@ -196,9 +193,11 @@
   </div>
 </div>
     <div class="bottom" >
-      <button @click="openClick" class="link-btn link-btn-default f-fr">确定</button>
+      <button @click="openClick" v-if="$route.query.method!='look'" class="link-btn link-btn-default f-fr">确定</button>
     </div>
     <br/>
+    <IMask :hide-mask.sync="hideMask"></IMask>
+    <Tip :message="tipText" :hide-tip.sync="hideTip" :hide-mask.sync="hideMask" v-on:increment="closeTip"></Tip>
   </div>
 
 </template>
@@ -207,6 +206,7 @@
     import ProcessImg from '../CC/ProcessImg'
     import SingleSelect from '../CC/SingleSelect'
     import Tip from "../Tip"
+    import IMask from '../Mask'
     export default{
       data(){
         return {
@@ -232,13 +232,27 @@
             outPreselected: []
           },
           hideTip:true,
+          hideMask:true,
+          tipText:'',
           nodeCount:2,
-          pageCount:2
+          pageCount:2,
+          process:{
+            name:'',
+            nodeNum:'',
+            pdesc:'',
+            type:'',
+            devauthor:'',
+            devdate:''
+          }
         }
       },
-      components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect,'ProcessImg':ProcessImg,'Tip':Tip},
+      components:{MutipleSelectDelete,SingleSelect,ProcessImg,Tip,IMask},
       mounted:function(){
         this.$nextTick(function(){
+          if(this.$route.query.method=='new'){//如果是注册页面
+          }else{
+            this.process = JSON.parse(sessionStorage.getItem("aProcess"))
+          }
           this.queryData();
         })
       },
@@ -339,11 +353,30 @@
         singleCallback:function(data){
         },
         openClick:function(){
-          this.hideTip = false
+          this.$http.post("/api/app/register_process",JSON.stringify(this.process)).then(function(res){
+            if(res.body.code == 200){
+              this.hideTip = !this.hideTip
+              this.hideMask = !this.hideMask
+              this.tipText = "保存成功！"
+              //
+            }
+            if(res.body.code=='error'){
+              this.hideTip = !this.hideTip
+              this.hideMask = !this.hideMask
+              this.tipText = "保存失败！"
+              console.log("保存失败")
+            }
+            if(res.body.code == 401){
+              this.$router.push("/login")
+            }
+          })
         },
         closeTip:function(data){
           this.hideTip = data
+          this.hideMask = data
+          this.$router.push("/bzprocess")
         },
+        //里面前置条件等的删除
         deleteItem:function(type){
           if(type='nodeCount'){
             if(this.nodeCount!=0){
@@ -482,6 +515,8 @@
   .xf-precondition-box div{margin-right:3%;}
   .xf-precondition-box .xf-predition-label{margin-top:5px;width:15%;}
   .xf-precondition-box .xf-predition-delete{margin-left:58%;margin-top: 5px}
+  .xf-form-fix .item{width:28%;margin-bottom:10px;margin-right:3%;}
+  .xf-noborder{border:none;}
 </style>
 
 
