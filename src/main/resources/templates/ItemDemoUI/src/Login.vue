@@ -101,7 +101,7 @@ form:after {
     clear: both;
     visibility: hidden;
 }
-.container { margin: 80px auto; position: relative; width: 900px; z-index:104;}
+.container { margin: 80px auto; position: relative; width: 900px; z-index:1102;}
 .logincontent {
     background: #f9f9f9;
     background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
