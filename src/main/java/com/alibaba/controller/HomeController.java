@@ -5,10 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
@@ -16,8 +16,8 @@ import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
 
-@RestController
-public class HomeController extends BaseController {
+@Controller
+public class HomeController{
 	@Autowired//别漏了
 	private UserRepository userRepository;
 
@@ -50,4 +50,9 @@ public class HomeController extends BaseController {
 			return responseData;
 		}
 	}
+	
+	/*@RequestMapping("/")
+	public String geIndex(){
+		return "test";
+	}*/
 }

@@ -124,7 +124,7 @@
       </div>
     </div>
 
-  <Loading v-if="hideLoading"></Loading>
+  <Loading v-if="hideLoading1"></Loading>
   </div>
 </template>
 
