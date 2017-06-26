@@ -7,11 +7,11 @@ import java.util.Set;
 import javax.persistence.*;
 
 /**
- * 能力基本信息
+ * 能力配置项基本信息
  * @author JH
  * ok
  */
-@Table(name = "abilityconfigure")
+@Table(name = "ability_configure")
 @Entity
 public class AbilityConfigure {
 	@Id

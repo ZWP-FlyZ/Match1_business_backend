@@ -1,11 +1,17 @@
 package com.alibaba.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 /**
  * 流程实体
@@ -28,6 +34,10 @@ public class Process {
 	private String pdesc;
 	private String type;
 	
+	//流程节点  一个流程下面有多个流程节点--单向一对多
+	@OneToMany
+    @JoinColumn(name = "process_nodes")
+    private Set<ProcessNode> processNodes = new HashSet<ProcessNode>();
 	
 	
 	public int getId() {
@@ -86,4 +96,11 @@ public class Process {
 		this.type = type;
 	}
 
+	public Set<ProcessNode> getProcessNodes() {
+		return processNodes;
+	}
+
+	public void setProcessNodes(Set<ProcessNode> processNodes) {
+		this.processNodes = processNodes;
+	}
 }

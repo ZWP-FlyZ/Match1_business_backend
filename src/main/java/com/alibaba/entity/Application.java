@@ -1,8 +1,8 @@
 package com.alibaba.entity;
 
-import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,10 +30,25 @@ public class Application {
 	private String appname;
 	private String appdesc;
 	
+	//一个用户下有多个应用
 	@ManyToOne
 	@JoinColumn(name = "user")
 	private User user;
 
+	//一个应用下有多个流程……，一对多
+	@OneToMany
+	@JoinColumn(name="processes")
+	private Set<Process> processes = new HashSet<Process>();
+	
+	//一个应用下有多个页面模板……，一对多
+	@OneToMany
+	@JoinColumn(name="page_models")
+	private Set<PageModel> pageModels = new HashSet<PageModel>();
+	
+	//一个应用下有多个业务能力……，一对多
+	//一个应用下有多个能力……，一对多
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -64,6 +79,14 @@ public class Application {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Set<Process> getProcesses() {
+		return processes;
+	}
+
+	public void setProcesses(Set<Process> processes) {
+		this.processes = processes;
 	}
 	
 }

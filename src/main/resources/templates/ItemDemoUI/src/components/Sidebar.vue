@@ -16,7 +16,7 @@
           </li>
         </ul> -->
         <el-collapse v-model="activeNames">
-          <el-collapse-item v-bind:title="item.appname" v-bind:name="index" v-for="(item,index) in appList">
+          <el-collapse-item v-bind:title="item.appname" v-bind:name="index" v-for="(item,index) in appList" v-bind:key="item.id">
            <router-link :to="{path:'/content?id='+item.id}">
             <div class="xf-app-item">
               <img class="xf-application-list-img" v-bind:src="item.img" />
