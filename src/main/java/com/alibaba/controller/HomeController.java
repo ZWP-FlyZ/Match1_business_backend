@@ -51,8 +51,8 @@ public class HomeController{
 		}
 	}
 	
-	/*@RequestMapping("/")
+	@RequestMapping("/test")
 	public String geIndex(){
 		return "test";
-	}*/
+	}
 }
