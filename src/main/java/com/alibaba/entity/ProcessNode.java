@@ -33,6 +33,13 @@ public class ProcessNode {
 	private String type;
 	private String description;
 	
+	
+	
+	public ProcessNode(int id) {
+		super();
+		this.id = id;
+	}
+
 	//节点前置条件  ，一个节点下面有多个前置条件
 	@OneToMany(cascade={CascadeType.ALL})
     @JoinColumn(name = "node_pre_conditions")

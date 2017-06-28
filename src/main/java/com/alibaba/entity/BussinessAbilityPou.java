@@ -34,19 +34,24 @@ public class BussinessAbilityPou {
 	//业务能力剖面描述
 	private String badesc;
 	//业务能力剖面关联的能力类
-
+	
 	//UI类型
 	private String uitype;
 	
-	@ManyToMany(mappedBy ="bussinessability")
-	private Set<PageModel> pagemodel;
-	
-public Set<PageModel> getPagemodel() {
-		return pagemodel;
+	@ManyToMany(mappedBy ="bussinessabilitypou")
+	private Set<PageModelType> pagemodelTypes;
+
+	public BussinessAbilityPou(int id) {
+		super();
+		this.id = id;
 	}
 
-	public void setPagemodel(Set<PageModel> pagemodel) {
-		this.pagemodel = pagemodel;
+	public Set<PageModelType> getPagemodelTypes() {
+		return pagemodelTypes;
+	}
+
+	public void setPagemodelTypes(Set<PageModelType> pagemodelTypes) {
+		this.pagemodelTypes = pagemodelTypes;
 	}
 
 	public BussinessAbility getBussinessabilty() {

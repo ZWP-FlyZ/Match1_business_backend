@@ -71,7 +71,7 @@
         singleFocus: function(){
             if (!this.show){
                 document.body.click();
-                console.log('single show')
+                //console.log('single show')
                 this.show = true;
                 this.singleSearch();
                 this.searchInputFocus();
@@ -104,9 +104,8 @@
             mySelf.show = false;
             this.search = '';
             //传递给父级组件
-            // console.log('派发！！')
-            //this.$dispatch('selected', this.selected)
-            // console.log('选中的是' + JSON.stringify(this.selected))
+            this.$emit('selected', this.selected)
+            //console.log('选中的是' + JSON.stringify(this.selected))
         },
         singleSearch: function(){
             var mySelf = this;
@@ -127,7 +126,7 @@
             }
         },
         blur: function(){
-            console.log('hide single！！')
+            //console.log('hide single！！')
             this.show = false;
             this.search = '';
         }

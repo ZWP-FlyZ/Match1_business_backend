@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -21,7 +22,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.entity.Application;
+import com.alibaba.entity.BussinessAbilityPou;
+import com.alibaba.entity.PageModel;
+import com.alibaba.entity.PageModelType;
+import com.alibaba.entity.PagePreCondition;
 import com.alibaba.entity.Process;
+import com.alibaba.entity.ProcessNode;
 import com.alibaba.entity.User;
 import com.alibaba.repository.ApplicationRepository;
 import com.alibaba.repository.UserRepository;
@@ -123,4 +129,35 @@ public class AppController extends BaseController {
 		responseData.setCode(Constants.IDENTITY_SUCCESS);
 		return responseData;
 	}
+	
+	@RequestMapping(value = "register_pageModel",method = RequestMethod.POST)
+	public ResponseData registerPageModel(@RequestBody PageModel pageModel,HttpSession session){
+		logger.info("pageModel-name:===="+pageModel.getName());
+		logger.info("pageModel-processnode-size:===="+pageModel.getProcessNodes().size());
+		Iterator<ProcessNode> pn = pageModel.getProcessNodes().iterator();
+		while(pn.hasNext()){
+			ProcessNode pnode = pn.next();
+			logger.info("pageModel-processnode-id:"+pnode.getId());
+		}
+		logger.info("pageModel-pou:===="+pageModel.getPageModelTypes().size());
+		Iterator<PageModelType> it = pageModel.getPageModelTypes().iterator();
+		while(it.hasNext()){
+			PageModelType pou = it.next();
+			logger.info("pou name,pou ability==="+pou.getModulename()+","+pou.getBussinessabilitypou().size());
+			Iterator<BussinessAbilityPou> bas = pou.getBussinessabilitypou().iterator();
+			while(bas.hasNext()){
+				BussinessAbilityPou ppp = bas.next();
+				logger.info("bas--id:=="+ppp.getId());
+			}
+		}
+		logger.info("pageModel:===="+pageModel.getPagePreConditions().size());
+		Iterator<PagePreCondition> pageconditions = pageModel.getPagePreConditions().iterator();
+		while(pageconditions.hasNext()){
+			PagePreCondition pc = pageconditions.next();
+			logger.info("pagecondition：==="+pc.getId());
+		}
+		responseData.setCode(Constants.IDENTITY_SUCCESS);
+		return responseData;
+	}
+	
 }

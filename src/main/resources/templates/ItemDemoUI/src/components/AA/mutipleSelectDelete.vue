@@ -65,7 +65,7 @@
         multipleFocus: function(){
             if (!this.show){
                 document.body.click();
-                console.log('multiple show');
+                //console.log('multiple show');
                 this.show = true;
                 this.multipleSearch();
                 this.searchInputFocus();
@@ -115,7 +115,7 @@
             this.$emit('selected', this.selectedList);
         },
         multipleRemove: function(id){
-            console.log('删除！' + id)
+            //console.log('删除！' + id)
             var mySelf = this;
             var selectedList = mySelf.selectedList;
             var selectedIdList = mySelf.selectedIdList;
@@ -149,8 +149,8 @@
 
             // 通过回车键 添加
             if (event && event.keyCode==13 && search!=''){
-                console.log('回车！');
-                console.log('通过回车添加的值' + search);
+                //console.log('回车！');
+                //console.log('通过回车添加的值' + search);
 
                 for (var i=0;i<originOptions.length;i++){
                     var item = originOptions[i]
@@ -183,7 +183,7 @@
             mySelf.search = '';
         },
         blur: function(){
-            console.log('hide multiple！！')
+            //console.log('hide multiple！！')
             this.show = false;
             this.search = '';
         }

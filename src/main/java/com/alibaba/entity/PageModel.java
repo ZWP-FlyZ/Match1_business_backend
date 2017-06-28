@@ -37,12 +37,13 @@ public class PageModel {
 	//页面模板关联的流程节点
 	@ManyToMany(mappedBy = "pagemodels")
 	private Set<ProcessNode> processNodes;
-	//关联业务能力剖面
+	//关联业务能力剖面--模块类型
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="pagemdel_has_bussinessabilitypou",joinColumns = {
+	@JoinTable(name="pagemdel__pagemodeltype",joinColumns = {
 	@JoinColumn(name="pagemodel_id",referencedColumnName="id")},inverseJoinColumns={
-	@JoinColumn(name="bussinessabilitypou_id",referencedColumnName="id")})
-	private Set<BussinessAbility> bussinessability;
+	@JoinColumn(name="pagemodel_type_id",referencedColumnName="id")})
+	private Set<PageModelType> pageModelTypes;
+	
 	private String name;
 	private String description;
 	private String devauthor;
@@ -55,12 +56,12 @@ public class PageModel {
 		this.id = id;
 	}
 
-	public Set<BussinessAbility> getBussinessability() {
-		return bussinessability;
+	public Set<PageModelType> getPageModelTypes() {
+		return pageModelTypes;
 	}
 
-	public void setBussinessability(Set<BussinessAbility> bussinessability) {
-		this.bussinessability = bussinessability;
+	public void setPageModelTypes(Set<PageModelType> pageModelTypes) {
+		this.pageModelTypes = pageModelTypes;
 	}
 
 	public String getName() {

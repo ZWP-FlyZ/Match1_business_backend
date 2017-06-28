@@ -124,7 +124,7 @@
       </div>
     </div>
 
-  <Loading v-if="hideLoading1"></Loading>
+  <Loading v-if="hideLoading"></Loading>
   </div>
 </template>
 
@@ -139,7 +139,7 @@ export default {
       isActive:'0',
       hideMask:true,
       hideDialog:true,
-      hideLoading:true,
+      hideLoading:false,
       choosedList:[],
       appList:[],
       processL1:[],
