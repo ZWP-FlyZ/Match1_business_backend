@@ -9,8 +9,8 @@ import org.dom4j.Element;
 import org.dom4j.io.XMLWriter;
 
 import com.alibaba.entity.Process;
-public class XMLHepler {
-	public static XMLWriter writeXML(Process process){
+public class XMLWriteHepler {
+	public static XMLWriter writeProcess(Process process){
 		try{
 			//DocumentHelper提供了创建Document对象的方法  
 	        Document document = DocumentHelper.createDocument();  
@@ -47,7 +47,6 @@ public class XMLHepler {
 			e.printStackTrace();
 			return null;
 		}
-		
 	}
 
 }

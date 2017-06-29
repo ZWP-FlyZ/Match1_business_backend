@@ -34,7 +34,8 @@ import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
-import com.alibaba.util.XMLHepler;
+import com.alibaba.util.XMLReadHepler;
+import com.alibaba.util.XMLWriteHepler;
 
 @RestController
 @RequestMapping("app")
@@ -87,7 +88,7 @@ public class AppController extends BaseController {
 	@RequestMapping(value = "register_process",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseData registerProcess(@RequestBody Process process,HttpSession session){
-		if(XMLHepler.writeXML(process)!=null){
+		if(XMLWriteHepler.writeProcess(process)!=null){
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 	        System.out.println("xml文档添加成功！");  
 		}else{
@@ -100,33 +101,10 @@ public class AppController extends BaseController {
 	//参数是id
 	public ResponseData getProcess(Integer id){
 		logger.info("id:"+id);
-		List list = new ArrayList();
-		try{
-			InputStream inputStream = new FileInputStream(new File("H:/process.xml"));
-			SAXReader saxReader = new SAXReader();  
-			Document document = saxReader.read(new File("H:/process.xml"));
-			Element rootElement = document.getRootElement();   
-			if(document.getRootElement() != null ){  
-				 String name = rootElement.attributeValue("name");//为节点添加属性值  
-				 String nodeNum = rootElement.attributeValue("nodeNum");//为节点添加属性值  
-				 String pdesc = rootElement.attributeValue("pdesc");//为节点添加属性值  
-				 String type = rootElement.attributeValue("type");//为节点添加属性值  
-				 String devdate = rootElement.attributeValue("devdate");//为节点添加属性值  
-				 String devauthor = rootElement.attributeValue("devauthor");//为节点添加属性值  
-				 Process process = new Process();
-				 process.setName(name);
-				 process.setNodeNum(nodeNum);
-				 process.setPdesc(pdesc);
-				 process.setDevauthor(devauthor);
-				 process.setDevdate(devdate);
-				 process.setType(type);
-				 list.add(process);
-			}
-		}catch(Exception e){
-			e.printStackTrace();
+		if(XMLReadHepler.readProcess()!=null){
+			responseData.setList(XMLReadHepler.readProcess());
+			responseData.setCode(Constants.IDENTITY_SUCCESS);
 		}
-		responseData.setList(list);
-		responseData.setCode(Constants.IDENTITY_SUCCESS);
 		return responseData;
 	}
 	
