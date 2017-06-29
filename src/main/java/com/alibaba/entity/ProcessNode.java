@@ -14,12 +14,29 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * 流程节点实体
  * @author WXF
  *
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="processNode")
+@XmlType(propOrder={
+		"id",
+		"name",
+		"type",
+		"description",
+		"nodePreConditions",
+		"pagePreConditions",
+		"pagemodels"
+})
 @Table(name = "process_node")
 @Entity
 public class ProcessNode {
@@ -35,6 +52,10 @@ public class ProcessNode {
 	
 	
 	
+	public ProcessNode() {
+		super();
+	}
+
 	public ProcessNode(int id) {
 		super();
 		this.id = id;
@@ -43,11 +64,15 @@ public class ProcessNode {
 	//节点前置条件  ，一个节点下面有多个前置条件
 	@OneToMany(cascade={CascadeType.ALL})
     @JoinColumn(name = "node_pre_conditions")
+	@XmlElementWrapper(name="nodePreConditions") 
+	@XmlElement(name="nodePreCondition")
 	private Set<NodePreCondition> nodePreConditions = new HashSet<NodePreCondition>();
 	
 	//页面模板前置条件
 	@OneToMany(cascade={CascadeType.ALL})
     @JoinColumn(name = "page_pre_conditions")
+	@XmlElementWrapper(name="pagePreConditions") 
+	@XmlElement(name="pagePreCondition")
 	private Set<PagePreCondition> pagePreConditions = new HashSet<PagePreCondition>();
 	
 	//页面模板
@@ -55,6 +80,8 @@ public class ProcessNode {
 	@JoinTable(name="Node_Page",joinColumns = {
 			@JoinColumn(name="Node_id",referencedColumnName="id")},inverseJoinColumns = {
 			@JoinColumn(name="Page_id",referencedColumnName="id")})
+	@XmlElementWrapper(name="pagemodels") 
+	@XmlElement(name="pagemodel")
 	private Set<PageModel> pagemodels;
 
 	public int getId() {

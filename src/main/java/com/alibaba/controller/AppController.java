@@ -1,17 +1,10 @@
 package com.alibaba.controller;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.dom4j.Document;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +15,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.entity.Application;
-import com.alibaba.entity.BussinessAbilityPou;
 import com.alibaba.entity.PageModel;
-import com.alibaba.entity.PageModelType;
-import com.alibaba.entity.PagePreCondition;
 import com.alibaba.entity.Process;
-import com.alibaba.entity.ProcessNode;
 import com.alibaba.entity.User;
 import com.alibaba.repository.ApplicationRepository;
+import com.alibaba.repository.ProcessRepository;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
 import com.alibaba.util.XMLReadHepler;
+import com.alibaba.util.XMLUtil;
 import com.alibaba.util.XMLWriteHepler;
 
 @RestController
@@ -42,6 +33,8 @@ import com.alibaba.util.XMLWriteHepler;
 public class AppController extends BaseController {
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private ProcessRepository processRepository;
 	@Autowired
 	private ApplicationRepository applicationRepository;
 	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
@@ -97,6 +90,7 @@ public class AppController extends BaseController {
 		return responseData;
 	}
 	
+	//根据process_id获取流程信息
 	@RequestMapping("/get_process")
 	//参数是id
 	public ResponseData getProcess(Integer id){
@@ -107,33 +101,32 @@ public class AppController extends BaseController {
 		}
 		return responseData;
 	}
+	//根据应用id获取所有的流程信息
+	@RequestMapping("/get_processList")
+	public ResponseData getProcessList(Integer id){
+		if(id==0){
+			responseData.setCode(Constants.EMPTY);
+		}else{
+			Application app = applicationRepository.findById(id);
+			//根据应用找到所有的流程
+			logger.info("app.id:"+app.getId());
+			List processList = processRepository.findByApplication(app);
+			if(processList!=null){
+				responseData.setList(processList);
+				responseData.setCode(Constants.IDENTITY_SUCCESS);
+			}else{
+				responseData.setCode(Constants.IDENTITY_FAIL);
+			}
+		}
+		return responseData;
+	}
 	
 	@RequestMapping(value = "register_pageModel",method = RequestMethod.POST)
 	public ResponseData registerPageModel(@RequestBody PageModel pageModel,HttpSession session){
-		logger.info("pageModel-name:===="+pageModel.getName());
-		logger.info("pageModel-processnode-size:===="+pageModel.getProcessNodes().size());
-		Iterator<ProcessNode> pn = pageModel.getProcessNodes().iterator();
-		while(pn.hasNext()){
-			ProcessNode pnode = pn.next();
-			logger.info("pageModel-processnode-id:"+pnode.getId());
-		}
-		logger.info("pageModel-pou:===="+pageModel.getPageModelTypes().size());
-		Iterator<PageModelType> it = pageModel.getPageModelTypes().iterator();
-		while(it.hasNext()){
-			PageModelType pou = it.next();
-			logger.info("pou name,pou ability==="+pou.getModulename()+","+pou.getBussinessabilitypou().size());
-			Iterator<BussinessAbilityPou> bas = pou.getBussinessabilitypou().iterator();
-			while(bas.hasNext()){
-				BussinessAbilityPou ppp = bas.next();
-				logger.info("bas--id:=="+ppp.getId());
-			}
-		}
-		logger.info("pageModel:===="+pageModel.getPagePreConditions().size());
-		Iterator<PagePreCondition> pageconditions = pageModel.getPagePreConditions().iterator();
-		while(pageconditions.hasNext()){
-			PagePreCondition pc = pageconditions.next();
-			logger.info("pagecondition：==="+pc.getId());
-		}
+		logger.info("---将对象转换成string类型的xml Start---");  
+		//String path = String.format(Constants.PROCESS_LIB, args);
+        XMLUtil.convertToXml(pageModel,"H:\\test.xml"); 
+        logger.info("---将对象转换成string类型的xml End---");  
 		responseData.setCode(Constants.IDENTITY_SUCCESS);
 		return responseData;
 	}

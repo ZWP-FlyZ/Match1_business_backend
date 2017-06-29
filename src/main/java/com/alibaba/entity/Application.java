@@ -36,19 +36,34 @@ public class Application {
 	private User user;
 
 	//一个应用下有多个流程……，一对多
-	@OneToMany
+	/*@OneToMany
 	@JoinColumn(name="processes")
-	private Set<Process> processes = new HashSet<Process>();
+	private Set<Process> processes = new HashSet<Process>();*/
 	
 	//一个应用下有多个页面模板……，一对多
-	@OneToMany
+	/*@OneToMany
 	@JoinColumn(name="page_models")
-	private Set<PageModel> pageModels = new HashSet<PageModel>();
+	private Set<PageModel> pageModels = new HashSet<PageModel>();*/
 	
 	//一个应用下有多个业务能力……，一对多
+	/*@OneToMany
+	@JoinColumn(name="bussiness_abilities")
+	private Set<BussinessAbility> bussinessAbilities = new HashSet<BussinessAbility>();*/
 	//一个应用下有多个能力……，一对多
+	/*@OneToMany
+	@JoinColumn(name="ability")
+	private Set<Ability> abilities = new HashSet<Ability>();*/
 	
 	
+	
+	public Application() {
+	}
+
+	public Application(int id) {
+		super();
+		this.id = id;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -81,12 +96,4 @@ public class Application {
 		this.user = user;
 	}
 
-	public Set<Process> getProcesses() {
-		return processes;
-	}
-
-	public void setProcesses(Set<Process> processes) {
-		this.processes = processes;
-	}
-	
 }

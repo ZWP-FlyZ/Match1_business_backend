@@ -173,7 +173,7 @@ export default {
                         value: 'tb',
                         label: '淘宝'
                       }]
-                    }],
+                    }]
     }
   },
   props:['message'],
@@ -272,7 +272,6 @@ export default {
           this.$set(i,'img','static/img/application2.png')
         })
         }
-        
       })
     },
     openApp:function(){

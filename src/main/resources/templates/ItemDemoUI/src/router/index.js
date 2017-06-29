@@ -37,6 +37,7 @@ import CCbeforeEdit from '@/components/CC/CCbeforeEdit'
 import CCEditPage from '@/components/CC/CCEditPage'
 import CCLookUpProcess from '@/components/CC/CCLookUpProcess'
 import CCLookUpIdentity from '@/components/CC/CCLookUpIdentity'
+import test from '@/components/test'
 Vue.use(Router)
 
 export default new Router({
@@ -44,6 +45,10 @@ export default new Router({
   {
     path:'/',
     redirect:'/login'
+  },
+  {
+    path:'/test',
+    component:test
   },
   {
     path: '/login',

@@ -12,13 +12,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * 页面模板模块类型类
  * @author wxf
  * ok
  */
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="pageModelType")
+@XmlType(propOrder={
+		"id",
+		"modulename",
+		"moduledesc",
+		"bussinessabilitypou"
+})
 //页面模板类
 @Table(name="page_model_type")
 @Entity
@@ -35,6 +48,8 @@ public class PageModelType {
 	@JoinTable(name="pagemdelType_bussinessabilitypou",joinColumns = {
 	@JoinColumn(name="pagemodelType_id",referencedColumnName="id")},inverseJoinColumns={
 	@JoinColumn(name="bussinessabilitypou_id",referencedColumnName="id")})
+	@XmlElementWrapper(name="bussinessabilitypous") 
+	@XmlElement(name="bussinessabilitypou")
 	private Set<BussinessAbilityPou> bussinessabilitypou;
 
 	public int getId() {

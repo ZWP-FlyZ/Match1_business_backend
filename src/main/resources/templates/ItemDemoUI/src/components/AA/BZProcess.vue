@@ -1,29 +1,6 @@
 <template>
   <div class = "BZProcess">
     <div class = "BZProcess-total">流程定制总数：12</div>
-    <!-- 流程模板 -->
-    <!-- <div class="BZProcess-register">
-      <ul>
-          <li class = "BZProcess-classify">流程模板</li>
-      </ul>
-    </div>
-    <div class = "classfy-table">
-     <div v-for="(item,index) in tempList">
-      <div class="BZProcess-table">
-        <div class="BZ-edit">
-          <div class="BZ-num">{{item.name}}</div>
-          <div class="process"><img v-bind:src="item.imgPath" /></div>
-          <div class = "process-button">
-            <router-link to="/registerProcess" class = "link-btn link-btn-primary">编辑</router-link>
-            <br /><br />
-            <router-link to="/registerProcess" class = "link-btn link-btn-look">查看</router-link>
-             <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div> -->
-    <!-- 流程模板 -->
     <div class="BZProcess-register">
       <ul>
           <li class = "BZProcess-classify"></li>
@@ -53,12 +30,14 @@
     </div>
     <IMask :hide-mask.sync="hideMask"></IMask>
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
+    <Loading v-if="hideLoading"></Loading>
   </div>       
 </template>
 
 <script>
 import Delete from "../Delete"
 import IMask from "../Mask"
+import Loading from '../Loading'
   export default{
     data(){
       return {
@@ -69,21 +48,56 @@ import IMask from "../Mask"
           url:''//删除的url请求
         },
         hideDialog:true,
-        hideMask:true
+        hideMask:true,
+        hideLoading:false
       }
     },
-    components:{"Delete":Delete,"IMask":IMask},
+    components:{Delete,IMask,Loading},
     mounted:function(){
       this.$nextTick(function(){
         this.getProcess();
       })
     },
+    created(){
+      this.fetchProcess();
+    },
+    watch:{
+      '$route':'fetchProcess'
+    },
     methods: {
+      //from server ,会抛弃下面那个getProcess
+      fetchProcess(){
+        this.hideLoading = !this.hideLoading;
+        //console.log("id:"+this.$route.query.id);//1,2,3
+        this.$route.query.id = this.$route.query.id || 0;
+        this.$http.get("api/app/get_processList?id="+this.$route.query.id).then(res=>{
+            this.hideLoading = !this.hideLoading;
+            if(res.body.code == 200){
+              if(res.body.list!=null){
+                this.processList = res.body.list;
+                console.log("success")
+              }
+              //
+            }
+            if(res.body.code=='401'){
+              
+              console.log("失败")
+            }
+            if(res.body.code=='empty'){
+              
+              console.log("是空的")
+            }
+            if(res.body.code == 401){
+              this.$router.push("/login")
+            }
+        })
+      },
       getProcess:function(){
         /*this.$http.get("/api/getList").then(res=>{
           this.processList = JSON.parse(res.body.data).result.processList
           this.tempList = JSON.parse(res.body.data).result.processTemp
         })*/
+
         this.processList = [
           {
         "name":"商品发布流程",

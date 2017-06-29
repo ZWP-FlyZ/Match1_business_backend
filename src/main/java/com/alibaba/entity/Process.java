@@ -9,8 +9,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -18,6 +25,18 @@ import javax.persistence.Table;
  * @author WXF
  *
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="process")
+@XmlType(propOrder={
+		"id",
+		"name",
+		"devauthor",
+		"devdate",
+		"nodeNum",
+		"pdesc",
+		"type",
+		"processNodes"
+})
 @Table(name = "process")
 @Entity
 public class Process {
@@ -37,8 +56,14 @@ public class Process {
 	//流程节点  一个流程下面有多个流程节点--单向一对多
 	@OneToMany
     @JoinColumn(name = "process_nodes")
+	@XmlElementWrapper(name="processNodes") 
+	@XmlElement(name="processNode")
     private Set<ProcessNode> processNodes = new HashSet<ProcessNode>();
 	
+	//一个应用下有多个流程……，一对多
+	@ManyToOne
+	@JoinColumn(name = "application")
+	private Application application;
 	
 	public int getId() {
 		return id;
@@ -103,4 +128,13 @@ public class Process {
 	public void setProcessNodes(Set<ProcessNode> processNodes) {
 		this.processNodes = processNodes;
 	}
+
+	public Application getApplication() {
+		return application;
+	}
+
+	public void setApplication(Application application) {
+		this.application = application;
+	}
+	
 }

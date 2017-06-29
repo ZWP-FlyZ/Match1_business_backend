@@ -126,7 +126,7 @@
                   v-for="item in multiple.inPreEdit"
                   :key="item.name"
                   :label="item.name"
-                  :value="item.id">
+                  :value="item.name">
                 </el-option>
               </el-select>
            </div>
@@ -297,7 +297,7 @@
           //处理一下processNodes，将数组弄成一个节点的id--结束
           //处理一下pagePreConditions，将数组弄成一个节点的id--开始
           this.pagemodel.pagePreConditions.forEach((i,index)=>{
-            i.value = this.initpre[index]
+            i.value = JSON.stringify(this.initpre[index])
             console.log(i);
           })
           console.log(this.pagemodel)

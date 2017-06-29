@@ -17,10 +17,6 @@ public class BussinessAbilityPou {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private int id;
-	
-
-	
-
 	public int getId() {
 		return id;
 	}

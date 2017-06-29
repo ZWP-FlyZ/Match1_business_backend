@@ -12,5 +12,7 @@ import com.alibaba.entity.User;
 public interface ApplicationRepository extends JpaRepository<Application, Integer> {
 	
 	List<Application> findAllByUser(User user);
+
+	Application findById(Integer id);
 	
 }

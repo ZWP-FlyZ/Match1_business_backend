@@ -3,7 +3,16 @@ package com.alibaba.entity;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +22,18 @@ import java.util.Set;
  * @author JH
  * ok
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="ability")
+@XmlType(propOrder={
+		"id",
+		"name",
+		"adesc",
+		"akey",
+		"storelocation",
+		"devauthor",
+		"date",
+		"bussinessabilitypou"
+})
 @Table(name = "ability")
 @Entity
 public class Ability {
@@ -29,7 +50,11 @@ public class Ability {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	//一个应用下有多个流程……，一对多
+	@ManyToOne
+	@JoinColumn(name = "application")
+	@XmlTransient
+	private Application application;
 
 	//能力名称
 	private String name;
@@ -49,6 +74,8 @@ public class Ability {
 	@JoinTable(name = "bussinessabilitypou_has_ability", joinColumns = {
     @JoinColumn(name = "bussinessabilitypou_id", referencedColumnName = "id")}, inverseJoinColumns = {
     @JoinColumn(name = "ability_id", referencedColumnName = "id")})
+	@XmlElementWrapper(name="bussinessabilitypous") 
+	@XmlElement(name="bussinessabilitypou")
 	private Set<BussinessAbilityPou> bussinessabilitypou;
 	 
 
