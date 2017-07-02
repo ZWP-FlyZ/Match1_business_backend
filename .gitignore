@@ -17,8 +17,12 @@ target/
 
 ### NetBeans ###
 nbproject/private/
-build/
+/build/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### LocalFiles ###
+.DS_Store
+*.log
