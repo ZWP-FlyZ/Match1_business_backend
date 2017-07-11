@@ -364,3 +364,5 @@ button{
 .f-fr{float: right}
 .f-fl{float: left}
 .server-message{font-size:12px;color:#ff4949}
+.listNotEmpty-div{text-align: center;margin:50px 0px;}
+.listNotEmpty{font-size:13px;color:#ccc;text-align: center}

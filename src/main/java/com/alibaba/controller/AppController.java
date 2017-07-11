@@ -1,7 +1,9 @@
 package com.alibaba.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -46,6 +48,12 @@ public class AppController extends BaseController {
 		logger.info(loginUser.getUsername());
 		List<Application> apps = new ArrayList<Application>();
 		apps = applicationRepository.findAllByUser(loginUser);
+		if(apps.size()>0){
+			responseData.setCode(Constants.IDENTITY_SUCCESS);
+			responseData.setList(apps);
+		}else{
+			responseData.setCode(Constants.EMPTY);
+		}
 		responseData.setList(apps);
 		return responseData;
 	}
@@ -81,11 +89,20 @@ public class AppController extends BaseController {
 	@RequestMapping(value = "register_process",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseData registerProcess(@RequestBody Process process,HttpSession session){
-		if(XMLWriteHepler.writeProcess(process)!=null){
+		//存入xml-----开始
+		/*if(XMLWriteHepler.writeProcess(process)!=null){
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 	        System.out.println("xml文档添加成功！");  
 		}else{
 			responseData.setCode(Constants.IDENTITY_ERROR);
+		}*/
+		//存入xml-----结束;
+		try{
+			processRepository.save(process);
+			responseData.setCode(Constants.IDENTITY_SUCCESS);
+		}catch(Exception e){
+			responseData.setCode(Constants.IDENTITY_ERROR);
+			e.printStackTrace();
 		}
 		return responseData;
 	}
@@ -104,18 +121,34 @@ public class AppController extends BaseController {
 	//根据应用id获取所有的流程信息
 	@RequestMapping("/get_processList")
 	public ResponseData getProcessList(Integer id){
-		if(id==0){
-			responseData.setCode(Constants.EMPTY);
-		}else{
+		if(id!=null){
 			Application app = applicationRepository.findById(id);
 			//根据应用找到所有的流程
-			logger.info("app.id:"+app.getId());
-			List processList = processRepository.findByApplication(app);
+			List<Process> processList = processRepository.findByApplication(app);
 			if(processList!=null){
-				responseData.setList(processList);
+				Map<String,List<Process>> map = new HashMap<String,List<Process>>();
+				List<Process> listold = new ArrayList<Process>();
+				for(Process process : processList) {
+					if(map.containsKey(process.getType())){
+						listold = map.get(process.getType());
+						listold.add(process);
+						map.put(process.getType(), listold);
+					}else{
+						List<Process> listnew = new ArrayList<Process>();
+						listnew.add(process);
+						map.put(process.getType(), listnew);
+					}
+				}
+			    /*System.out.println("第一种：通过Map.keySet遍历key和value：");
+		        for (String in : map.keySet()) {
+			            //map.keySet()返回的是所有key的值
+			           List<Process> str = map.get(in);//得到每个key多对用value的值
+			           System.out.println(in + "     " + str.size());
+			     }*/
+				responseData.setMap(map);
 				responseData.setCode(Constants.IDENTITY_SUCCESS);
 			}else{
-				responseData.setCode(Constants.IDENTITY_FAIL);
+				responseData.setCode(Constants.EMPTY);
 			}
 		}
 		return responseData;

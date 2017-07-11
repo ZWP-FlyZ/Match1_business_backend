@@ -15,5 +15,5 @@ import com.alibaba.entity.Process;
 public interface ProcessRepository extends JpaRepository<Process, Integer> {
 	public Process save(Process prcess);
 	
-    List findByApplication(Application application);
+    List<Process> findByApplication(Application application);
 }

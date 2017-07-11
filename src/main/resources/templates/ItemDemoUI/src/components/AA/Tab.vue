@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs">
     <li v-bind:class="{'tab-active':isActive==1}" @click="changeTab(1)">
       <div class="tab-icon tab-icon-process" v-bind:class="{'tab-icon-process-active':isActive==1}"></div>
-      <router-link to="/bzprocess" class="link"><span>流程</span>(1)</router-link>
+      <router-link to="" class="link"><span>流程</span>(1)</router-link>
     </li>
     <li v-bind:class="{'tab-active':isActive==2}" @click="changeTab(2)">
       <div class="tab-icon tab-icon-temp" v-bind:class="{'tab-icon-temp-active':isActive==2}"></div>
@@ -28,6 +28,15 @@
 	},
 	methods:{
 		changeTab:function(i){
+      // if(i==1){
+      //   console.log("111")
+      //   this.$root.eventHub.$on("giveTabFirstApp",(data)=>{
+      //     console.log("tab:"+data)
+      //     this.$root.eventHub.$emit("appisEmpty",data);
+      //     this.$router.push("/bzprocess")
+      //   })
+      // }
+      
 			this.isActive = i;
 		}
 	}

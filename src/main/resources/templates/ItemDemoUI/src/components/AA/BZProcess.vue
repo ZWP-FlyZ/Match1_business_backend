@@ -1,32 +1,47 @@
 <template>
   <div class = "BZProcess">
+    <div v-if="!appisEmpty">
     <div class = "BZProcess-total">流程定制总数：12</div>
-    <div class="BZProcess-register">
+    <div class="BZProcess-register" >
       <ul>
           <li class = "BZProcess-classify"></li>
           <li class = "BZProcess-create"><router-link :to="{path:'/registerProcess',query:{method:'new'}}"class = "link-btn link-btn-default">注册流程</router-link></li>
       </ul>
     </div>
-    <div class = "classfy-table">
-     <div v-for="(item,index) in processList">
+    <div class = "classfy-table" >
+      <div v-for="(item,index) in processList">
       <div class="BZProcess-des">
         <img src="" alt="">
-        <a href="" ><router-link to="" class = "L1-name">流程分类：{{item.name}}（{{item.count}}）</router-link></a>
+        <a href="" ><router-link to="" class = "L1-name">流程分类：{{index}}（{{item.length}}）</router-link></a>
         <a href="" ><router-link to="/configPreCondition" class = "L1-edit">配置前置条件</router-link></a>
         <a href="" ><router-link to="/configPreCondition" class = "L1-edit">查看前置条件</router-link></a>
       </div> 
-      <div class="BZProcess-table">
-        <div class="BZ-edit" v-for="i in item.pList">
-          <div class="BZ-num">流程名称：{{i.name}}</div>
-          <div class="process"><img v-bind:src="i.imgPath" /></div>
-          <div class = "process-button">
+      <ul class="xf-process-ul">
+      <li class="xf-process-li" v-for="i in item">
+        <img src="/static/img/tbpublish.png" alt="" ><a class="xf-el-upload-list__item-name">
+          <i class="el-icon-document"></i>
+          流程名称：{{i.name}}
+        </a>
+        <div class = "process-button">
             <router-link :to="{path:'/registerProcess',query:{method:'edit'}}" class = "link-btn link-btn-primary" @click.native="getaProcess(i.id)">编辑</router-link>
             <router-link :to="{path:'/registerProcess',query:{method:'look'}}" @click.native="getaProcess(i.id)" class = "link-btn link-btn-look">查看</router-link>
-            <li><button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button></li>
+            <button class = "link-btn link-btn-delete" @click="deleteDialog(item)" >删除</button>
           </div>
-        </div>
+        <label class="xf-process-label" >
+          <i class="xf-el-icon-upload-success el-icon-check" style="color:#fff"></i>
+        </label>
+      </li>
+    </ul>
       </div>
-      </div>
+
+    </div>
+    </div>
+    <div class="BZProcess-table" style="border:none" v-else>
+      <p style="color:#ccc">您还未注册过应用，请先注册应用</p>
+      <br />
+      <i @click="openApp" class="el-icon-upload2" style="color:#448bc7;font-size:30px"></i>
+      <p >注册应用</p>
+      <br />
     </div>
     <IMask :hide-mask.sync="hideMask"></IMask>
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
@@ -49,32 +64,43 @@ import Loading from '../Loading'
         },
         hideDialog:true,
         hideMask:true,
-        hideLoading:false
+        hideLoading:false,
+        appisEmpty:false
       }
     },
     components:{Delete,IMask,Loading},
     mounted:function(){
-      this.$nextTick(function(){
-        this.getProcess();
+      this.$nextTick(()=>{
+        
       })
     },
     created(){
-      this.fetchProcess();
+      this.$root.eventHub.$on("appisEmpty",(data)=>{
+        if(data == 'empty'){
+          this.appisEmpty = data;
+        }else{
+          this.fetchProcess(data);
+        }
+      })
     },
     watch:{
       '$route':'fetchProcess'
     },
     methods: {
       //from server ,会抛弃下面那个getProcess
-      fetchProcess(){
+      fetchProcess(data){
         this.hideLoading = !this.hideLoading;
         //console.log("id:"+this.$route.query.id);//1,2,3
-        this.$route.query.id = this.$route.query.id || 0;
+        if(typeof(data) == "number"){
+          this.$route.query.id = data;
+        }
+        console.log(typeof(data))
         this.$http.get("api/app/get_processList?id="+this.$route.query.id).then(res=>{
             this.hideLoading = !this.hideLoading;
             if(res.body.code == 200){
               if(res.body.list!=null){
-                this.processList = res.body.list;
+                this.processList = res.body.map;
+
                 console.log("success")
               }
               //
@@ -85,74 +111,12 @@ import Loading from '../Loading'
             }
             if(res.body.code=='empty'){
               
-              console.log("是空的")
+              console.log("是空的")//此处的空不需要做处理
             }
             if(res.body.code == 401){
               this.$router.push("/login")
             }
         })
-      },
-      getProcess:function(){
-        /*this.$http.get("/api/getList").then(res=>{
-          this.processList = JSON.parse(res.body.data).result.processList
-          this.tempList = JSON.parse(res.body.data).result.processTemp
-        })*/
-
-        this.processList = [
-          {
-        "name":"商品发布流程",
-        "count":"3",
-        "preList":[
-          {
-            "id":"10001",
-            "name":"账号从属于天猫还是淘宝"
-          },
-          {
-            "id":"10001",
-            "name":"登陆地在中国还是外国"
-          }
-        ],
-        "pList":[
-          {
-            "id":"10001",
-            "name":"淘宝一口价商品发布流程",
-            "imgPath":"static/img/tbpublish.png"
-          },
-          {
-            "id":"10002",
-            "name":"天猫一口价商品发布流程",
-            "imgPath":"static/img/tmpublish.png"
-          }
-        ]
-      },
-      {
-        "name":"交易流程",
-        "count":"1",
-        "preList":[
-          {
-            "id":"10001",
-            "name":"虚拟还是实物"
-          },
-          {
-            "id":"10001",
-            "name":"担保还是电子凭证"
-          }
-        ],
-        "pList":[
-          {
-            "id":"10001",
-            "name":"淘宝交易流程",
-            "imgPath":"static/img/process1.png"
-          }
-        ]
-      }
-        ],
-        this.tempList = [
-        {
-        "name":"商品发布流程模板",
-        "imgPath":"static/img/publish.png"
-      }
-        ]
       },
       deleteDialog:function(i){
         this.hideDialog = !this.hideDialog
@@ -164,13 +128,12 @@ import Loading from '../Loading'
         this.hideDialog = childData
         this.hideMask = childData
       },
+      openApp:function(){
+        this.$root.eventHub.$emit('openApp',"process");
+      },
       //查看时或者编辑时调用的方法
       getaProcess:function(id){
-        console.log(id)
         this.$http.get("/api/app/get_process?id="+id).then(function(res){
-          console.log(res.body);
-          console.log("get a process success");
-          console.log(res.body.list[0])
           sessionStorage.setItem("aProcess",JSON.stringify(res.body.list[0]));
         })
       }
@@ -238,9 +201,10 @@ import Loading from '../Loading'
     margin-right: 5%;
     position: relative;
   }
-  .BZProcess-table .process-button{
-    margin-left: 50px;
-
+  .process-button{
+    float: right;
+    margin-right: 41px;
+    line-height: 70px
   }
   .BZProcess-table .process-button .link-btn{
     display: block;
@@ -268,5 +232,45 @@ import Loading from '../Loading'
   .BZProcess-table{
     margin-bottom: 20px;
   }
+  .xf-process-ul{margin:0;padding:0;list-style: none}
+    .xf-process-li{overflow: hidden;background-color:#fff;border:1px solid #c0ccda; 
+        border-radius: 6px;
+        box-sizing: border-box;
+        padding: 10px 10px 10px 90px;
+        height: 92px;transition: all .5s cubic-bezier(.55,0,.1,1);
+        font-size: 14px;
+        color: #48576a;
+        line-height: 1.8;
+        margin:10px 20px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 95%;
+        position: relative;cursor:pointer;}
+    .xf-process-li img{
+        vertical-align: middle;
+        display: inline-block;
+        width: 200px;
+        height: 70px;
+        float: left;
+        position: relative;
+        z-index: 1;
+        margin-left: -80px;
+        }
+    .xf-process-label{display: none;
+      background-color: #448bc7;
+      width: 45px;
+      height: 30px;
+      position: absolute;
+      top: -10px;
+      right: -18px;
+      transform: rotate(45deg);}
+      .xf-process-li:hover .xf-process-label{display: block}
+      .xf-process-li:hover .xf-el-upload-list__item-name{color:#448bc7;}
+      .xf-el-upload-list__item-name{line-height: 70px;color:#48576a;margin-left:3%;}
+      .xf-el-icon-upload-success{position: absolute;
+    top: 15px;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-46deg);
+    left: 12px;}
 </style>
 

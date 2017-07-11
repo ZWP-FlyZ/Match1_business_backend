@@ -4,18 +4,9 @@
       <div class="application-heading ">
         <span class="xf-app-header">我的应用</span>
         <i class="el-icon-plus xf-icon-app-new" title="注册应用" @click="openApp"></i>
-       <!--  <button class = "link-btn link-btn-primary" >注册应用</button> -->
       </div>
       <div class="application-list xf-application-list">
-        <!-- <ul>
-          <li v-bind:class="{'application-li-active':isActive == index}" @click="addActive(index)" v-for="(item,index) in appList">
-          <router-link :to="{path:'/content',query:{id:item.id}}" class="xf-ta-center">
-            <img class="xf-application-list-img" v-bind:src="item.img" />
-            <span class="xf-application-list-span">{{item.appname}}</span>
-          </router-link>
-          </li>
-        </ul> -->
-        <el-collapse v-model="activeNames">
+        <el-collapse v-model="activeNames" v-if="listNotEmpty">
           <el-collapse-item v-bind:title="item.appname" v-bind:name="index" v-for="(item,index) in appList" v-bind:key="item.id">
            <router-link :to="{path:'/content?id='+item.id}">
             <div class="xf-app-item">
@@ -25,6 +16,11 @@
            </router-link>
           </el-collapse-item>
         </el-collapse>
+        <div class="listNotEmpty-div" v-else>
+          <i class="el-icon-warning"></i>
+          <br />
+          <span class="listNotEmpty">列表为空</span>
+        </div>
       </div>
       <IMask :hide-mask.sync="hideMask"></IMask>
       <RegisterApplication :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask"  v-on:isClose="closeDialog"></RegisterApplication>
@@ -144,6 +140,7 @@ export default {
       appList:[],
       processL1:[],
       activeNames:['1','2','3'],
+      listNotEmpty:false,//列表是否为空
       componentImg1:[
         {src:'static/img/component1.png'},
         {src:'static/img/component2.png'},
@@ -185,6 +182,10 @@ export default {
       }
       this.getChoosedList();
       this.getProcessL1();
+      //右边触发了左边，打开注册应用页面
+      this.$root.eventHub.$on("openApp",(data)=>{
+        this.openApp();
+      })
     })
   },
   methods: {
@@ -260,16 +261,27 @@ export default {
       ]
     },
     getApplication:function(){
+      this.hideLoading = !this.hideLoading;
       this.$http.get("/api/app/getApps").then(function(res){
-        console.log("sidebar:"+res.body.code)
+        this.hideLoading = !this.hideLoading;
         if (res.body.code == 401) {
-          console.log("login")
+
           this.$router.push("/login")
-        }else{
-          this.hideLoading = false;
+        }
+        if(res.body.code == 'empty'){
+          //非父子组件之间的通信，告诉他，我没有应用
+          this.$root.eventHub.$emit('appisEmpty','empty');
+          this.listNotEmpty = false;
+        }
+        else{
+          this.listNotEmpty = true;
           this.appList = res.body.list;
-          this.appList.forEach((i)=>{
-          this.$set(i,'img','static/img/application2.png')
+          this.appList.forEach((i,index)=>{
+            if(index == 0){
+              this.$root.eventHub.$emit('appisEmpty',i.id);
+              this.$root.eventHub.$emit('giveTabFirstApp',i.id);
+            }
+            this.$set(i,'img','static/img/application2.png')
         })
         }
       })
@@ -295,13 +307,13 @@ export default {
   /*组件*/
   .xf-app-header{text-align: left;margin-left:-70px;}
   .xf-component-item,.xf-app-item{display: inline-block;width: 33.2%;height: 65px;overflow: hidden;padding: 5px 1px;}
-  .xf-app-item{width:48.5%;}
+  .xf-app-item{width:48.5%;text-align: center}
   #application .xf-application-list ul li{height:78px;line-height: 78px;text-align: center;cursor: pointer;}
   .xf-application-list-img{width:35px;display: block;position: relative;left:25%;}
   /*.xf-application-list-span{position: relative;top:-28px;margin-left:-15px;}*/
-  .xf-application-list-span{position: relative;margin-left:9px;}
+  .xf-application-list-span{position: relative;}
   .xf-ta-center{text-align: center!important;}
-  .xf-icon-app-new{color:white;position: relative;cursor: pointer;width:15px;height:15px;left: -1px;top: 10px;}
+  .xf-icon-app-new{color:white;position: relative;cursor: pointer;font-size:14px;left: -1px;top: 9px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}
   .xf-step-process{margin-left:50px;margin-top:10px;}
   .xf-l1process-heading{padding-left:0px;}
@@ -317,6 +329,7 @@ export default {
     .xf-identity-type-left{
       opacity:0;position: relative;top:-15px;
     }
+    .el-icon-warning{color:#ccc;}
 </style>
 
 

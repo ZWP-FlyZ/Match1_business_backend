@@ -8,8 +8,8 @@
     <div class="heads xf-heads">
       <i class="el-icon-share xf-edit-icon"></i> 流程基本信息
     </div>
-    <div class="items">
-      <form  class="itemsform xf-form-fix">
+    <div name="processValidator" class="items">
+      <div class="itemsform xf-form-fix">
         <div class="item">
           <label class="nameid">流程名称：</label><input type="text" class="xf-input" v-model="process.name" placeholder="输入流程名称"  autocomplete="on" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" autofocus="autofocus">
         </div>
@@ -44,7 +44,7 @@
         <div class="item">
           <label class="nameid">开发日期：</label> <input type="date" class="xf-input" v-model="process.devdate" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" placeholder="选择流程开发日期" value="2017-05-13"  autocomplete="on" >
         </div>
-      </form>
+      </div>
     </div>
     <div class="heads xf-heads">
       <i class="el-icon-picture xf-edit-icon"></i> 流程图形化表达
@@ -68,35 +68,21 @@
         <ProcessImg class="xf-process-img" v-on:show="showContent"></ProcessImg>
          <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab">
          <el-tab-pane class="xf-content-height" v-for="(item, index) in editableTabs2" :key="item.name" :label="item.title" :name="item.name" >
-            <div v-if="isshowActiviti">
+    <div v-if="isshowActiviti">
       <div class="heads xf-heads">
         <i class="el-icon-share xf-edit-icon"></i> 节点基本信息
       </div>
       <div class="items">
         <div  class="xf-yellow">
-          <div class="item">
-            <label class="nameid">节点名称: </label>
-            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-            <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
-
-            <label class="nameid">节点类型: </label>
-            <input type="text" class="inputbox checkView"  placeholder="子活动"  autocomplete="on" v-if="item.id==0||item.id==2||item.id==3||item.id==5||item.id==6">
-            <input type="text" class="inputbox checkView"  placeholder="网关"  autocomplete="on" v-if="item.id==1||item.id==4">
-            
-            <label class="nameid">节点描述: </label> 
-            <input type="text" class="inputbox checkView"  value="选择类目" autocomplete="on" autofocus="autofocus" v-if="item.id==0">
-            <input type="text" class="inputbox checkView"  value="是否选择货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==1">
-            <input type="text" class="inputbox checkView"  value="获取货品模板" autocomplete="on" autofocus="autofocus" v-if="item.id==2">
-            <input type="text" class="inputbox checkView"  value="填写商品信息" autocomplete="on" autofocus="autofocus" v-if="item.id==3">
-            <input type="text" class="inputbox checkView"  value="审核" autocomplete="on" autofocus="autofocus" v-if="item.id==4">
-            <input type="text" class="inputbox checkView"  value="人工审核" autocomplete="on" autofocus="autofocus" v-if="item.id==6">
-            <input type="text" class="inputbox checkView"  value="机器审核" autocomplete="on" autofocus="autofocus" v-if="item.id==5">
-          </div> 
+          <div class="item xf-item-fix-margin">
+          <label class="nameid">节点名称：</label><input type="text" class="xf-input" v-model="process.processNodes[index].name" placeholder="输入节点名称"  autocomplete="on" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" autofocus="autofocus">
+        </div>
+        <div class="item xf-item-fix-margin">
+          <label class="nameid">节点类型：</label><input type="text" class="xf-input" v-model="process.processNodes[index].type" placeholder="输入节点类型"  autocomplete="on" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" autofocus="autofocus">
+        </div>
+        <div class="item xf-item-fix-margin">
+          <label class="nameid">节点描述：</label><input type="text" class="xf-input" v-model="process.processNodes[index].description" placeholder="输入节点描述"  autocomplete="on" v-bind:readOnly="$route.query.method =='look'" v-bind:class="{'xf-noborder':$route.query.method =='look'}" autofocus="autofocus">
+        </div>
         </div>
       </div>
 
@@ -242,7 +228,9 @@
             pdesc:'',
             type:'',
             devauthor:'',
-            devdate:''
+            devdate:'',
+            application:'',//该流程所属的应用
+            processNodes:[],//流程节点，里面的信息在add tab的时候动态添加
           }
         }
       },
@@ -256,6 +244,7 @@
           this.queryData();
         })
       },
+      created:function(){},
       methods:{
         queryData:function(){
           var mySelf = this
@@ -323,6 +312,7 @@
               }
             });
           }
+          this.process.processNodes.pop()//删除item
           this.editableTabsValue2 = activeName;
           this.editableTabs2 = tabs.filter(tab => tab.name !== targetName);
         },
@@ -351,6 +341,7 @@
           this.multiple.selectedList = data;
         },
         singleCallback:function(data){
+
         },
         openClick:function(){
           this.$http.post("/api/app/register_process",JSON.stringify(this.process)).then(function(res){
@@ -517,6 +508,8 @@
   .xf-precondition-box .xf-predition-delete{margin-left:58%;margin-top: 5px}
   .xf-form-fix .item{width:28%;margin-bottom:10px;margin-right:3%;}
   .xf-noborder{border:none;}
+  .xf-item-fix-margin{margin-right:-15px;margin-bottom:10px;}
+  .xf-item-fix-margin .xf-input{width:85%;}
 </style>
 
 
