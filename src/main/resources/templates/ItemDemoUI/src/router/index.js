@@ -68,7 +68,7 @@ export default new Router({
         children:[
           {
             path: '/',
-            redirect: '/bZProcess' 
+            redirect: '/bzprocess' 
           },
           {
             path: '/bzprocess',

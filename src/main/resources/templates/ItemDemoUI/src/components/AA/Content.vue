@@ -5,9 +5,9 @@
     <div class="content-tab">
        <Tab></Tab>
     </div>
-    <div class="content-main">
+    <!-- <div class="content-main">
       <transition name="fade"><router-view></router-view></transition>
-    </div>
+    </div> -->
   </div>
 </template>
 

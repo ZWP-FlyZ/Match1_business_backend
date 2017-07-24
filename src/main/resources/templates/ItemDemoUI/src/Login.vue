@@ -12,6 +12,7 @@
             </div>
             <div>
                 <input type="submit" value="登录" />
+                <i v-if="hideLoading" class="el-icon-loading xf-el-icon-loading"></i> 
                 <a href="#">提示：shangpin 1；taobao 11</a>
                 <!-- <a href="#">Regist
                 er</a> -->
@@ -23,13 +24,11 @@
     </section><!-- content -->
 </div><!-- container -->
 <IMask :hide-mask.sync="hideMask"></IMask>
-<Loading v-if="hideLoading"></Loading>
 </div>
 </template>
 
 <script>
     import IMask from "./components/Mask"
-    import Loading from "./components/Loading"
     import {mapActions} from 'vuex'
     import {USER_SIGNIN} from './store/user'
 	export default {
@@ -44,12 +43,34 @@
             hideLoading:false
 	  	}
 	  },
-      mounted(){
-        /*this.$http.post("/api/first",JSON.stringify(this.user)).then(function(res){
-            console.log(res.body)
-        })*/
+      /*beforeCreate(){
+        alert(0)
       },
-      components:{IMask,Loading},
+      created(){
+        alert(1)
+      },
+      beforeMount(){
+        alert(2)
+      },
+      mounted(){
+        this.$http.post("/api/first",JSON.stringify(this.user)).then(function(res){
+            console.log(res.body)
+        })
+        alert(3)
+      },
+      beforeUpdate(){
+        alert(4)
+      },
+      updated(){
+        alert(5)
+      },
+      beforeDestroy(){
+        alert(6)
+      },
+      destroyed(){
+        alert(7)
+      },*/
+      components:{IMask},
 	  methods:{
         ...mapActions([USER_SIGNIN]),
 	  	submit(){
@@ -317,5 +338,10 @@ form:after {
 .button a:hover {
     background-position: 0 -135px;
     color: #00aeef;
+}
+.xf-el-icon-loading{
+    position: relative;
+    top: 26px;
+    left: -54px;
 }
 </style>

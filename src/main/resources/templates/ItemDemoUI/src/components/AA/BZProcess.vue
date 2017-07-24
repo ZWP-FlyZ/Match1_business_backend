@@ -45,7 +45,7 @@
     </div>
     <IMask :hide-mask.sync="hideMask"></IMask>
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
-    <Loading v-if="hideLoading"></Loading>
+    <Loading v-if="hideLoading" style="margin-top:25px"></Loading>
   </div>       
 </template>
 
@@ -71,20 +71,20 @@ import Loading from '../Loading'
     components:{Delete,IMask,Loading},
     mounted:function(){
       this.$nextTick(()=>{
-        
-      })
-    },
-    created(){
-      this.$root.eventHub.$on("appisEmpty",(data)=>{
+        this.$root.eventHub.$on("appisEmpty",(data)=>{
         if(data == 'empty'){
           this.appisEmpty = data;
         }else{
           this.fetchProcess(data);
         }
+       })
       })
     },
+    created(){
+      
+    },
     watch:{
-      '$route':'fetchProcess'
+      //'$route':'fetchProcess'
     },
     methods: {
       //from server ,会抛弃下面那个getProcess
