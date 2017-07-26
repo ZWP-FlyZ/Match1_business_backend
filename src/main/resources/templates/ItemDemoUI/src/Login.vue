@@ -43,33 +43,6 @@
             hideLoading:false
 	  	}
 	  },
-      /*beforeCreate(){
-        alert(0)
-      },
-      created(){
-        alert(1)
-      },
-      beforeMount(){
-        alert(2)
-      },
-      mounted(){
-        this.$http.post("/api/first",JSON.stringify(this.user)).then(function(res){
-            console.log(res.body)
-        })
-        alert(3)
-      },
-      beforeUpdate(){
-        alert(4)
-      },
-      updated(){
-        alert(5)
-      },
-      beforeDestroy(){
-        alert(6)
-      },
-      destroyed(){
-        alert(7)
-      },*/
       components:{IMask},
 	  methods:{
         ...mapActions([USER_SIGNIN]),

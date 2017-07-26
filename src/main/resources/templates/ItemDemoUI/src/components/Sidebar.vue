@@ -5,23 +5,28 @@
         <span class="xf-app-header">我的应用</span>
         <i class="el-icon-plus xf-icon-app-new" title="注册应用" @click="openApp"></i>
       </div>
-      <div class="application-list xf-application-list">
-        <el-collapse v-model="activeNames" v-if="listNotEmpty">
+      <div>
+        <!-- <el-collapse v-model="activeNames" v-if="listNotEmpty">
           <el-collapse-item v-bind:title="item.appname" v-bind:name="index" v-for="(item,index) in appList" v-bind:key="item.id">
-           <router-link :to="{path:'/content?id='+item.id}">
-            <div class="xf-app-item">
+           <router-link to="">
+            <div class="xf-app-item" @click="toAppModule(item)">
               <img class="xf-application-list-img" v-bind:src="item.img" />
               <span class="xf-application-list-span">{{item.appname}}</span>
             </div>
            </router-link>
           </el-collapse-item>
-        </el-collapse>
+        </el-collapse> -->
+        <el-menu mode="vertical" v-for="(item,index) in appList" v-if="listNotEmpty" default-active="0" class="el-menu-vertical-demo">            
+            <el-menu-item v-bind:index="item.appname" @click="toAppModule(item)"><i class="el-icon-message"></i>{{item.appname}}</el-menu-item>
+          
+        </el-menu>
         <div class="listNotEmpty-div" v-else>
           <i class="el-icon-warning"></i>
           <br />
           <span class="listNotEmpty">列表为空</span>
         </div>
       </div>
+
       <IMask :hide-mask.sync="hideMask"></IMask>
       <RegisterApplication :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask"  v-on:isClose="closeDialog"></RegisterApplication>
     </div>
@@ -128,7 +133,8 @@
 import IMask from './Mask'
 import RegisterApplication from './AA/RegisterApplication'
 import Loading from './Loading'
-
+import {mapActions} from 'vuex'
+import {APP_LIST,APP_ID} from '../store/application'
 export default {
   data(){
     return {
@@ -189,6 +195,7 @@ export default {
     })
   },
   methods: {
+    ...mapActions([APP_LIST,APP_ID]),
     addActive:function(item){
       this.isActive = item;
     },
@@ -268,7 +275,7 @@ export default {
 
           this.$router.push("/login")
         }
-        if(res.body.code == 'empty'){
+        else if(res.body.code == 'empty'){
           //非父子组件之间的通信，告诉他，我没有应用
           this.$root.eventHub.$emit('appisEmpty','empty');
           this.listNotEmpty = false;
@@ -282,9 +289,15 @@ export default {
               this.$root.eventHub.$emit('giveTabFirstApp',i.id);
             }
             this.$set(i,'img','static/img/application2.png')
-        })
-        }
+          })
+          this.APP_LIST(this.appList);  
+       }
       })
+    },
+    toAppModule:function(firstapp){
+      this.APP_ID(firstapp);
+      //console.log(app)
+      this.$root.eventHub.$emit("changeModule",firstapp);
     },
     openApp:function(){
       this.hideMask = !this.hideMask
@@ -313,7 +326,7 @@ export default {
   /*.xf-application-list-span{position: relative;top:-28px;margin-left:-15px;}*/
   .xf-application-list-span{position: relative;}
   .xf-ta-center{text-align: center!important;}
-  .xf-icon-app-new{color:white;position: relative;cursor: pointer;font-size:14px;left: -1px;top: 9px;}
+  .xf-icon-app-new{color:white;position: relative;cursor: pointer;font-size:14px;left: -1px;top: 6px;}
   .application-li-active{border-color:#f0f0f0 transparent #f0f0f0 #448bc7 !important;}
   .xf-step-process{margin-left:50px;margin-top:10px;}
   .xf-l1process-heading{padding-left:0px;}

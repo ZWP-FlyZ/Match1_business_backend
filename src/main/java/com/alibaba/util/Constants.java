@@ -1,6 +1,8 @@
 package com.alibaba.util;
 
-	public final class Constants {
+import java.io.File;
+
+public final class Constants {
 		public static final String Session_User = "user";
 		public static final String IDENTITY_FAIL = "401";
 		public static final String IDENTITY_SUCCESS = "200";

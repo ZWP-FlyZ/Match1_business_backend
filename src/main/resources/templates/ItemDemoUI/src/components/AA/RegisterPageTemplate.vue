@@ -142,13 +142,13 @@
     </div>
     <br/>
   </div>
-
 </template>
   <script>
   import MutipleSelectDelete from './mutipleSelectDelete'
   import SingleSelect from '../CC/SingleSelect'
+  import Tip from '../Tip'
+  import {mapState} from 'vuex'
     export default{
-      
       data:function(){
       return {
         initpre:[],
@@ -195,22 +195,23 @@
           processNodes:[],//关联的流程节点
           //页面模板上的业务能力剖面
           pageModelTypes:[],
-          pagePreConditions:[]
+          pagePreConditions:[],
+          application:''
         }
      }
     },
-    components:{'MutipleSelectDelete':MutipleSelectDelete,'SingleSelect':SingleSelect},
+    components:{MutipleSelectDelete,SingleSelect,Tip},
+    computed:mapState({apps:state=>state.apps}),
     mounted:function(){
       this.$nextTick(function(){
         this.queryData();
       })
     },
     watch:{
-      initpre:function(newValue,oldValue){
+      /*initpre:function(newValue,oldValue){
         if(oldValue!=newValue){
-
         }
-      }
+      }*/
     },
     created:function(){
 
@@ -284,7 +285,6 @@
                 value:[]
               })
            }
-           console.log(this.pagemodel.pagePreConditions);
         },
         submit:function(){
           //处理一下processNodes，将数组弄成一个节点的id--开始
@@ -293,26 +293,50 @@
             this.pagemodel.processNodes = [];
             this.pagemodel.processNodes.push(parseInt(this.initProcessNode[len-1]));
           }
-          console.log(this.pagemodel.processNodes)
           //处理一下processNodes，将数组弄成一个节点的id--结束
           //处理一下pagePreConditions，将数组弄成一个节点的id--开始
           this.pagemodel.pagePreConditions.forEach((i,index)=>{
             i.value = JSON.stringify(this.initpre[index])
-            console.log(i);
           })
-          console.log(this.pagemodel)
           //处理一下pagePreConditions，将数组弄成一个节点的id--结束
+          //处理一下application，将数组弄成一个节点的id--开始
+          console.log(this.apps.firstapp);
+
+          this.pagemodel.application = parseInt(this.apps.firstapp.id);
+          //处理一下application，将数组弄成一个节点的id--结束
           this.$http.post("/api/app/register_pageModel",JSON.stringify(this.pagemodel)).then(function(res){
             if(res.body.code == 200){
-              console.log("提交成功");
+              this.successTip('success');
+              setTimeout(()=>{
+                //简直是一个天才
+                this.$root.eventHub.$emit("changeModule",this.apps.firstapp);
+                this.$router.push("/pagetemplate");
+              },3000);
+            }
+            if(res.body.code == 'error'){
+              this.successTip('error');
+            }
+            if(res.body.code == '401'){
+              this.$router.push('/login');
             }
           })
+        },
+        successTip:function(type){
+          if(type == 'success'){
+            this.$message({
+              message: '恭喜你，保存成功',
+              type: 'success'
+            })
+
+          }else{
+            this.$message.error('错了哦，请重新尝试！');
+          }
         }
-      }
+     }
     }   
   </script>
 <style>
-@import "../../assets/css/edit.css";
+@import "../../assets/css/edit.scss";
 .page-SelectList{
   border-style:none;
     appearance:none;

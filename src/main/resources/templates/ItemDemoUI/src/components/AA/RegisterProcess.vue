@@ -1,6 +1,6 @@
 
 <style>
-  @import "../../assets/css/edit.css";
+  @import "../../assets/css/edit.scss";
 
 </style>
 <template>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="heads xf-heads">
-      <i class="el-icon-picture xf-edit-icon"></i> 流程图形化表达
+      <i class="el-icon-picture xf-edit-icon"></i> 流程图形化表达{{editableTabs2.length}}
     </div>
     <div class="items">
       <div class="yellow-block xf-node-style" >
@@ -68,7 +68,7 @@
         <ProcessImg class="xf-process-img" v-on:show="showContent"></ProcessImg>
          <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab">
          <el-tab-pane class="xf-content-height" v-for="(item, index) in editableTabs2" :key="item.name" :label="item.title" :name="item.name" >
-    <div v-if="isshowActiviti">
+    <div >
       <div class="heads xf-heads">
         <i class="el-icon-share xf-edit-icon"></i> 节点基本信息
       </div>
@@ -230,7 +230,7 @@
             devauthor:'',
             devdate:'',
             application:'',//该流程所属的应用
-            processNodes:[],//流程节点，里面的信息在add tab的时候动态添加
+            processNodes:[]//流程节点，里面的信息在add tab的时候动态添加
           }
         }
       },
@@ -244,7 +244,19 @@
           this.queryData();
         })
       },
-      created:function(){},
+      created:function(){
+        //生成对象属性
+        for(let i=0;i<this.process.nodeNum;i++){
+          var item = {
+            name:'',
+            type:'',
+            description:'',
+            nodePreConditions:[],
+            pagePreConditions:[],
+            pagemodels:[]
+          }
+        }
+      },      
       methods:{
         queryData:function(){
           var mySelf = this
@@ -320,22 +332,28 @@
           let newTabName = ++this.tabIndex + '';
           let tabs = this.editableTabs2;
           var isAdd = true;
-          tabs.forEach((tab, index) =>{
+          if(tabs.length>0){
+            tabs.forEach((tab, index) =>{
             if(tab.id == targetName){
               this.editableTabsValue2 = targetName;
               isAdd = false;
               this.editableTabsValue2 = tab.name;
-            }
-          })
-          if(isAdd){
-             this.editableTabs2.push({
+             }
+           })
+          }          
+          if(isAdd){            
+            console.log("0")
+            //console.log(this.editableTabs2)
+            console.log("2")
+            this.editableTabs2.push({
                id: targetName,
                title: name,
                name: name,
                content: 'New'
             });
-            this.editableTabsValue2 = name;
+            this.editableTabsValue2 = name;          
           }
+          console.log(this.editableTabs2)
         },
         multipleCallback: function(data){
           this.multiple.selectedList = data;

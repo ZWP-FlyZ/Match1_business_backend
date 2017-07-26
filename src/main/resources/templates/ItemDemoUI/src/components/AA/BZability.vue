@@ -119,7 +119,7 @@ import IMask from "../Mask"
 </script>
 <style>
     .BZability-register{
-      background: #F2F2F2;
+      background: #eef1f6;
       height: 45px;
       margin-top: 30px;
     }

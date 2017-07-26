@@ -20,19 +20,16 @@
    <el-tabs v-model="tab" type="border-card" @tab-click="handleClick"><!-- @tab-click="handleClick" -->
     <el-tab-pane name="first">  
       <span slot="label"><i class="el-icon-date"></i> 流程</span>
-      <transition name="fade"><router-view></router-view></transition>
     </el-tab-pane>
+    <keep-alive><router-view></router-view></keep-alive>
     <el-tab-pane name="second">
       <span slot="label"><i class="el-icon-menu"></i> 页面模版</span>
-      <transition name="fade"><router-view></router-view></transition>
     </el-tab-pane>
     <el-tab-pane name="third">
       <span slot="label"><i class="el-icon-setting"></i> 业务能力</span>
-      <transition name="fade"><router-view></router-view></transition>
     </el-tab-pane>
     <el-tab-pane name="fourth">
     <span slot="label"><i class="el-icon-document"></i> 能力</span>
-    <transition name="fade"><router-view></router-view></transition>
     </el-tab-pane>
   </el-tabs>
 </template>
@@ -51,6 +48,13 @@
 		}
 	},
   components:{BZProcess,PageTemplate,BZability,Ability},
+  mounted:function(){
+    var tab = sessionStorage.getItem("tab") || 'first';
+    this.tab = tab;    
+  },
+  destroyed:function(){
+    sessionStorage.clear();
+  },
 	methods:{
 		changeTab:function(i){
       /*if(i==1){
@@ -61,6 +65,7 @@
 			this.isActive = i;
 		},
     handleClick:function(tab,event){
+      sessionStorage.setItem("tab",tab.name)
       if(tab.name == 'first'){
         this.$router.push("/bzprocess")
       }else if(tab.name == 'second'){
@@ -70,8 +75,6 @@
       }else{
         this.$router.push("/ability")
       }
-
-
     }
 	}
   }

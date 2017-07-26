@@ -178,7 +178,7 @@
 		position: fixed;
 		top: 16%;
 		left: 35%;
-		z-index:103;
+		z-index:1113;
 	}
 	.ability-delete:hover{
 		transform: scale(1.2,1.2);

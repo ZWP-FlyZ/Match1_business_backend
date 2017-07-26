@@ -1,10 +1,17 @@
 <template>
   <div class = "BZProcess">
-    <div v-if="!appisEmpty">
+   <div class="BZProcess-table" style="border:none" v-if="apps.apps.length==0">
+      <p style="color:#ccc">您还未注册过应用，请先注册应用</p>
+      <br />
+      <i @click="openApp" class="el-icon-upload2" style="color:#448bc7;font-size:30px"></i>
+      <p >注册应用</p>
+      <br />
+    </div>
+    <div v-else>
     <div class = "BZProcess-total">流程定制总数：12</div>
     <div class="BZProcess-register" >
       <ul>
-          <li class = "BZProcess-classify"></li>
+          <li class = "BZProcess-classify">业务流程</li>
           <li class = "BZProcess-create"><router-link :to="{path:'/registerProcess',query:{method:'new'}}"class = "link-btn link-btn-default">注册流程</router-link></li>
       </ul>
     </div>
@@ -36,13 +43,7 @@
 
     </div>
     </div>
-    <div class="BZProcess-table" style="border:none" v-else>
-      <p style="color:#ccc">您还未注册过应用，请先注册应用</p>
-      <br />
-      <i @click="openApp" class="el-icon-upload2" style="color:#448bc7;font-size:30px"></i>
-      <p >注册应用</p>
-      <br />
-    </div>
+    
     <IMask :hide-mask.sync="hideMask"></IMask>
     <Delete :message="deleteContent" :hide-dialog.sync="hideDialog" :hide-mask.sync="hideMask" v-on:increment="closeDialog"></Delete>
     <Loading v-if="hideLoading" style="margin-top:25px"></Loading>
@@ -53,6 +54,7 @@
 import Delete from "../Delete"
 import IMask from "../Mask"
 import Loading from '../Loading'
+import {mapState} from 'vuex'
   export default{
     data(){
       return {
@@ -69,6 +71,7 @@ import Loading from '../Loading'
       }
     },
     components:{Delete,IMask,Loading},
+    computed:mapState({apps:state=>state.apps}),
     mounted:function(){
       this.$nextTick(()=>{
         this.$root.eventHub.$on("appisEmpty",(data)=>{
@@ -145,7 +148,7 @@ import Loading from '../Loading'
     margin-top: 0;
   }
   .BZProcess-register{
-    background: #F2F2F2;
+    background: #eef1f6;
     height: 45px;
     margin-top: 30px;
   }

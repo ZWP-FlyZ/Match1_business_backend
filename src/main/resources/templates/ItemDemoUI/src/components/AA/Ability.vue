@@ -133,7 +133,7 @@ import IMask from "../Mask"
     margin-top: 0;
   }
     .Ability-register{
-      background: #F2F2F2;
+      background: #eef1f6;
       height: 45px;
       margin-top: 30px;
     }

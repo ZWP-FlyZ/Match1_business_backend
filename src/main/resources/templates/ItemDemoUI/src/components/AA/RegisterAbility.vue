@@ -166,5 +166,5 @@
     }   
   </script>
 <style>
-  @import ".././../assets/css/edit.css";
+  @import ".././../assets/css/edit.scss";
 </style>

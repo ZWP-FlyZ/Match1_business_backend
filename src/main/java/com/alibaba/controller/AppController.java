@@ -1,5 +1,6 @@
 package com.alibaba.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,7 @@ import com.alibaba.entity.PageModel;
 import com.alibaba.entity.Process;
 import com.alibaba.entity.User;
 import com.alibaba.repository.ApplicationRepository;
+import com.alibaba.repository.PageModelRepository;
 import com.alibaba.repository.ProcessRepository;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
@@ -28,7 +30,6 @@ import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
 import com.alibaba.util.XMLReadHepler;
 import com.alibaba.util.XMLUtil;
-import com.alibaba.util.XMLWriteHepler;
 
 @RestController
 @RequestMapping("app")
@@ -39,13 +40,14 @@ public class AppController extends BaseController {
 	private ProcessRepository processRepository;
 	@Autowired
 	private ApplicationRepository applicationRepository;
+	@Autowired
+	private PageModelRepository pageModelRepository;
 	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
 	private ResponseData responseData= new ResponseData();
 	@RequestMapping("/getApps")
 	@ResponseBody
 	public ResponseData getAppList(HttpSession session){
 		User loginUser = (User) session.getAttribute(Constants.Session_User);
-		logger.info(loginUser.getUsername());
 		List<Application> apps = new ArrayList<Application>();
 		apps = applicationRepository.findAllByUser(loginUser);
 		if(apps.size()>0){
@@ -121,6 +123,8 @@ public class AppController extends BaseController {
 	//根据应用id获取所有的流程信息
 	@RequestMapping("/get_processList")
 	public ResponseData getProcessList(Integer id){
+		responseData.setCode("");
+		responseData.getList().clear();
 		if(id!=null){
 			Application app = applicationRepository.findById(id);
 			//根据应用找到所有的流程
@@ -158,10 +162,37 @@ public class AppController extends BaseController {
 	public ResponseData registerPageModel(@RequestBody PageModel pageModel,HttpSession session){
 		logger.info("---将对象转换成string类型的xml Start---");  
 		//String path = String.format(Constants.PROCESS_LIB, args);
-        XMLUtil.convertToXml(pageModel,"H:\\test.xml"); 
+		String filePath = AppController.class.getResource(".." + File.separator + ".." + File.separator+".." + File.separator).getPath();
+		System.out.println(filePath);
+        XMLUtil.convertToXml(pageModel,filePath+"templates"+File.separator+pageModel.getName()+"1.xml"); 
         logger.info("---将对象转换成string类型的xml End---");  
-		responseData.setCode(Constants.IDENTITY_SUCCESS);
+        logger.info("application:"+pageModel.getApplication());
+        try{
+			pageModelRepository.save(pageModel); 
+			responseData.setCode(Constants.IDENTITY_SUCCESS);
+		}catch(Exception e){
+			responseData.setCode(Constants.IDENTITY_ERROR);
+			e.printStackTrace();
+		}
 		return responseData;
 	}
-	
+	//根据应用获取所有页面模版 
+	@RequestMapping(value = "get_pageList",method = RequestMethod.GET)
+	public ResponseData getPageList(Integer id){
+		responseData.setCode("");
+		responseData.getList().clear();
+		if(id!=null){
+			Application app = applicationRepository.findById(id);
+			//根据应用找到所有的页面模版
+			List<PageModel> pageList = pageModelRepository.findByApplication(app);
+			System.out.println(pageList.size());
+			if(pageList.size()!=0){
+				responseData.setList(pageList);
+				responseData.setCode(Constants.IDENTITY_SUCCESS);
+			}else{
+				responseData.setCode(Constants.EMPTY);
+			}
+		}
+		return responseData;
+	}
 }

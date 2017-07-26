@@ -148,7 +148,7 @@
     }   
   </script>
 <style>
-  @import "../../assets/css/edit.css";
+  @import "../../assets/css/edit.scss";
 </style>
 <style>
   .xf-poumian-single-fix .display-container .single-selected{margin-top:4px !important;}

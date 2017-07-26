@@ -31,9 +31,10 @@
 <script>
 import {mapState} from 'vuex'
   export default{
-    beforeUpdate(){
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
+    beforeCreate:function(){
+      window.scrollTo(0,0); 
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
     computed:mapState({user:state=>state.user}),
     methods:{

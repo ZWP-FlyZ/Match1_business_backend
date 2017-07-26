@@ -163,7 +163,7 @@
   }
   .delete-modal-delete-content{
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 80px;
     color: red;
   }
 </style>
