@@ -37,11 +37,13 @@
               <img v-bind:src="item.imgPath" class="template-img">
             </div>
             <div class="bottoms">
-              <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link>
+              <!-- <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link> -->
+              <el-button type="default" style="margin-top:10px;margin-left:0px">配置<i class="el-icon-edit el-icon--right"></i></el-button>
+              <el-button type="default" style="margin-top:10px;margin-left:0px">查看<i class="el-icon-search el-icon--right"></i></el-button>
+              <el-button type="default" style="margin-top:10px;margin-left:0px" @click="deleteDialog(item)">删除<i class="el-icon-delete el-icon--right"></i></el-button>
+              <!-- <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
               <br/>
-              <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
-              <br/>
-               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button>
+               <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button> -->
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@
         appisempty:'您还尚未注册过应用，请先注册应用',
         appsLength:'',
         welcome:false,//xiang xi jie shao
-        registerPage:false,
+        registerPage:true,
         detail:[
           {text:'您可以点击左侧应用，查看应用提供的页面模版服务'},
           {text:'页面模版是一个好东西'},
@@ -121,6 +123,7 @@
       getPages:function(app_id){
         if(app_id){
           this.welcome = false;
+          this.registerPage = true;
           this.$http.get("/api/app/get_pageList?id="+app_id).then((res)=>{
           if(res.body.code == '200'){
             this.pageList = res.body.list;
@@ -130,12 +133,12 @@
           }
           console.log(res.body.code);
           if(res.body.code == 'empty'){
-            this.registerPage = true;
             this.welcome = true;
           }
          })
         }else{
-          //还没点某一个按钮的时候,应该显示欢迎界面
+          //还没点某一个按钮应用的时候,应该显示欢迎界面
+          this.registerPage = false;
           this.welcome = true;
         }
     },
@@ -144,9 +147,23 @@
         this.hideMask = !this.hideMask
         this.deleteContent.item = i
       },
-      closeDialog:function(childData){
-        this.hideDialog = childData
-        this.hideMask = childData
+      closeDialog:function(childData,data,id){
+        if(!data){//删除框点了取消
+          this.hideDialog = childData
+          this.hideMask = childData
+        }else{//删除框点了确定
+          this.$http.post("/api/app/delete_pagemodel",parseInt(id)).then((res)=>{
+            if(res.body.code == '200'){
+              this.$message({
+                message: '删除成功！',
+                type: 'success'
+              })
+            }else{
+              this.$message.error('删除失败，请重新尝试！');
+            }
+          })
+        }
+        
       },
       openApp:function(){
         this.$root.eventHub.$emit('openApp',"process");
@@ -218,8 +235,8 @@
    display: block;
    float: right;
    position: relative;
-   right:3px;
-   top:5px;
+   right:-8px;
+   top:15px;
   }
  .bottom-item{
    float:right;

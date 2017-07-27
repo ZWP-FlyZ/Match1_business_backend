@@ -15,13 +15,13 @@
 					<span class="icon-delete"></span>确认删除以下内容：
 				</div>
 				<div class = " delete-modal-delete-content">
-					<!-- {{message.item.name}} -->
-					删除东西
+									
+					删除东西: {{message.item.name}}	
 				</div>
 			</div>
 			<div class = "delete-modal-footer">
-				<button class = "link-btn link-btn-blue" @click="confirmDelete">确认</button>
-				<button @click="closeDialog" class = "link-btn link-btn-red">取消</button>
+				<button class = "link-btn link-btn-blue" @click="confirmDelete(true)">确认</button>
+				<button @click="confirmDelete(false)" class = "link-btn link-btn-red">取消</button>
 			</div>
 			</div>
 		  </div>
@@ -32,16 +32,10 @@
 	export default{
 	  props:['message','hideDialog','hideMask'],
 	  methods:{
-	  	closeDialog:function(){
-	  		this.$emit("increment",!this.hideDialog)
-	  	},
-	  	confirmDelete:function(){
-	  	/*this.$http.post(this.message.url,object,{emulateJSON: true}).then((res)=>{
-          console.log(res.bodyText);
-        }).then((error)=>{
-        })*/
+	  	confirmDelete:function(data){
+	  		this.$emit("increment",!this.hideDialog,data,this.message.item.id)
+	  	}
 	  }
-	 }
     }
 </script>
 <style scoped>

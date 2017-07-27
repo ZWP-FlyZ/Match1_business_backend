@@ -195,4 +195,16 @@ public class AppController extends BaseController {
 		}
 		return responseData;
 	}
+	
+	//删除页面模版
+	/*请求参数：id   页面模版id
+	  相应结果：
+	  {
+	  	code:200/401
+	  }
+    */
+	/*@RequestMapping(value="delete_pagemodel",method = RequestMethod.POST)
+	public ResponseData deletePageModel(){
+		
+	}*/
 }
