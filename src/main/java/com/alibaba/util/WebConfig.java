@@ -1,24 +1,46 @@
 package com.alibaba.util;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * Web MVC config
- * Created by lucas on 2016/11/11.
- * Added and edited by tony on 2017/04/22
- */
+import com.alibaba.interceptor.LoginInterceptor;
+
 @Configuration
 @EnableWebMvc
-public class WebConfig extends WebMvcConfigurerAdapter {
+@ComponentScan
+public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
+
+    public WebConfig(){
+        super();
+    }
 
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowCredentials(true).maxAge(3600);
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/static/");
+        registry.addResourceHandler("/templates/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/templates/");
+
+        super.addResourceHandlers(registry);
+        }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //拦截规则：除了login，其他都拦截判断
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/login");
+        super.addInterceptors(registry);
     }
 
 }

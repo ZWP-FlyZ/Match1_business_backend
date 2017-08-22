@@ -1,4 +1,18 @@
+ul{list-style:none;
+   padding:0;
+   margin:0;}
 
+a:link,a:visited{text-decoration:none;
+               outline:none;}
+
+
+*, *:after, *:before{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+.clearfix:before,.clearfix:after{ content: ''; display:block;}
+.clearfix:after { clear: both; }
 #wrapper{background:#fff;}
 /*************头部****************************************/
 #header{
@@ -16,7 +30,7 @@
 	margin-top: 8px;
 }
 #header .header-right{
-	margin-left: 70%;
+	margin-left: 65%;
 	float: left;
 	margin-top: 8px;
 }
@@ -36,13 +50,13 @@
 	margin-left:20px;
 	background: #fff;
 }
-#application .application-heading{padding-left:20px;text-align: left;height:55px;color:#fff;background: #448bc7;border:0px solid #448bc7;}
-#application .application-heading span{font-size:20px;position:relative;top:10px;}
+#application .application-heading{text-align: center;height:43px;color:#fff;background: #448bc7;border:0px solid #448bc7;}
+#application .application-heading span{font-size:16px;position:relative;top:8px;left:0%;}
 #application .application-list{border:1px solid #f0f0f0;margin-bottom:50px;}
 #application .application-list ul li{padding-left:20px;line-height:50px;height:50px;text-align:left;font-size:16px;border:1px solid;border-color:#f0f0f0 transparent #f0f0f0 transparent;}
 #application .application-list ul li:hover{background: #f0f0f0;}
 #application .application-list ul li:hover .application-router{color:#000;}
-#application .application-li-active .application-router{color: #448bc7;font-weight: bold}
+#application .application-li-active .application-router,#application .application-li-active .xf-application-list-span{color: #448bc7;font-weight: bold}
 #application .application-list .application-router{width:70%;display: inline-block;}
 .icon-triangle-right,.icon-triangle-bottom{width:0px;height:0px;display:inline-block;border:8px solid;top: 2px;position: relative;left: 4px;}
 #application .application-list ul li:hover .icon-triangle-right,.icon-triangle-right{border-color:transparent transparent transparent #169BD5;}
@@ -50,7 +64,8 @@
 /*************我的应用结束***************************************/
 /*************内容区****************************************************/
 #content{overflow: hidden;}
-#content .content-main{border:2px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
+#content .content-main,#content .content-main-fix{border:1px solid #f0f0f0;margin-top:43px;padding:15px 10px 10px;}
+#content .content-main-fix{margin-top:0px;}
 /*tab页开始*/
 
 span.tabs-BZ-total{
@@ -69,22 +84,33 @@ span.tabs-BZ-total{
   background: #F2F2F2;
   float: left;
   display: inline-block;
-  width:112px;
+  width:13%;
   height:43px;
-  text-align: center;
+  min-width:122px;
+  text-overflow:ellipsis;
 }
-.nav> li .link{display: block;padding:15px 10px;}
+.nav li .tab-icon{display: inline-block;width: 25px;height: 20px; background: url(../img/icon.png);float: left;margin-top: 16px;margin-left: 11%;}
+.nav li .tab-icon-process{background-position: -187px 0px}
+.nav .tab-active .tab-icon-process-active{background-position: -215px 0px}
+.nav li .tab-icon-temp{background-position:-126px 0px}
+.nav .tab-active .tab-icon-temp-active{background-position:-158px 0px}
+.nav li .tab-icon-bza{background-position: -55px 0px}
+.nav .tab-active .tab-icon-bza-active{background-position: -93px 0px}
+.nav li .tab-icon-abl{background-position: 0px 0px}
+.nav .tab-active .tab-icon-zbl-active{background-position: -25px 0px}
+.nav> li .link{display: block;padding:15px 0px;}
 .nav> li:hover{
   text-decoration: none;
   background-color: #eee;
 }
 .tab-active{
-  color: #555 !important;
   cursor: default;
   background-color: #fff !important;
-  border: 1px solid #ddd  !important;
+  border: 1px solid #f0f0f0 !important;
   border-bottom-color: transparent !important;
+  border-top:2px solid #169BD5 !important;
 }
+.tab-active .link{color:#448bc7;}
 /*tab页结束*/
 /*流程tab内容开始*/
 #content .BZ-tabs span.tabs-BZ-total{
@@ -140,7 +166,7 @@ hr.hr-BZProcess{
 }
 li.process{
 	width: 60%;
-	margin-left: 10%;
+	margin-left: 5%;
 	text-align: center;
 }
 #content .BZ-tabs .BZ-classify a{
@@ -230,7 +256,6 @@ button{
   	background-image: none;
   	border: 1px solid transparent;
   	border-radius: 4px;
-	/*border:1px solid red;*/
 }
 .btn-primary {
   color: #ffffff;
@@ -239,8 +264,8 @@ button{
 }
 .btn-delete{
 	color: #ffffff;
-    background-color: #999999;
-    border-color: #357ebd;
+  background-color: #999999;
+  border-color: #357ebd;
 }
 .link-btn{
 	display: inline-block;
@@ -256,16 +281,88 @@ button{
   	background-image: none;
   	border: 1px solid transparent;
   	border-radius: 4px;
-	/*border:1px solid red;*/
 }
-.link-btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
+.link-btn-default{
+  color: #fff;
+  background-color: #357ebd;
   border-color: #357ebd;
 }
-.link-btn-delete{
-	color: #ffffff;
-    background-color: #999999;
-    border-color: #357ebd;
+.link-btn-default:hover{
+  color: #357ebd;
+  background-color: #fff;
+  border-color: #357ebd;
 }
+/*彩色，hover更彩*/
+.link-btn-blue{
+	color: #fff;
+  	background-color: #357ebd;
+  	border-color: #357ebd;
+}
+.link-btn-blue:hover{
+	color: #357ebd;
+  	background-color: #fff;
+  	border-color: #357ebd;
+}
+.link-btn-red{
+	color: #1f2d3d;
+  	background-color: #fff;
+  	border-color: #f7ba2a;
+}
+.link-btn-red:hover{
+	color: #f7ba2a;
+  	background-color: #fff;
+  	border-color: #f7ba2a;
+}
+/*浅色按钮，hover彩色*/
+.link-btn-primary,.link-btn-look,.link-btn-delete{
+  color: #1f2d3d;
+  background-color: #fff;
+  border-color: #bfcbd9;
 
+}
+.link-btn-primary:hover{
+  color: #357ebd;
+  background-color: #fff;
+  border-color: #357ebd;
+}
+.link-btn-look:hover{
+	color: #13ce66;
+  	background-color: #fff;
+  	border-color: #13ce66;
+}
+.link-btn-delete:hover{
+	color: #ff6d6d;
+    background-color: #fff;
+    border-color: #ff6d6d;
+}
+.btn:hover{
+	color: #000;
+}
+.xf-clear{clear: both;}
+/*遮罩层的*/
+.fade-enter-active {
+  transition: all .2s ease;
+}
+.fade-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+/*弹出框的*/
+.xf-app-enter-active{
+  transform: translate(0,0);
+}
+.xf-app-leave-active{
+  transform: translate(0,-10px);
+}
+.xf-app-enter,.xf-app-active{
+  opacity: 0;
+}
+/*修改默认样式*/
+.el-checkbox__input.is-checked .el-checkbox__inner{background-color: #448bc7;}
+.f-fr{float: right}
+.f-fl{float: left}
+.server-message{font-size:12px;color:#ff4949}
+.listNotEmpty-div{text-align: center;margin:50px 0px;}
+.listNotEmpty{font-size:13px;color:#ccc;text-align: center}

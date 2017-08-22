@@ -54,6 +54,18 @@ hs_err_pid*
 ## File-based project format:
 *.iws
 
+### NetBeans ###
+nbproject/private/
+/build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### LocalFiles ###
+.DS_Store
+*.log
+
 ## Plugin-specific files:
 
 # IntelliJ

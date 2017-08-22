@@ -8,7 +8,7 @@ import com.alibaba.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 	
-	public User findByUid(int uid);
+	public User findById(int id);
 	
 	public User save(User user);
 	
@@ -20,6 +20,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	 * @param userpassword 密码
 	 * @return
 	 */
-	public User findByUsernameAndUserpassword(String username,String userpassword);
+	public User findByUsernameAndPassword(String username,String password);
 	
 }

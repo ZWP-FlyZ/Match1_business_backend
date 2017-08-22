@@ -1,53 +1,35 @@
 package com.alibaba.entity;
 
-import java.sql.Timestamp;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  * 用户实体
- * @author XRH
+ * @author WXF
  *
  */
-@Table(name = "tbuser")
+@Table(name = "user")
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private int uid;
+	private int id;
 
 	private String username;
-	private String userpassword;
-	private Timestamp register_time;
-	private int level;
-
-	// 一对多关系表的关联 一个用户关联多个应用
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name = "uid", referencedColumnName = "uid")
-	private List<Application> applications;
-
-	public List<Application> getApplications() {
-		return applications;
+	private String password;
+	private String usertype;
+	
+	public int getId() {
+		return id;
 	}
-	public void setApplications(List<Application> applications) {
-		this.applications = applications;
-	}
-	public int getUid() {
-		return uid;
-	}
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getUsername() {
 		return username;
@@ -55,23 +37,16 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getUserpassword() {
-		return userpassword;
+	public String getPassword() {
+		return password;
 	}
-	public void setUserpassword(String userpassword) {
-		this.userpassword = userpassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public Timestamp getRegister_time() {
-		return register_time;
+	public String getUsertype() {
+		return usertype;
 	}
-	public void setRegister_time(Timestamp register_time) {
-		this.register_time = register_time;
+	public void setUsertype(String usertype) {
+		this.usertype = usertype;
 	}
-	public int getLevel() {
-		return level;
-	}
-	public void setLevel(int level) {
-		this.level = level;
-	}
-
 }
