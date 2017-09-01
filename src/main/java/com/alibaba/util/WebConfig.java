@@ -29,13 +29,13 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/static/");
         registry.addResourceHandler("/templates/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/templates/");
 
-        super.addResourceHandlers(registry);  
+        super.addResourceHandlers(registry);
         }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
-    } 
+    }
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截规则：除了login，其他都拦截判断
