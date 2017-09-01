@@ -12,7 +12,7 @@
     <div class="items">
       <form  class="itemsform">
         <div class="item">
-          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView gm-input" value="淘宝女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
+          <label class="nameid">流程名称: </label><input type="text" class="inputbox checkView gm-input" value="女装T-shirt商品发布" autocomplete="on" autofocus="autofocus">
         </div>
          <div class="item">
           <label class="nameid">流程KEY: </label> <input type="text" class="inputbox checkView gm-input"  value="121" autocomplete="on" >
@@ -231,7 +231,7 @@
     export default{
       data(){
         return {
-          historyPathTitle:'业务方：选择业务身份 / 选择流程 / 配置流程',
+          historyPathTitle:'业务方：选择业务标 / 选择流程 / 配置流程',
           isshowActiviti:false,
           showwhat :'5',
           multiple: {

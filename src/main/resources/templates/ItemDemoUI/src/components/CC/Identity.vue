@@ -4,7 +4,7 @@
 	<div class="xf-identity-main">
 	   <div class="xf-item-header">
 	   	 <i class="xf-icon-chooseidentity"></i>
-	   	 <span>选择业务身份</span><sup class="xf-sup-identity">3</sup>
+	   	 <span>选择业务标</span><sup class="xf-sup-identity">3</sup>
 	   	 <!-- <el-select style="margin-left:10px" v-model="identitytype" filterable placeholder="筛选条件">
     		<el-option-group v-for="group in identitytypeList" :key="group.label" :label="group.label">
     			<el-option
@@ -21,11 +21,11 @@
 	   <div>
 	   	 <div v-if="!addAndUse" class="xf-item-box xf-item-box-new" @click="addIdentity" >
 	   	 	<div class="new-big-bg"></div>
-	   	 	<p>新建业务身份</p>
+	   	 	<p>新建业务标</p>
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/cCprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝女装-衬衫商品发布</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">女装-衬衫商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
@@ -49,7 +49,7 @@
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/cCprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝女装-T-shirt商品发布</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">女装-T-shirt商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
@@ -73,7 +73,7 @@
 	   	 </div>
 	   	 <div class="xf-item-box xf-item-box-chooose">
 	   	   <router-link to="/cCprocess">
-	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">淘宝男鞋-帆布鞋商品发布</router-link></span>
+	   	 	<i class="xf-icon-identity"></i><span title="点击查看详情"><router-link to="/identityDetail">男鞋-帆布鞋商品发布</router-link></span>
 	   	 	<div class="xf-item-box-des">
 	   	 	   <span class="xf-item-box-des-content">描述:描述文字描述文字描述文字描述文字描述文字描述文字</span>
 	   	 	   <br>
@@ -118,28 +118,28 @@
 				step:'1',
 				identitytype:'',
 				identitytypeList:[{
-						          label: '全局业务身份',
+						          label: '全局业务标',
 						          options: [{
 						            value: 'tm',
-						            label: '天猫'
+						            label: ''
 						          }, {
 						            value: 'tb',
-						            label: '淘宝'
+						            label: ''
 						          }]
 						        }, {
-						          label: '原子业务身份',
+						          label: '原子业务标',
 						          options: [{
 						            value: 'tmpublish',
-						            label: '天猫商品发布'
+						            label: '商品发布'
 						          }, {
 						            value: 'tbpublish',
-						            label: '淘宝商品发布'
+						            label: '商品发布'
 						          }, {
 						            value: 'tbjy',
-						            label: '淘宝交易'
+						            label: '交易'
 						          }, {
 						            value: 'tmjy',
-						            label: '天猫交易'
+						            label: '交易'
 						          }]
 						        }],
 			}
@@ -176,12 +176,12 @@
           			return (restaurant.value.indexOf(queryString.toLowerCase()) === 0);
         		};
       		},
-      		//这是业务身份的列表，从后台读取
+      		//这是业务标的列表，从后台读取
       		loadAll() {
         		return [
-		          { "value": "淘宝男鞋-帆布鞋商品发布", "address": "1" },
-		          { "value": "", "淘宝女装-衬衫商品发布": "2" },
-		          { "value": "淘宝女装-T-shirt商品发布", "address": "3" }]
+		          { "value": "男鞋-帆布鞋商品发布", "address": "1" },
+		          { "value": "", "女装-衬衫商品发布": "2" },
+		          { "value": "女装-T-shirt商品发布", "address": "3" }]
 		    },
 		    handleSelect(item) {
         		console.log(item);

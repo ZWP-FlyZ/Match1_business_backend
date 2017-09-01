@@ -3,11 +3,11 @@
     <div id="header">
       <div class="header-left">
         <img src="" alt="">
-        <span class = "left-title">业务中台</span>
+        <span class = "left-title">业务定制平台</span>
       </div>
       <div class="header-right">
         <img src="" alt="">
-        <span class = "right-title">业务中台demo</span>
+        <span class = "right-title">业务定制平台</span>
         <img src="" alt="">
       </div>
       <div class="header-author" >

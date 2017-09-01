@@ -1,5 +1,10 @@
 package com.alibaba.controller;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,6 +19,7 @@ import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
+import com.alibaba.util.PictureCheckCode;
 import com.alibaba.util.ResponseData;
 
 @Controller
@@ -52,7 +58,9 @@ public class HomeController{
 	}
 	
 	@RequestMapping("/test")
-	public String geIndex(){
-		return "test";
+	public void geIndex(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException{
+		PictureCheckCode pc = new PictureCheckCode();
+		pc.service( req, res); 
+		//return "hello world";
 	}
 }

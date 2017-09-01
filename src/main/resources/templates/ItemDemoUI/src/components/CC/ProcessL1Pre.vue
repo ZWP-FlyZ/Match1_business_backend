@@ -104,7 +104,7 @@
           var mySelf = this
           if(this.message=='process'){
             this.outPreOptions = [{"id":"1","name":"商家类型"},{"id":"2","name":"前置条件1"},{"id":"3","name":"前置条件2"},{"id":"4","name":"前置条件3"}];
-            this.outPreCondition = [{"id":"value1","name":"天猫商家"},{"id":"value2","name":"淘宝商家"},{"id":"value3","name":"聚划算商家"}];
+            this.outPreCondition = [{"id":"value1","name":"商家"},{"id":"value2","name":"商家"},{"id":"value3","name":"商家"}];
             /*this.$http.get("/api/getList").then(res=>{
               mySelf.outPreOptions = JSON.parse(res.body.data).result.outPreCondition;
             })*/

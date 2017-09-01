@@ -1,14 +1,14 @@
 <template>
 	<div class="xf-identity-detail-main">
       <div class="xf-identity-detail-body">
-	   <i class="el-icon-star-off"></i>  <span class="detail">业务身份详情</span>
+	   <i class="el-icon-star-off"></i>  <span class="detail">业务标详情</span>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务KEY：</label>
 	   	 <span>TB_MENS</span>
 	   </div>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务名称：</label>
-	   	 <span>淘宝男装-衬衫</span>
+	   	 <span>男装-衬衫</span>
 	   </div>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务类型：</label>
@@ -32,7 +32,7 @@
 	   </div>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务概要：</label>
-	   	 <span>淘宝男装-衬衫销售</span>
+	   	 <span>男装-衬衫销售</span>
 	   </div>
 	   <div class="xf-identity-detail-box">
 	   	 <label>业务详情：</label>

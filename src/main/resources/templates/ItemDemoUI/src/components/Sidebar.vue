@@ -168,13 +168,13 @@ export default {
                         label:'无'
                       }]
                     },{
-                      label: '全局业务身份',
+                      label: '全局业务标',
                       options: [{
                         value: 'tm',
-                        label: '天猫'
+                        label: 'BU1'
                       }, {
                         value: 'tb',
-                        label: '淘宝'
+                        label: 'BU2'
                       }]
                     }]
     }
@@ -183,7 +183,7 @@ export default {
   components:{IMask,RegisterApplication,Loading},
   mounted:function(){
       this.$nextTick(function(){
-      if(this.message == 1){
+        if(this.message == 1){
         this.getApplication();
       }
       this.getChoosedList();
@@ -206,12 +206,12 @@ export default {
       this.choosedList = [
         {
         "id":"1001",
-        "name":"淘宝女装T-shirt商品发布",
+        "name":"女装T-shirt商品发布",
         "imgPath":"static/img/tbpublish.png"
       },
       {
         "id":"1002",
-        "name":"淘宝女装衬衫商品发布",
+        "name":"女装衬衫商品发布",
         "imgPath":"static/img/tbpublish.png"
       }
       ]

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -143,12 +144,6 @@ public class AppController extends BaseController {
 						map.put(process.getType(), listnew);
 					}
 				}
-			    /*System.out.println("第一种：通过Map.keySet遍历key和value：");
-		        for (String in : map.keySet()) {
-			            //map.keySet()返回的是所有key的值
-			           List<Process> str = map.get(in);//得到每个key多对用value的值
-			           System.out.println(in + "     " + str.size());
-			     }*/
 				responseData.setMap(map);
 				responseData.setCode(Constants.IDENTITY_SUCCESS);
 			}else{
@@ -160,6 +155,7 @@ public class AppController extends BaseController {
 	
 	@RequestMapping(value = "register_pageModel",method = RequestMethod.POST)
 	public ResponseData registerPageModel(@RequestBody PageModel pageModel,HttpSession session){
+		System.out.println(pageModel);
 		logger.info("---将对象转换成string类型的xml Start---");  
 		//String path = String.format(Constants.PROCESS_LIB, args);
 		String filePath = AppController.class.getResource(".." + File.separator + ".." + File.separator+".." + File.separator).getPath();
@@ -203,8 +199,16 @@ public class AppController extends BaseController {
 	  	code:200/401
 	  }
     */
-	/*@RequestMapping(value="delete_pagemodel",method = RequestMethod.POST)
-	public ResponseData deletePageModel(){
-		
-	}*/
+	@RequestMapping(value="delete_pagemodel",method = RequestMethod.POST)
+	public ResponseData deletePageModel(@RequestParam(value = "id", required = true) Integer id){
+		System.out.println(id);
+		try{
+			pageModelRepository.delete(id);
+			responseData.setCode("200");
+		}catch(Exception e){
+			responseData.setCode("401");
+			e.printStackTrace();
+		}
+		return responseData;
+	}
 }

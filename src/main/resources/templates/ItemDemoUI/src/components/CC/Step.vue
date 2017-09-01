@@ -6,7 +6,7 @@
       <router-link to="/cidentity" class="step-a">
         <img v-if="step==0" class="xf-cc-step-img" src="static/img/step1.png"/>
         <img v-if="step!=0" class="xf-cc-step-img" src="static/img/step11.png"/>
-        <span class="xf-cc-step-text" style="left:1%">选择业务身份{{step}}</span>
+        <span class="xf-cc-step-text" style="left:1%">选择业务标{{step}}</span>
       </router-link>
       </div>
       <div class="xf-cc-step-line"></div>
@@ -47,7 +47,7 @@
       <router-link to="/publishIdentity" class="step-a">
         <img v-if="step!=5" class="xf-cc-step-img" src="static/img/step5.png"/>
         <img v-if="step==5" class="xf-cc-step-img" src="static/img/step55.png"/>
-        <span class="xf-cc-step-text" style="left:3.5%">发布业务身份</span>
+        <span class="xf-cc-step-text" style="left:3.5%">发布业务标</span>
       </router-link>
       </div>
       <div class="xf-cc-step-box xf-cc-step-box-button" v-if="step==0||step==2||step==3||step==4">

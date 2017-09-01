@@ -31,16 +31,16 @@
 
         <!-- empty -->
         <div class="one-container" v-for="(item,index) in pageList">
-          <router-link to="/registerPageTemplate" class="titem-name">页面模板名称：{{item.name}}</router-link>
+          <router-link to="" class="titem-name">页面模板名称：{{item.name}}</router-link>
           <div class="template-edit">
             <div class="template-view">
               <img v-bind:src="item.imgPath" class="template-img">
             </div>
             <div class="bottoms">
               <!-- <router-link to="/registerPageTemplate" class="link-btn link-btn-primary bottom-item">配置</router-link> -->
-              <el-button type="default" style="margin-top:10px;margin-left:0px">配置<i class="el-icon-edit el-icon--right"></i></el-button>
-              <el-button type="default" style="margin-top:10px;margin-left:0px">查看<i class="el-icon-search el-icon--right"></i></el-button>
-              <el-button type="default" style="margin-top:10px;margin-left:0px" @click="deleteDialog(item)">删除<i class="el-icon-delete el-icon--right"></i></el-button>
+              <el-button type="default" @click="editPage" style="margin-top:10px;margin-left:0px"><i class="el-icon-edit el-icon--right"></i></el-button>
+              <el-button @click="searchPage" type="default" style="margin-top:10px;margin-left:0px"><i class="el-icon-search el-icon--right"></i></el-button>
+              <el-button type="default" style="margin-top:10px;margin-left:0px" @click="deleteDialog(item)" ><i class="el-icon-delete el-icon--right"></i></el-button>
               <!-- <a href="#" class="link-btn link-btn-look bottom-item">查看</a>
               <br/>
                <button class="link-btn link-btn-delete delete" @click="deleteDialog(item)">删除</button> -->
@@ -97,7 +97,7 @@
     mounted:function(){
       this.$nextTick(function(){
         setTimeout(()=>{
-          this.appsLength = this.apps.apps.length;
+          this.appsLength = this.apps.apps.length;  //该字段用来判断登陆的用户是否有应用
           //alert(this.appsLength)
           //this.$root.eventHub.$emit("changeModule",this.apps.firstapp);
           //this.init();
@@ -110,28 +110,27 @@
     },
     methods:{
       init:function(){
-        this.$root.eventHub.$on("changeModule",(data)=>{
+        this.$root.eventHub.$on("changeModule",(data)=>{//当点击了左边的某一个应用的时候，会触发changeModule这个监听器，然后执行invokeGetPages这个方法
           this.invokeGetPages(data);
         })
       },
-      invokeGetPages:function(data){
+      invokeGetPages:function(data){//根据data.id判断选择了哪一个应用，
         if(data!=null){
           this.app_id = data.id;
         }
-        this.getPages(this.app_id)
+        this.getPages(this.app_id)  //根据应用id去获取应用下对应的页面模版
       },
       getPages:function(app_id){
         if(app_id){
           this.welcome = false;
           this.registerPage = true;
-          this.$http.get("/api/app/get_pageList?id="+app_id).then((res)=>{
+          this.$http.get("/api/app/get_pageList?id="+app_id).then((res)=>{//获取页面模版的http请求
           if(res.body.code == '200'){
             this.pageList = res.body.list;
             this.pageList.forEach((i,index)=>{
               this.$set(i,'imgPath','static/img/page1.png')
             });
           }
-          console.log(res.body.code);
           if(res.body.code == 'empty'){
             this.welcome = true;
           }
@@ -148,16 +147,21 @@
         this.deleteContent.item = i
       },
       closeDialog:function(childData,data,id){
+        console.log("删除的id："+id)
         if(!data){//删除框点了取消
           this.hideDialog = childData
-          this.hideMask = childData
+          this.hideMask = childData     
         }else{//删除框点了确定
-          this.$http.post("/api/app/delete_pagemodel",parseInt(id)).then((res)=>{
+          this.$http.post("/api/app/delete_pagemodel?id="+parseInt(id)).then((res)=>{
             if(res.body.code == '200'){
               this.$message({
                 message: '删除成功！',
                 type: 'success'
               })
+              this.hideDialog = childData
+              this.hideMask = childData
+              //刷新页面
+              this.getPages()
             }else{
               this.$message.error('删除失败，请重新尝试！');
             }

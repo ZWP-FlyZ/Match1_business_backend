@@ -19,19 +19,19 @@
          
         </div> 
         <div>
-        <!-- 淘宝女装T-shirt开始 -->
+        <!-- 女装T-shirt开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
             <input type="checkbox" value="0" v-model="checkList" id="0" class = "chk_1" name = "checkNameSolved">
             <label for="0"> </label>
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
-          <div style = "text-align:center;clear:both;">淘宝女装T-shirt商品发布</div>
+          <div style = "text-align:center;clear:both;">女装T-shirt商品发布</div>
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
         </div>
-        <!-- 淘宝女装T-shirt结束 -->
+        <!-- 女装T-shirt结束 -->
         <!-- 弹窗大图 -->
         <div id = "divCenter" align="center" class = "picBigShow">
           <img src="../../assets/img/tbpublish.png" alt="" style="margin-top:30px;" v-if = "depart == 0"/>
@@ -39,7 +39,7 @@
           <div><a href="javascript:void(0);" @click="picClose()" class="link-btn link-btn-blue">关闭</a></div> 
         </div>
         <!-- 弹窗大图结束 -->
-        <!-- 淘宝女装衬衫开始 -->
+        <!-- 女装衬衫开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
            <input type="checkbox" v-model="checkList" style = "width:17px;height:17px;" id="1" value="1" class = "chk_1" name = "checkNameSolved">
@@ -47,13 +47,13 @@
            <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
           
-          <div style = "text-align:center;clear:both;">淘宝女装衬衫商品发布</div>
+          <div style = "text-align:center;clear:both;">女装衬衫商品发布</div>
                   
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
         </div>
-        <!-- 淘宝女装衬衫结束 -->
+        <!-- 女装衬衫结束 -->
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(0)"> 
           </div>
           
-          <div style = "text-align:center;clear:both;">淘宝男鞋-帆布鞋商品发布</div>
+          <div style = "text-align:center;clear:both;">男鞋-帆布鞋商品发布</div>
                   
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/tbpublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
@@ -102,7 +102,7 @@
           <label for="13"> </label>全选
         </div> 
         <div>
-         <!-- 淘宝一口价商品发布开始 -->
+         <!-- 一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
           <input type="checkbox"  v-model="checkListRepository" value="3" style = "width:17px;height:17px;" id="3" class = "chk_1" name = "checkName">
@@ -110,14 +110,14 @@
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
-          <div style = "text-align:center;clear:both;">淘宝一口价商品发布</div>
+          <div style = "text-align:center;clear:both;">一口价商品发布</div>
                   
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
         </div>
-        <!-- 淘宝一口价商品发布结束 -->
-        <!-- 天猫一口价商品发布开始 -->
+        <!-- 一口价商品发布结束 -->
+        <!-- 一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
            <input type="checkbox"  value="4" v-model="checkListRepository" style = "width:17px;height:17px;" id="4" class = "chk_1" name = "checkName">
@@ -125,14 +125,14 @@
              <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
-          <div style = "text-align:center;clear:both;">天猫一口价商品发布</div>
+          <div style = "text-align:center;clear:both;">一口价商品发布</div>
                   
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
         </div>
-        <!-- 天猫一口价商品发布结束 -->
-        <!-- 聚划算一口价商品发布开始 -->
+        <!-- 一口价商品发布结束 -->
+        <!-- 一口价商品发布开始 -->
         <div class="table-background">
           <div style= "border:1px solid transparent;height:32px;">
            <input type="checkbox" value="5" v-model="checkListRepository" style = "width:17px;height:17px;" id="5" class = "chk_1" name = "checkName">
@@ -140,13 +140,13 @@
             <img src="../../assets/img/big.png" alt="" class = "blue-check look-into" @click="picBig(1)"> 
           </div>
           
-          <div style = "text-align:center;clear:both;">聚划算一口价商品发布</div>
+          <div style = "text-align:center;clear:both;">一口价商品发布</div>
                   
           <div align="center">
             <router-link to="/cCLookUpProcess"><img src="../../assets/img/jhspublish.png" class="table-process-pic" v-bind:class="{'pic-bigger':picBigger==0}"/></router-link>  
           </div>
         </div>
-        <!-- 聚划算一口价商品发布结束 -->
+        <!-- 一口价商品发布结束 -->
         </div>
         </div>
       </div>
@@ -183,13 +183,13 @@ import Step from '../CC/Step.vue'
         hideDialog:true,
         hideMask:true,
         hidePre:true,
-        historyPathTitle:'业务方：选择业务身份 / 选择流程',
+        historyPathTitle:'业务方：选择业务标 / 选择流程',
         checkList:[],//解决方案复选框数组
         checkListMy:[],//我的流程 复选框数组
         checkListRepository:[],//流程模板库，复选框数组
         deleteLogoNums:0,//deleteLogoNums为0时候 该div显示，若为1，则隐藏显示
         picBigger:'-1',//picBigger为0时显示缩略图状态  非0时，为放大状态
-        depart:'-1',//depart=0 展示淘宝流程大图  depart=1展示聚划算流程大图
+        depart:'-1',//depart=0 展示流程大图  depart=1展示流程大图
         step:'2',
         message:'process',
         flag:false,

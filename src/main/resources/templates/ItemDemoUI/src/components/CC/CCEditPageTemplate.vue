@@ -11,7 +11,7 @@
 				    <div class="template-body">
 				    <!-- 普通样式 -->
 				        <div class="one-container cc-page-name cc-page-size" v-if="(AlignStyle==-1&&ColorStyle==-1)||(AlignStyle==-1&&ColorStyle==0)||(AlignStyle==0&&ColorStyle==-1)||(AlignStyle==0&&ColorStyle==0)">
-				          <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：淘宝童鞋一口价商品发布页面模板</span></div>
+				          <div style="width: 100%;height: 37px;top: 2px;left: 19px;" class="beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==0}" @click="showRight(0)"><span class="titem-name">页面模板名称：童鞋一口价商品发布页面模板</span></div>
 						   <div class= "classify-title">1.宝贝基本信息</div>
 						   	<div class= "basic-bzability xf-basic-bzability beforeCheck" v-bind:class="{'afterCheck':clickBorderContent==2}" @click="showRight(2)"  v-if = "LogoNum!=2">
 						   		<div style="width:17%">
@@ -540,7 +540,7 @@
     data(){
       return {
         pageList:[],
-        historyPathTitle:'业务方：选择业务身份 / 选择流程 / 配置流程 / 配置业务能力',
+        historyPathTitle:'业务方：选择业务标 / 选择流程 / 配置流程 / 配置业务能力',
         deleteContent:{
           item:'',
           url:''//删除的url请求

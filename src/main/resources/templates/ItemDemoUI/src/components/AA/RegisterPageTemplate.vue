@@ -304,6 +304,7 @@
 
           this.pagemodel.application = parseInt(this.apps.firstapp.id);
           //处理一下application，将数组弄成一个节点的id--结束
+          console.log(this.pagemodel)
           this.$http.post("/api/app/register_pageModel",JSON.stringify(this.pagemodel)).then(function(res){
             if(res.body.code == 200){
               this.successTip('success');
