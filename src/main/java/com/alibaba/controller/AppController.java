@@ -18,11 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.FileStorageUtil;
 import com.alibaba.entity.Application;
+import com.alibaba.entity.Message;
 import com.alibaba.entity.PageModel;
 import com.alibaba.entity.Process;
 import com.alibaba.entity.User;
 import com.alibaba.repository.ApplicationRepository;
+import com.alibaba.repository.MessageReponsitory;
 import com.alibaba.repository.PageModelRepository;
 import com.alibaba.repository.ProcessRepository;
 import com.alibaba.repository.UserRepository;
@@ -31,6 +34,7 @@ import com.alibaba.util.Constants;
 import com.alibaba.util.ResponseData;
 import com.alibaba.util.XMLReadHepler;
 import com.alibaba.util.XMLUtil;
+import com.google.gson.Gson;
 
 @RestController
 @RequestMapping("app")
@@ -43,6 +47,14 @@ public class AppController extends BaseController {
 	private ApplicationRepository applicationRepository;
 	@Autowired
 	private PageModelRepository pageModelRepository;
+	
+	
+	@Autowired
+	private FileStorageUtil fs;
+	
+	@Autowired
+	private MessageReponsitory mr;
+	
 	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
 	private ResponseData responseData= new ResponseData();
 	@RequestMapping("/getApps")
@@ -102,7 +114,11 @@ public class AppController extends BaseController {
 		//存入xml-----结束;
 		logger.debug("get in regiset");
 		try{
-			processRepository.save(process);
+			//processRepository.save(process);
+			Message msg = new Message();
+			msg.setName(getFileName(process));
+			msg.setMessage(new Gson().toJson(process));
+			mr.save(msg);
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 		}catch(Exception e){
 			responseData.setCode(Constants.IDENTITY_ERROR);
@@ -126,31 +142,17 @@ public class AppController extends BaseController {
 	//根据应用id获取所有的流程信息
 	@RequestMapping("/get_processList")
 	public ResponseData getProcessList(Integer id){
-		responseData.setCode("");
-		responseData.getList().clear();
+		responseData.setCode(Constants.IDENTITY_SUCCESS);
+		//responseData.getList().clear();
 		if(id!=null){
-			Application app = applicationRepository.findById(id);
-			//根据应用找到所有的流程
-			List<Process> processList = processRepository.findByApplication(app);
-			if(processList!=null){
-				Map<String,List<Process>> map = new HashMap<String,List<Process>>();
-				List<Process> listold = new ArrayList<Process>();
-				for(Process process : processList) {
-					if(map.containsKey(process.getType())){
-						listold = map.get(process.getType());
-						listold.add(process);
-						map.put(process.getType(), listold);
-					}else{
-						List<Process> listnew = new ArrayList<Process>();
-						listnew.add(process);
-						map.put(process.getType(), listnew);
-					}
-				}
-				responseData.setMap(map);
-				responseData.setCode(Constants.IDENTITY_SUCCESS);
-			}else{
-				responseData.setCode(Constants.EMPTY);
-			}
+			List<Message> ms = mr.findAll();
+			List<Process> ps = new ArrayList<>();
+			Gson g = new Gson();
+			
+			for(Message m :ms)
+				ps.add(g.fromJson(m.getMessage(), Process.class));
+			
+			responseData.setList(ps);
 		}
 		return responseData;
 	}
@@ -213,4 +215,17 @@ public class AppController extends BaseController {
 		}
 		return responseData;
 	}
+	
+	
+	private String getFileName(Process p){
+		if(p==null) return "null";
+		Application a = p.getApplication();
+		User u = a.getUser();
+		
+		return u.getUsername()+"_"+a.getAppname()+"_"+a.getId()+"_"+p.getName();
+		
+		
+	}
+	
+	
 }
