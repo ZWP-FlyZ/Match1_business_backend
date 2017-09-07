@@ -100,12 +100,14 @@ public class AppController extends BaseController {
 			responseData.setCode(Constants.IDENTITY_ERROR);
 		}*/
 		//存入xml-----结束;
+		logger.debug("get in regiset");
 		try{
 			processRepository.save(process);
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 		}catch(Exception e){
 			responseData.setCode(Constants.IDENTITY_ERROR);
-			e.printStackTrace();
+			logger.error("reg_pross err",e);
+			//e.printStackTrace();
 		}
 		return responseData;
 	}

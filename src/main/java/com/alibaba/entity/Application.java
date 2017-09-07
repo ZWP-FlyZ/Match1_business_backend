@@ -32,7 +32,7 @@ public class Application {
 	
 	//一个用户下有多个应用
 	@ManyToOne
-	@JoinColumn(name = "user")
+	@JoinColumn(name = "user",referencedColumnName="id")
 	private User user;
 
 	//一个应用下有多个流程……，一对多
