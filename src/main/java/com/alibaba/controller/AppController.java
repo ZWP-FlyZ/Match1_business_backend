@@ -146,13 +146,24 @@ public class AppController extends BaseController {
 		//responseData.getList().clear();
 		if(id!=null){
 			List<Message> ms = mr.findAll();
-			List<Process> ps = new ArrayList<>();
+			List<Process> ps = null;
 			Gson g = new Gson();
 			
-			for(Message m :ms)
-				ps.add(g.fromJson(m.getMessage(), Process.class));
+			Map<String,List<Process>> map = new HashMap<>();
+			for(Message m :ms){
+				Process p =g.fromJson(m.getMessage(), Process.class);
+				if(p.getApplication().getId()!=id) continue;
+				
+				if((ps=map.get(p.getType()))==null){
+					ps = new ArrayList<Process>();
+					map.put(p.getType(), ps);
+				}
+				p.setId(m.getId());
+				ps.add(p);
+				map.put(p.getType(), ps);
+			}
 			
-			responseData.setList(ps);
+			responseData.setMap(map);
 		}
 		return responseData;
 	}
