@@ -31,6 +31,7 @@ import com.alibaba.repository.ProcessRepository;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
+import com.alibaba.util.ProcessRequest;
 import com.alibaba.util.ResponseData;
 import com.alibaba.util.XMLReadHepler;
 import com.alibaba.util.XMLUtil;
@@ -103,7 +104,7 @@ public class AppController extends BaseController {
 	
 	@RequestMapping(value = "register_process",method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseData registerProcess(@RequestBody Process process,HttpSession session){
+	public ResponseData registerProcess( @RequestBody ProcessRequest process,HttpSession session){
 		//存入xml-----开始
 		/*if(XMLWriteHepler.writeProcess(process)!=null){
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
@@ -112,13 +113,15 @@ public class AppController extends BaseController {
 			responseData.setCode(Constants.IDENTITY_ERROR);
 		}*/
 		//存入xml-----结束;
-		logger.debug("get in regiset");
+		logger.debug("get in regiset "+new Gson().toJson(process));
 		try{
 			//processRepository.save(process);
-			Message msg = new Message();
-			msg.setName(getFileName(process));
-			msg.setMessage(new Gson().toJson(process));
-			mr.save(msg);
+//			logger.debug(process);
+//			Message msg = new Message();
+//			Process p = new Gson().fromJson(process, Process.class);
+//			msg.setName(getFileName(p));
+//			msg.setMessage(process);
+//			mr.save(msg);
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 		}catch(Exception e){
 			responseData.setCode(Constants.IDENTITY_ERROR);
@@ -152,7 +155,7 @@ public class AppController extends BaseController {
 			Map<String,List<Process>> map = new HashMap<>();
 			for(Message m :ms){
 				Process p =g.fromJson(m.getMessage(), Process.class);
-				if(p.getApplication().getId()!=id) continue;
+				if(p==null||p.getApplication().getId()!=id) continue;
 				
 				if((ps=map.get(p.getType()))==null){
 					ps = new ArrayList<Process>();
