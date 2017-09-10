@@ -1,11 +1,10 @@
-package com.alibaba.util;
+package com.alibaba.model;
 
 import java.util.List;
 
 import com.alibaba.entity.Application;
-import com.alibaba.entity.ProcessNode;
 
-public class ProcessRequest {
+public class ProcessData {
 
 	private int id;
 
@@ -17,7 +16,7 @@ public class ProcessRequest {
 	private String type;
 	
 
-    private List<ProcessNode> processNodes ;
+    private List<ProcessNodeData> processNodes ;
 	
 	private Application application;
 
@@ -77,11 +76,12 @@ public class ProcessRequest {
 		this.type = type;
 	}
 
-	public List<ProcessNode> getProcessNodes() {
+
+	public List<ProcessNodeData> getProcessNodes() {
 		return processNodes;
 	}
 
-	public void setProcessNodes(List<ProcessNode> processNodes) {
+	public void setProcessNodes(List<ProcessNodeData> processNodes) {
 		this.processNodes = processNodes;
 	}
 

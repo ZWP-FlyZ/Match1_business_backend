@@ -24,6 +24,7 @@ import com.alibaba.entity.Message;
 import com.alibaba.entity.PageModel;
 import com.alibaba.entity.Process;
 import com.alibaba.entity.User;
+import com.alibaba.model.ProcessData;
 import com.alibaba.repository.ApplicationRepository;
 import com.alibaba.repository.MessageReponsitory;
 import com.alibaba.repository.PageModelRepository;
@@ -31,7 +32,6 @@ import com.alibaba.repository.ProcessRepository;
 import com.alibaba.repository.UserRepository;
 import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
-import com.alibaba.util.ProcessRequest;
 import com.alibaba.util.ResponseData;
 import com.alibaba.util.XMLReadHepler;
 import com.alibaba.util.XMLUtil;
@@ -104,7 +104,7 @@ public class AppController extends BaseController {
 	
 	@RequestMapping(value = "register_process",method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseData registerProcess( @RequestBody ProcessRequest process,HttpSession session){
+	public ResponseData registerProcess( @RequestBody ProcessData process,HttpSession session){
 		//存入xml-----开始
 		/*if(XMLWriteHepler.writeProcess(process)!=null){
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
@@ -117,11 +117,10 @@ public class AppController extends BaseController {
 		try{
 			//processRepository.save(process);
 //			logger.debug(process);
-//			Message msg = new Message();
-//			Process p = new Gson().fromJson(process, Process.class);
-//			msg.setName(getFileName(p));
-//			msg.setMessage(process);
-//			mr.save(msg);
+			Message msg = new Message();
+			msg.setName(getFileName(process));
+			msg.setMessage(new Gson().toJson(process));
+			mr.save(msg);
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 		}catch(Exception e){
 			responseData.setCode(Constants.IDENTITY_ERROR);
@@ -149,16 +148,16 @@ public class AppController extends BaseController {
 		//responseData.getList().clear();
 		if(id!=null){
 			List<Message> ms = mr.findAll();
-			List<Process> ps = null;
+			List<ProcessData> ps = null;
 			Gson g = new Gson();
 			
-			Map<String,List<Process>> map = new HashMap<>();
+			Map<String,List<ProcessData>> map = new HashMap<>();
 			for(Message m :ms){
-				Process p =g.fromJson(m.getMessage(), Process.class);
+				ProcessData p =g.fromJson(m.getMessage(), ProcessData.class);
 				if(p==null||p.getApplication().getId()!=id) continue;
 				
 				if((ps=map.get(p.getType()))==null){
-					ps = new ArrayList<Process>();
+					ps = new ArrayList<ProcessData>();
 					map.put(p.getType(), ps);
 				}
 				p.setId(m.getId());
@@ -231,12 +230,12 @@ public class AppController extends BaseController {
 	}
 	
 	
-	private String getFileName(Process p){
-		if(p==null) return "null";
-		Application a = p.getApplication();
+	private String getFileName(ProcessData process){
+		if(process==null) return "null";
+		Application a = process.getApplication();
 		User u = a.getUser();
 		
-		return u.getUsername()+"_"+a.getAppname()+"_"+a.getId()+"_"+p.getName();
+		return u.getUsername()+"_"+a.getAppname()+"_"+a.getId()+"_"+process.getName();
 		
 		
 	}
