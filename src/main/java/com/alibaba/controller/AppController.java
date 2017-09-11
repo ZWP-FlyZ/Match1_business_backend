@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,12 +59,15 @@ public class AppController extends BaseController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
 	private ResponseData responseData= new ResponseData();
+	@CrossOrigin(origins="*", maxAge=3600)
 	@RequestMapping("/getApps")
 	@ResponseBody
 	public ResponseData getAppList(HttpSession session){
-		User loginUser = (User) session.getAttribute(Constants.Session_User);
+		//User loginUser = (User) session.getAttribute(Constants.Session_User);
+		User loginUser = new User();
+		loginUser.setId(1);
 		List<Application> apps = new ArrayList<Application>();
-		apps = applicationRepository.findAllByUser(loginUser);
+		apps = applicationRepository.findAll();
 		if(apps.size()>0){
 			responseData.setCode(Constants.IDENTITY_SUCCESS);
 			responseData.setList(apps);
@@ -73,6 +77,7 @@ public class AppController extends BaseController {
 		responseData.setList(apps);
 		return responseData;
 	}
+	@CrossOrigin(origins="*", maxAge=3600)
 	@RequestMapping(value = "app_add",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseData addApp(@RequestBody Application app,HttpSession session){
@@ -102,6 +107,7 @@ public class AppController extends BaseController {
 		return responseData;
 	}
 	
+	@CrossOrigin(origins="*", maxAge=3600)
 	@RequestMapping(value = "register_process",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseData registerProcess( @RequestBody ProcessData process,HttpSession session){
@@ -131,6 +137,7 @@ public class AppController extends BaseController {
 	}
 	
 	//根据process_id获取流程信息
+	@CrossOrigin(origins="*", maxAge=3600)
 	@RequestMapping("/get_process")
 	//参数是id
 	public ResponseData getProcess(Integer id){

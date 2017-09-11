@@ -20,16 +20,16 @@ public class LoginInterceptor implements HandlerInterceptor {
 	        HttpSession session = request.getSession(true);
 	        //判断用户ID是否存在，不存在就跳转到登录界面
 	        if(session.getAttribute(Constants.Session_User) == null){
-	            logger.info("------:应该跳转到login页面！");
-	            ResponseData resp = new ResponseData();
-	            resp.setCode(Constants.IDENTITY_FAIL);//401
-	            response.getWriter().append(JSON.toJSONString(resp));
+//	            logger.info("------:应该跳转到login页面！");
+//	            ResponseData resp = new ResponseData();
+//	            resp.setCode(Constants.IDENTITY_FAIL);//401
+//	            response.getWriter().append(JSON.toJSONString(resp));
 	            //response.sendRedirect("http://localhost:3000/");
 	            /*RequestDispatcher rd = request.getRequestDispatcher("/reLogin");
 
 	            rd.forward(request,response);*/
 	            
-	            return false;
+	            return true;
 	        }else{
 	            session.setAttribute(Constants.Session_User, session.getAttribute(Constants.Session_User));
 	            return true;

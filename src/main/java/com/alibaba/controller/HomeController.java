@@ -11,16 +11,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.entity.User;
 import com.alibaba.repository.UserRepository;
-import com.alibaba.util.BaseController;
 import com.alibaba.util.Constants;
 import com.alibaba.util.PictureCheckCode;
 import com.alibaba.util.ResponseData;
+import com.google.gson.Gson;
 
 @Controller
 public class HomeController{
@@ -30,6 +31,7 @@ public class HomeController{
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private ResponseData responseData = new ResponseData();
 	//用户登录验证
+	@CrossOrigin(origins="*", maxAge=3600)
 	@RequestMapping("/login")
 	@ResponseBody
 	public ResponseData login(@RequestBody  User user, HttpSession session){
@@ -44,6 +46,7 @@ public class HomeController{
 				if(usertype.equals(Constants.ROLE_APP)){
 					responseData.setCode(Constants.ROLE_APP_LOGIN);
 				}
+				responseData.setMessage(new Gson().toJson(usertype));
 				session.setAttribute(Constants.Session_User, checkUser);
 			}else{
 				responseData.setCode(Constants.IDENTITY_NOT_FOUND);
